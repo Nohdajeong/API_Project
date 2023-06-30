@@ -3,7 +3,6 @@
 #include "IStage.h"
 
 #include "PlayerS1.h"
-#include "MonsterS1.h"
 
 #include "Bullet.h"
 #include "Mouse.h"

@@ -3,7 +3,7 @@
 #include "Define.h"
 #include "Intro.h"
 #include "Stage1.h"
-
+#include "Stage2.h"
 
 
 class CMainGame

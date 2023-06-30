@@ -1,5 +1,6 @@
 #pragma once
 #include "Obj.h"
+#include "BmpMgr.h"
 
 class CObjS1 : public CObj{
 public:

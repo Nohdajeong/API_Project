@@ -4,7 +4,9 @@
 #include "CollisionMgr.h"
 #include "ObjMgr.h"
 #include "LineMgr.h"
-
+#include "PlayerS1.h"
+#include "BmpMgr.h"
+#include "ScrollMgr.h"
 #include "IScene.h"
 
 

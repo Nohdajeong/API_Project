@@ -33,18 +33,24 @@ public:
 
 protected:
 	void		Update_Rect();
+	void		Move_Frame();
 
 protected:
 	INFO		m_tInfo;
 	RECT		m_tRect;
 	DIRECTION	m_eDir;
 	STATES		m_tStates;
+	FRAME		m_tFrame;
+	RENDERID	m_eRender;
+
 
 	CObj*		m_pTarget;
 
 	float		m_fSpeed;
 	float		m_fAngle;
 	bool		m_bDead;
+
+	TCHAR*		m_pFrameKey;
 
 };
 

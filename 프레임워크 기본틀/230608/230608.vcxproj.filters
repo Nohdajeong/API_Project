@@ -94,47 +94,56 @@
     <Filter Include="01. Obj\01. Player\NewPlayer\Pattern\-1. Abstract\01. OnGround">
       <UniqueIdentifier>{ecb4991b-4f6e-45da-a83f-767aa63d7246}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Scene">
-      <UniqueIdentifier>{b353731c-cc88-4d52-a7f9-5e4831406875}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Scene\Stage">
-      <UniqueIdentifier>{31a2c119-ca70-43a8-a7f3-56f46c4022af}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Scene\Intro">
-      <UniqueIdentifier>{ffcbf8f1-a08c-40c8-8dfb-4c3e70fb6993}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Scene\Stage\Stage1 - Ruin">
-      <UniqueIdentifier>{4eac66b5-be39-4179-919e-1d5df3c89ede}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Scene\Stage\Stage1 - Ruin\00. Obj">
-      <UniqueIdentifier>{cf6d3031-bd4c-4fdb-a282-b31ba02b8b17}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Scene\Stage\Stage1 - Ruin\01. Player">
-      <UniqueIdentifier>{cb661d48-e621-4208-830d-114cbc456110}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Scene\Battle">
-      <UniqueIdentifier>{e11d3bab-7dfe-40fb-8219-f7cf27cbf69d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Scene\Stage\Stage4 - Toliel">
-      <UniqueIdentifier>{19b1d20e-0635-4e2f-bb82-bebe1e5e47ed}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Scene\Stage\Stage4 - Toliel\00. Toliel">
-      <UniqueIdentifier>{a3c41303-6e06-4ded-bd04-6254ba419341}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Scene\Stage\Stage3 - Puzzle">
-      <UniqueIdentifier>{65020c9f-6d89-4cac-a823-92a326b007e4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Scene\Stage\Stage2 - Flowey">
-      <UniqueIdentifier>{fd26949e-e538-4a2f-8d0c-819d18aac292}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Scene\Battle\01. Monster">
-      <UniqueIdentifier>{4582c75e-0737-4e5b-a177-c4758da44495}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Scene\Battle\02. Boss">
-      <UniqueIdentifier>{051190ac-bda1-4649-af01-a704facfb6bf}</UniqueIdentifier>
-    </Filter>
     <Filter Include="01. Obj\01. Player\NewPlayer\Pattern\-1. Abstract\02, OnAir">
       <UniqueIdentifier>{e049d178-1fdf-4dc3-930b-1d288630206b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. Design\06. BmpMgr">
+      <UniqueIdentifier>{73571c0d-6e75-492c-9d54-0ba489b5cee1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene">
+      <UniqueIdentifier>{b353731c-cc88-4d52-a7f9-5e4831406875}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\Stage">
+      <UniqueIdentifier>{31a2c119-ca70-43a8-a7f3-56f46c4022af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\Stage\Stage1 - Ruin">
+      <UniqueIdentifier>{4eac66b5-be39-4179-919e-1d5df3c89ede}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\Stage\Stage1 - Ruin\00. Obj">
+      <UniqueIdentifier>{cf6d3031-bd4c-4fdb-a282-b31ba02b8b17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\Stage\Stage4 - Toliel">
+      <UniqueIdentifier>{19b1d20e-0635-4e2f-bb82-bebe1e5e47ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\Stage\Stage4 - Toliel\00. Toliel">
+      <UniqueIdentifier>{a3c41303-6e06-4ded-bd04-6254ba419341}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\Stage\Stage3 - Puzzle">
+      <UniqueIdentifier>{65020c9f-6d89-4cac-a823-92a326b007e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\Stage\Stage2 - Flowey">
+      <UniqueIdentifier>{fd26949e-e538-4a2f-8d0c-819d18aac292}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\Stage\Player">
+      <UniqueIdentifier>{cb661d48-e621-4208-830d-114cbc456110}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\Intro">
+      <UniqueIdentifier>{ffcbf8f1-a08c-40c8-8dfb-4c3e70fb6993}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\Battle">
+      <UniqueIdentifier>{e11d3bab-7dfe-40fb-8219-f7cf27cbf69d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\Battle\01. Monster">
+      <UniqueIdentifier>{4582c75e-0737-4e5b-a177-c4758da44495}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\Battle\02. Boss">
+      <UniqueIdentifier>{051190ac-bda1-4649-af01-a704facfb6bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\Stage\Stage2 - Flowey\Flowey">
+      <UniqueIdentifier>{b87900fb-3647-4484-9f1b-8bc143a51806}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. Design\07. SoundMgr">
+      <UniqueIdentifier>{8a0adcc9-5e34-49cb-af34-35733d0ab9d1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -178,7 +187,7 @@
       <Filter>02. Design\01. CollisionMgr</Filter>
     </ClInclude>
     <ClInclude Include="Stage1.h">
-      <Filter>Scene\Stage\Stage1 - Ruin</Filter>
+      <Filter>03. Scene\Stage\Stage1 - Ruin</Filter>
     </ClInclude>
     <ClInclude Include="ObjMgr.h">
       <Filter>02. Design\02. ObjMgr</Filter>
@@ -190,13 +199,13 @@
       <Filter>02. Design\03. LineMgr\Line</Filter>
     </ClInclude>
     <ClInclude Include="IStage.h">
-      <Filter>Scene\Stage</Filter>
+      <Filter>03. Scene\Stage</Filter>
     </ClInclude>
     <ClInclude Include="IScene.h">
-      <Filter>Scene</Filter>
+      <Filter>03. Scene</Filter>
     </ClInclude>
     <ClInclude Include="Intro.h">
-      <Filter>Scene\Intro</Filter>
+      <Filter>03. Scene\Intro</Filter>
     </ClInclude>
     <ClInclude Include="Actor.h">
       <Filter>01. Obj\00. Actor</Filter>
@@ -208,10 +217,10 @@
       <Filter>01. Obj\05. Boss</Filter>
     </ClInclude>
     <ClInclude Include="ObjS1.h">
-      <Filter>Scene\Stage\Stage1 - Ruin\00. Obj</Filter>
+      <Filter>03. Scene\Stage\Stage1 - Ruin\00. Obj</Filter>
     </ClInclude>
     <ClInclude Include="PlayerS1.h">
-      <Filter>Scene\Stage\Stage1 - Ruin\01. Player</Filter>
+      <Filter>03. Scene\Stage\Player</Filter>
     </ClInclude>
     <ClInclude Include="KeyMgr.h">
       <Filter>02. Design\04. KeyMgr</Filter>
@@ -249,11 +258,23 @@
     <ClInclude Include="NewPlayerOnAir.h">
       <Filter>01. Obj\01. Player\NewPlayer\Pattern\-1. Abstract\02, OnAir</Filter>
     </ClInclude>
-    <ClInclude Include="DefineS1.h">
-      <Filter>Scene\Stage\Stage1 - Ruin</Filter>
-    </ClInclude>
     <ClInclude Include="Loading.h">
-      <Filter>Scene\Intro</Filter>
+      <Filter>03. Scene\Intro</Filter>
+    </ClInclude>
+    <ClInclude Include="BitMap.h">
+      <Filter>02. Design\06. BmpMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="BmpMgr.h">
+      <Filter>02. Design\06. BmpMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage2.h">
+      <Filter>03. Scene\Stage\Stage2 - Flowey</Filter>
+    </ClInclude>
+    <ClInclude Include="Flowey.h">
+      <Filter>03. Scene\Stage\Stage2 - Flowey\Flowey</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundMgr.h">
+      <Filter>02. Design\07. SoundMgr</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -282,7 +303,7 @@
       <Filter>02. Design\01. CollisionMgr</Filter>
     </ClCompile>
     <ClCompile Include="Stage1.cpp">
-      <Filter>Scene\Stage\Stage1 - Ruin</Filter>
+      <Filter>03. Scene\Stage\Stage1 - Ruin</Filter>
     </ClCompile>
     <ClCompile Include="ObjMgr.cpp">
       <Filter>02. Design\02. ObjMgr</Filter>
@@ -294,10 +315,10 @@
       <Filter>02. Design\03. LineMgr</Filter>
     </ClCompile>
     <ClCompile Include="Intro.cpp">
-      <Filter>Scene\Intro</Filter>
+      <Filter>03. Scene\Intro</Filter>
     </ClCompile>
     <ClCompile Include="PlayerS1.cpp">
-      <Filter>Scene\Stage\Stage1 - Ruin\01. Player</Filter>
+      <Filter>03. Scene\Stage\Player</Filter>
     </ClCompile>
     <ClCompile Include="KeyMgr.cpp">
       <Filter>02. Design\04. KeyMgr</Filter>
@@ -337,6 +358,21 @@
     </ClCompile>
     <ClCompile Include="NewPlayerOnAir.cpp">
       <Filter>01. Obj\01. Player\NewPlayer\Pattern\-1. Abstract\02, OnAir</Filter>
+    </ClCompile>
+    <ClCompile Include="BitMap.cpp">
+      <Filter>02. Design\06. BmpMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="BmpMgr.cpp">
+      <Filter>02. Design\06. BmpMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage2.cpp">
+      <Filter>03. Scene\Stage\Stage2 - Flowey</Filter>
+    </ClCompile>
+    <ClCompile Include="Flowey.cpp">
+      <Filter>03. Scene\Stage\Stage2 - Flowey\Flowey</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundMgr.cpp">
+      <Filter>02. Design\07. SoundMgr</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

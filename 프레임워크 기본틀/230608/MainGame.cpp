@@ -23,6 +23,7 @@ void CMainGame::Initialize()
 	m_eScenes[INTRO] = new Intro();
 
 	m_eScenes[RUIN] = new CStage1();
+	m_eScenes[FLOWEY] = new CStage2();
 
 	m_eScenes[m_eSceneId]->Initialize();
 }
