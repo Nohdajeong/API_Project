@@ -1,0 +1,34 @@
+조작키
+
+z / enter - 결정
+x / shift - 취소
+c / ctrl - 메뉴
+esc - 종료
+
+
+원래
+인트로 -> Stage1 (스크롤 이동) -> 폐허 입구(위로 스크롤) -> 퍼즐 맵 -> 토리엘
+
+
+모작
+인트로 -> Stage1 (오른쪽 스크롤) -> 퍼즐맵 (위 스크롤) -> 토리엘 (전투)
+
+
+bgm
+stage1 지나고 - https://youtu.be/B69GfSqEZEs
+일반 몬스터 전투 - https://youtu.be/JRU6GnETSN4
+토리엘 전투 - https://youtu.be/xflkF-sqNaM
+게임 오버 - https://youtu.be/W1i4mTyidOc
+
+필요한 스탯 - 레벨 / hp / maxhp / atk / def / exp / max exp
+
+
+프리스크 - 사이즈 40*60
+토리엘 - 사이즈 50*100
+연습용 인형 - 40*70
+프로깅 - 50*80
+
+
+전투창
+연습용 - 100*200
+토리엘 - 사이즈 100*200
