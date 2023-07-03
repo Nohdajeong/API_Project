@@ -1,6 +1,8 @@
 #pragma once
 
 #include "Define.h"
+#include "BmpMgr.h"
+#include "ScrollMgr.h"
 
 class CObj abstract
 {

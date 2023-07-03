@@ -40,62 +40,14 @@
     <Filter Include="01. Obj\01. Player">
       <UniqueIdentifier>{a538927e-c2c1-40f9-93f1-1f42f6ff2455}</UniqueIdentifier>
     </Filter>
-    <Filter Include="01. Obj\03. Monster">
-      <UniqueIdentifier>{2942410f-98eb-447d-ac1c-ac47cc0752f6}</UniqueIdentifier>
-    </Filter>
     <Filter Include="01. Obj\00. Actor">
       <UniqueIdentifier>{4b05b9bc-f5cd-41a1-ac65-3886dc6a08ff}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01. Obj\04. Mouse">
-      <UniqueIdentifier>{4dab4d2f-e72e-4697-98b6-055d6fca6bbc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01. Obj\05. Boss">
-      <UniqueIdentifier>{5c21e8c1-ba0a-4e57-b841-df5d815b687b}</UniqueIdentifier>
     </Filter>
     <Filter Include="02. Design\04. KeyMgr">
       <UniqueIdentifier>{8cbae56d-d83e-43f6-acff-177acc050f89}</UniqueIdentifier>
     </Filter>
     <Filter Include="02. Design\05. ScrollMgr">
       <UniqueIdentifier>{dfa74177-fdc4-49b8-a0f8-1b9e93bebd82}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01. Obj\05. Boss\Pattern">
-      <UniqueIdentifier>{c8bfff6c-2a16-4e9d-94d0-6f9c187fd486}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01. Obj\05. Boss\Pattern\Idle">
-      <UniqueIdentifier>{ac012855-4a62-42f8-8b32-b1787b656f93}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01. Obj\05. Boss\Pattern\Chase">
-      <UniqueIdentifier>{1ed66422-1b66-4705-a6f6-dd04cfcceba8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01. Obj\05. Boss\Pattern\Attack">
-      <UniqueIdentifier>{ff4c59ff-dbb6-45ee-aedc-8e9481ab3b50}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01. Obj\01. Player\NewPlayer">
-      <UniqueIdentifier>{b067aa35-65ea-470d-8713-dd3e0ba31e97}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01. Obj\01. Player\NewPlayer\Pattern">
-      <UniqueIdentifier>{d07cdac9-70a0-42e1-a30d-dd15615286d1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01. Obj\01. Player\NewPlayer\Pattern\00. Idle">
-      <UniqueIdentifier>{bd28db91-baf6-4a0e-a039-70608217730e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01. Obj\01. Player\NewPlayer\Pattern\01. Jump">
-      <UniqueIdentifier>{ac0f1e06-b1f5-4075-bc98-585b370c51ac}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01. Obj\01. Player\NewPlayer\Pattern\03. Fall">
-      <UniqueIdentifier>{09c33a1e-c9f1-40a1-88f6-cbaed5242628}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01. Obj\01. Player\NewPlayer\Pattern\02. Walk">
-      <UniqueIdentifier>{75c831b0-c4c6-4414-b058-168c50e28cb7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01. Obj\01. Player\NewPlayer\Pattern\-1. Abstract">
-      <UniqueIdentifier>{c6d002d7-72a2-4ecf-8aa5-799650d0afc6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01. Obj\01. Player\NewPlayer\Pattern\-1. Abstract\01. OnGround">
-      <UniqueIdentifier>{ecb4991b-4f6e-45da-a83f-767aa63d7246}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01. Obj\01. Player\NewPlayer\Pattern\-1. Abstract\02, OnAir">
-      <UniqueIdentifier>{e049d178-1fdf-4dc3-930b-1d288630206b}</UniqueIdentifier>
     </Filter>
     <Filter Include="02. Design\06. BmpMgr">
       <UniqueIdentifier>{73571c0d-6e75-492c-9d54-0ba489b5cee1}</UniqueIdentifier>
@@ -130,80 +82,74 @@
     <Filter Include="03. Scene\01. Stage\Stage2 - Flowey\Flowey">
       <UniqueIdentifier>{b87900fb-3647-4484-9f1b-8bc143a51806}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Scene\01. Stage\Player">
-      <UniqueIdentifier>{cb661d48-e621-4208-830d-114cbc456110}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Scene\01. Stage\Obj">
-      <UniqueIdentifier>{cf6d3031-bd4c-4fdb-a282-b31ba02b8b17}</UniqueIdentifier>
-    </Filter>
     <Filter Include="03. Scene\02. Battle">
       <UniqueIdentifier>{e11d3bab-7dfe-40fb-8219-f7cf27cbf69d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Scene\02. Battle\Obj">
-      <UniqueIdentifier>{d1176492-46c0-4d8f-867d-8c921ed276f7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Scene\02. Battle\Obj\Button">
-      <UniqueIdentifier>{05295684-89b6-4039-a2cc-b75d5fb97ee7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Scene\02. Battle\Obj\Message">
-      <UniqueIdentifier>{483a1b92-461a-4ee0-a1bd-3bad2666c15e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Scene\02. Battle\Obj\Player">
-      <UniqueIdentifier>{59f1588e-2940-4cb7-9a3d-91234e605186}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Scene\02. Battle\Scene">
-      <UniqueIdentifier>{63df1f97-5b47-4848-815d-8329201ad679}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Scene\02. Battle\Monster">
-      <UniqueIdentifier>{4582c75e-0737-4e5b-a177-c4758da44495}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Scene\02. Battle\Boss">
-      <UniqueIdentifier>{051190ac-bda1-4649-af01-a704facfb6bf}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Scene\02. Battle\Monster\Pattern">
-      <UniqueIdentifier>{1b40cc7b-854c-4f90-bb87-05050f27d952}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Scene\02. Battle\Boss\Pattern">
-      <UniqueIdentifier>{fc2d51d2-5505-4174-969f-e9ba53b9102b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Scene\02. Battle\Monster\Pattern\Idle">
-      <UniqueIdentifier>{f4cefd0e-f012-46c5-a513-f97329b6e5b0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Scene\02. Battle\Monster\Pattern\Attack1">
-      <UniqueIdentifier>{dfbed268-a913-4115-81b4-cdd8a9328b8b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Scene\02. Battle\Monster\Pattern\Attack2">
-      <UniqueIdentifier>{51f6a4f2-e14a-42cc-bc1a-1c7af9be2046}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Scene\02. Battle\Boss\Pattern\Idle">
-      <UniqueIdentifier>{db762cbc-351f-45a8-8fab-9d8bc838e036}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Scene\02. Battle\Boss\Pattern\Attack1">
-      <UniqueIdentifier>{f387c2d5-b0fe-46f9-98ed-e9cbade1d0eb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Scene\02. Battle\Boss\Pattern\Attack2">
-      <UniqueIdentifier>{e132095d-136e-4b3e-bb30-46b7934db4d6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Scene\02. Battle\Boss\Pattern\Attack3">
-      <UniqueIdentifier>{41d66f05-7a41-4bdf-a193-0a7b675b25a7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Scene\02. Battle\Scene\Idle">
-      <UniqueIdentifier>{cbd8d4dd-0ff5-408a-9016-f0679a9fe14c}</UniqueIdentifier>
     </Filter>
     <Filter Include="02. Design\08. SceneMgr">
       <UniqueIdentifier>{6a5aec73-6337-411d-96f5-f8ab87416bd2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Scene\02. Battle\Scene\Attack">
-      <UniqueIdentifier>{66e5c62e-a05d-4efb-a11d-05686d550932}</UniqueIdentifier>
+    <Filter Include="01. Obj\01. Player\Player">
+      <UniqueIdentifier>{cb661d48-e621-4208-830d-114cbc456110}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Scene\02. Battle\Scene\Act">
-      <UniqueIdentifier>{050440e7-f481-4d0b-b8ea-0a0cb00087bd}</UniqueIdentifier>
+    <Filter Include="01. Obj\02. Mouse">
+      <UniqueIdentifier>{4dab4d2f-e72e-4697-98b6-055d6fca6bbc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Scene\02. Battle\Scene\Item">
-      <UniqueIdentifier>{fcfdf063-70c5-43f8-86e0-d3fe1f011410}</UniqueIdentifier>
+    <Filter Include="01. Obj\03. Boss">
+      <UniqueIdentifier>{051190ac-bda1-4649-af01-a704facfb6bf}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Scene\02. Battle\Scene\Mercy">
-      <UniqueIdentifier>{be6a6d9d-dc58-4903-83cc-645969191e85}</UniqueIdentifier>
+    <Filter Include="01. Obj\03. Boss\Pattern">
+      <UniqueIdentifier>{fc2d51d2-5505-4174-969f-e9ba53b9102b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Obj\03. Boss\Pattern\Idle">
+      <UniqueIdentifier>{db762cbc-351f-45a8-8fab-9d8bc838e036}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Obj\03. Boss\Pattern\Attack1">
+      <UniqueIdentifier>{f387c2d5-b0fe-46f9-98ed-e9cbade1d0eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Obj\03. Boss\Pattern\Attack2">
+      <UniqueIdentifier>{e132095d-136e-4b3e-bb30-46b7934db4d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Obj\03. Boss\Pattern\Attack3">
+      <UniqueIdentifier>{41d66f05-7a41-4bdf-a193-0a7b675b25a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Obj\04. Monster">
+      <UniqueIdentifier>{4582c75e-0737-4e5b-a177-c4758da44495}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Obj\04. Monster\Pattern">
+      <UniqueIdentifier>{1b40cc7b-854c-4f90-bb87-05050f27d952}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Obj\04. Monster\Pattern\Idle">
+      <UniqueIdentifier>{f4cefd0e-f012-46c5-a513-f97329b6e5b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Obj\04. Monster\Pattern\Attack1">
+      <UniqueIdentifier>{dfbed268-a913-4115-81b4-cdd8a9328b8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Obj\04. Monster\Pattern\Attack2">
+      <UniqueIdentifier>{51f6a4f2-e14a-42cc-bc1a-1c7af9be2046}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Obj\05. Button">
+      <UniqueIdentifier>{05295684-89b6-4039-a2cc-b75d5fb97ee7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Obj\06. Message">
+      <UniqueIdentifier>{483a1b92-461a-4ee0-a1bd-3bad2666c15e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\02. Battle\MonsterScene">
+      <UniqueIdentifier>{63df1f97-5b47-4848-815d-8329201ad679}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\02. Battle\MonsterScene\Idle">
+      <UniqueIdentifier>{1a11409f-3b2d-4c59-beb3-98d9988052c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\02. Battle\MonsterScene\Attack">
+      <UniqueIdentifier>{9096e64d-27c8-4467-bd82-6e1250271c64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\02. Battle\MonsterScene\Phase">
+      <UniqueIdentifier>{3ca15ea9-7e77-4856-9b49-c4bfd30fe973}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Obj\01. Player\Battle">
+      <UniqueIdentifier>{b067aa35-65ea-470d-8713-dd3e0ba31e97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Obj\07. Attack_Bar">
+      <UniqueIdentifier>{ee286269-efc2-4d70-9e4b-55aa9f06b6e9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -231,17 +177,11 @@
     <ClInclude Include="Obj.h">
       <Filter>01. Obj</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>01. Obj\01. Player</Filter>
-    </ClInclude>
     <ClInclude Include="AbstractFactory.h">
       <Filter>02. Design\00. AbstractFactory</Filter>
     </ClInclude>
-    <ClInclude Include="Monster.h">
-      <Filter>01. Obj\03. Monster</Filter>
-    </ClInclude>
     <ClInclude Include="Mouse.h">
-      <Filter>01. Obj\04. Mouse</Filter>
+      <Filter>01. Obj\02. Mouse</Filter>
     </ClInclude>
     <ClInclude Include="CollisionMgr.h">
       <Filter>02. Design\01. CollisionMgr</Filter>
@@ -255,9 +195,6 @@
     <ClInclude Include="Line.h">
       <Filter>02. Design\03. LineMgr\Line</Filter>
     </ClInclude>
-    <ClInclude Include="IStage.h">
-      <Filter>03. Scene\01. Stage</Filter>
-    </ClInclude>
     <ClInclude Include="IScene.h">
       <Filter>03. Scene</Filter>
     </ClInclude>
@@ -270,47 +207,14 @@
     <ClInclude Include="State.h">
       <Filter>01. Obj\00. Actor</Filter>
     </ClInclude>
-    <ClInclude Include="Boss.h">
-      <Filter>01. Obj\05. Boss</Filter>
-    </ClInclude>
     <ClInclude Include="PlayerS1.h">
-      <Filter>03. Scene\01. Stage\Player</Filter>
+      <Filter>01. Obj\01. Player\Player</Filter>
     </ClInclude>
     <ClInclude Include="KeyMgr.h">
       <Filter>02. Design\04. KeyMgr</Filter>
     </ClInclude>
     <ClInclude Include="ScrollMgr.h">
       <Filter>02. Design\05. ScrollMgr</Filter>
-    </ClInclude>
-    <ClInclude Include="BossIdle.h">
-      <Filter>01. Obj\05. Boss\Pattern\Idle</Filter>
-    </ClInclude>
-    <ClInclude Include="BossChase.h">
-      <Filter>01. Obj\05. Boss\Pattern\Chase</Filter>
-    </ClInclude>
-    <ClInclude Include="BossAttack.h">
-      <Filter>01. Obj\05. Boss\Pattern\Attack</Filter>
-    </ClInclude>
-    <ClInclude Include="NewPlayer.h">
-      <Filter>01. Obj\01. Player\NewPlayer</Filter>
-    </ClInclude>
-    <ClInclude Include="NewPlayerIdle.h">
-      <Filter>01. Obj\01. Player\NewPlayer\Pattern\00. Idle</Filter>
-    </ClInclude>
-    <ClInclude Include="NewPlayerWalk.h">
-      <Filter>01. Obj\01. Player\NewPlayer\Pattern\02. Walk</Filter>
-    </ClInclude>
-    <ClInclude Include="NewPlayerJump.h">
-      <Filter>01. Obj\01. Player\NewPlayer\Pattern\01. Jump</Filter>
-    </ClInclude>
-    <ClInclude Include="NewPlayerFall.h">
-      <Filter>01. Obj\01. Player\NewPlayer\Pattern\03. Fall</Filter>
-    </ClInclude>
-    <ClInclude Include="NewPlayerOnGround.h">
-      <Filter>01. Obj\01. Player\NewPlayer\Pattern\-1. Abstract\01. OnGround</Filter>
-    </ClInclude>
-    <ClInclude Include="NewPlayerOnAir.h">
-      <Filter>01. Obj\01. Player\NewPlayer\Pattern\-1. Abstract\02, OnAir</Filter>
     </ClInclude>
     <ClInclude Include="Loading.h">
       <Filter>03. Scene\00. Intro</Filter>
@@ -321,62 +225,47 @@
     <ClInclude Include="BmpMgr.h">
       <Filter>02. Design\06. BmpMgr</Filter>
     </ClInclude>
-    <ClInclude Include="Stage2.h">
-      <Filter>03. Scene\01. Stage\Stage2 - Flowey</Filter>
-    </ClInclude>
     <ClInclude Include="Flowey.h">
       <Filter>03. Scene\01. Stage\Stage2 - Flowey\Flowey</Filter>
     </ClInclude>
     <ClInclude Include="SoundMgr.h">
       <Filter>02. Design\07. SoundMgr</Filter>
     </ClInclude>
-    <ClInclude Include="ObjStage.h">
-      <Filter>03. Scene\01. Stage\Obj</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjBattle.h">
-      <Filter>03. Scene\02. Battle\Obj</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerS2.h">
-      <Filter>03. Scene\02. Battle\Obj\Player</Filter>
-    </ClInclude>
     <ClInclude Include="MyButton.h">
-      <Filter>03. Scene\02. Battle\Obj\Button</Filter>
+      <Filter>01. Obj\05. Button</Filter>
     </ClInclude>
     <ClInclude Include="MessageBlock.h">
-      <Filter>03. Scene\02. Battle\Obj\Message</Filter>
+      <Filter>01. Obj\06. Message</Filter>
     </ClInclude>
     <ClInclude Include="Look.h">
-      <Filter>03. Scene\02. Battle\Monster</Filter>
-    </ClInclude>
-    <ClInclude Include="Stage1.h">
-      <Filter>03. Scene\01. Stage\Stage1 - Ruin</Filter>
-    </ClInclude>
-    <ClInclude Include="DefineS2.h">
-      <Filter>03. Scene\02. Battle</Filter>
+      <Filter>01. Obj\04. Monster</Filter>
     </ClInclude>
     <ClInclude Include="Toriel.h">
-      <Filter>03. Scene\02. Battle\Boss</Filter>
+      <Filter>01. Obj\03. Boss</Filter>
     </ClInclude>
-    <ClInclude Include="IBattleScene.h">
-      <Filter>03. Scene\02. Battle</Filter>
+    <ClInclude Include="MonsterBattle.h">
+      <Filter>03. Scene\02. Battle\MonsterScene\Idle</Filter>
     </ClInclude>
-    <ClInclude Include="Battle.h">
-      <Filter>03. Scene\02. Battle\Scene</Filter>
+    <ClInclude Include="MonsterAttack.h">
+      <Filter>03. Scene\02. Battle\MonsterScene\Attack</Filter>
     </ClInclude>
-    <ClInclude Include="BattleIdle.h">
-      <Filter>03. Scene\02. Battle\Scene\Idle</Filter>
+    <ClInclude Include="SceneMgr.h">
+      <Filter>02. Design\08. SceneMgr</Filter>
     </ClInclude>
-    <ClInclude Include="BattleAttack.h">
-      <Filter>03. Scene\02. Battle\Scene\Attack</Filter>
+    <ClInclude Include="MonsterPhase.h">
+      <Filter>03. Scene\02. Battle\MonsterScene\Phase</Filter>
     </ClInclude>
-    <ClInclude Include="BattleAct.h">
-      <Filter>03. Scene\02. Battle\Scene\Act</Filter>
+    <ClInclude Include="Stage_Flowey.h">
+      <Filter>03. Scene\01. Stage\Stage2 - Flowey</Filter>
     </ClInclude>
-    <ClInclude Include="BattleItem.h">
-      <Filter>03. Scene\02. Battle\Scene\Item</Filter>
+    <ClInclude Include="Stage_Ruin.h">
+      <Filter>03. Scene\01. Stage\Stage1 - Ruin</Filter>
     </ClInclude>
-    <ClInclude Include="BattleMercy.h">
-      <Filter>03. Scene\02. Battle\Scene\Mercy</Filter>
+    <ClInclude Include="Attack_Bar.h">
+      <Filter>01. Obj\07. Attack_Bar</Filter>
+    </ClInclude>
+    <ClInclude Include="Player_Battle.h">
+      <Filter>01. Obj\01. Player\Battle</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -392,14 +281,8 @@
     <ClCompile Include="Obj.cpp">
       <Filter>01. Obj</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>01. Obj\01. Player</Filter>
-    </ClCompile>
-    <ClCompile Include="Monster.cpp">
-      <Filter>01. Obj\03. Monster</Filter>
-    </ClCompile>
     <ClCompile Include="Mouse.cpp">
-      <Filter>01. Obj\04. Mouse</Filter>
+      <Filter>01. Obj\02. Mouse</Filter>
     </ClCompile>
     <ClCompile Include="CollisionMgr.cpp">
       <Filter>02. Design\01. CollisionMgr</Filter>
@@ -417,7 +300,7 @@
       <Filter>03. Scene\00. Intro</Filter>
     </ClCompile>
     <ClCompile Include="PlayerS1.cpp">
-      <Filter>03. Scene\01. Stage\Player</Filter>
+      <Filter>01. Obj\01. Player\Player</Filter>
     </ClCompile>
     <ClCompile Include="KeyMgr.cpp">
       <Filter>02. Design\04. KeyMgr</Filter>
@@ -425,47 +308,11 @@
     <ClCompile Include="ScrollMgr.cpp">
       <Filter>02. Design\05. ScrollMgr</Filter>
     </ClCompile>
-    <ClCompile Include="Boss.cpp">
-      <Filter>01. Obj\05. Boss</Filter>
-    </ClCompile>
-    <ClCompile Include="BossIdle.cpp">
-      <Filter>01. Obj\05. Boss\Pattern\Idle</Filter>
-    </ClCompile>
-    <ClCompile Include="BossChase.cpp">
-      <Filter>01. Obj\05. Boss\Pattern\Chase</Filter>
-    </ClCompile>
-    <ClCompile Include="BossAttack.cpp">
-      <Filter>01. Obj\05. Boss\Pattern\Attack</Filter>
-    </ClCompile>
-    <ClCompile Include="NewPlayer.cpp">
-      <Filter>01. Obj\01. Player\NewPlayer</Filter>
-    </ClCompile>
-    <ClCompile Include="NewPlayerIdle.cpp">
-      <Filter>01. Obj\01. Player\NewPlayer\Pattern\00. Idle</Filter>
-    </ClCompile>
-    <ClCompile Include="NewPlayerWalk.cpp">
-      <Filter>01. Obj\01. Player\NewPlayer\Pattern\02. Walk</Filter>
-    </ClCompile>
-    <ClCompile Include="NewPlayerJump.cpp">
-      <Filter>01. Obj\01. Player\NewPlayer\Pattern\01. Jump</Filter>
-    </ClCompile>
-    <ClCompile Include="NewPlayerFall.cpp">
-      <Filter>01. Obj\01. Player\NewPlayer\Pattern\03. Fall</Filter>
-    </ClCompile>
-    <ClCompile Include="NewPlayerOnGround.cpp">
-      <Filter>01. Obj\01. Player\NewPlayer\Pattern\-1. Abstract\01. OnGround</Filter>
-    </ClCompile>
-    <ClCompile Include="NewPlayerOnAir.cpp">
-      <Filter>01. Obj\01. Player\NewPlayer\Pattern\-1. Abstract\02, OnAir</Filter>
-    </ClCompile>
     <ClCompile Include="BitMap.cpp">
       <Filter>02. Design\06. BmpMgr</Filter>
     </ClCompile>
     <ClCompile Include="BmpMgr.cpp">
       <Filter>02. Design\06. BmpMgr</Filter>
-    </ClCompile>
-    <ClCompile Include="Stage2.cpp">
-      <Filter>03. Scene\01. Stage\Stage2 - Flowey</Filter>
     </ClCompile>
     <ClCompile Include="Flowey.cpp">
       <Filter>03. Scene\01. Stage\Stage2 - Flowey\Flowey</Filter>
@@ -473,41 +320,41 @@
     <ClCompile Include="SoundMgr.cpp">
       <Filter>02. Design\07. SoundMgr</Filter>
     </ClCompile>
-    <ClCompile Include="PlayerS2.cpp">
-      <Filter>03. Scene\02. Battle\Obj\Player</Filter>
-    </ClCompile>
     <ClCompile Include="MyButton.cpp">
-      <Filter>03. Scene\02. Battle\Obj\Button</Filter>
+      <Filter>01. Obj\05. Button</Filter>
     </ClCompile>
     <ClCompile Include="MessageBlock.cpp">
-      <Filter>03. Scene\02. Battle\Obj\Message</Filter>
+      <Filter>01. Obj\06. Message</Filter>
     </ClCompile>
     <ClCompile Include="Look.cpp">
-      <Filter>03. Scene\02. Battle\Monster</Filter>
-    </ClCompile>
-    <ClCompile Include="Stage1.cpp">
-      <Filter>03. Scene\01. Stage\Stage1 - Ruin</Filter>
+      <Filter>01. Obj\04. Monster</Filter>
     </ClCompile>
     <ClCompile Include="Toriel.cpp">
-      <Filter>03. Scene\02. Battle\Boss</Filter>
+      <Filter>01. Obj\03. Boss</Filter>
     </ClCompile>
-    <ClCompile Include="Battle.cpp">
-      <Filter>03. Scene\02. Battle\Scene</Filter>
+    <ClCompile Include="MonsterBattle.cpp">
+      <Filter>03. Scene\02. Battle\MonsterScene\Idle</Filter>
     </ClCompile>
-    <ClCompile Include="BattleIdle.cpp">
-      <Filter>03. Scene\02. Battle\Scene\Idle</Filter>
+    <ClCompile Include="MonsterAttack.cpp">
+      <Filter>03. Scene\02. Battle\MonsterScene\Attack</Filter>
     </ClCompile>
-    <ClCompile Include="BattleAttack.cpp">
-      <Filter>03. Scene\02. Battle\Scene\Attack</Filter>
+    <ClCompile Include="SceneMgr.cpp">
+      <Filter>02. Design\08. SceneMgr</Filter>
     </ClCompile>
-    <ClCompile Include="BattleAct.cpp">
-      <Filter>03. Scene\02. Battle\Scene\Act</Filter>
+    <ClCompile Include="MonsterPhase.cpp">
+      <Filter>03. Scene\02. Battle\MonsterScene\Phase</Filter>
     </ClCompile>
-    <ClCompile Include="BattleItem.cpp">
-      <Filter>03. Scene\02. Battle\Scene\Item</Filter>
+    <ClCompile Include="Stage_Flowey.cpp">
+      <Filter>03. Scene\01. Stage\Stage2 - Flowey</Filter>
     </ClCompile>
-    <ClCompile Include="BattleMercy.cpp">
-      <Filter>03. Scene\02. Battle\Scene\Mercy</Filter>
+    <ClCompile Include="Stage_Ruin.cpp">
+      <Filter>03. Scene\01. Stage\Stage1 - Ruin</Filter>
+    </ClCompile>
+    <ClCompile Include="Attack_Bar.cpp">
+      <Filter>01. Obj\07. Attack_Bar</Filter>
+    </ClCompile>
+    <ClCompile Include="Player_Battle.cpp">
+      <Filter>01. Obj\01. Player\Battle</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

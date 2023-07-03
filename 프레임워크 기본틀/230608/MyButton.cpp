@@ -1,5 +1,7 @@
 #include "stdafx.h"
 #include "MyButton.h"
+#include "SceneMgr.h"
+#include "KeyMgr.h"
 
 CMyButton::CMyButton() : m_iDrawID(0)
 {
@@ -33,22 +35,25 @@ void CMyButton::Late_Update(void)
 
 	if (PtInRect(&m_tRect, pt))
 	{
-		if (CKeyMgr::Get_Instance()->Key_Down(VK_LBUTTON))
-		{
-			if (!lstrcmp(L"Attack", m_pFrameKey))
-				Set_Scene(FIGHT);
+		if (CSceneMgr::Get_Instance()->Get_SceneID() != MONSTER_PHASE) {
+			if (CKeyMgr::Get_Instance()->Key_Down(VK_LBUTTON))
+			{
+				if (!lstrcmp(L"Fight", m_pFrameKey))
+					CSceneMgr::Get_Instance()->Scene_Change(MONSTER_ATTACK);
 
-			else if (!lstrcmp(L"Act", m_pFrameKey))
-				Set_Scene(ACT);
+				else if (!lstrcmp(L"Act", m_pFrameKey))
+					CSceneMgr::Get_Instance()->Scene_Change(RUIN);
 
-			else if (!lstrcmp(L"Item", m_pFrameKey))
-				Set_Scene(ITEM);
+				else if (!lstrcmp(L"Item", m_pFrameKey))
+					CSceneMgr::Get_Instance()->Scene_Change(RUIN);
 
-			else if (!lstrcmp(L"Mercy", m_pFrameKey))
-				Set_Scene(MERCY);
+				else if (!lstrcmp(L"Mercy", m_pFrameKey))
+					CSceneMgr::Get_Instance()->Scene_Change(RUIN);
+
+			}
+
+			m_iDrawID = 1;
 		}
-
-		m_iDrawID = 1;
 	}
 	else {
 		m_iDrawID = 0;

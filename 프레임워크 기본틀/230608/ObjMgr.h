@@ -13,6 +13,7 @@ public:
 	CObj* Get_Player() { return m_ObjList[PLAYER].front(); }
 
 	list<CObj*>	Get_Objects(OBJID eId) { return m_ObjList[eId]; }
+
 	CObj* Get_Target(OBJID eID, CObj* pInstance);
 
 public:

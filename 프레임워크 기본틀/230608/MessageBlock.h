@@ -1,15 +1,16 @@
 #pragma once
-#include "ObjBattle.h"
+#include "Obj.h"
 #include "MyButton.h"
+#include "SceneMgr.h"
 
-class CMessageBlock : public CObjBattle
+class CMessageBlock : public CObj
 {
 public:
 	CMessageBlock();
 	virtual ~CMessageBlock();
 
 public:
-	void	Text_Change();
+	void	Text_Change(SCENEID eScene);
 
 
 public:
@@ -22,8 +23,10 @@ public:
 
 public:
 	int	m_iDrawID;
+	int m_iCount;
 
 private:
 	TCHAR	szBuff[32] = L"";
+	DWORD	m_dwTime = GetTickCount();
 };
 

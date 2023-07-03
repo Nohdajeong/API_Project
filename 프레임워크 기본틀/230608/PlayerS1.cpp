@@ -6,7 +6,8 @@
 #include "BmpMgr.h"
 #include "KeyMgr.h"
 
-CPlayerS1::CPlayerS1() : m_fDistance(0.f), m_bJump(false), m_fPower(0.f), m_fTime(0.f), m_fJumpSpeed(0.f)
+CPlayerS1::CPlayerS1() 
+	: m_fDistance(0.f), m_bJump(false), m_fPower(0.f), m_fTime(0.f)
 {
 }
 
@@ -179,20 +180,6 @@ void CPlayerS1::Motion_Change(void)
 
 void CPlayerS1::Set_Location(void)
 {
-	if (m_ePreScene == BATTLE)
-	{
-		switch (m_eCurScene)
-		{
-		case RUIN:
-			break;
-
-		case FLOWEY:
-			break;
-
-		}
-	}
-	else {
 		m_tInfo.fX = WINCX * 0.5f;
 		m_tInfo.fY = WINCY * 0.5f;
-	}
 }

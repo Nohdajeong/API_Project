@@ -4,6 +4,7 @@
 #include "CollisionMgr.h"
 #include "LineMgr.h"
 #include "KeyMgr.h"
+#include "SceneMgr.h"
 
 CMainGame::CMainGame() : m_dwTime(GetTickCount()), m_iFPS(0)
 {
@@ -19,25 +20,30 @@ void CMainGame::Initialize()
 {
 	m_hDC = GetDC(g_hWnd);
 
-	m_eSceneId = RUIN;
-	m_eScenes[INTRO] = new Intro();
+	CSceneMgr::Get_Instance()->Scene_Change(RUIN);
 
-	m_eScenes[RUIN] = new CStage1();
-	m_eScenes[FLOWEY] = new CStage2();
-	m_eScenes[BATTLE] = new CBattle();
+	//m_eSceneId = RUIN;
 
-	m_eScenes[m_eSceneId]->Initialize();
+	//m_eScenes[RUIN] = new CStage1();
+	//m_eScenes[FLOWEY] = new CStage2();
+	//m_eScenes[MONSTER_IDLE] = new CBattle();
+
+	//m_eScenes[m_eSceneId]->Initialize();
+
+
 }
 
 void CMainGame::Update()
 {
-	m_eScenes[m_eSceneId]->Update();
+	//m_eScenes[m_eSceneId]->Update();
+	CSceneMgr::Get_Instance()->Update();
 }
 
 
 void CMainGame::Late_Update()
 {
-	m_eScenes[m_eSceneId]->Late_Update();
+	//m_eScenes[m_eSceneId]->Late_Update();
+	CSceneMgr::Get_Instance()->Late_Update();
 }
 
 void CMainGame::Render()
@@ -53,29 +59,19 @@ void CMainGame::Render()
 		m_dwTime = GetTickCount();
 	}
 
-	m_eScenes[m_eSceneId]->Render(m_hDC);
+	//m_eScenes[m_eSceneId]->Render(m_hDC);
+	CSceneMgr::Get_Instance()->Render(m_hDC);
 
 
 }
 
 void CMainGame::Release()
 {
-	m_eScenes[m_eSceneId]->Release();
-	for (auto scene : m_eScenes) 
-	{
-		Safe_Delete(scene);
-	}
-	CObjMgr::Get_Instance()->Release();
+	CBmpMgr::Destroy_Instance();
+	CScrollMgr::Destroy_Instance();
+	CKeyMgr::Destroy_Instance();
+	CObjMgr::Destroy_Instance();
+	CSceneMgr::Destroy_Instance();
+
 	ReleaseDC(g_hWnd, m_hDC);
-}
-
-void CMainGame::UpdateStage()
-{
-	SCENEID nextStage = m_eScenes[m_eSceneId]->UpdateScene();
-	if (m_eSceneId != nextStage) {
-		m_eScenes[m_eSceneId]->Release();
-
-		m_eSceneId = nextStage;
-		m_eScenes[m_eSceneId]->Initialize();
-	}
 }

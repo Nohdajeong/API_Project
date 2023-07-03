@@ -2,9 +2,9 @@
 
 #include "Define.h"
 #include "Intro.h"
-#include "Stage1.h"
-#include "Stage2.h"
-#include "Battle.h"
+#include "Stage_Ruin.h"
+#include "Stage_Flowey.h"
+#include "MonsterBattle.h"
 
 class CMainGame
 {
@@ -19,7 +19,6 @@ public:
 	void		Late_Update();
 	void		Render();
 	void		Release();
-	void		UpdateStage();
 
 private:
 	HDC			m_hDC;

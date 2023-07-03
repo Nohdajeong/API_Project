@@ -1,7 +1,8 @@
 #include "stdafx.h"
 #include "MessageBlock.h"
+#include "SceneMgr.h"
 
-CMessageBlock::CMessageBlock() : m_iDrawID(0)
+CMessageBlock::CMessageBlock() : m_iDrawID(0), m_iCount(0)
 {
 }
 
@@ -10,35 +11,25 @@ CMessageBlock::~CMessageBlock()
     Release();
 }
 
-void CMessageBlock::Text_Change()
+void CMessageBlock::Text_Change(SCENEID eScene)
 {
-	switch (m_eScene)
-	{
-	case IDLE:
-		swprintf_s(szBuff, L"* 룩스가 나타났다!");
+	switch (eScene) {
+	case MONSTER_IDLE:
+		if (m_iCount == 0) {
+			swprintf_s(szBuff, L"* 룩스가 나타났다!");
+		}
+		else {
+			swprintf_s(szBuff, L"* 룩스는 당신을 응시하고 있다.");
+		}
 		break;
 
-	case FIGHT:
-		swprintf_s(szBuff, L"* 공격!");
+	case MONSTER_ATTACK:
+		m_iDrawID = 1;
 		break;
 
-	case ACT:
-		swprintf_s(szBuff, L"* 행동!");
+	case MONSTER_PHASE:
+		m_iDrawID = 2;
 		break;
-
-	case ITEM:
-		swprintf_s(szBuff, L"* 아이템!");
-		break;
-
-	case MERCY:
-		swprintf_s(szBuff, L"* 자비!");
-		break;
-		
-	default:		
-		swprintf_s(szBuff, L"* 이건 디폴트!");
-		break;
-
-
 	}
 }
 
@@ -47,18 +38,15 @@ void CMessageBlock::Initialize(void)
     m_tInfo.fCX = 700.f;
     m_tInfo.fCY = 200.f;
 
-	m_tInfo.fX = 400.f;
-	m_tInfo.fY = 400.f;
-
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Message.bmp", L"Message");
 
     m_eRender = UI;
-
 }
 
 int CMessageBlock::Update(void)
 {
-	Text_Change();
+	Text_Change(CSceneMgr::Get_Instance()->Get_SceneID());
+
     __super::Update_Rect();
 
     return OBJ_NOEVENT;
@@ -66,24 +54,6 @@ int CMessageBlock::Update(void)
 
 void CMessageBlock::Late_Update(void)
 {
-	//if (CKeyMgr::Get_Instance()->Key_Down(VK_LBUTTON))
-	//{
-	//	if (!lstrcmp(L"Attack", m_pFrameKey))
-	//		swprintf_s(szBuff, L"* 공격");
-
-	//	else if (!lstrcmp(L"Act", m_pFrameKey))
-	//		swprintf_s(szBuff, L"* 행동");
-
-	//	else if (!lstrcmp(L"Item", m_pFrameKey))
-	//		swprintf_s(szBuff, L"* 아이템");
-
-	//	else if (!lstrcmp(L"Mercy", m_pFrameKey))
-	//		swprintf_s(szBuff, L"* 자비");
-
-	//	else if (!lstrcmp(L"Idle", m_pFrameKey))
-	//		swprintf_s(szBuff, L"* 시작");
-	//}
-
 }
 
 void CMessageBlock::Render(HDC hDC)

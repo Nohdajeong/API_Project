@@ -80,7 +80,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,		   // 현재 프로그램의 고유 식별
 				MainGame.Late_Update();
 				MainGame.Render();
 
-                MainGame.UpdateStage();
+                //MainGame.UpdateStage();
 							
 				dwTime = GetTickCount();
 			}			

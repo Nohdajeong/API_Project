@@ -1,7 +1,7 @@
 #pragma once
-#include "ObjStage.h"
+#include "Obj.h"
 
-class CPlayerS1 : public ObjStage {
+class CPlayerS1 : public CObj {
 public:
 	enum STATE { IDLE, WALK, STATE_END };
 

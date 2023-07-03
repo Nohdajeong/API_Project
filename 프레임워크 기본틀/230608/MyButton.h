@@ -1,6 +1,6 @@
 #pragma once
-#include "ObjBattle.h"
-class CMyButton : public CObjBattle
+#include "Obj.h"
+class CMyButton : public CObj
 {
 public:
 	CMyButton();
