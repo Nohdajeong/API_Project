@@ -4,7 +4,7 @@
 #include "Intro.h"
 #include "Stage1.h"
 #include "Stage2.h"
-
+#include "Battle.h"
 
 class CMainGame
 {

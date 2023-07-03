@@ -11,6 +11,7 @@ private:
 
 public:
 	CObj* Get_Player() { return m_ObjList[PLAYER].front(); }
+
 	list<CObj*>	Get_Objects(OBJID eId) { return m_ObjList[eId]; }
 	CObj* Get_Target(OBJID eID, CObj* pInstance);
 
@@ -21,7 +22,8 @@ public:
 	void		Render(HDC hDC);
 	void		Release();
 
-	
+	void		Delete_ID(OBJID eID);
+
 
 public:
 	static CObjMgr* Get_Instance()
@@ -45,6 +47,7 @@ public:
 private:
 	list<CObj*>	m_ObjList[OBJID_END];
 	list<CObj*>	m_ObjTemp[OBJID_END];
+	list<CObj*>	m_RenderList[RENDER_END];
 
 	static CObjMgr* m_pInstance;
 };

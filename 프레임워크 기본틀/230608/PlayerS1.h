@@ -1,7 +1,7 @@
 #pragma once
-#include "ObjS1.h"
+#include "ObjStage.h"
 
-class CPlayerS1 : public CObjS1 {
+class CPlayerS1 : public ObjStage {
 public:
 	enum STATE { IDLE, WALK, STATE_END };
 
@@ -20,6 +20,7 @@ private:
 	void		Key_Input(void);
 	void		OffSet(void);
 	void		Motion_Change(void);
+	void		Set_Location(void);
 
 private:
 	float				m_fDistance;
@@ -32,5 +33,8 @@ private:
 
 	STATE				m_eCurState;
 	STATE				m_ePreState;
+
+	SCENEID				m_eCurScene;
+	SCENEID				m_ePreScene;
 
 };

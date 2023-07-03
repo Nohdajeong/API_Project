@@ -1,6 +1,5 @@
 #pragma once
 #include "Define.h"
-#include "AbstractFactory.h"
 #include "CollisionMgr.h"
 #include "ObjMgr.h"
 #include "LineMgr.h"
@@ -24,5 +23,4 @@ public:
 	virtual		void		Release()			PURE;
 
 	virtual		SCENEID		UpdateScene()		PURE;
-
 };

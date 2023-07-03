@@ -24,6 +24,10 @@ public:
 
 	void			Set_PosY(float _fY) { m_tInfo.fY += _fY; }
 	void			Set_PosX(float _fX) { m_tInfo.fX += _fX; }
+
+	void			Set_FrameKey(TCHAR* pFrameKey) { m_pFrameKey = pFrameKey; }
+	RENDERID		Get_RenderID() { return m_eRender; }
+
 public:
 	virtual void		Initialize(void)	PURE;
 	virtual int			Update(void)		PURE;

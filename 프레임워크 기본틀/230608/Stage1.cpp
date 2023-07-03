@@ -13,7 +13,7 @@ CStage1::~CStage1()
 void CStage1::Initialize() 
 {
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Map/Ruin.bmp", L"Ruin");
-	CObjMgr::Get_Instance()->Add_Object(PLAYER, CAbstractFactory<CPlayerS1>::Create(WINCX * 0.5f, WINCY * 0.5f));
+	CObjMgr::Get_Instance()->Add_Object(PLAYER, CAbstractFactory<CPlayerS1>::Create());
 
 }
 
@@ -35,19 +35,9 @@ void CStage1::Render(HDC hDC)
 	int	iScrollX = (int)CScrollMgr::Get_Instance()->Get_ScollX();
 	int	iScrollY = (int)CScrollMgr::Get_Instance()->Get_ScollY();
 
-	BitBlt(hDC,	// 복사 받을 DC(최종적으로 그림을 그릴 DC공간)
-		iScrollX, iScrollY,
-		1700, 600,
-		hMemDC,			// 비트맵 이미지를 담고 있는 DC
-		0,					// 비트맵을 출력할 시작 X,Y좌표
-		0,
-		SRCCOPY);
+	BitBlt(hDC,	iScrollX, iScrollY, 1700, 600, hMemDC, 0, 0, SRCCOPY);
 
 	CObjMgr::Get_Instance()->Render(hDC);
-
-	TCHAR	szBuff[32] = L"";
-	swprintf_s(szBuff, L"TestStage");
-	TextOut(hDC, 100, 80, szBuff, lstrlen(szBuff));
 }
 
 void CStage1::Release()
@@ -58,10 +48,15 @@ void CStage1::Release()
 
 SCENEID CStage1::UpdateScene()
 {
+	int	iRand = rand() % 10000;
+
 	CObj* pPlayer = CObjMgr::Get_Instance()->Get_Player();
+
 	if ((1200.f < pPlayer->Get_Info().fX) && (350.f > pPlayer->Get_Info().fY)) {
 			return FLOWEY;
 	}
+
+
 
 	return RUIN;
 }

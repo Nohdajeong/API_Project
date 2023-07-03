@@ -10,12 +10,16 @@ public:
 	~CStage2();
 
 public:
-	virtual void	Initialize() override;
-	virtual void	Update() override;
-	virtual void	Late_Update() override;
-	virtual void	Render(HDC hDC) override;
-	virtual void	Release() override;
-	virtual SCENEID UpdateScene() override;
+	// IStage을(를) 통해 상속됨
+	virtual void Initialize();
+	virtual void Update();
+	virtual void Late_Update();
+	virtual void Render(HDC hDC);
+	virtual void Release();
+	virtual SCENEID UpdateScene();
+
+private:
+	DWORD		m_dwTime = GetTickCount();
 
 };
 

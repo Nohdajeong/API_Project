@@ -2,6 +2,7 @@
 #include "Obj.h"
 #include "State.h"
 #include "ObjMgr.h"
+#include "BmpMgr.h"
 
 template<typename T, typename T2>
 class Actor : public CObj

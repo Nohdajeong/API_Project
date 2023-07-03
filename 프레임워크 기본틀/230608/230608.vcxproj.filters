@@ -103,47 +103,107 @@
     <Filter Include="03. Scene">
       <UniqueIdentifier>{b353731c-cc88-4d52-a7f9-5e4831406875}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Scene\Stage">
-      <UniqueIdentifier>{31a2c119-ca70-43a8-a7f3-56f46c4022af}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Scene\Stage\Stage1 - Ruin">
-      <UniqueIdentifier>{4eac66b5-be39-4179-919e-1d5df3c89ede}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Scene\Stage\Stage1 - Ruin\00. Obj">
-      <UniqueIdentifier>{cf6d3031-bd4c-4fdb-a282-b31ba02b8b17}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Scene\Stage\Stage4 - Toliel">
-      <UniqueIdentifier>{19b1d20e-0635-4e2f-bb82-bebe1e5e47ed}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Scene\Stage\Stage4 - Toliel\00. Toliel">
-      <UniqueIdentifier>{a3c41303-6e06-4ded-bd04-6254ba419341}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Scene\Stage\Stage3 - Puzzle">
-      <UniqueIdentifier>{65020c9f-6d89-4cac-a823-92a326b007e4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Scene\Stage\Stage2 - Flowey">
-      <UniqueIdentifier>{fd26949e-e538-4a2f-8d0c-819d18aac292}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Scene\Stage\Player">
-      <UniqueIdentifier>{cb661d48-e621-4208-830d-114cbc456110}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Scene\Intro">
-      <UniqueIdentifier>{ffcbf8f1-a08c-40c8-8dfb-4c3e70fb6993}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Scene\Battle">
-      <UniqueIdentifier>{e11d3bab-7dfe-40fb-8219-f7cf27cbf69d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Scene\Battle\01. Monster">
-      <UniqueIdentifier>{4582c75e-0737-4e5b-a177-c4758da44495}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Scene\Battle\02. Boss">
-      <UniqueIdentifier>{051190ac-bda1-4649-af01-a704facfb6bf}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Scene\Stage\Stage2 - Flowey\Flowey">
-      <UniqueIdentifier>{b87900fb-3647-4484-9f1b-8bc143a51806}</UniqueIdentifier>
-    </Filter>
     <Filter Include="02. Design\07. SoundMgr">
       <UniqueIdentifier>{8a0adcc9-5e34-49cb-af34-35733d0ab9d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\00. Intro">
+      <UniqueIdentifier>{ffcbf8f1-a08c-40c8-8dfb-4c3e70fb6993}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\01. Stage">
+      <UniqueIdentifier>{31a2c119-ca70-43a8-a7f3-56f46c4022af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\01. Stage\Stage1 - Ruin">
+      <UniqueIdentifier>{4eac66b5-be39-4179-919e-1d5df3c89ede}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\01. Stage\Stage4 - Toliel">
+      <UniqueIdentifier>{19b1d20e-0635-4e2f-bb82-bebe1e5e47ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\01. Stage\Stage4 - Toliel\00. Toliel">
+      <UniqueIdentifier>{a3c41303-6e06-4ded-bd04-6254ba419341}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\01. Stage\Stage3 - Puzzle">
+      <UniqueIdentifier>{65020c9f-6d89-4cac-a823-92a326b007e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\01. Stage\Stage2 - Flowey">
+      <UniqueIdentifier>{fd26949e-e538-4a2f-8d0c-819d18aac292}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\01. Stage\Stage2 - Flowey\Flowey">
+      <UniqueIdentifier>{b87900fb-3647-4484-9f1b-8bc143a51806}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\01. Stage\Player">
+      <UniqueIdentifier>{cb661d48-e621-4208-830d-114cbc456110}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\01. Stage\Obj">
+      <UniqueIdentifier>{cf6d3031-bd4c-4fdb-a282-b31ba02b8b17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\02. Battle">
+      <UniqueIdentifier>{e11d3bab-7dfe-40fb-8219-f7cf27cbf69d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\02. Battle\Obj">
+      <UniqueIdentifier>{d1176492-46c0-4d8f-867d-8c921ed276f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\02. Battle\Obj\Button">
+      <UniqueIdentifier>{05295684-89b6-4039-a2cc-b75d5fb97ee7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\02. Battle\Obj\Message">
+      <UniqueIdentifier>{483a1b92-461a-4ee0-a1bd-3bad2666c15e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\02. Battle\Obj\Player">
+      <UniqueIdentifier>{59f1588e-2940-4cb7-9a3d-91234e605186}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\02. Battle\Scene">
+      <UniqueIdentifier>{63df1f97-5b47-4848-815d-8329201ad679}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\02. Battle\Monster">
+      <UniqueIdentifier>{4582c75e-0737-4e5b-a177-c4758da44495}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\02. Battle\Boss">
+      <UniqueIdentifier>{051190ac-bda1-4649-af01-a704facfb6bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\02. Battle\Monster\Pattern">
+      <UniqueIdentifier>{1b40cc7b-854c-4f90-bb87-05050f27d952}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\02. Battle\Boss\Pattern">
+      <UniqueIdentifier>{fc2d51d2-5505-4174-969f-e9ba53b9102b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\02. Battle\Monster\Pattern\Idle">
+      <UniqueIdentifier>{f4cefd0e-f012-46c5-a513-f97329b6e5b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\02. Battle\Monster\Pattern\Attack1">
+      <UniqueIdentifier>{dfbed268-a913-4115-81b4-cdd8a9328b8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\02. Battle\Monster\Pattern\Attack2">
+      <UniqueIdentifier>{51f6a4f2-e14a-42cc-bc1a-1c7af9be2046}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\02. Battle\Boss\Pattern\Idle">
+      <UniqueIdentifier>{db762cbc-351f-45a8-8fab-9d8bc838e036}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\02. Battle\Boss\Pattern\Attack1">
+      <UniqueIdentifier>{f387c2d5-b0fe-46f9-98ed-e9cbade1d0eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\02. Battle\Boss\Pattern\Attack2">
+      <UniqueIdentifier>{e132095d-136e-4b3e-bb30-46b7934db4d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\02. Battle\Boss\Pattern\Attack3">
+      <UniqueIdentifier>{41d66f05-7a41-4bdf-a193-0a7b675b25a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\02. Battle\Scene\Idle">
+      <UniqueIdentifier>{cbd8d4dd-0ff5-408a-9016-f0679a9fe14c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. Design\08. SceneMgr">
+      <UniqueIdentifier>{6a5aec73-6337-411d-96f5-f8ab87416bd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\02. Battle\Scene\Attack">
+      <UniqueIdentifier>{66e5c62e-a05d-4efb-a11d-05686d550932}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\02. Battle\Scene\Act">
+      <UniqueIdentifier>{050440e7-f481-4d0b-b8ea-0a0cb00087bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\02. Battle\Scene\Item">
+      <UniqueIdentifier>{fcfdf063-70c5-43f8-86e0-d3fe1f011410}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\02. Battle\Scene\Mercy">
+      <UniqueIdentifier>{be6a6d9d-dc58-4903-83cc-645969191e85}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -186,9 +246,6 @@
     <ClInclude Include="CollisionMgr.h">
       <Filter>02. Design\01. CollisionMgr</Filter>
     </ClInclude>
-    <ClInclude Include="Stage1.h">
-      <Filter>03. Scene\Stage\Stage1 - Ruin</Filter>
-    </ClInclude>
     <ClInclude Include="ObjMgr.h">
       <Filter>02. Design\02. ObjMgr</Filter>
     </ClInclude>
@@ -199,13 +256,13 @@
       <Filter>02. Design\03. LineMgr\Line</Filter>
     </ClInclude>
     <ClInclude Include="IStage.h">
-      <Filter>03. Scene\Stage</Filter>
+      <Filter>03. Scene\01. Stage</Filter>
     </ClInclude>
     <ClInclude Include="IScene.h">
       <Filter>03. Scene</Filter>
     </ClInclude>
     <ClInclude Include="Intro.h">
-      <Filter>03. Scene\Intro</Filter>
+      <Filter>03. Scene\00. Intro</Filter>
     </ClInclude>
     <ClInclude Include="Actor.h">
       <Filter>01. Obj\00. Actor</Filter>
@@ -216,11 +273,8 @@
     <ClInclude Include="Boss.h">
       <Filter>01. Obj\05. Boss</Filter>
     </ClInclude>
-    <ClInclude Include="ObjS1.h">
-      <Filter>03. Scene\Stage\Stage1 - Ruin\00. Obj</Filter>
-    </ClInclude>
     <ClInclude Include="PlayerS1.h">
-      <Filter>03. Scene\Stage\Player</Filter>
+      <Filter>03. Scene\01. Stage\Player</Filter>
     </ClInclude>
     <ClInclude Include="KeyMgr.h">
       <Filter>02. Design\04. KeyMgr</Filter>
@@ -259,7 +313,7 @@
       <Filter>01. Obj\01. Player\NewPlayer\Pattern\-1. Abstract\02, OnAir</Filter>
     </ClInclude>
     <ClInclude Include="Loading.h">
-      <Filter>03. Scene\Intro</Filter>
+      <Filter>03. Scene\00. Intro</Filter>
     </ClInclude>
     <ClInclude Include="BitMap.h">
       <Filter>02. Design\06. BmpMgr</Filter>
@@ -268,13 +322,61 @@
       <Filter>02. Design\06. BmpMgr</Filter>
     </ClInclude>
     <ClInclude Include="Stage2.h">
-      <Filter>03. Scene\Stage\Stage2 - Flowey</Filter>
+      <Filter>03. Scene\01. Stage\Stage2 - Flowey</Filter>
     </ClInclude>
     <ClInclude Include="Flowey.h">
-      <Filter>03. Scene\Stage\Stage2 - Flowey\Flowey</Filter>
+      <Filter>03. Scene\01. Stage\Stage2 - Flowey\Flowey</Filter>
     </ClInclude>
     <ClInclude Include="SoundMgr.h">
       <Filter>02. Design\07. SoundMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjStage.h">
+      <Filter>03. Scene\01. Stage\Obj</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjBattle.h">
+      <Filter>03. Scene\02. Battle\Obj</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerS2.h">
+      <Filter>03. Scene\02. Battle\Obj\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="MyButton.h">
+      <Filter>03. Scene\02. Battle\Obj\Button</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageBlock.h">
+      <Filter>03. Scene\02. Battle\Obj\Message</Filter>
+    </ClInclude>
+    <ClInclude Include="Look.h">
+      <Filter>03. Scene\02. Battle\Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage1.h">
+      <Filter>03. Scene\01. Stage\Stage1 - Ruin</Filter>
+    </ClInclude>
+    <ClInclude Include="DefineS2.h">
+      <Filter>03. Scene\02. Battle</Filter>
+    </ClInclude>
+    <ClInclude Include="Toriel.h">
+      <Filter>03. Scene\02. Battle\Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="IBattleScene.h">
+      <Filter>03. Scene\02. Battle</Filter>
+    </ClInclude>
+    <ClInclude Include="Battle.h">
+      <Filter>03. Scene\02. Battle\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="BattleIdle.h">
+      <Filter>03. Scene\02. Battle\Scene\Idle</Filter>
+    </ClInclude>
+    <ClInclude Include="BattleAttack.h">
+      <Filter>03. Scene\02. Battle\Scene\Attack</Filter>
+    </ClInclude>
+    <ClInclude Include="BattleAct.h">
+      <Filter>03. Scene\02. Battle\Scene\Act</Filter>
+    </ClInclude>
+    <ClInclude Include="BattleItem.h">
+      <Filter>03. Scene\02. Battle\Scene\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="BattleMercy.h">
+      <Filter>03. Scene\02. Battle\Scene\Mercy</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -302,9 +404,6 @@
     <ClCompile Include="CollisionMgr.cpp">
       <Filter>02. Design\01. CollisionMgr</Filter>
     </ClCompile>
-    <ClCompile Include="Stage1.cpp">
-      <Filter>03. Scene\Stage\Stage1 - Ruin</Filter>
-    </ClCompile>
     <ClCompile Include="ObjMgr.cpp">
       <Filter>02. Design\02. ObjMgr</Filter>
     </ClCompile>
@@ -315,10 +414,10 @@
       <Filter>02. Design\03. LineMgr</Filter>
     </ClCompile>
     <ClCompile Include="Intro.cpp">
-      <Filter>03. Scene\Intro</Filter>
+      <Filter>03. Scene\00. Intro</Filter>
     </ClCompile>
     <ClCompile Include="PlayerS1.cpp">
-      <Filter>03. Scene\Stage\Player</Filter>
+      <Filter>03. Scene\01. Stage\Player</Filter>
     </ClCompile>
     <ClCompile Include="KeyMgr.cpp">
       <Filter>02. Design\04. KeyMgr</Filter>
@@ -366,13 +465,49 @@
       <Filter>02. Design\06. BmpMgr</Filter>
     </ClCompile>
     <ClCompile Include="Stage2.cpp">
-      <Filter>03. Scene\Stage\Stage2 - Flowey</Filter>
+      <Filter>03. Scene\01. Stage\Stage2 - Flowey</Filter>
     </ClCompile>
     <ClCompile Include="Flowey.cpp">
-      <Filter>03. Scene\Stage\Stage2 - Flowey\Flowey</Filter>
+      <Filter>03. Scene\01. Stage\Stage2 - Flowey\Flowey</Filter>
     </ClCompile>
     <ClCompile Include="SoundMgr.cpp">
       <Filter>02. Design\07. SoundMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerS2.cpp">
+      <Filter>03. Scene\02. Battle\Obj\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="MyButton.cpp">
+      <Filter>03. Scene\02. Battle\Obj\Button</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageBlock.cpp">
+      <Filter>03. Scene\02. Battle\Obj\Message</Filter>
+    </ClCompile>
+    <ClCompile Include="Look.cpp">
+      <Filter>03. Scene\02. Battle\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage1.cpp">
+      <Filter>03. Scene\01. Stage\Stage1 - Ruin</Filter>
+    </ClCompile>
+    <ClCompile Include="Toriel.cpp">
+      <Filter>03. Scene\02. Battle\Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="Battle.cpp">
+      <Filter>03. Scene\02. Battle\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="BattleIdle.cpp">
+      <Filter>03. Scene\02. Battle\Scene\Idle</Filter>
+    </ClCompile>
+    <ClCompile Include="BattleAttack.cpp">
+      <Filter>03. Scene\02. Battle\Scene\Attack</Filter>
+    </ClCompile>
+    <ClCompile Include="BattleAct.cpp">
+      <Filter>03. Scene\02. Battle\Scene\Act</Filter>
+    </ClCompile>
+    <ClCompile Include="BattleItem.cpp">
+      <Filter>03. Scene\02. Battle\Scene\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="BattleMercy.cpp">
+      <Filter>03. Scene\02. Battle\Scene\Mercy</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

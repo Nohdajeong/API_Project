@@ -1,6 +1,6 @@
 #pragma once
-#include "ObjS1.h"
-class CFlowey : public CObjS1 {
+#include "ObjStage.h"
+class CFlowey : public ObjStage {
 
 public:
 	CFlowey();

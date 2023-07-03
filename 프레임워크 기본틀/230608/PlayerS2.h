@@ -1,7 +1,7 @@
 #pragma once
-#include "ObjS2.h"
+#include "ObjBattle.h"
 
-class CPlayerS2 : public CObjS2 {
+class CPlayerS2 : public CObjBattle {
 public:
 	CPlayerS2();
 	virtual ~CPlayerS2();
@@ -13,12 +13,9 @@ public:
 	virtual void Render(HDC hDC)	override;
 	virtual void Release(void)		override;
 
+
 private:
 	void		Key_Input(void);
-	void		Jump(void);
-
-	template<typename T>
-	CObj* Create_Bullet();
 
 private:
 	float				m_fDistance;

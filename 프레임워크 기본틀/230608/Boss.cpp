@@ -4,7 +4,6 @@
 #include "BossIdle.h"
 #include "BossChase.h"
 #include "BossAttack.h"
-#include "LineMgr.h"
 
 Boss::Boss()
 {

@@ -18,7 +18,8 @@ CPlayerS1::~CPlayerS1()
 
 void CPlayerS1::Initialize(void)
 {
-	m_tInfo = { 400.f, 300.f, 40.f, 60.f };
+	m_tInfo.fCX = 40.f;
+	m_tInfo.fCY = 60.f;
 	m_tStates = { 1, 20, 20, 0, 10, 10, 0, 30 };
 
 	m_fSpeed = 5.f;
@@ -40,6 +41,8 @@ void CPlayerS1::Initialize(void)
 	m_tFrame.dwTime = GetTickCount();
 
 	m_eRender = GAMEOBJECT;
+
+	Set_Location();
 
 }
 
@@ -172,4 +175,24 @@ void CPlayerS1::Motion_Change(void)
 		m_ePreState = m_eCurState;
 	}
 
+}
+
+void CPlayerS1::Set_Location(void)
+{
+	if (m_ePreScene == BATTLE)
+	{
+		switch (m_eCurScene)
+		{
+		case RUIN:
+			break;
+
+		case FLOWEY:
+			break;
+
+		}
+	}
+	else {
+		m_tInfo.fX = WINCX * 0.5f;
+		m_tInfo.fY = WINCY * 0.5f;
+	}
 }

@@ -24,6 +24,7 @@ void CMainGame::Initialize()
 
 	m_eScenes[RUIN] = new CStage1();
 	m_eScenes[FLOWEY] = new CStage2();
+	m_eScenes[BATTLE] = new CBattle();
 
 	m_eScenes[m_eSceneId]->Initialize();
 }

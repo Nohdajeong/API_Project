@@ -1,6 +1,9 @@
 #pragma once
 
 #include "Define.h"
+#include "BmpMgr.h"
+#include "ObjMgr.h"
+#include "AbstractFactory.h"
 
 class IScene
 {
