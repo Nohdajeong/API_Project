@@ -4,6 +4,7 @@
 #include "MyButton.h"
 #include "MessageBlock.h"
 #include "Player_Battle.h"
+#include "LookBullet.h"
 
 CMonsterPhase::CMonsterPhase()
 {
@@ -23,11 +24,6 @@ void CMonsterPhase::Initialize(void)
     CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Item.bmp", L"Item");
     CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Mercy.bmp", L"Mercy");
 
-    CObjMgr::Get_Instance()->Add_Object(MONSTER, CAbstractFactory<CLook>::Create(300.f, 250.f));
-    CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CMessageBlock>::Create(400.f, 400.f));
-    CObjMgr::Get_Instance()->Add_Object(BATTLE_PLAYER, CAbstractFactory<CPlayerBattle>::Create(400.f, 400.f));
-
-
     CObj* pObj = CAbstractFactory<CMyButton>::Create(100.f, 570.f);
     pObj->Set_FrameKey(L"Fight");
     CObjMgr::Get_Instance()->Add_Object(BUTTON, pObj);
@@ -43,6 +39,16 @@ void CMonsterPhase::Initialize(void)
     pObj = CAbstractFactory<CMyButton>::Create(700.f, 570.f);
     pObj->Set_FrameKey(L"Mercy");
     CObjMgr::Get_Instance()->Add_Object(BUTTON, pObj);
+
+
+    CObjMgr::Get_Instance()->Add_Object(MONSTER, CAbstractFactory<CLook>::Create(300.f, 250.f));
+    CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CMessageBlock>::Create(400.f, 400.f));
+    CObjMgr::Get_Instance()->Add_Object(BATTLE_PLAYER, CAbstractFactory<CPlayerBattle>::Create(400.f, 400.f));
+    
+    for (int i = 0; i < 10; ++i) {
+        
+        CObjMgr::Get_Instance()->Add_Object(BULLET, CAbstractFactory<CLooKBullet>::Create((float)(rand() % 100 + 400), (float)(rand() % 100 + 400)));
+    }
 
 }
 
@@ -63,20 +69,6 @@ void CMonsterPhase::Late_Update(void)
 
 void CMonsterPhase::Render(HDC hDC)
 {
-    AddFontResourceA("NeoµÕ±Ù¸ð.ttf");
-
-    HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Img(L"Back_Monster");
-    BitBlt(hDC, 0, 0, WINCX, WINCY, hMemDC, 0, 0, SRCCOPY);
-
-    SetBkMode(hDC, 1);
-    SetTextColor(hDC, RGB(255, 255, 255));
-    HFONT	hFont, oldFont;
-
-    hFont = CreateFont(30, 0, 0, 0, 0, 0, 0, 0, HANGUL_CHARSET, 0, 0, 0, VARIABLE_PITCH || FF_ROMAN, TEXT("NeoµÕ±Ù¸ð"));
-    oldFont = (HFONT)SelectObject(hDC, hFont);
-
-    TextOut(hDC, 70.f, 500.f, L"FRISK", lstrlen(L"FRISK"));
-
     CObjMgr::Get_Instance()->Render(hDC);
 
 }

@@ -3,11 +3,11 @@
 #include "Define.h"
 #include "Obj.h"
 
-class CBattle : public IScene
+class CMonsterMatch : public IScene
 {
 public:
-	CBattle();
-	virtual ~CBattle();
+	CMonsterMatch();
+	virtual ~CMonsterMatch();
 
 public:
 	// IScene을(를) 통해 상속됨
@@ -19,5 +19,6 @@ public:
 
 private:
 	DWORD		m_dwTime = GetTickCount();
+
 };
 

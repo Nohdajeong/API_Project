@@ -3,17 +3,18 @@
 #include "Look.h"
 #include "MyButton.h"
 #include "MessageBlock.h"
+#include "PlayerState.h"
 
-CBattle::CBattle()
+CMonsterMatch::CMonsterMatch()
 {
 }
 
-CBattle::~CBattle()
+CMonsterMatch::~CMonsterMatch()
 {
     Release();
 }
 
-void CBattle::Initialize(void)
+void CMonsterMatch::Initialize(void)
 {
     CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Back_Monster.bmp", L"Back_Monster");
 
@@ -24,6 +25,7 @@ void CBattle::Initialize(void)
 
     CObjMgr::Get_Instance()->Add_Object(MONSTER, CAbstractFactory<CLook>::Create(300.f, 250.f));
     CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CMessageBlock>::Create(400.f, 400.f));
+    CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CPlayerState>::Create());
 
 
     CObj* pObj = CAbstractFactory<CMyButton>::Create(100.f, 570.f);
@@ -41,42 +43,28 @@ void CBattle::Initialize(void)
     pObj = CAbstractFactory<CMyButton>::Create(700.f, 570.f);
     pObj->Set_FrameKey(L"Mercy");
     CObjMgr::Get_Instance()->Add_Object(BUTTON, pObj);
+
 }
 
-void CBattle::Update(void)
+void CMonsterMatch::Update(void)
 {
     CObjMgr::Get_Instance()->Update();
 }
 
-void CBattle::Late_Update(void)
+void CMonsterMatch::Late_Update(void)
 {
     CObjMgr::Get_Instance()->Late_Update();
 
 
 }
 
-void CBattle::Render(HDC hDC)
+void CMonsterMatch::Render(HDC hDC)
 {
-    AddFontResourceA("NeoµÕ±Ù¸ð.ttf");
-
-    HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Img(L"Back_Monster");
-
-    BitBlt(hDC, 0, 0, WINCX, WINCY, hMemDC, 0, 0, SRCCOPY);
     CObjMgr::Get_Instance()->Render(hDC);
-
-    SetBkMode(hDC, 1);
-    SetTextColor(hDC, RGB(255, 255, 255));
-    HFONT	hFont, oldFont;
-
-    hFont = CreateFont(30, 0, 0, 0, 0, 0, 0, 0, HANGUL_CHARSET, 0, 0, 0, VARIABLE_PITCH || FF_ROMAN, TEXT("NeoµÕ±Ù¸ð"));
-    oldFont = (HFONT)SelectObject(hDC, hFont);
-
-    TextOut(hDC, 70.f, 500.f, L"FRISK", lstrlen(L"FRISK"));
-
-
 }
 
-void CBattle::Release(void)
+void CMonsterMatch::Release(void)
 {
     CObjMgr::Get_Instance()->Delete_ID(MONSTER);
+    CObjMgr::Get_Instance()->Delete_ID(MESSAGEBOX);
 }

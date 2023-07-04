@@ -8,7 +8,6 @@ CLook::CLook()
 
 CLook::~CLook()
 {
-	Release();
 }
 
 void CLook::Idle()
@@ -17,10 +16,10 @@ void CLook::Idle()
 
 void CLook::Attack1()
 {
-	if (m_preDeley + 100.f < GetTickCount()) {
-		CObjMgr::Get_Instance()->Add_Object(BULLET, Create_Bullet<CLooKBullet>());
-		m_preDeley = GetTickCount64();
-	}
+	//if (m_preDeley + 100.f < GetTickCount()) {
+	//	CObjMgr::Get_Instance()->Add_Object(BULLET, Create_Bullet<CLooKBullet>());
+	//	m_preDeley = GetTickCount64();
+	//}
 
 }
 
@@ -31,7 +30,9 @@ void CLook::Attack2()
 void CLook::Initialize(void)
 {
 	m_tInfo = { 300.f, 250.f, 100.f, 115.f };
-	m_tStates = {};
+	m_tStates.iAttack = 10.f;
+	m_tStates.iDefense = 0.f;
+	m_tStates.iHp = 50.f;
 
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Monster/Monster_looks.bmp", L"Looks");
 
@@ -49,7 +50,7 @@ int CLook::Update(void)
 	if (m_bDead)
 		return OBJ_DEAD;
 
-	Attack1();
+	//Attack1();
 
 	__super::Move_Frame();
 	__super::Update_Rect();
@@ -85,12 +86,12 @@ void CLook::Release(void)
 {
 }
 
-template<typename T>
-CObj* CLook::Create_Bullet()
-{
-	CObj* pBullet = CAbstractFactory<T>::Create((float)m_tInfo.fX, (float)m_tInfo.fY);
-	pBullet->Set_Target(this);
-	pBullet->Set_Angle(m_fAngle);
-
-	return pBullet;
-}
+//template<typename T>
+//CObj* CLook::Create_Bullet()
+//{
+//	CObj* pBullet = CAbstractFactory<T>::Create((float)m_tInfo.fX, (float)m_tInfo.fY);
+//	pBullet->Set_Angle(m_fAngle);
+//	pBullet->Set_Target(this);
+//
+//	return pBullet;
+//}

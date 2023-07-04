@@ -3,17 +3,18 @@
 #include "Look.h"
 #include "MyButton.h"
 #include "MessageBlock.h"
+#include "Attack_Bar.h"
 
-CAttack::CAttack()
+CMonsterAttack::CMonsterAttack()
 {
 }
 
-CAttack::~CAttack()
+CMonsterAttack::~CMonsterAttack()
 {
     Release();
 }
 
-void CAttack::Initialize(void)
+void CMonsterAttack::Initialize(void)
 {
     CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Back_Monster.bmp", L"Back_Monster");
 
@@ -24,6 +25,7 @@ void CAttack::Initialize(void)
 
     CObjMgr::Get_Instance()->Add_Object(MONSTER, CAbstractFactory<CLook>::Create(300.f, 250.f));
     CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CMessageBlock>::Create(400.f, 400.f));
+    CObjMgr::Get_Instance()->Add_Object(BAR, CAbstractFactory<CPlayer_Attack>::Create(400.f, 400.f));
 
     CObj* pObj = CAbstractFactory<CMyButton>::Create(100.f, 570.f);
     pObj->Set_FrameKey(L"Fight");
@@ -43,41 +45,26 @@ void CAttack::Initialize(void)
 
 }
 
-void CAttack::Update(void)
+void CMonsterAttack::Update(void)
 {
     CObjMgr::Get_Instance()->Update();
 }
 
-void CAttack::Late_Update(void)
+void CMonsterAttack::Late_Update(void)
 {
     CObjMgr::Get_Instance()->Late_Update();
 
-    if (m_dwTime + 5000 < GetTickCount())
+    if (m_dwTime + 7000 < GetTickCount())
         CSceneMgr::Get_Instance()->Scene_Change(MONSTER_PHASE);
 }
 
-void CAttack::Render(HDC hDC)
+void CMonsterAttack::Render(HDC hDC)
 {
-    AddFontResourceA("NeoµÕ±Ù¸ð.ttf");
-
-    HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Img(L"Back_Monster");
-
-    BitBlt(hDC, 0, 0, WINCX, WINCY, hMemDC, 0, 0, SRCCOPY);
     CObjMgr::Get_Instance()->Render(hDC);
-
-    SetBkMode(hDC, 1);
-    SetTextColor(hDC, RGB(255, 255, 255));
-    HFONT	hFont, oldFont;
-
-    hFont = CreateFont(30, 0, 0, 0, 0, 0, 0, 0, HANGUL_CHARSET, 0, 0, 0, VARIABLE_PITCH || FF_ROMAN, TEXT("NeoµÕ±Ù¸ð"));
-    oldFont = (HFONT)SelectObject(hDC, hFont);
-
-    TextOut(hDC, 70.f, 500.f, L"FRISK", lstrlen(L"FRISK"));
-
 
 }
 
-void CAttack::Release(void)
+void CMonsterAttack::Release(void)
 {
     CObjMgr::Get_Instance()->Destroy_Instance();
 }

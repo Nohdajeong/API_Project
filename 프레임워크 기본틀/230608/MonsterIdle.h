@@ -3,11 +3,11 @@
 #include "Define.h"
 #include "Obj.h"
 
-class CIdle : public IScene
+class CMonsterIdle : public IScene
 {
 public:
-	CIdle();
-	virtual ~CIdle();
+	CMonsterIdle();
+	virtual ~CMonsterIdle();
 
 public:
 	// IScene을(를) 통해 상속됨

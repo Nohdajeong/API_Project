@@ -3,11 +3,11 @@
 #include "Define.h"
 #include "Obj.h"
 
-class CAttack : public IScene
+class CMonsterAttack : public IScene
 {
 public:
-	CAttack();
-	virtual ~CAttack();
+	CMonsterAttack();
+	virtual ~CMonsterAttack();
 
 public:
 	// IScene을(를) 통해 상속됨

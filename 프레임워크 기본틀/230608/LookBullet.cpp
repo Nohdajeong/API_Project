@@ -18,7 +18,8 @@ void CLooKBullet::Initialize(void)
 	m_tInfo.fCX = 16.f;
 	m_tInfo.fCY = 16.f;
 
-	m_fSpeed = 0.5f;
+	m_fSpeed = 1.f;
+	m_eRender = GAMEOBJECT;
 
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Monster/looks_attack.bmp", L"LookAttack");
 }
@@ -28,11 +29,6 @@ int CLooKBullet::Update(void)
 	if (m_bDead)
 		return OBJ_DEAD;	
 	
-	if (m_dwTime + 1000 <= GetTickCount()) {
-		m_dwTime = GetTickCount();
-		m_iTime++;
-	}
-
 	m_pTarget = CObjMgr::Get_Instance()->Get_BattlePlayer();
 
 	if (m_pTarget) {
@@ -42,16 +38,14 @@ int CLooKBullet::Update(void)
 		float fDiagonal = sqrtf(fWidth * fWidth + fHeight * fHeight);
 		float fRadian = acosf(fWidth / fDiagonal);
 
-		m_fAngle = fRadian * 180.f / PI;		// 라디안 값을 다시 degree 값으로
+		m_fAngle = fRadian * 180.f / PI;
 
-		// 타겟이 아래에 있을 경우
 		if (m_tInfo.fY < m_pTarget->Get_Info().fY)
 			m_fAngle *= -1.f;
 	}
 
 	m_tInfo.fX += m_fSpeed * cosf(m_fAngle * (PI / 180.f));
 	m_tInfo.fY -= m_fSpeed * sinf(m_fAngle * (PI / 180.f));
-
 
 	__super::Update_Rect();
 
@@ -60,8 +54,6 @@ int CLooKBullet::Update(void)
 
 void CLooKBullet::Late_Update(void)
 {
-	if (m_iTime == 5)
-		m_bDead = true;
 }
 
 void CLooKBullet::Render(HDC hDC)

@@ -25,8 +25,12 @@ public:
 	int	m_iDrawID;
 	int m_iCount;
 
+	int m_iAttack;
+	int m_iDefense;
+
 private:
-	TCHAR	szBuff[32] = L"";
+	TCHAR	szBuff[100] = L"";
+	TCHAR	szPlayer[100] = L"";
 	DWORD	m_dwTime = GetTickCount();
 };
 

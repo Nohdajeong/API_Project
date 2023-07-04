@@ -4,16 +4,16 @@
 #include "MyButton.h"
 #include "MessageBlock.h"
 
-CIdle::CIdle()
+CMonsterIdle::CMonsterIdle()
 {
 }
 
-CIdle::~CIdle()
+CMonsterIdle::~CMonsterIdle()
 {
     Release();
 }
 
-void CIdle::Initialize(void)
+void CMonsterIdle::Initialize(void)
 {
     CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Back_Monster.bmp", L"Back_Monster");
 
@@ -43,40 +43,25 @@ void CIdle::Initialize(void)
     CObjMgr::Get_Instance()->Add_Object(BUTTON, pObj);
 }
 
-void CIdle::Update(void)
+void CMonsterIdle::Update(void)
 {
     CObjMgr::Get_Instance()->Update();
 }
 
-void CIdle::Late_Update(void)
+void CMonsterIdle::Late_Update(void)
 {
     CObjMgr::Get_Instance()->Late_Update();
 
 }
 
-void CIdle::Render(HDC hDC)
+void CMonsterIdle::Render(HDC hDC)
 {
-    AddFontResourceA("NeoµÕ±Ù¸ð.ttf");
-
-    HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Img(L"Back_Monster");
-
-
-    BitBlt(hDC, 0, 0, WINCX, WINCY, hMemDC, 0, 0, SRCCOPY);
     CObjMgr::Get_Instance()->Render(hDC);
-
-    SetBkMode(hDC, 1);
-    SetTextColor(hDC, RGB(255, 255, 255));
-    HFONT	hFont, oldFont;
-
-    hFont = CreateFont(30, 0, 0, 0, 0, 0, 0, 0, HANGUL_CHARSET, 0, 0, 0, VARIABLE_PITCH || FF_ROMAN, TEXT("NeoµÕ±Ù¸ð"));
-    oldFont = (HFONT)SelectObject(hDC, hFont);
-
-    TextOut(hDC, 70.f, 500.f, L"FRISK", lstrlen(L"FRISK"));
-
 
 }
 
-void CIdle::Release(void)
+void CMonsterIdle::Release(void)
 {
-    CObjMgr::Get_Instance()->Destroy_Instance();
+    CObjMgr::Get_Instance()->Delete_ID(MONSTER);
+    CObjMgr::Get_Instance()->Delete_ID(MESSAGEBOX);
 }

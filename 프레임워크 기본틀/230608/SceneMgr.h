@@ -7,6 +7,8 @@
 #include "MonsterAttack.h"
 #include "MonsterPhase.h"
 #include "MonsterIdle.h"
+#include "MonsterMercy.h"
+#include "MonsterAct.h"
 
 class CSceneMgr
 {

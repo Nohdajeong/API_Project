@@ -148,6 +148,15 @@
     <Filter Include="03. Scene\02. Battle\01. Monster\Phase">
       <UniqueIdentifier>{3ca15ea9-7e77-4856-9b49-c4bfd30fe973}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. Scene\02. Battle\01. Monster\Mercy">
+      <UniqueIdentifier>{4a3f59e4-63b3-4949-b7da-3f0f3121fae7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\02. Battle\01. Monster\Act">
+      <UniqueIdentifier>{142a3aad-3a80-4cc8-903f-8df317d131cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Obj\08. PlayerUI">
+      <UniqueIdentifier>{2a78f9da-16f7-4aa2-8156-a51ebe174b62}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -270,6 +279,15 @@
     <ClInclude Include="MonsterIdle.h">
       <Filter>03. Scene\02. Battle\01. Monster\Idle</Filter>
     </ClInclude>
+    <ClInclude Include="MonsterMercy.h">
+      <Filter>03. Scene\02. Battle\01. Monster\Mercy</Filter>
+    </ClInclude>
+    <ClInclude Include="MonsterAct.h">
+      <Filter>03. Scene\02. Battle\01. Monster\Act</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerState.h">
+      <Filter>01. Obj\08. PlayerUI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -364,6 +382,15 @@
     </ClCompile>
     <ClCompile Include="MonsterIdle.cpp">
       <Filter>03. Scene\02. Battle\01. Monster\Idle</Filter>
+    </ClCompile>
+    <ClCompile Include="MonsterMercy.cpp">
+      <Filter>03. Scene\02. Battle\01. Monster\Mercy</Filter>
+    </ClCompile>
+    <ClCompile Include="MonsterAct.cpp">
+      <Filter>03. Scene\02. Battle\01. Monster\Act</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerState.cpp">
+      <Filter>01. Obj\08. PlayerUI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

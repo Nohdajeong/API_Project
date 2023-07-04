@@ -2,8 +2,10 @@
 #include "MessageBlock.h"
 #include "SceneMgr.h"
 
-CMessageBlock::CMessageBlock() : m_iDrawID(0), m_iCount(0)
+CMessageBlock::CMessageBlock()
+	: m_iDrawID(0), m_iCount(0), m_iAttack(0), m_iDefense(0)
 {
+
 }
 
 CMessageBlock::~CMessageBlock()
@@ -31,12 +33,17 @@ void CMessageBlock::Text_Change(SCENEID eScene)
 		break;
 
 	case MONSTER_ACT:
+		swprintf_s(szBuff, L"* ·è½º - Attack : %d, Defense : %d", m_iAttack, m_iDefense);
 		break;
 
 	case MONSTER_ITEM:
 		break;
 
 	case MONSTER_MERCY:
+		swprintf_s(szBuff, L"* ´ç½ÅÀº ÀÚºñ¸¦ º£Ç®¾ú´Ù.");
+		if (m_dwTime + 1500 < GetTickCount())
+			swprintf_s(szBuff, L"* 0exp¿Í 0°ñµå¸¦ È¹µæÇß´Ù.");
+
 		break;
 	}
 }
@@ -45,6 +52,11 @@ void CMessageBlock::Initialize(void)
 {
     m_tInfo.fCX = 700.f;
     m_tInfo.fCY = 200.f;
+
+	CObj* pMonster = CObjMgr::Get_Instance()->Get_Monster();
+
+	m_iAttack = pMonster->Get_States().iAttack;
+	m_iDefense = pMonster->Get_States().iDefense;
 
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Message.bmp", L"Message");
 

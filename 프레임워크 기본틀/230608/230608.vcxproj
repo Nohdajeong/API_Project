@@ -150,7 +150,10 @@
     <ClInclude Include="Actor.h" />
     <ClInclude Include="Attack_Bar.h" />
     <ClInclude Include="LookBullet.h" />
+    <ClInclude Include="MonsterAct.h" />
     <ClInclude Include="MonsterIdle.h" />
+    <ClInclude Include="MonsterMercy.h" />
+    <ClInclude Include="PlayerState.h" />
     <ClInclude Include="Player_Battle.h" />
     <ClInclude Include="Stage_Flowey.h" />
     <ClInclude Include="MonsterAttack.h" />
@@ -189,7 +192,10 @@
     <ClCompile Include="230608.cpp" />
     <ClCompile Include="Attack_Bar.cpp" />
     <ClCompile Include="LookBullet.cpp" />
+    <ClCompile Include="MonsterAct.cpp" />
     <ClCompile Include="MonsterIdle.cpp" />
+    <ClCompile Include="MonsterMercy.cpp" />
+    <ClCompile Include="PlayerState.cpp" />
     <ClCompile Include="Player_Battle.cpp" />
     <ClCompile Include="Stage_Flowey.cpp" />
     <ClCompile Include="MonsterAttack.cpp" />
