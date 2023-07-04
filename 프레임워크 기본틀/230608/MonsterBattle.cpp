@@ -78,4 +78,5 @@ void CBattle::Render(HDC hDC)
 
 void CBattle::Release(void)
 {
+    CObjMgr::Get_Instance()->Delete_ID(MONSTER);
 }

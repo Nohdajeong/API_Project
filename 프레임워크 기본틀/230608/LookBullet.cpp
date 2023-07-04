@@ -33,7 +33,7 @@ int CLooKBullet::Update(void)
 		m_iTime++;
 	}
 
-	m_pTarget = CObjMgr::Get_Instance()->Get_Player();
+	m_pTarget = CObjMgr::Get_Instance()->Get_BattlePlayer();
 
 	if (m_pTarget) {
 		float fWidth = m_pTarget->Get_Info().fX - m_tInfo.fX;

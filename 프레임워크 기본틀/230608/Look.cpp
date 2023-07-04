@@ -49,8 +49,7 @@ int CLook::Update(void)
 	if (m_bDead)
 		return OBJ_DEAD;
 
-	if (CSceneMgr::Get_Instance()->Get_SceneID() == MONSTER_PHASE)
-		Attack1();
+	Attack1();
 
 	__super::Move_Frame();
 	__super::Update_Rect();
