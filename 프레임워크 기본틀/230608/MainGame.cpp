@@ -20,29 +20,20 @@ void CMainGame::Initialize()
 {
 	m_hDC = GetDC(g_hWnd);
 
-	CSceneMgr::Get_Instance()->Scene_Change(RUIN);
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Back.bmp", L"Back");
 
-	//m_eSceneId = RUIN;
-
-	//m_eScenes[RUIN] = new CStage1();
-	//m_eScenes[FLOWEY] = new CStage2();
-	//m_eScenes[MONSTER_IDLE] = new CBattle();
-
-	//m_eScenes[m_eSceneId]->Initialize();
-
+	CSceneMgr::Get_Instance()->Scene_Change(MONSTER_MATCH);
 
 }
 
 void CMainGame::Update()
 {
-	//m_eScenes[m_eSceneId]->Update();
 	CSceneMgr::Get_Instance()->Update();
 }
 
 
 void CMainGame::Late_Update()
 {
-	//m_eScenes[m_eSceneId]->Late_Update();
 	CSceneMgr::Get_Instance()->Late_Update();
 }
 
@@ -50,7 +41,7 @@ void CMainGame::Render()
 {
 	++m_iFPS;
 
-	if (m_dwTime + 1000 < GetTickCount())
+	if (m_dwTime + 2000 < GetTickCount())
 	{
 		swprintf_s(m_szFPS, L"FPS : %d", m_iFPS);
 		SetWindowText(g_hWnd, m_szFPS);
@@ -59,8 +50,11 @@ void CMainGame::Render()
 		m_dwTime = GetTickCount();
 	}
 
-	//m_eScenes[m_eSceneId]->Render(m_hDC);
-	CSceneMgr::Get_Instance()->Render(m_hDC);
+	HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Img(L"Back");
+
+	CSceneMgr::Get_Instance()->Render(hMemDC);
+
+	BitBlt(m_hDC, 0, 0, WINCX, WINCY, hMemDC, 0, 0, SRCCOPY);
 
 
 }

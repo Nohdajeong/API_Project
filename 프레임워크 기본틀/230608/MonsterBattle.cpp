@@ -60,7 +60,9 @@ void CBattle::Render(HDC hDC)
     AddFontResourceA("NeoµÕ±Ù¸ð.ttf");
 
     HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Img(L"Back_Monster");
+
     BitBlt(hDC, 0, 0, WINCX, WINCY, hMemDC, 0, 0, SRCCOPY);
+    CObjMgr::Get_Instance()->Render(hDC);
 
     SetBkMode(hDC, 1);
     SetTextColor(hDC, RGB(255, 255, 255));
@@ -71,18 +73,9 @@ void CBattle::Render(HDC hDC)
 
     TextOut(hDC, 70.f, 500.f, L"FRISK", lstrlen(L"FRISK"));
 
-    CObjMgr::Get_Instance()->Render(hDC);
 
 }
 
 void CBattle::Release(void)
 {
-    CBmpMgr::Destroy_Instance();
-    CObjMgr::Get_Instance()->Destroy_Instance();
-}
-
-SCENEID CBattle::UpdateScene()
-{
-
-    return MONSTER_IDLE;
 }

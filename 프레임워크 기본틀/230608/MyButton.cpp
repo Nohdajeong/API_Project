@@ -35,7 +35,7 @@ void CMyButton::Late_Update(void)
 
 	if (PtInRect(&m_tRect, pt))
 	{
-		if (CSceneMgr::Get_Instance()->Get_SceneID() != MONSTER_PHASE) {
+		if (CSceneMgr::Get_Instance()->Get_SceneID() == MONSTER_IDLE || CSceneMgr::Get_Instance()->Get_SceneID() == MONSTER_MATCH) {
 			if (CKeyMgr::Get_Instance()->Key_Down(VK_LBUTTON))
 			{
 				if (!lstrcmp(L"Fight", m_pFrameKey))

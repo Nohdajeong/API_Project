@@ -7,7 +7,7 @@
 #include "KeyMgr.h"
 
 CPlayerS1::CPlayerS1() 
-	: m_fDistance(0.f), m_bJump(false), m_fPower(0.f), m_fTime(0.f)
+	  : m_ePreState(STATE_END), m_eCurState(IDLE)
 {
 }
 
@@ -19,18 +19,20 @@ CPlayerS1::~CPlayerS1()
 
 void CPlayerS1::Initialize(void)
 {
+	m_tInfo.fX = WINCX * 0.5f;
+	m_tInfo.fY = WINCY * 0.5f;
+
 	m_tInfo.fCX = 40.f;
 	m_tInfo.fCY = 60.f;
 	m_tStates = { 1, 20, 20, 0, 10, 10, 0, 30 };
 
 	m_fSpeed = 5.f;
-	m_fDistance = 100.f;
-	m_fPower = 20.f;
 
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Player/Player_Down.bmp", L"Player_DOWN");
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Player/Player_Left.bmp", L"Player_LEFT");
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Player/Player_Right.bmp", L"Player_RIGHT");
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Player/Player_Up.bmp", L"Player_UP");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Player/Stretch.bmp", L"Player_UP");
 
 
 	m_pFrameKey = L"Player_DOWN";
@@ -42,16 +44,12 @@ void CPlayerS1::Initialize(void)
 	m_tFrame.dwTime = GetTickCount();
 
 	m_eRender = GAMEOBJECT;
-
-	Set_Location();
-
 }
 
 int CPlayerS1::Update(void)
 {
 	Key_Input();
 	OffSet();
-
 	Motion_Change();
 
 	__super::Move_Frame();
@@ -59,6 +57,7 @@ int CPlayerS1::Update(void)
 
 	return OBJ_NOEVENT;
 }
+
 void CPlayerS1::Late_Update(void)
 {
 
@@ -69,21 +68,24 @@ void CPlayerS1::Render(HDC hDC)
 	int		iScrollX = (int)CScrollMgr::Get_Instance()->Get_ScollX();
 	int		iScrollY = (int)CScrollMgr::Get_Instance()->Get_ScollY();
 
+	HDC		hBackDC = CBmpMgr::Get_Instance()->Find_Img(L"Back");
 	HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Img(m_pFrameKey);
 
-	GdiTransparentBlt(hDC,
-		(int)m_tRect.left + iScrollX, // 복사 받을 위치 X,Y 좌표
-		(int)m_tRect.top + iScrollY,
-		(int)m_tInfo.fCX,	// 복사 받을 가로, 세로 길이
-		(int)m_tInfo.fCY,
-		hMemDC,			// 비트맵 이미지를 담고 있는 DC
-		m_tFrame.iFrameStart * (int)m_tInfo.fCX,					// 비트맵을 출력할 시작 X,Y좌표
-		m_tFrame.iMotion * (int)m_tInfo.fCY,
-		(int)m_tInfo.fCX,		// 출력할 비트맵의 가로, 세로 사이즈
-		(int)m_tInfo.fCY,
-		RGB(195, 134, 255)); // 제거하고자 하는 색상
 
-	
+	GdiTransparentBlt(hDC,
+			(int)m_tRect.left + iScrollX, // 복사 받을 위치 X,Y 좌표
+			(int)m_tRect.top + iScrollY,
+			(int)m_tInfo.fCX,	// 복사 받을 가로, 세로 길이
+			(int)m_tInfo.fCY,
+			hMemDC,			// 비트맵 이미지를 담고 있는 DC
+			m_tFrame.iFrameStart * (int)m_tInfo.fCX,					// 비트맵을 출력할 시작 X,Y좌표
+			m_tFrame.iMotion * (int)m_tInfo.fCY,
+			(int)m_tInfo.fCX,		// 출력할 비트맵의 가로, 세로 사이즈
+			(int)m_tInfo.fCY,
+			RGB(195, 134, 255)); // 제거하고자 하는 색상
+
+	BitBlt(hDC, 0, 0, m_tInfo.fCX, m_tInfo.fCY, hBackDC, 0, 0, SRCCOPY);
+
 }
 
 void CPlayerS1::Release(void)
@@ -159,7 +161,7 @@ void CPlayerS1::Motion_Change(void)
 			m_tFrame.iFrameStart = 0;
 			m_tFrame.iFrameEnd = 0;
 			m_tFrame.iMotion = 0;
-			m_tFrame.dwSpeed = 500;
+			m_tFrame.dwSpeed = 250;
 			m_tFrame.dwTime = GetTickCount();
 			break;
 
@@ -180,6 +182,4 @@ void CPlayerS1::Motion_Change(void)
 
 void CPlayerS1::Set_Location(void)
 {
-		m_tInfo.fX = WINCX * 0.5f;
-		m_tInfo.fY = WINCY * 0.5f;
 }

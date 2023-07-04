@@ -31,8 +31,12 @@ void CSceneMgr::Scene_Change(SCENEID eScene)
 			m_pScene = new CStage2;
 			break;
 
-		case MONSTER_IDLE:
+		case MONSTER_MATCH:
 			m_pScene = new CBattle;
+			break;
+
+		case MONSTER_IDLE:
+			m_pScene = new CIdle;
 			break;
 
 		case MONSTER_ATTACK:

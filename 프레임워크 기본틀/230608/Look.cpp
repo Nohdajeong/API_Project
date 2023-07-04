@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "Look.h"
+#include "LookBullet.h"
 
 CLook::CLook()
 {
@@ -16,6 +17,11 @@ void CLook::Idle()
 
 void CLook::Attack1()
 {
+	if (m_preDeley + 100.f < GetTickCount()) {
+		CObjMgr::Get_Instance()->Add_Object(BULLET, Create_Bullet<CLooKBullet>());
+		m_preDeley = GetTickCount64();
+	}
+
 }
 
 void CLook::Attack2()
@@ -36,11 +42,6 @@ void CLook::Initialize(void)
 	m_tFrame.dwTime = GetTickCount64();
 
 	m_eRender = GAMEOBJECT;
-	
-
-	//m_States[(int)LookState::IDLE] = new LookIdle();
-	//m_States[(int)LookState::ATTACK1] = new LookAttack1();
-	//m_States[(int)LookState::ATTACK2] = new LookAttack2();
 }
 
 int CLook::Update(void)
@@ -48,16 +49,8 @@ int CLook::Update(void)
 	if (m_bDead)
 		return OBJ_DEAD;
 
-	//LookState nowState = m_States[(int)m_eState]->Update(*this);
-	//if (m_eState != nowState)
-	//{
-	//	m_States[(int)m_eState]->Release(*this);
-
-	//	m_eState = nowState;
-	//	m_States[(int)m_eState]->Initialize(*this);
-	//	m_States[(int)m_eState]->Update(*this);
-	//}
-
+	if (CSceneMgr::Get_Instance()->Get_SceneID() == MONSTER_PHASE)
+		Attack1();
 
 	__super::Move_Frame();
 	__super::Update_Rect();
@@ -67,7 +60,6 @@ int CLook::Update(void)
 
 void CLook::Late_Update(void)
 {
-	//m_States[(int)m_eState]->Late_Update(*this);
 
 }
 
@@ -87,10 +79,19 @@ void CLook::Render(HDC hDC)
 		(int)m_tInfo.fCY,
 		RGB(195, 134, 255));
 
-	//m_States[(int)m_eState]->Render(hDC, *this);
 
 }
 
 void CLook::Release(void)
 {
+}
+
+template<typename T>
+CObj* CLook::Create_Bullet()
+{
+	CObj* pBullet = CAbstractFactory<T>::Create((float)m_tInfo.fX, (float)m_tInfo.fY);
+	pBullet->Set_Target(this);
+	pBullet->Set_Angle(m_fAngle);
+
+	return pBullet;
 }

@@ -17,7 +17,6 @@ public:
 	virtual void Late_Update();
 	virtual void Render(HDC hDC);
 	virtual void Release();
-	virtual SCENEID UpdateScene();
 
 private:
 	DWORD		m_dwTime = GetTickCount();

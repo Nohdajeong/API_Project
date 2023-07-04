@@ -1,5 +1,6 @@
 #pragma once
 #include "Actor.h"
+#include "SceneMgr.h"
 
 enum class LookState { IDLE, ATTACK1, ATTACK2 , StateEnd};
 
@@ -20,4 +21,13 @@ public:
 	virtual void	Late_Update(void) override;
 	virtual void	Render(HDC hDC) override;
 	virtual void	Release(void) override;
+
+private:
+	template<typename T>
+	CObj* Create_Bullet();	
+	
+	DWORD		m_preDeley;
+	DWORD		m_PostDelay;
+
+
 };

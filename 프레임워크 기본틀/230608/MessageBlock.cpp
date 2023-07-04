@@ -14,13 +14,12 @@ CMessageBlock::~CMessageBlock()
 void CMessageBlock::Text_Change(SCENEID eScene)
 {
 	switch (eScene) {
+	case MONSTER_MATCH:
+		swprintf_s(szBuff, L"* 룩스가 나타났다!");
+		break;
+
 	case MONSTER_IDLE:
-		if (m_iCount == 0) {
-			swprintf_s(szBuff, L"* 룩스가 나타났다!");
-		}
-		else {
-			swprintf_s(szBuff, L"* 룩스는 당신을 응시하고 있다.");
-		}
+		swprintf_s(szBuff, L"* 룩스는 당신을 응시하고 있다.");
 		break;
 
 	case MONSTER_ATTACK:
@@ -29,6 +28,15 @@ void CMessageBlock::Text_Change(SCENEID eScene)
 
 	case MONSTER_PHASE:
 		m_iDrawID = 2;
+		break;
+
+	case MONSTER_ACT:
+		break;
+
+	case MONSTER_ITEM:
+		break;
+
+	case MONSTER_MERCY:
 		break;
 	}
 }

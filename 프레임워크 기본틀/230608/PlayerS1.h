@@ -23,18 +23,12 @@ private:
 	void		Set_Location(void);
 
 private:
-	float				m_fDistance;
-
-	bool				m_bJump;
-	float				m_fPower;
-	float				m_fTime;
-
-	float				m_fJumpSpeed;
-
 	STATE				m_eCurState;
 	STATE				m_ePreState;
 
 	SCENEID				m_eCurScene;
 	SCENEID				m_ePreScene;
+
+	bool				m_bStretch = false;
 
 };

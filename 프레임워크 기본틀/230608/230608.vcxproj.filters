@@ -118,9 +118,6 @@
     <Filter Include="01. Obj\04. Monster\Pattern">
       <UniqueIdentifier>{1b40cc7b-854c-4f90-bb87-05050f27d952}</UniqueIdentifier>
     </Filter>
-    <Filter Include="01. Obj\04. Monster\Pattern\Idle">
-      <UniqueIdentifier>{f4cefd0e-f012-46c5-a513-f97329b6e5b0}</UniqueIdentifier>
-    </Filter>
     <Filter Include="01. Obj\04. Monster\Pattern\Attack1">
       <UniqueIdentifier>{dfbed268-a913-4115-81b4-cdd8a9328b8b}</UniqueIdentifier>
     </Filter>
@@ -133,23 +130,23 @@
     <Filter Include="01. Obj\06. Message">
       <UniqueIdentifier>{483a1b92-461a-4ee0-a1bd-3bad2666c15e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Scene\02. Battle\MonsterScene">
-      <UniqueIdentifier>{63df1f97-5b47-4848-815d-8329201ad679}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Scene\02. Battle\MonsterScene\Idle">
-      <UniqueIdentifier>{1a11409f-3b2d-4c59-beb3-98d9988052c8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Scene\02. Battle\MonsterScene\Attack">
-      <UniqueIdentifier>{9096e64d-27c8-4467-bd82-6e1250271c64}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Scene\02. Battle\MonsterScene\Phase">
-      <UniqueIdentifier>{3ca15ea9-7e77-4856-9b49-c4bfd30fe973}</UniqueIdentifier>
-    </Filter>
     <Filter Include="01. Obj\01. Player\Battle">
       <UniqueIdentifier>{b067aa35-65ea-470d-8713-dd3e0ba31e97}</UniqueIdentifier>
     </Filter>
     <Filter Include="01. Obj\07. Attack_Bar">
       <UniqueIdentifier>{ee286269-efc2-4d70-9e4b-55aa9f06b6e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\02. Battle\01. Monster">
+      <UniqueIdentifier>{63df1f97-5b47-4848-815d-8329201ad679}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\02. Battle\01. Monster\Idle">
+      <UniqueIdentifier>{1a11409f-3b2d-4c59-beb3-98d9988052c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\02. Battle\01. Monster\Attack">
+      <UniqueIdentifier>{9096e64d-27c8-4467-bd82-6e1250271c64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\02. Battle\01. Monster\Phase">
+      <UniqueIdentifier>{3ca15ea9-7e77-4856-9b49-c4bfd30fe973}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -243,17 +240,14 @@
     <ClInclude Include="Toriel.h">
       <Filter>01. Obj\03. Boss</Filter>
     </ClInclude>
-    <ClInclude Include="MonsterBattle.h">
-      <Filter>03. Scene\02. Battle\MonsterScene\Idle</Filter>
-    </ClInclude>
     <ClInclude Include="MonsterAttack.h">
-      <Filter>03. Scene\02. Battle\MonsterScene\Attack</Filter>
+      <Filter>03. Scene\02. Battle\01. Monster\Attack</Filter>
     </ClInclude>
     <ClInclude Include="SceneMgr.h">
       <Filter>02. Design\08. SceneMgr</Filter>
     </ClInclude>
     <ClInclude Include="MonsterPhase.h">
-      <Filter>03. Scene\02. Battle\MonsterScene\Phase</Filter>
+      <Filter>03. Scene\02. Battle\01. Monster\Phase</Filter>
     </ClInclude>
     <ClInclude Include="Stage_Flowey.h">
       <Filter>03. Scene\01. Stage\Stage2 - Flowey</Filter>
@@ -266,6 +260,15 @@
     </ClInclude>
     <ClInclude Include="Player_Battle.h">
       <Filter>01. Obj\01. Player\Battle</Filter>
+    </ClInclude>
+    <ClInclude Include="LookBullet.h">
+      <Filter>01. Obj\04. Monster\Pattern\Attack1</Filter>
+    </ClInclude>
+    <ClInclude Include="MonsterBattle.h">
+      <Filter>03. Scene\02. Battle\01. Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="MonsterIdle.h">
+      <Filter>03. Scene\02. Battle\01. Monster\Idle</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -332,17 +335,14 @@
     <ClCompile Include="Toriel.cpp">
       <Filter>01. Obj\03. Boss</Filter>
     </ClCompile>
-    <ClCompile Include="MonsterBattle.cpp">
-      <Filter>03. Scene\02. Battle\MonsterScene\Idle</Filter>
-    </ClCompile>
     <ClCompile Include="MonsterAttack.cpp">
-      <Filter>03. Scene\02. Battle\MonsterScene\Attack</Filter>
+      <Filter>03. Scene\02. Battle\01. Monster\Attack</Filter>
     </ClCompile>
     <ClCompile Include="SceneMgr.cpp">
       <Filter>02. Design\08. SceneMgr</Filter>
     </ClCompile>
     <ClCompile Include="MonsterPhase.cpp">
-      <Filter>03. Scene\02. Battle\MonsterScene\Phase</Filter>
+      <Filter>03. Scene\02. Battle\01. Monster\Phase</Filter>
     </ClCompile>
     <ClCompile Include="Stage_Flowey.cpp">
       <Filter>03. Scene\01. Stage\Stage2 - Flowey</Filter>
@@ -355,6 +355,15 @@
     </ClCompile>
     <ClCompile Include="Player_Battle.cpp">
       <Filter>01. Obj\01. Player\Battle</Filter>
+    </ClCompile>
+    <ClCompile Include="LookBullet.cpp">
+      <Filter>01. Obj\04. Monster\Pattern\Attack1</Filter>
+    </ClCompile>
+    <ClCompile Include="MonsterBattle.cpp">
+      <Filter>03. Scene\02. Battle\01. Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="MonsterIdle.cpp">
+      <Filter>03. Scene\02. Battle\01. Monster\Idle</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

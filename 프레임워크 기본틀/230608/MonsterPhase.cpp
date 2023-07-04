@@ -5,7 +5,6 @@
 #include "MessageBlock.h"
 #include "Player_Battle.h"
 
-
 CMonsterPhase::CMonsterPhase()
 {
 }
@@ -17,8 +16,6 @@ CMonsterPhase::~CMonsterPhase()
 
 void CMonsterPhase::Initialize(void)
 {
-    CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Back_Monster.bmp", L"Back_Monster");
-
     CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Fight.bmp", L"Fight");
     CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Act.bmp", L"Act");
     CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Item.bmp", L"Item");
@@ -45,12 +42,13 @@ void CMonsterPhase::Initialize(void)
     pObj->Set_FrameKey(L"Mercy");
     CObjMgr::Get_Instance()->Add_Object(BUTTON, pObj);
 
-
 }
 
 void CMonsterPhase::Update(void)
 {
+
     CObjMgr::Get_Instance()->Update();
+
 }
 
 void CMonsterPhase::Late_Update(void)
@@ -83,12 +81,5 @@ void CMonsterPhase::Render(HDC hDC)
 
 void CMonsterPhase::Release(void)
 {
-    CBmpMgr::Destroy_Instance();
-    CObjMgr::Get_Instance()->Release();
-}
-
-SCENEID CMonsterPhase::UpdateScene()
-{
-
-    return MONSTER_PHASE;
+    CObjMgr::Get_Instance()->Destroy_Instance();
 }

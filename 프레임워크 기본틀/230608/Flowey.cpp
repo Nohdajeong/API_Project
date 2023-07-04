@@ -33,7 +33,6 @@ void CFlowey::Initialize(void)
 
 int CFlowey::Update(void)
 {
-
 	__super::Move_Frame();
 	__super::Update_Rect();
 
@@ -63,8 +62,6 @@ void CFlowey::Render(HDC hDC)
 		(int)m_tInfo.fCX,
 		(int)m_tInfo.fCY,
 		RGB(241, 95, 241));
-
-
 }
 
 void CFlowey::Release(void)

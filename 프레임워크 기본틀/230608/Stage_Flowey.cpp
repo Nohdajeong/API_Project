@@ -37,7 +37,7 @@ void CStage2::Late_Update()
 	CObj* pPlayer = CObjMgr::Get_Instance()->Get_Player();
 
 	if (200.f > pPlayer->Get_Info().fY) {
-		CSceneMgr::Get_Instance()->Scene_Change(MONSTER_IDLE);
+		CSceneMgr::Get_Instance()->Scene_Change(MONSTER_MATCH);
 	}
 
 }
@@ -56,12 +56,5 @@ void CStage2::Render(HDC hDC)
 
 void CStage2::Release()
 {
-	CBmpMgr::Destroy_Instance();
 	CObjMgr::Get_Instance()->Release();
-
-}
-
-SCENEID CStage2::UpdateScene()
-{
-	return FLOWEY;
 }
