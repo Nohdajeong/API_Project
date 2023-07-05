@@ -5,6 +5,7 @@
 #include "MessageBlock.h"
 #include "PlayerState.h"
 #include "SoundMgr.h"
+#include "Player_Battle.h"
 
 CTorielMatch::CTorielMatch()
     : m_iLevel(1), m_iHp(0), m_iMaxHp(0)
@@ -28,8 +29,9 @@ void CTorielMatch::Initialize(void)
     CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Mercy.bmp", L"Mercy");
 
     CObjMgr::Get_Instance()->Add_Object(MONSTER, CAbstractFactory<CToriel>::Create());
+    CObjMgr::Get_Instance()->Add_Object(BATTLE_PLAYER_STATE, CAbstractFactory<CPlayerBattle>::Create());
     CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CMessageBlock>::Create(400.f, 400.f));
-    CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CPlayerState>::Create());
+    CObjMgr::Get_Instance()->Add_Object(PLAYER_STATE, CAbstractFactory<CPlayerState>::Create());
 
     CObj* pObj = CAbstractFactory<CMyButton>::Create(100.f, 570.f);
     pObj->Set_FrameKey(L"Fight");
@@ -75,6 +77,5 @@ void CTorielMatch::Render(HDC hDC)
 
 void CTorielMatch::Release(void)
 {
-    CObjMgr::Get_Instance()->Delete_ID(MONSTER);
     CObjMgr::Get_Instance()->Delete_ID(MESSAGEBOX);
 }

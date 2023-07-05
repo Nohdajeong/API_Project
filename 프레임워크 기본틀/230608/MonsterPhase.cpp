@@ -19,36 +19,14 @@ CMonsterPhase::~CMonsterPhase()
 
 void CMonsterPhase::Initialize(void)
 {
-    CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Fight.bmp", L"Fight");
-    CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Act.bmp", L"Act");
-    CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Item.bmp", L"Item");
-    CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Mercy.bmp", L"Mercy");
-
-    CObjMgr::Get_Instance()->Add_Object(MONSTER, CAbstractFactory<CLook>::Create());
     CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CMessageBlock>::Create());
-    CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CPlayerState>::Create());
     CObjMgr::Get_Instance()->Add_Object(BATTLE_PLAYER, CAbstractFactory<CPlayerBattle>::Create(400.f, 400.f));
+    CObjMgr::Get_Instance()->Add_Object(PLAYER_STATE, CAbstractFactory<CPlayerState>::Create());
 
     for (int i = 0; i < 10; ++i) {
         
         CObjMgr::Get_Instance()->Add_Object(BULLET, CAbstractFactory<CLooKBullet>::Create((float)(rand() % 100 + 400), (float)(rand() % 100 + 400)));
     }
-
-    CObj* pObj = CAbstractFactory<CMyButton>::Create(100.f, 570.f);
-    pObj->Set_FrameKey(L"Fight");
-    CObjMgr::Get_Instance()->Add_Object(BUTTON, pObj);
-
-    pObj = CAbstractFactory<CMyButton>::Create(300.f, 570.f);
-    pObj->Set_FrameKey(L"Act");
-    CObjMgr::Get_Instance()->Add_Object(BUTTON, pObj);
-
-    pObj = CAbstractFactory<CMyButton>::Create(500.f, 570.f);
-    pObj->Set_FrameKey(L"Item");
-    CObjMgr::Get_Instance()->Add_Object(BUTTON, pObj);
-
-    pObj = CAbstractFactory<CMyButton>::Create(700.f, 570.f);
-    pObj->Set_FrameKey(L"Mercy");
-    CObjMgr::Get_Instance()->Add_Object(BUTTON, pObj);
 }
 
 void CMonsterPhase::Update(void)
@@ -84,5 +62,6 @@ void CMonsterPhase::Render(HDC hDC)
 
 void CMonsterPhase::Release(void)
 {
-    CObjMgr::Get_Instance()->Destroy_Instance();
-    }
+    CObjMgr::Get_Instance()->Delete_ID(MESSAGEBOX);
+    CObjMgr::Get_Instance()->Delete_ID(BULLET);
+}

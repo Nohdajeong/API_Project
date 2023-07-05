@@ -16,30 +16,7 @@ CMonsterItem::~CMonsterItem()
 
 void CMonsterItem::Initialize(void)
 {
-    CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Fight.bmp", L"Fight");
-    CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Act.bmp", L"Act");
-    CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Item.bmp", L"Item");
-    CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Mercy.bmp", L"Mercy");
-
-    CObjMgr::Get_Instance()->Add_Object(MONSTER, CAbstractFactory<CLook>::Create());
     CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CMessageBlock>::Create());
-    CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CPlayerState>::Create());
-
-    CObj* pObj = CAbstractFactory<CMyButton>::Create(100.f, 570.f);
-    pObj->Set_FrameKey(L"Fight");
-    CObjMgr::Get_Instance()->Add_Object(BUTTON, pObj);
-
-    pObj = CAbstractFactory<CMyButton>::Create(300.f, 570.f);
-    pObj->Set_FrameKey(L"Act");
-    CObjMgr::Get_Instance()->Add_Object(BUTTON, pObj);
-
-    pObj = CAbstractFactory<CMyButton>::Create(500.f, 570.f);
-    pObj->Set_FrameKey(L"Item");
-    CObjMgr::Get_Instance()->Add_Object(BUTTON, pObj);
-
-    pObj = CAbstractFactory<CMyButton>::Create(700.f, 570.f);
-    pObj->Set_FrameKey(L"Mercy");
-    CObjMgr::Get_Instance()->Add_Object(BUTTON, pObj);
 
 }
 
@@ -69,5 +46,5 @@ void CMonsterItem::Render(HDC hDC)
 
 void CMonsterItem::Release(void)
 {
-    CObjMgr::Get_Instance()->Destroy_Instance();
+    CObjMgr::Get_Instance()->Delete_ID(MESSAGEBOX);
 }

@@ -25,7 +25,7 @@ void CMainGame::Initialize()
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Back.bmp", L"Back");
 	CSoundMgr::Get_Instance()->Initialize();
 
-	CSceneMgr::Get_Instance()->Scene_Change(FLOWEY);
+	CSceneMgr::Get_Instance()->Scene_Change(MONSTER_MATCH);
 
 
 }

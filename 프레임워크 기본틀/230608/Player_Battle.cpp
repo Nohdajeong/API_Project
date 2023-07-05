@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "Player_Battle.h"
+#include "SceneMgr.h"
 
 CPlayerBattle::CPlayerBattle()
 {
@@ -14,7 +15,12 @@ void CPlayerBattle::Initialize(void)
 {
 	m_tInfo.fCX = 25.f;
 	m_tInfo.fCY = 25.f;
-    m_tStates = { 1, 20, 20, 0, 10, 10, 0, 30 };
+
+	m_tStates.iAttack = 10;
+	m_tStates.iMaxHp = 20;
+	m_tStates.iHp = 20;
+	m_tStates.iDefense = 10;
+	m_tStates.iLevel = 1;
 
     CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Player/Player_Battle.bmp", L"Player_Battle");
 
@@ -44,20 +50,22 @@ void CPlayerBattle::Late_Update(void)
 
 void CPlayerBattle::Render(HDC hDC)
 {
-	HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Img(L"Player_Battle");
+	if (CSceneMgr::Get_Instance()->Get_SceneID() == MONSTER_PHASE || CSceneMgr::Get_Instance()->Get_SceneID() == BOSS_PHASE) {
 
-	GdiTransparentBlt(hDC,
-		(int)m_tRect.left,
-		(int)m_tRect.top,
-		(int)m_tInfo.fCX,
-		(int)m_tInfo.fCY,
-		hMemDC,	
-		0,
-		0,
-		(int)m_tInfo.fCX,
-		(int)m_tInfo.fCY,
-		RGB(205, 141, 255));
+		HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Img(L"Player_Battle");
 
+		GdiTransparentBlt(hDC,
+			(int)m_tRect.left,
+			(int)m_tRect.top,
+			(int)m_tInfo.fCX,
+			(int)m_tInfo.fCY,
+			hMemDC,
+			0,
+			0,
+			(int)m_tInfo.fCX,
+			(int)m_tInfo.fCY,
+			RGB(205, 141, 255));
+	}
 }
 
 void CPlayerBattle::Release(void)

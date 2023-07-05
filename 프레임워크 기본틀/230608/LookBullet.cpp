@@ -19,9 +19,11 @@ void CLooKBullet::Initialize(void)
 	m_tInfo.fCY = 16.f;
 
 	m_fSpeed = 1.f;
-	m_eRender = GAMEOBJECT;
 
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Monster/looks_attack.bmp", L"LookAttack");
+
+	m_eRender = GAMEOBJECT;
+
 }
 
 int CLooKBullet::Update(void)

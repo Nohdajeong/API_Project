@@ -26,12 +26,6 @@ void CPlayerS1::Initialize(void)
 	m_tInfo.fCX = 40.f;
 	m_tInfo.fCY = 60.f;
 
-	m_tStates.iAttack = 10;
-	m_tStates.iMaxHp = 20;
-	m_tStates.iHp = 20;
-	m_tStates.iDefense = 10;
-	m_tStates.iLevel = 1;
-
 	m_fSpeed = 5.f;
 
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Player/Player_Down.bmp", L"Player_DOWN");
