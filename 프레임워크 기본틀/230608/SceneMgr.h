@@ -9,6 +9,7 @@
 #include "MonsterIdle.h"
 #include "MonsterMercy.h"
 #include "MonsterAct.h"
+#include "MonsterItem.h"
 
 class CSceneMgr
 {

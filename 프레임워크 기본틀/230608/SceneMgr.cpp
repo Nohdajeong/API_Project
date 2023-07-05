@@ -51,6 +51,10 @@ void CSceneMgr::Scene_Change(SCENEID eScene)
 			m_pScene = new CMonsterAct;
 			break;
 
+		case MONSTER_ITEM:
+			m_pScene = new CMonsterItem;
+			break;
+
 		case MONSTER_MERCY:
 			m_pScene = new CMonsterMercy;
 			break;

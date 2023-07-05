@@ -45,7 +45,7 @@ void CMyButton::Late_Update(void)
 					CSceneMgr::Get_Instance()->Scene_Change(MONSTER_ACT);
 
 				else if (!lstrcmp(L"Item", m_pFrameKey))
-					CSceneMgr::Get_Instance()->Scene_Change(RUIN);
+					CSceneMgr::Get_Instance()->Scene_Change(MONSTER_ITEM);
 
 				else if (!lstrcmp(L"Mercy", m_pFrameKey))
 					CSceneMgr::Get_Instance()->Scene_Change(MONSTER_MERCY);

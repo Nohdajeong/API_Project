@@ -157,6 +157,9 @@
     <Filter Include="01. Obj\08. PlayerUI">
       <UniqueIdentifier>{2a78f9da-16f7-4aa2-8156-a51ebe174b62}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. Scene\02. Battle\01. Monster\Item">
+      <UniqueIdentifier>{fe70c88d-9443-4dec-a363-ece7b1e79539}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -288,6 +291,9 @@
     <ClInclude Include="PlayerState.h">
       <Filter>01. Obj\08. PlayerUI</Filter>
     </ClInclude>
+    <ClInclude Include="MonsterItem.h">
+      <Filter>03. Scene\02. Battle\01. Monster\Item</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -391,6 +397,9 @@
     </ClCompile>
     <ClCompile Include="PlayerState.cpp">
       <Filter>01. Obj\08. PlayerUI</Filter>
+    </ClCompile>
+    <ClCompile Include="MonsterItem.cpp">
+      <Filter>03. Scene\02. Battle\01. Monster\Item</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

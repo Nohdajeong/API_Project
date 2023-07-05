@@ -152,6 +152,7 @@
     <ClInclude Include="LookBullet.h" />
     <ClInclude Include="MonsterAct.h" />
     <ClInclude Include="MonsterIdle.h" />
+    <ClInclude Include="MonsterItem.h" />
     <ClInclude Include="MonsterMercy.h" />
     <ClInclude Include="PlayerState.h" />
     <ClInclude Include="Player_Battle.h" />
@@ -194,6 +195,7 @@
     <ClCompile Include="LookBullet.cpp" />
     <ClCompile Include="MonsterAct.cpp" />
     <ClCompile Include="MonsterIdle.cpp" />
+    <ClCompile Include="MonsterItem.cpp" />
     <ClCompile Include="MonsterMercy.cpp" />
     <ClCompile Include="PlayerState.cpp" />
     <ClCompile Include="Player_Battle.cpp" />

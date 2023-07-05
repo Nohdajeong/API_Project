@@ -37,7 +37,7 @@ void CPlayerBattle::Late_Update(void)
 		m_tInfo.fX = -m_tInfo.fX;
 	}
 
-	if ((m_tRect.top < 290.f) || (m_tRect.bottom > 490.f)) {
+	if ((m_tRect.top < 310.f) || (m_tRect.bottom > 490.f)) {
 		m_tInfo.fY = -m_tInfo.fY;
 	}	
 }

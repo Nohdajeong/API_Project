@@ -6,6 +6,7 @@
 #include "PlayerState.h"
 
 CMonsterMatch::CMonsterMatch()
+    : m_iLevel(1), m_iHp(0), m_iMaxHp(0)
 {
 }
 
@@ -26,7 +27,6 @@ void CMonsterMatch::Initialize(void)
     CObjMgr::Get_Instance()->Add_Object(MONSTER, CAbstractFactory<CLook>::Create(300.f, 250.f));
     CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CMessageBlock>::Create(400.f, 400.f));
     CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CPlayerState>::Create());
-
 
     CObj* pObj = CAbstractFactory<CMyButton>::Create(100.f, 570.f);
     pObj->Set_FrameKey(L"Fight");
@@ -60,6 +60,11 @@ void CMonsterMatch::Late_Update(void)
 
 void CMonsterMatch::Render(HDC hDC)
 {
+
+    HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Img(L"Back_Monster");
+
+    BitBlt(hDC, 0, 0, WINCX, WINCY, hMemDC, 0, 0, SRCCOPY);
+
     CObjMgr::Get_Instance()->Render(hDC);
 }
 

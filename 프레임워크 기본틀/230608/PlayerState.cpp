@@ -16,12 +16,12 @@ CPlayerState::~CPlayerState()
 
 void CPlayerState::Initialize(void)
 {
-    CObj* pPlayer = CObjMgr::Get_Instance()->Get_Monster();
+    //CObj* pPlayer = CObjMgr::Get_Instance()->Get_Monster();
 
 
-    m_iLevel = (pPlayer)->Get_States().iLevel;
-    m_iHp = (pPlayer)->Get_States().iHp;
-    m_iMaxHp = (pPlayer)->Get_States().iMaxHp;
+    //m_iLevel = (pPlayer)->Get_States().iLevel;
+    //m_iHp = (pPlayer)->Get_States().iHp;
+    //m_iMaxHp = (pPlayer)->Get_States().iMaxHp;
 
 	m_eRender = UI;
 
@@ -39,10 +39,6 @@ void CPlayerState::Late_Update(void)
 void CPlayerState::Render(HDC hDC)
 {
 	AddFontResourceA("NeoµÕ±Ù¸ð.ttf");
-
-	HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Img(L"Back_Monster");
-
-	BitBlt(hDC, 0, 0, WINCX, WINCY, hMemDC, 0, 0, SRCCOPY);
     SetBkMode(hDC, 1);
     SetTextColor(hDC, RGB(255, 255, 255));
     HFONT	hFont, oldFont;

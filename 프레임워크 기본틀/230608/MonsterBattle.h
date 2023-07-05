@@ -19,6 +19,10 @@ public:
 
 private:
 	DWORD		m_dwTime = GetTickCount();
+	TCHAR		szBuff[100] = L"";
+	int			m_iLevel;
+	int			m_iHp;
+	int			m_iMaxHp;
 
 };
 

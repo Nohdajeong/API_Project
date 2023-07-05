@@ -4,8 +4,10 @@
 #include "MyButton.h"
 #include "MessageBlock.h"
 #include "Attack_Bar.h"
+#include "PlayerState.h"
 
 CMonsterAttack::CMonsterAttack()
+    : m_iLevel(1), m_iHp(0), m_iMaxHp(0)
 {
 }
 
@@ -16,16 +18,16 @@ CMonsterAttack::~CMonsterAttack()
 
 void CMonsterAttack::Initialize(void)
 {
-    CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Back_Monster.bmp", L"Back_Monster");
-
     CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Fight.bmp", L"Fight");
     CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Act.bmp", L"Act");
     CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Item.bmp", L"Item");
     CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Mercy.bmp", L"Mercy");
 
-    CObjMgr::Get_Instance()->Add_Object(MONSTER, CAbstractFactory<CLook>::Create(300.f, 250.f));
-    CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CMessageBlock>::Create(400.f, 400.f));
+
+    CObjMgr::Get_Instance()->Add_Object(MONSTER, CAbstractFactory<CLook>::Create());
+    CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CMessageBlock>::Create());
     CObjMgr::Get_Instance()->Add_Object(BAR, CAbstractFactory<CPlayer_Attack>::Create(400.f, 400.f));
+    CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CPlayerState>::Create());
 
     CObj* pObj = CAbstractFactory<CMyButton>::Create(100.f, 570.f);
     pObj->Set_FrameKey(L"Fight");
@@ -60,6 +62,11 @@ void CMonsterAttack::Late_Update(void)
 
 void CMonsterAttack::Render(HDC hDC)
 {
+
+    HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Img(L"Back_Monster");
+
+    BitBlt(hDC, 0, 0, WINCX, WINCY, hMemDC, 0, 0, SRCCOPY);
+
     CObjMgr::Get_Instance()->Render(hDC);
 
 }

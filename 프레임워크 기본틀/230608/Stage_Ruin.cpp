@@ -32,7 +32,7 @@ void CStage1::Late_Update()
 	CObj* pPlayer = CObjMgr::Get_Instance()->Get_Player();
 
 	if ((1200.f < pPlayer->Get_Info().fX) && (350.f > pPlayer->Get_Info().fY)) {
-		CSceneMgr::Get_Instance()->Scene_Change(FLOWEY);
+		CSceneMgr::Get_Instance()->Scene_Change(MONSTER_MATCH);
 	}
 
 }
