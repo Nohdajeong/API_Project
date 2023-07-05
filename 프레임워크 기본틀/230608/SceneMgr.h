@@ -10,6 +10,13 @@
 #include "MonsterMercy.h"
 #include "MonsterAct.h"
 #include "MonsterItem.h"
+#include "TorielAct.h"
+#include "TorielAttack.h"
+#include "TorielBattle.h"
+#include "TorielIdle.h"
+#include "TorielItem.h"
+#include "TorielMercy.h"
+#include "TorielPhase.h"
 
 class CSceneMgr
 {

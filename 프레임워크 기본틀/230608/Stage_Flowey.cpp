@@ -37,7 +37,7 @@ void CStage2::Late_Update()
 	CObj* pPlayer = CObjMgr::Get_Instance()->Get_Player();
 
 	if (200.f > pPlayer->Get_Info().fY) {
-		CSceneMgr::Get_Instance()->Scene_Change(MONSTER_MATCH);
+		CSceneMgr::Get_Instance()->Scene_Change(BOSS_MATCH);
 	}
 
 }

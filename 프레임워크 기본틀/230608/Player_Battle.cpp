@@ -47,16 +47,16 @@ void CPlayerBattle::Render(HDC hDC)
 	HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Img(L"Player_Battle");
 
 	GdiTransparentBlt(hDC,
-		(int)m_tRect.left, // 복사 받을 위치 X,Y 좌표
+		(int)m_tRect.left,
 		(int)m_tRect.top,
-		(int)m_tInfo.fCX,	// 복사 받을 가로, 세로 길이
+		(int)m_tInfo.fCX,
 		(int)m_tInfo.fCY,
-		hMemDC,			// 비트맵 이미지를 담고 있는 DC
-		0,					// 비트맵을 출력할 시작 X,Y좌표
+		hMemDC,	
 		0,
-		(int)m_tInfo.fCX,		// 출력할 비트맵의 가로, 세로 사이즈
+		0,
+		(int)m_tInfo.fCX,
 		(int)m_tInfo.fCY,
-		RGB(205, 141, 255)); // 제거하고자 하는 색상
+		RGB(205, 141, 255));
 
 }
 

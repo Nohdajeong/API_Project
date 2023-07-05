@@ -46,8 +46,49 @@ void CMessageBlock::Text_Change(SCENEID eScene)
 		swprintf_s(szBuff, L"* 당신은 자비를 베풀었다.");
 		if (m_dwTime + 1500 < GetTickCount())
 			swprintf_s(szBuff, L"* 0exp와 0골드를 획득했다.");
+		break;
+
+	case BOSS_MATCH:
+		swprintf_s(szBuff, L"* 토리엘이 당신 앞을 막아선다.");
+		break;
+
+	case BOSS_IDLE:
+		swprintf_s(szBuff, L"* 토리엘은 아무 말도 하지 않는다.");
+		break;
+
+	case BOSS_ATTACK:
+		m_iDrawID = 1;
+		break;
+
+	case BOSS_PHASE:
+		m_iDrawID = 2;
+		break;
+
+	case BOSS_ACT:
+		swprintf_s(szBuff, L"* 토리엘 - Attack : %d, Defense : %d", m_iAttack, m_iDefense);
+		if (m_dwTime + 1500 < GetTickCount())
+			swprintf_s(szBuff, L"* 누구보다 당신을 잘 알고 있다.");
+		break;
+
+	case BOSS_ITEM:
+		swprintf_s(szBuff, L"* 버터스카치 파이를 먹었다.");
+		if (m_dwTime + 1500 < GetTickCount())
+			swprintf_s(szBuff, L"* 체력을 5 회복했다.");
+		break;
+
+	case BOSS_MERCY:
+		swprintf_s(szBuff, L"* 당신은 자비를 베풀었다.");
+		if (m_dwTime + 2000 < GetTickCount())
+			swprintf_s(szBuff, L"* 토리엘은 동요하고 있다.");
+		if (m_dwTime + 4000 < GetTickCount())
+			swprintf_s(szBuff, L"* ...");
+		if (m_dwTime + 6000 < GetTickCount())
+			swprintf_s(szBuff, L"* 당신의 자비가, 그의 마음을 움직였다.");
+		if (m_dwTime + 8000 < GetTickCount())
+			swprintf_s(szBuff, L"* 0exp와 0골드를 획득했다.");
 
 		break;
+
 	}
 }
 

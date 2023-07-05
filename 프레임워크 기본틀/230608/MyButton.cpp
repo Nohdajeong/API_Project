@@ -54,6 +54,27 @@ void CMyButton::Late_Update(void)
 
 			m_iDrawID = 1;
 		}
+
+		if (CSceneMgr::Get_Instance()->Get_SceneID() == BOSS_IDLE || CSceneMgr::Get_Instance()->Get_SceneID() == BOSS_MATCH) {
+			if (CKeyMgr::Get_Instance()->Key_Down(VK_LBUTTON))
+			{
+				if (!lstrcmp(L"Fight", m_pFrameKey))
+					CSceneMgr::Get_Instance()->Scene_Change(BOSS_ATTACK);
+
+				else if (!lstrcmp(L"Act", m_pFrameKey))
+					CSceneMgr::Get_Instance()->Scene_Change(BOSS_ACT);
+
+				else if (!lstrcmp(L"Item", m_pFrameKey))
+					CSceneMgr::Get_Instance()->Scene_Change(BOSS_ITEM);
+
+				else if (!lstrcmp(L"Mercy", m_pFrameKey))
+					CSceneMgr::Get_Instance()->Scene_Change(BOSS_MERCY);
+
+			}
+
+			m_iDrawID = 1;
+		}
+
 	}
 	else {
 		m_iDrawID = 0;

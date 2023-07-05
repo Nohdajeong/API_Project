@@ -160,6 +160,27 @@
     <Filter Include="03. Scene\02. Battle\01. Monster\Item">
       <UniqueIdentifier>{fe70c88d-9443-4dec-a363-ece7b1e79539}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. Scene\02. Battle\02. Boss">
+      <UniqueIdentifier>{8b641b71-dfb5-4aa1-88ae-a6993476029c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\02. Battle\02. Boss\Act">
+      <UniqueIdentifier>{40055354-e599-4711-868e-ce0c52877db9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\02. Battle\02. Boss\Attack">
+      <UniqueIdentifier>{e78c780f-d947-449e-9ab6-b68020708101}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\02. Battle\02. Boss\Idle">
+      <UniqueIdentifier>{06dd3569-36e9-433c-96cb-551d7d96076e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\02. Battle\02. Boss\Item">
+      <UniqueIdentifier>{a2099b22-5b39-48b2-b4c8-884434708f39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\02. Battle\02. Boss\Mercy">
+      <UniqueIdentifier>{a5ae74c0-2169-4c6c-bf8b-4b64299d9234}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\02. Battle\02. Boss\Phase">
+      <UniqueIdentifier>{6d600206-f461-41e9-a058-86facdec1e8d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -294,6 +315,27 @@
     <ClInclude Include="MonsterItem.h">
       <Filter>03. Scene\02. Battle\01. Monster\Item</Filter>
     </ClInclude>
+    <ClInclude Include="TorielAct.h">
+      <Filter>03. Scene\02. Battle\02. Boss\Act</Filter>
+    </ClInclude>
+    <ClInclude Include="TorielAttack.h">
+      <Filter>03. Scene\02. Battle\02. Boss\Attack</Filter>
+    </ClInclude>
+    <ClInclude Include="TorielBattle.h">
+      <Filter>03. Scene\02. Battle\02. Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="TorielIdle.h">
+      <Filter>03. Scene\02. Battle\02. Boss\Idle</Filter>
+    </ClInclude>
+    <ClInclude Include="TorielItem.h">
+      <Filter>03. Scene\02. Battle\02. Boss\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="TorielMercy.h">
+      <Filter>03. Scene\02. Battle\02. Boss\Mercy</Filter>
+    </ClInclude>
+    <ClInclude Include="TorielPhase.h">
+      <Filter>03. Scene\02. Battle\02. Boss\Phase</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -400,6 +442,27 @@
     </ClCompile>
     <ClCompile Include="MonsterItem.cpp">
       <Filter>03. Scene\02. Battle\01. Monster\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="TorielAct.cpp">
+      <Filter>03. Scene\02. Battle\02. Boss\Act</Filter>
+    </ClCompile>
+    <ClCompile Include="TorielAttack.cpp">
+      <Filter>03. Scene\02. Battle\02. Boss\Attack</Filter>
+    </ClCompile>
+    <ClCompile Include="TorielBattle.cpp">
+      <Filter>03. Scene\02. Battle\02. Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="TorielIdle.cpp">
+      <Filter>03. Scene\02. Battle\02. Boss\Idle</Filter>
+    </ClCompile>
+    <ClCompile Include="TorielItem.cpp">
+      <Filter>03. Scene\02. Battle\02. Boss\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="TorielMercy.cpp">
+      <Filter>03. Scene\02. Battle\02. Boss\Mercy</Filter>
+    </ClCompile>
+    <ClCompile Include="TorielPhase.cpp">
+      <Filter>03. Scene\02. Battle\02. Boss\Phase</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -58,6 +58,35 @@ void CSceneMgr::Scene_Change(SCENEID eScene)
 		case MONSTER_MERCY:
 			m_pScene = new CMonsterMercy;
 			break;
+
+		case BOSS_MATCH:
+			m_pScene = new CTorielMatch;
+			break;
+
+		case BOSS_IDLE:
+			m_pScene = new CTorielIdle;
+			break;
+
+		case BOSS_ATTACK:
+			m_pScene = new CTorielAttack;
+			break;
+
+		case BOSS_PHASE:
+			m_pScene = new CTorielPhase;
+			break;
+
+		case BOSS_ACT:
+			m_pScene = new CTorielAct;
+			break;
+
+		case BOSS_ITEM:
+			m_pScene = new CTorielItem;
+			break;
+
+		case BOSS_MERCY:
+			m_pScene = new CTorielMercy;
+			break;
+
 		}
 
 		m_pScene->Initialize();

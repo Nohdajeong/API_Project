@@ -53,7 +53,7 @@ void CMonsterItem::Late_Update(void)
     CObjMgr::Get_Instance()->Late_Update();
 
     if (m_dwTime + 5000 < GetTickCount())
-        CSceneMgr::Get_Instance()->Scene_Change(MONSTER_IDLE);
+        CSceneMgr::Get_Instance()->Scene_Change(MONSTER_PHASE);
 
 }
 

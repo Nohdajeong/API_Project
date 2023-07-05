@@ -22,7 +22,7 @@ void CMainGame::Initialize()
 
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Back.bmp", L"Back");
 
-	CSceneMgr::Get_Instance()->Scene_Change(RUIN);
+	CSceneMgr::Get_Instance()->Scene_Change(BOSS_MATCH);
 
 }
 
