@@ -4,6 +4,7 @@
 #include "MyButton.h"
 #include "MessageBlock.h"
 #include "PlayerState.h"
+#include "SoundMgr.h"
 
 CTorielMatch::CTorielMatch()
     : m_iLevel(1), m_iHp(0), m_iMaxHp(0)
@@ -17,6 +18,8 @@ CTorielMatch::~CTorielMatch()
 
 void CTorielMatch::Initialize(void)
 {
+    float	g_fSound = 1.f;
+
     CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Back_Boss.bmp", L"Back_Boss");
 
     CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Fight.bmp", L"Fight");
@@ -43,6 +46,8 @@ void CTorielMatch::Initialize(void)
     pObj = CAbstractFactory<CMyButton>::Create(700.f, 570.f);
     pObj->Set_FrameKey(L"Mercy");
     CObjMgr::Get_Instance()->Add_Object(BUTTON, pObj);
+
+    CSoundMgr::Get_Instance()->PlaySoundW(L"TorielBattle.mp3", SOUND_BGM, g_fSound);
 
 }
 

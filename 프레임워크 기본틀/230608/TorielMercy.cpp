@@ -4,6 +4,7 @@
 #include "MyButton.h"
 #include "MessageBlock.h"
 #include "PlayerState.h"
+#include "SoundMgr.h"
 
 CTorielMercy::CTorielMercy()
 {
@@ -52,9 +53,10 @@ void CTorielMercy::Late_Update(void)
 {
     CObjMgr::Get_Instance()->Late_Update();
 
-    if (m_dwTime + 10000 < GetTickCount())
+    if (m_dwTime + 10000 < GetTickCount()) {
         CSceneMgr::Get_Instance()->Scene_Change(RUIN);
-
+        CSoundMgr::Get_Instance()->StopSound(SOUND_BGM);
+    }
 }
 
 void CTorielMercy::Render(HDC hDC)

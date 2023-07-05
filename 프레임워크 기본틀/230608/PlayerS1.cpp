@@ -5,6 +5,7 @@
 #include "ScrollMgr.h"
 #include "BmpMgr.h"
 #include "KeyMgr.h"
+#include "SoundMgr.h"
 
 CPlayerS1::CPlayerS1() 
 	  : m_ePreState(STATE_END), m_eCurState(IDLE)
@@ -38,7 +39,7 @@ void CPlayerS1::Initialize(void)
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Player/Player_Right.bmp", L"Player_RIGHT");
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Player/Player_Up.bmp", L"Player_UP");
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Player/Stretch.bmp", L"Player_UP");
-
+	
 
 	m_pFrameKey = L"Player_DOWN";
 
@@ -49,6 +50,7 @@ void CPlayerS1::Initialize(void)
 	m_tFrame.dwTime = GetTickCount();
 
 	m_eRender = GAMEOBJECT;
+
 }
 
 int CPlayerS1::Update(void)
@@ -89,7 +91,7 @@ void CPlayerS1::Render(HDC hDC)
 			(int)m_tInfo.fCY,
 			RGB(195, 134, 255)); // 제거하고자 하는 색상
 
-	BitBlt(hDC, 0, 0, m_tInfo.fCX, m_tInfo.fCY, hBackDC, 0, 0, SRCCOPY);
+	BitBlt(hDC, 0, 0, (int)m_tInfo.fCX, (int)m_tInfo.fCY, hBackDC, 0, 0, SRCCOPY);
 
 }
 

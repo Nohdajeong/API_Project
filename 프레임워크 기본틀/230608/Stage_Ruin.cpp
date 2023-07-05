@@ -2,6 +2,7 @@
 #include "Stage_Ruin.h"
 #include "PlayerS1.h"
 #include "SceneMgr.h"
+#include "SoundMgr.h"
 
 CStage1::CStage1()
 {
@@ -17,7 +18,7 @@ void CStage1::Initialize()
 	CObjMgr::Get_Instance()->Add_Object(PLAYER, CAbstractFactory<CPlayerS1>::Create());
 
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Map/Ruin.bmp", L"Ruin");
-
+	
 }
 
 void CStage1::Update()
@@ -27,6 +28,7 @@ void CStage1::Update()
 
 void CStage1::Late_Update()
 {
+
 	CObjMgr::Get_Instance()->Late_Update();
 
 	CObj* pPlayer = CObjMgr::Get_Instance()->Get_Player();

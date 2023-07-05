@@ -4,6 +4,8 @@
 #include "MyButton.h"
 #include "MessageBlock.h"
 #include "PlayerState.h"
+#include "SoundMgr.h"
+
 
 CMonsterMatch::CMonsterMatch()
     : m_iLevel(1), m_iHp(0), m_iMaxHp(0)
@@ -17,6 +19,8 @@ CMonsterMatch::~CMonsterMatch()
 
 void CMonsterMatch::Initialize(void)
 {
+    float	g_fSound = 1.f;
+
     CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Back_Monster.bmp", L"Back_Monster");
 
     CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Fight.bmp", L"Fight");
@@ -44,6 +48,7 @@ void CMonsterMatch::Initialize(void)
     pObj->Set_FrameKey(L"Mercy");
     CObjMgr::Get_Instance()->Add_Object(BUTTON, pObj);
 
+    CSoundMgr::Get_Instance()->PlaySoundW(L"MonsterBattle.mp3", SOUND_BGM, g_fSound);
 }
 
 void CMonsterMatch::Update(void)

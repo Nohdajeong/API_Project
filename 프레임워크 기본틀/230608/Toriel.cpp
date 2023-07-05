@@ -28,7 +28,7 @@ void CToriel::Attack3()
 
 void CToriel::Initialize(void)
 {
-    m_tInfo = { 400.f, 250.f, 72.f, 100.f };
+    m_tInfo = { 400.f, 190.f, 178.f, 245.f };
     m_tStates.iAttack = 10.f;
     m_tStates.iDefense = 0.f;
     m_tStates.iHp = 50.f;

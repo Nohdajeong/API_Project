@@ -2,6 +2,8 @@
 #include "Stage_Flowey.h"
 #include "CollisionMgr.h"
 #include "PlayerS1.h"
+#include "SoundMgr.h"
+
 
 CStage2::CStage2()
 {
@@ -14,10 +16,14 @@ CStage2::~CStage2()
 
 void CStage2::Initialize()
 {
+	float	g_fSound = 1.f;
+
+	CSoundMgr::Get_Instance()->StopSound(SOUND_BGM);
+
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Map/Flowey.bmp", L"Flowey_map");
 	CObjMgr::Get_Instance()->Add_Object(PLAYER, CAbstractFactory<CPlayerS1>::Create(400, 800));
 	CObjMgr::Get_Instance()->Add_Object(NPC, CAbstractFactory<CFlowey>::Create());
-
+	CSoundMgr::Get_Instance()->PlaySoundW(L"Flowey.mp3", SOUND_BGM, g_fSound);
 }
 
 void CStage2::Update()
@@ -57,4 +63,5 @@ void CStage2::Render(HDC hDC)
 void CStage2::Release()
 {
 	CObjMgr::Get_Instance()->Release();
+	CSoundMgr::Get_Instance()->StopSound(SOUND_BGM);
 }

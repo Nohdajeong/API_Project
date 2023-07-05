@@ -5,6 +5,8 @@
 #include "LineMgr.h"
 #include "KeyMgr.h"
 #include "SceneMgr.h"
+#include "SoundMgr.h"
+#include "BmpMgr.h"
 
 CMainGame::CMainGame() : m_dwTime(GetTickCount()), m_iFPS(0)
 {
@@ -21,8 +23,10 @@ void CMainGame::Initialize()
 	m_hDC = GetDC(g_hWnd);
 
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Back.bmp", L"Back");
+	CSoundMgr::Get_Instance()->Initialize();
 
-	CSceneMgr::Get_Instance()->Scene_Change(BOSS_MATCH);
+	CSceneMgr::Get_Instance()->Scene_Change(FLOWEY);
+
 
 }
 
@@ -66,6 +70,8 @@ void CMainGame::Release()
 	CKeyMgr::Destroy_Instance();
 	CObjMgr::Destroy_Instance();
 	CSceneMgr::Destroy_Instance();
+	CSoundMgr::Get_Instance()->Destroy_Instance();
+	CBmpMgr::Destroy_Instance();
 
 	ReleaseDC(g_hWnd, m_hDC);
 }
