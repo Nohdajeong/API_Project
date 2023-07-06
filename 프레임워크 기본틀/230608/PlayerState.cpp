@@ -16,7 +16,7 @@ CPlayerState::~CPlayerState()
 
 void CPlayerState::Initialize(void)
 {
-    CObj* pPlayer = CObjMgr::Get_Instance()->Get_BattlePlayerState();
+    CObj* pPlayer = CObjMgr::Get_Instance()->Get_BattlePlayer();
 
     m_iLevel = (pPlayer)->Get_States().iLevel;
     m_iHp = (pPlayer)->Get_States().iHp;

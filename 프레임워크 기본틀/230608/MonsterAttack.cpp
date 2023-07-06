@@ -1,13 +1,9 @@
 #include "stdafx.h"
 #include "MonsterAttack.h"
-#include "Look.h"
-#include "MyButton.h"
 #include "MessageBlock.h"
 #include "Attack_Bar.h"
-#include "PlayerState.h"
 
 CMonsterAttack::CMonsterAttack()
-    : m_iLevel(1), m_iHp(0), m_iMaxHp(0)
 {
 }
 
@@ -19,8 +15,7 @@ CMonsterAttack::~CMonsterAttack()
 void CMonsterAttack::Initialize(void)
 {
     CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CMessageBlock>::Create());
-    CObjMgr::Get_Instance()->Add_Object(BAR, CAbstractFactory<CPlayer_Attack>::Create(400.f, 400.f));
-
+    //CObjMgr::Get_Instance()->Add_Object(BAR, CAbstractFactory<CPlayer_Attack>::Create(400.f, 400.f));
 }
 
 void CMonsterAttack::Update(void)
@@ -32,8 +27,10 @@ void CMonsterAttack::Late_Update(void)
 {
     CObjMgr::Get_Instance()->Late_Update();
 
-    if (m_dwTime + 7000 < GetTickCount())
+    if (m_dwTime + 5000 < GetTickCount()) {
         CSceneMgr::Get_Instance()->Scene_Change(MONSTER_PHASE);
+        return;
+    }
 }
 
 void CMonsterAttack::Render(HDC hDC)
@@ -50,5 +47,5 @@ void CMonsterAttack::Render(HDC hDC)
 void CMonsterAttack::Release(void)
 {
     CObjMgr::Get_Instance()->Delete_ID(MESSAGEBOX);
-    CObjMgr::Get_Instance()->Delete_ID(BAR);
+    //CObjMgr::Get_Instance()->Delete_ID(BAR);
 }

@@ -19,8 +19,6 @@ CTorielPhase::~CTorielPhase()
 void CTorielPhase::Initialize(void)
 {
     CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CMessageBlock>::Create());
-    CObjMgr::Get_Instance()->Add_Object(BATTLE_PLAYER, CAbstractFactory<CPlayerBattle>::Create(400.f, 400.f));
-    CObjMgr::Get_Instance()->Add_Object(PLAYER_STATE, CAbstractFactory<CPlayerState>::Create());
 }
 
 void CTorielPhase::Update(void)

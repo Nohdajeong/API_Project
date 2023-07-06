@@ -12,7 +12,6 @@ private:
 public:
 	CObj* Get_Player() { return m_ObjList[PLAYER].front(); }
 	CObj* Get_BattlePlayer() { return m_ObjList[BATTLE_PLAYER].front(); }
-	CObj* Get_BattlePlayerState() { return m_ObjList[BATTLE_PLAYER_STATE].front(); }
 	CObj* Get_Monster() { return m_ObjList[MONSTER].front(); }
 
 	list<CObj*>	Get_Objects(OBJID eId) { return m_ObjList[eId]; }

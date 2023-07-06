@@ -17,7 +17,6 @@ CMonsterMercy::~CMonsterMercy()
 void CMonsterMercy::Initialize(void)
 {
     CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CMessageBlock>::Create());
-
 }
 
 void CMonsterMercy::Update(void)
@@ -29,8 +28,10 @@ void CMonsterMercy::Late_Update(void)
 {
     CObjMgr::Get_Instance()->Late_Update();
 
-    if (m_dwTime + 5000 < GetTickCount())
+    if (m_dwTime + 5000 < GetTickCount()) {
         CSceneMgr::Get_Instance()->Scene_Change(FLOWEY);
+        return;
+    }
 
 }
 
