@@ -33,7 +33,7 @@ void CMessageBlock::Text_Change(SCENEID eScene)
 		break;
 
 	case MONSTER_ACT:
-		swprintf_s(szBuff, L"* 룩스 - HP : %d, ATK : %d, DEF : %d", m_iHp, m_iAttack, m_iDefense);
+		swprintf_s(szBuff, L"* 룩스 - ATK : %d, DEF : %d", m_iAttack, m_iDefense);
 		break;
 
 	case MONSTER_ITEM:
@@ -127,28 +127,20 @@ void CMessageBlock::Late_Update(void)
 
 void CMessageBlock::Render(HDC hDC)
 {
-	AddFontResourceA("Neo둥근모.ttf");
-
 	HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Img(L"Message");
 
 	GdiTransparentBlt(hDC,
-		(int)m_tRect.left, // 복사 받을 위치 X,Y 좌표
+		(int)m_tRect.left,
 		(int)m_tRect.top,
-		(int)m_tInfo.fCX,	// 복사 받을 가로, 세로 길이
+		(int)m_tInfo.fCX,
 		(int)m_tInfo.fCY,
-		hMemDC,			// 비트맵 이미지를 담고 있는 DC
-		m_iDrawID * (int)m_tInfo.fCX,					// 비트맵을 출력할 시작 X,Y좌표
+		hMemDC,
+		m_iDrawID * (int)m_tInfo.fCX,
 		0,
-		(int)m_tInfo.fCX,		// 출력할 비트맵의 가로, 세로 사이즈
+		(int)m_tInfo.fCX,
 		(int)m_tInfo.fCY,
-		RGB(195, 134, 255)); // 제거하고자 하는 색상
+		RGB(195, 134, 255));
 
-	SetBkMode(hDC, 1);
-	SetTextColor(hDC, RGB(255, 255, 255));
-	HFONT	hFont, oldFont;
-
-	hFont = CreateFont(20, 0, 0, 0, 0, 0, 0, 0, HANGUL_CHARSET, 0, 0, 0, VARIABLE_PITCH || FF_ROMAN, TEXT("Neo둥근모"));
-	oldFont = (HFONT)SelectObject(hDC, hFont);
 	TextOut(hDC, (int)(m_tRect.left + 40), (int)(m_tInfo.fY - 50), szBuff, lstrlen(szBuff));
 }
 

@@ -16,4 +16,6 @@ public:
 
 private:
 	DWORD		m_dwTime = GetTickCount64();
+	TCHAR	szBuff[100] = L"";
+
 };

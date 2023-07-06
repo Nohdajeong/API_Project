@@ -16,6 +16,9 @@ public:
 	virtual void Release(void) override;
 
 private:
+	int		Damage_size(float _fX);
+
+private:
 	DWORD		m_dwTime = GetTickCount64();
 };
 

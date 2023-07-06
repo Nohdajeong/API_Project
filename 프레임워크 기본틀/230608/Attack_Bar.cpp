@@ -25,6 +25,7 @@ void CPlayer_Attack::Initialize(void)
 	m_tInfo.fCY = 150.f;
 
 	m_fSpeed = 3.f;
+	m_iAttack = 5.f;
 
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/attack_line.bmp", L"Line");
 
@@ -51,6 +52,9 @@ void CPlayer_Attack::Late_Update(void)
 	if (CKeyMgr::Get_Instance()->Key_Down(VK_SPACE))
 		m_fSpeed = 0;	
 
+	if (m_fSpeed == 0)
+		m_iAttack = Damage_size(m_tInfo.fX);
+
 	if (CSceneMgr::Get_Instance()->Get_SceneID() == MONSTER_ATTACK || CSceneMgr::Get_Instance()->Get_SceneID() == BOSS_ATTACK)
 		m_bDead = false;
 	else
@@ -76,4 +80,18 @@ void CPlayer_Attack::Render(HDC hDC)
 
 void CPlayer_Attack::Release(void)
 {
+}
+
+int CPlayer_Attack::Damage_size(float _fX)
+{
+	if (_fX == 400.f)
+		return 35;
+	else if (_fX > 350.f && _fX < 450.f)
+		return 30;
+	else if (_fX > 200.f && _fX <= 350.f)
+		return 20;
+	else if (_fX >= 450.f && _fX < 550.f)
+		return 20;
+	else
+		return 10;
 }

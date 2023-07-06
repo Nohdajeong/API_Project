@@ -19,9 +19,11 @@ CAttackMotion::~CAttackMotion()
 void CAttackMotion::Initialize(void)
 {
 	CObj* pMonster = CObjMgr::Get_Instance()->Get_Monster();
+	CObj* pPlayerAttack = CObjMgr::Get_Instance()->Get_Objects(BAR).front();
 
 	m_tInfo.fX = pMonster->Get_Info().fX;
 	m_tInfo.fY = pMonster->Get_Info().fY;
+	m_iAttack = pPlayerAttack->Get_Attack();
 
 	m_tInfo.fCX = 26.f;
 	m_tInfo.fCY = 110.f;
@@ -73,6 +75,9 @@ void CAttackMotion::Render(HDC hDC)
 		(int)m_tInfo.fCX,
 		(int)m_tInfo.fCY,
 		RGB(195, 134, 255));
+
+	swprintf_s(szBuff, L"%d", m_iAttack);
+	TextOut(hDC, (int)(m_tInfo.fX + 80.f), (int)(m_tInfo.fY - 20.f), szBuff, lstrlen(szBuff));
 
 }
 

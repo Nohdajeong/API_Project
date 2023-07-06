@@ -43,7 +43,7 @@ int CLooKNormalBullet::Update(void)
 	m_tInfo.fX += m_fSpeed * cosf(m_fAngle * (PI / 180.f));
 	m_tInfo.fY -= m_fSpeed * sinf(m_fAngle * (PI / 180.f));
 
-	if (m_dwTime + 200.f < GetTickCount64()) {
+	if (m_dwTime + 400.f < GetTickCount64()) {
 		CObjMgr::Get_Instance()->Add_Object(BULLET, Create_Bullet());
 		m_dwTime = GetTickCount64();
 	}

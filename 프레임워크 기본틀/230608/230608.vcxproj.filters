@@ -100,9 +100,6 @@
     <Filter Include="01. Obj\03. Boss\Pattern">
       <UniqueIdentifier>{fc2d51d2-5505-4174-969f-e9ba53b9102b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="01. Obj\03. Boss\Pattern\Idle">
-      <UniqueIdentifier>{db762cbc-351f-45a8-8fab-9d8bc838e036}</UniqueIdentifier>
-    </Filter>
     <Filter Include="01. Obj\03. Boss\Pattern\Attack1">
       <UniqueIdentifier>{f387c2d5-b0fe-46f9-98ed-e9cbade1d0eb}</UniqueIdentifier>
     </Filter>

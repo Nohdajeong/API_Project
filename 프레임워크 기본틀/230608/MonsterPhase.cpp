@@ -33,9 +33,7 @@ void CMonsterPhase::Initialize(void)
 
 void CMonsterPhase::Update(void)
 {
-
-    CObjMgr::Get_Instance()->Update();
-
+     CObjMgr::Get_Instance()->Update();
 }
 
 void CMonsterPhase::Late_Update(void)

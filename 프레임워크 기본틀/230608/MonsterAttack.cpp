@@ -28,9 +28,11 @@ void CMonsterAttack::Update(void)
     CObj* pAttack = CObjMgr::Get_Instance()->Get_Objects(BAR).front();
 
     if (pAttack->Get_Speed() == 0) {
-        CObjMgr::Get_Instance()->Add_Object(ATTACK, CAbstractFactory<CAttackMotion>::Create());
-        if ((pAttack->Get_Info().fX > 350.f) && (pAttack->Get_Info().fX < 450.f)) {
-            pAttack->Set_Attack(30);
+        if (m_dwTime + 700 < GetTickCount64()) {
+            CObjMgr::Get_Instance()->Add_Object(ATTACK, CAbstractFactory<CAttackMotion>::Create());
+            if ((pAttack->Get_Info().fX > 350.f) && (pAttack->Get_Info().fX < 450.f)) {
+                pAttack->Set_Attack(30);
+            }
         }
     }
 
@@ -38,28 +40,13 @@ void CMonsterAttack::Update(void)
 
 void CMonsterAttack::Late_Update(void)
 {
-
     CObjMgr::Get_Instance()->Late_Update();
 
-    //CCollisionMgr::Collision_Rect_Attack(
-    //    CObjMgr::Get_Instance()->Get_Objects(ATTACK),
-    //    CObjMgr::Get_Instance()->Get_Objects(MONSTER));
 
-    CObj* pAttack = CObjMgr::Get_Instance()->Get_Objects(BAR).front();
 
-    if (pAttack->Get_Speed() == 0) {
-        if (m_dwTime + 3000 < GetTickCount64()) {
+    if (m_dwTime + 4000 < GetTickCount64()) {
             CSceneMgr::Get_Instance()->Scene_Change(MONSTER_PHASE);
             return;
-        }
-
-    }
-    else {
-        if (m_dwTime + 5000 < GetTickCount64()) {
-            CSceneMgr::Get_Instance()->Scene_Change(MONSTER_PHASE);
-            return;
-        }
-
     }
 }
 

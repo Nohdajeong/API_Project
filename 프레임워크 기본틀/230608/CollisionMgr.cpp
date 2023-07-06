@@ -87,7 +87,7 @@ void CCollisionMgr::Collision_Rect_Attack(list<CObj*> _Dst, list<CObj*> _Src)
 			{
 				Dst->Set_Hp(-(Src->Get_Attack()));
 
-				if (dwTime + 5000 < GetTickCount64())
+				if (dwTime + 1-00 < GetTickCount64())
 					Src->Set_Dead();
 
 				if (Dst->Get_States().iHp <= 0)

@@ -23,6 +23,5 @@ private:
 	int			m_iLevel;
 	int			m_iHp;
 	int			m_iMaxHp;
-
 };
 
