@@ -22,12 +22,13 @@ void CMonsterPhase::Initialize(void)
     CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CMessageBlock>::Create());
     CObjMgr::Get_Instance()->Add_Object(MONSTER_MENTION, CAbstractFactory<CMention>::Create());
 
-    m_iMonsterPhase = rand() % 2;
 
-    //if (m_iMonsterPhase == 1)
+    m_iMonsterPhase = rand() % 100;
+
+    if (m_iMonsterPhase % 2 == 0)
         Monster_Phase1();
-    //else if (m_iMonsterPhase == 2)
-    //    Monster_Phase2();
+    else if (m_iMonsterPhase %2 == 1)
+        Monster_Phase2();
 }
 
 void CMonsterPhase::Update(void)
@@ -65,8 +66,6 @@ void CMonsterPhase::Render(HDC hDC)
 void CMonsterPhase::Release(void)
 {
     CObjMgr::Get_Instance()->Delete_ID(MESSAGEBOX);
-    //CObjMgr::Get_Instance()->Delete_ID(BULLET);
-    //CObjMgr::Get_Instance()->Delete_ID(MONSTER_MENTION);
 
 }
 

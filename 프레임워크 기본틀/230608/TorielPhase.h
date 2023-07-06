@@ -18,9 +18,15 @@ public:
 	virtual void Release(void) override;
 
 private:
+	void	Boss_Phase1();
+	void	Boss_Phase2();
+	void	Boss_Phase3();
+
+private:
 	DWORD		m_dwTime = (DWORD)GetTickCount64();
 	DWORD		m_preDeley = (DWORD)GetTickCount64();
 	DWORD		m_PostDelay = (DWORD)GetTickCount64();
 
+	int			m_iMonsterPhase = 0;
 };
 

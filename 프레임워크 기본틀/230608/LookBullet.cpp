@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "LookBullet.h"
 #include "ObjMgr.h"
-
+#include "SceneMgr.h"
 
 CLooKBullet::CLooKBullet()
 	:m_dwTime(GetTickCount64()), m_iTime(0)
@@ -19,6 +19,7 @@ void CLooKBullet::Initialize(void)
 	m_tInfo.fCY = 20.f;
 
 	m_fSpeed = 1.f;
+	m_iAttack = 2;
 
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Monster/looks_attack.bmp", L"LookAttack");
 
@@ -56,6 +57,11 @@ int CLooKBullet::Update(void)
 
 void CLooKBullet::Late_Update(void)
 {
+	if (CSceneMgr::Get_Instance()->Get_SceneID() == MONSTER_PHASE || CSceneMgr::Get_Instance()->Get_SceneID() == BOSS_PHASE)
+		m_bDead = false;
+	else
+		m_bDead = true;
+
 }
 
 void CLooKBullet::Render(HDC hDC)

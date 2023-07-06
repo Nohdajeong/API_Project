@@ -11,11 +11,6 @@ public:
 	virtual ~CLook();
 
 public:
-	void Idle();
-	void Attack1();
-	void Attack2();
-
-public:
 	virtual void	Initialize(void) override;
 	virtual int		Update(void) override;
 	virtual void	Late_Update(void) override;
@@ -23,9 +18,6 @@ public:
 	virtual void	Release(void) override;
 
 private:
-	template<typename T>
-	CObj* Create_Bullet();	
-	
 	DWORD		m_preDeley;
 	DWORD		m_PostDelay;
 

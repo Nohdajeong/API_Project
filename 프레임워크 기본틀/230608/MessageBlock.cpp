@@ -3,7 +3,7 @@
 #include "SceneMgr.h"
 
 CMessageBlock::CMessageBlock()
-	: m_iDrawID(0), m_iCount(0), m_iAttack(0), m_iDefense(0)
+	: m_iDrawID(0), m_iHp(0), m_iAttack(0), m_iDefense(0)
 {
 
 }
@@ -33,7 +33,7 @@ void CMessageBlock::Text_Change(SCENEID eScene)
 		break;
 
 	case MONSTER_ACT:
-		swprintf_s(szBuff, L"* ·è½º - Attack : %d, Defense : %d", m_iAttack, m_iDefense);
+		swprintf_s(szBuff, L"* ·è½º - HP : %d, ATK : %d, DEF : %d", m_iHp, m_iAttack, m_iDefense);
 		break;
 
 	case MONSTER_ITEM:
@@ -101,6 +101,7 @@ void CMessageBlock::Initialize(void)
 
 	CObj* pMonster = CObjMgr::Get_Instance()->Get_Monster();
 
+	m_iHp = pMonster->Get_States().iHp;
 	m_iAttack = pMonster->Get_States().iAttack;
 	m_iDefense = pMonster->Get_States().iDefense;
 
@@ -111,7 +112,8 @@ void CMessageBlock::Initialize(void)
 
 int CMessageBlock::Update(void)
 {
-	Text_Change(CSceneMgr::Get_Instance()->Get_SceneID());
+	if (m_bDead)
+		return OBJ_DEAD;
 
     __super::Update_Rect();
 
@@ -120,6 +122,7 @@ int CMessageBlock::Update(void)
 
 void CMessageBlock::Late_Update(void)
 {
+	Text_Change(CSceneMgr::Get_Instance()->Get_SceneID());
 }
 
 void CMessageBlock::Render(HDC hDC)

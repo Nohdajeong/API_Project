@@ -19,6 +19,16 @@ CTorielPhase::~CTorielPhase()
 void CTorielPhase::Initialize(void)
 {
     CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CMessageBlock>::Create());
+
+    m_iMonsterPhase = rand() % 100;
+
+    if (m_iMonsterPhase % 3 == 0)
+        Boss_Phase1();
+    else if (m_iMonsterPhase % 3 == 1)
+        Boss_Phase2();
+    else if (m_iMonsterPhase % 3 == 2)
+        Boss_Phase3();
+
 }
 
 void CTorielPhase::Update(void)
@@ -38,8 +48,10 @@ void CTorielPhase::Late_Update(void)
     );
 
 
-    if (m_dwTime + 5000 < GetTickCount64())
+    if (m_dwTime + 5000 < GetTickCount64()) {
         CSceneMgr::Get_Instance()->Scene_Change(BOSS_IDLE);
+        return;
+    }
 }
 
 void CTorielPhase::Render(HDC hDC)
@@ -55,4 +67,16 @@ void CTorielPhase::Render(HDC hDC)
 void CTorielPhase::Release(void)
 {
     CObjMgr::Get_Instance()->Delete_ID(MESSAGEBOX);
+}
+
+void CTorielPhase::Boss_Phase1()
+{
+}
+
+void CTorielPhase::Boss_Phase2()
+{
+}
+
+void CTorielPhase::Boss_Phase3()
+{
 }

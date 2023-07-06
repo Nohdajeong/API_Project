@@ -149,6 +149,7 @@
     <ClInclude Include="AbstractFactory.h" />
     <ClInclude Include="Actor.h" />
     <ClInclude Include="Attack_Bar.h" />
+    <ClInclude Include="Attack_Motion.h" />
     <ClInclude Include="LookBullet.h" />
     <ClInclude Include="LookNormalBullet.h" />
     <ClInclude Include="Mention.h" />
@@ -202,6 +203,7 @@
   <ItemGroup>
     <ClCompile Include="230608.cpp" />
     <ClCompile Include="Attack_Bar.cpp" />
+    <ClCompile Include="Attack_Motion.cpp" />
     <ClCompile Include="LookBullet.cpp" />
     <ClCompile Include="LookNormalBullet.cpp" />
     <ClCompile Include="Mention.cpp" />

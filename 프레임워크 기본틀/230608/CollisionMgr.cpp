@@ -74,6 +74,30 @@ void CCollisionMgr::Collision_RectEx(list<CObj*> _Dst, list<CObj*> _Src)
 	}
 }
 
+void CCollisionMgr::Collision_Rect_Attack(list<CObj*> _Dst, list<CObj*> _Src)
+{
+	RECT	rc{};
+	DWORD	dwTime = GetTickCount64();
+
+	for (auto& Dst : _Dst)
+	{
+		for (auto& Src : _Src)
+		{
+			if (IntersectRect(&rc, &(Dst->Get_Rect()), &(Src->Get_Rect())))
+			{
+				Dst->Set_Hp(-(Src->Get_Attack()));
+
+				if (dwTime + 5000 < GetTickCount64())
+					Src->Set_Dead();
+
+				if (Dst->Get_States().iHp <= 0)
+					Dst->Set_Dead();
+
+			}
+		}
+	}
+}
+
 bool CCollisionMgr::Check_Rect(CObj* _Dst, CObj* _Src, float* _pX, float* _pY)
 {
 	float		fWidth = fabs(_Dst->Get_Info().fX - _Src->Get_Info().fX);
@@ -102,6 +126,11 @@ void CCollisionMgr::Collision_Sphere(list<CObj*> _Dst, list<CObj*> _Src)
 			if (Check_Sphere(Dst, Src))
 			{
 				Src->Set_Dead();
+
+				Dst->Set_Hp(-(Src->Get_Attack()));
+
+				if (Dst->Get_States().iHp <= 0)
+					Dst->Set_Dead();
 			}
 		}
 	}

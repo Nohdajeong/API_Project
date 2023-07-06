@@ -3,6 +3,7 @@
 #include "ObjMgr.h"
 #include "AbstractFactory.h"
 #include "MiniBullet.h"
+#include "SceneMgr.h"
 
 CLooKNormalBullet::CLooKNormalBullet()
 	:m_dwTime(GetTickCount64()), m_iTime(0)
@@ -21,6 +22,7 @@ void CLooKNormalBullet::Initialize(void)
 
 	m_fSpeed = 2.f;
 	m_fAngle = 10.f;
+	m_iAttack = 2.f;
 
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Monster/looks_attack.bmp", L"LookAttack");
 
@@ -60,6 +62,10 @@ void CLooKNormalBullet::Late_Update(void)
 		m_tInfo.fY *= -1.f;
 	}
 
+	if (CSceneMgr::Get_Instance()->Get_SceneID() == MONSTER_PHASE || CSceneMgr::Get_Instance()->Get_SceneID() == BOSS_PHASE)
+		m_bDead = false;
+	else
+		m_bDead = true;
 
 }
 

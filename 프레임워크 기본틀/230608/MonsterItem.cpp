@@ -23,11 +23,16 @@ void CMonsterItem::Initialize(void)
 void CMonsterItem::Update(void)
 {
     CObjMgr::Get_Instance()->Update();
+
 }
 
 void CMonsterItem::Late_Update(void)
 {
+    CObj* pPlayer = CObjMgr::Get_Instance()->Get_BattlePlayer();
+    pPlayer->Set_Hp(5);
+
     CObjMgr::Get_Instance()->Late_Update();
+
 
     if (m_dwTime + 5000 < GetTickCount()) {
         CSceneMgr::Get_Instance()->Scene_Change(MONSTER_PHASE);

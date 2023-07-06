@@ -2,6 +2,8 @@
 #include "MonsterAttack.h"
 #include "MessageBlock.h"
 #include "Attack_Bar.h"
+#include "Attack_Motion.h"
+#include "CollisionMgr.h"
 
 CMonsterAttack::CMonsterAttack()
 {
@@ -16,20 +18,48 @@ void CMonsterAttack::Initialize(void)
 {
     CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CMessageBlock>::Create());
     CObjMgr::Get_Instance()->Add_Object(BAR, CAbstractFactory<CPlayer_Attack>::Create());
+
 }
 
 void CMonsterAttack::Update(void)
 {
     CObjMgr::Get_Instance()->Update();
+
+    CObj* pAttack = CObjMgr::Get_Instance()->Get_Objects(BAR).front();
+
+    if (pAttack->Get_Speed() == 0) {
+        CObjMgr::Get_Instance()->Add_Object(ATTACK, CAbstractFactory<CAttackMotion>::Create());
+        if ((pAttack->Get_Info().fX > 350.f) && (pAttack->Get_Info().fX < 450.f)) {
+            pAttack->Set_Attack(30);
+        }
+    }
+
 }
 
 void CMonsterAttack::Late_Update(void)
 {
+
     CObjMgr::Get_Instance()->Late_Update();
 
-    if (m_dwTime + 5000 < GetTickCount64()) {
-        CSceneMgr::Get_Instance()->Scene_Change(MONSTER_PHASE);
-        return;
+    //CCollisionMgr::Collision_Rect_Attack(
+    //    CObjMgr::Get_Instance()->Get_Objects(ATTACK),
+    //    CObjMgr::Get_Instance()->Get_Objects(MONSTER));
+
+    CObj* pAttack = CObjMgr::Get_Instance()->Get_Objects(BAR).front();
+
+    if (pAttack->Get_Speed() == 0) {
+        if (m_dwTime + 3000 < GetTickCount64()) {
+            CSceneMgr::Get_Instance()->Scene_Change(MONSTER_PHASE);
+            return;
+        }
+
+    }
+    else {
+        if (m_dwTime + 5000 < GetTickCount64()) {
+            CSceneMgr::Get_Instance()->Scene_Change(MONSTER_PHASE);
+            return;
+        }
+
     }
 }
 
@@ -46,5 +76,4 @@ void CMonsterAttack::Render(HDC hDC)
 void CMonsterAttack::Release(void)
 {
     CObjMgr::Get_Instance()->Delete_ID(MESSAGEBOX);
-    //CObjMgr::Get_Instance()->Delete_ID(BAR);
 }

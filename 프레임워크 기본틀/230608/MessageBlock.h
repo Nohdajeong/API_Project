@@ -23,7 +23,7 @@ public:
 
 public:
 	int	m_iDrawID;
-	int m_iCount;
+	int m_iHp;
 
 	int m_iAttack;
 	int m_iDefense;

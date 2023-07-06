@@ -22,6 +22,8 @@ void CMainGame::Initialize()
 {
 	m_hDC = GetDC(g_hWnd);
 
+	srand((unsigned int)time(NULL));
+
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Back.bmp", L"Back");
 	CSoundMgr::Get_Instance()->Initialize();
 

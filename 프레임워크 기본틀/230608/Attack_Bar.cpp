@@ -1,6 +1,11 @@
 #include "stdafx.h"
 #include "Attack_Bar.h"
 #include "KeyMgr.h"
+#include "ObjMgr.h"
+#include "AbstractFactory.h"
+#include "SceneMgr.h"
+#include "Attack_Motion.h"
+#include "CollisionMgr.h"
 
 CPlayer_Attack::CPlayer_Attack()
 {
@@ -29,6 +34,9 @@ void CPlayer_Attack::Initialize(void)
 
 int CPlayer_Attack::Update(void)
 {
+	if (m_bDead)
+		return OBJ_DEAD;
+
 	m_tInfo.fX += m_fSpeed;
 	__super::Update_Rect();
 
@@ -41,7 +49,12 @@ void CPlayer_Attack::Late_Update(void)
 		m_fSpeed = -m_fSpeed;
 
 	if (CKeyMgr::Get_Instance()->Key_Down(VK_SPACE))
-		m_fSpeed = 0;
+		m_fSpeed = 0;	
+
+	if (CSceneMgr::Get_Instance()->Get_SceneID() == MONSTER_ATTACK || CSceneMgr::Get_Instance()->Get_SceneID() == BOSS_ATTACK)
+		m_bDead = false;
+	else
+		m_bDead = true;
 }
 
 void CPlayer_Attack::Render(HDC hDC)

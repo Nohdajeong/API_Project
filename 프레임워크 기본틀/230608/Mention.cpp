@@ -38,6 +38,10 @@ void CMention::Initialize(void)
 
 int CMention::Update(void)
 {
+	if (m_bDead)
+		return OBJ_DEAD;
+
+
 	Text_Change(CSceneMgr::Get_Instance()->Get_SceneID());
 
     __super::Update_Rect();
@@ -47,6 +51,11 @@ int CMention::Update(void)
 
 void CMention::Late_Update(void)
 {
+	if (CSceneMgr::Get_Instance()->Get_SceneID() == MONSTER_ATTACK || CSceneMgr::Get_Instance()->Get_SceneID() == BOSS_ATTACK)
+		m_bDead = false;
+	else
+		m_bDead = true;
+
 }
 
 void CMention::Render(HDC hDC)

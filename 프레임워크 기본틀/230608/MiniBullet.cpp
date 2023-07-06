@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "MiniBullet.h"
 #include "ObjMgr.h"
-
+#include "SceneMgr.h"
 
 CMiniBullet::CMiniBullet()
 	:m_dwTime(GetTickCount64()), m_iTime(0)
@@ -19,6 +19,7 @@ void CMiniBullet::Initialize(void)
 	m_tInfo.fCY = 10.f;
 
 	m_fSpeed = 2.f;
+	m_iAttack = 1;
 
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Monster/looks_attack.bmp", L"LookAttack");
 
@@ -45,8 +46,13 @@ int CMiniBullet::Update(void)
 
 void CMiniBullet::Late_Update(void)
 {
-	//if (m_tInfo.fX == 400.f)
-	//	Set_Dead();
+	if (m_tInfo.fX == 400.f)
+		m_bDead = true;
+
+	if (CSceneMgr::Get_Instance()->Get_SceneID() == MONSTER_PHASE || CSceneMgr::Get_Instance()->Get_SceneID() == BOSS_PHASE)
+		m_bDead = false;
+	else
+		m_bDead = true;
 }
 
 void CMiniBullet::Render(HDC hDC)
