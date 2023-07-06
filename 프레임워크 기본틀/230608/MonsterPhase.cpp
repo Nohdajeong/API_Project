@@ -24,10 +24,10 @@ void CMonsterPhase::Initialize(void)
 
     m_iMonsterPhase = rand() % 2;
 
-    if (m_iMonsterPhase == 1)
+    //if (m_iMonsterPhase == 1)
         Monster_Phase1();
-    else if (m_iMonsterPhase == 2)
-        Monster_Phase2();
+    //else if (m_iMonsterPhase == 2)
+    //    Monster_Phase2();
 }
 
 void CMonsterPhase::Update(void)
@@ -72,16 +72,16 @@ void CMonsterPhase::Release(void)
 
 void CMonsterPhase::Monster_Phase1()
 {
-    for (int i = 0; i < 10; ++i)
-        CObjMgr::Get_Instance()->Add_Object(BULLET, CAbstractFactory<CLooKBullet>::Create((float)(rand() % 100 + 400), 300.f));
+    for (int i = 0; i < 5; ++i)
+        CObjMgr::Get_Instance()->Add_Object(BULLET, CAbstractFactory<CLooKBullet>::Create(300.f + i * 50, 300.f));
 
 }
 
 void CMonsterPhase::Monster_Phase2()
 {
-    for (int i = 0; i < 3; ++i)
+    for (int i = 0; i < 3; ++i) {
         CObjMgr::Get_Instance()->Add_Object(BULLET, CAbstractFactory<CLooKNormalBullet>::Create(330.f, 400.f + i * 30));
-
+    }
     for (int i = 0; i < 3; ++i)
         CObjMgr::Get_Instance()->Add_Object(BULLET, CAbstractFactory<CLooKNormalBullet>::Create(460.f, 430.f - i * 30));
 

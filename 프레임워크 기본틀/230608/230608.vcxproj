@@ -152,6 +152,7 @@
     <ClInclude Include="LookBullet.h" />
     <ClInclude Include="LookNormalBullet.h" />
     <ClInclude Include="Mention.h" />
+    <ClInclude Include="MiniBullet.h" />
     <ClInclude Include="MonsterAct.h" />
     <ClInclude Include="MonsterIdle.h" />
     <ClInclude Include="MonsterItem.h" />
@@ -204,6 +205,7 @@
     <ClCompile Include="LookBullet.cpp" />
     <ClCompile Include="LookNormalBullet.cpp" />
     <ClCompile Include="Mention.cpp" />
+    <ClCompile Include="MiniBullet.cpp" />
     <ClCompile Include="MonsterAct.cpp" />
     <ClCompile Include="MonsterIdle.cpp" />
     <ClCompile Include="MonsterItem.cpp" />

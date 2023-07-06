@@ -190,6 +190,12 @@
     <Filter Include="03. Scene\04. Ending">
       <UniqueIdentifier>{afeb87b6-a9e4-42bb-940b-a5032deb6baf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="01. Obj\04. Monster\Pattern\Attack2\Bullet">
+      <UniqueIdentifier>{27f3558e-c253-4f8e-8b45-89d75a32bc29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Obj\01. Player\Battle\Motion">
+      <UniqueIdentifier>{0425b16c-1f55-4188-94c7-4f16533e24fe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -351,6 +357,9 @@
     <ClInclude Include="LookNormalBullet.h">
       <Filter>01. Obj\04. Monster\Pattern\Attack2</Filter>
     </ClInclude>
+    <ClInclude Include="MiniBullet.h">
+      <Filter>01. Obj\04. Monster\Pattern\Attack2\Bullet</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -484,6 +493,9 @@
     </ClCompile>
     <ClCompile Include="LookNormalBullet.cpp">
       <Filter>01. Obj\04. Monster\Pattern\Attack2</Filter>
+    </ClCompile>
+    <ClCompile Include="MiniBullet.cpp">
+      <Filter>01. Obj\04. Monster\Pattern\Attack2\Bullet</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

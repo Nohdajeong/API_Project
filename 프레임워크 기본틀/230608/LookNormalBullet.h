@@ -17,4 +17,8 @@ public:
 private:
 	DWORD		m_dwTime;
 	int			m_iTime;
+
+private:
+	CObj*		Create_Bullet();
+
 };
