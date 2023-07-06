@@ -38,13 +38,13 @@ void CMessageBlock::Text_Change(SCENEID eScene)
 
 	case MONSTER_ITEM:
 		swprintf_s(szBuff, L"* 버터스카치 파이를 먹었다.");
-		if (m_dwTime + 1500 < GetTickCount())
+		if (m_dwTime + 1500 < GetTickCount64())
 			swprintf_s(szBuff, L"* 체력을 5 회복했다.");
 		break;
 
 	case MONSTER_MERCY:
 		swprintf_s(szBuff, L"* 당신은 자비를 베풀었다.");
-		if (m_dwTime + 1500 < GetTickCount())
+		if (m_dwTime + 1500 < GetTickCount64())
 			swprintf_s(szBuff, L"* 0exp와 0골드를 획득했다.");
 		break;
 
@@ -66,25 +66,25 @@ void CMessageBlock::Text_Change(SCENEID eScene)
 
 	case BOSS_ACT:
 		swprintf_s(szBuff, L"* 토리엘 - Attack : %d, Defense : %d", m_iAttack, m_iDefense);
-		if (m_dwTime + 1500 < GetTickCount())
+		if (m_dwTime + 1500 < GetTickCount64())
 			swprintf_s(szBuff, L"* 누구보다 당신을 잘 알고 있다.");
 		break;
 
 	case BOSS_ITEM:
 		swprintf_s(szBuff, L"* 버터스카치 파이를 먹었다.");
-		if (m_dwTime + 1500 < GetTickCount())
+		if (m_dwTime + 1500 < GetTickCount64())
 			swprintf_s(szBuff, L"* 체력을 5 회복했다.");
 		break;
 
 	case BOSS_MERCY:
 		swprintf_s(szBuff, L"* 당신은 자비를 베풀었다.");
-		if (m_dwTime + 2000 < GetTickCount())
+		if (m_dwTime + 2000 < GetTickCount64())
 			swprintf_s(szBuff, L"* 토리엘은 동요하고 있다.");
-		if (m_dwTime + 4000 < GetTickCount())
+		if (m_dwTime + 4000 < GetTickCount64())
 			swprintf_s(szBuff, L"* ...");
-		if (m_dwTime + 6000 < GetTickCount())
+		if (m_dwTime + 6000 < GetTickCount64())
 			swprintf_s(szBuff, L"* 당신의 자비가, 그의 마음을 움직였다.");
-		if (m_dwTime + 8000 < GetTickCount())
+		if (m_dwTime + 8000 < GetTickCount64())
 			swprintf_s(szBuff, L"* 0exp와 0골드를 획득했다.");
 
 		break;
@@ -144,9 +144,9 @@ void CMessageBlock::Render(HDC hDC)
 	SetTextColor(hDC, RGB(255, 255, 255));
 	HFONT	hFont, oldFont;
 
-	hFont = CreateFont(30, 0, 0, 0, 0, 0, 0, 0, HANGUL_CHARSET, 0, 0, 0, VARIABLE_PITCH || FF_ROMAN, TEXT("Neo둥근모"));
+	hFont = CreateFont(20, 0, 0, 0, 0, 0, 0, 0, HANGUL_CHARSET, 0, 0, 0, VARIABLE_PITCH || FF_ROMAN, TEXT("Neo둥근모"));
 	oldFont = (HFONT)SelectObject(hDC, hFont);
-	TextOut(hDC, (float)m_tRect.left + 40.f,(float) m_tInfo.fY - 50.f, szBuff, lstrlen(szBuff));
+	TextOut(hDC, (int)(m_tRect.left + 40), (int)(m_tInfo.fY - 50), szBuff, lstrlen(szBuff));
 }
 
 void CMessageBlock::Release(void)

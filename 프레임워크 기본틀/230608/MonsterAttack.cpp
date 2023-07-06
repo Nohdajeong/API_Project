@@ -27,7 +27,7 @@ void CMonsterAttack::Late_Update(void)
 {
     CObjMgr::Get_Instance()->Late_Update();
 
-    if (m_dwTime + 5000 < GetTickCount()) {
+    if (m_dwTime + 5000 < GetTickCount64()) {
         CSceneMgr::Get_Instance()->Scene_Change(MONSTER_PHASE);
         return;
     }
@@ -46,5 +46,5 @@ void CMonsterAttack::Render(HDC hDC)
 void CMonsterAttack::Release(void)
 {
     CObjMgr::Get_Instance()->Delete_ID(MESSAGEBOX);
-    CObjMgr::Get_Instance()->Delete_ID(BAR);
+    //CObjMgr::Get_Instance()->Delete_ID(BAR);
 }

@@ -42,12 +42,12 @@ int CPlayerBattle::Update(void)
 void CPlayerBattle::Late_Update(void)
 {
 	if ((m_tRect.left < 290.f) || (m_tRect.right > 515.f)) {
-		m_tInfo.fX = -m_tInfo.fX;
+		m_tInfo.fX *= -1.f;
 	}
 
 	if ((m_tRect.top < 310.f) || (m_tRect.bottom > 490.f)) {
-		m_tInfo.fY = -m_tInfo.fY;
-	}	
+		m_tInfo.fY *= -1.f;
+	}
 }
 
 void CPlayerBattle::Render(HDC hDC)

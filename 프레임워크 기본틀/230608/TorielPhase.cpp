@@ -38,7 +38,7 @@ void CTorielPhase::Late_Update(void)
     );
 
 
-    if (m_dwTime + 5000 < GetTickCount())
+    if (m_dwTime + 5000 < GetTickCount64())
         CSceneMgr::Get_Instance()->Scene_Change(BOSS_IDLE);
 }
 

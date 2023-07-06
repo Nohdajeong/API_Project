@@ -15,14 +15,14 @@ CLooKBullet::~CLooKBullet()
 
 void CLooKBullet::Initialize(void)
 {
-	m_tInfo.fCX = 16.f;
-	m_tInfo.fCY = 16.f;
+	m_tInfo.fCX = 20.f;
+	m_tInfo.fCY = 20.f;
 
 	m_fSpeed = 1.f;
 
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Monster/looks_attack.bmp", L"LookAttack");
 
-	m_eRender = GAMEOBJECT;
+	m_eRender = EFFECT;
 
 }
 

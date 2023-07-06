@@ -49,8 +49,7 @@ void CTorielMatch::Initialize(void)
     pObj->Set_FrameKey(L"Mercy");
     CObjMgr::Get_Instance()->Add_Object(BUTTON, pObj);
 
-    CSoundMgr::Get_Instance()->PlaySoundW(L"TorielBattle.mp3", SOUND_BGM, g_fSound);
-
+    CSoundMgr::Get_Instance()->PlayBGM(L"TorielBattle.mp3", g_fSound);
 }
 
 void CTorielMatch::Update(void)

@@ -5,6 +5,7 @@
 CObjMgr* CObjMgr::m_pInstance = nullptr;
 
 CObjMgr::CObjMgr()
+	: m_ObjID(OBJID_END)
 {
 }
 
@@ -79,7 +80,7 @@ void CObjMgr::Late_Update()
 	{
 		for (auto& iter : m_ObjList[i]) {
 			iter->Late_Update();
-
+		
 			if (m_ObjList[i].empty())
 				break;
 
@@ -102,7 +103,6 @@ void CObjMgr::Render(HDC hDC)
 
 		m_RenderList[i].clear();
 	}
-
 }
 
 void CObjMgr::Release()

@@ -17,7 +17,7 @@ public:
 	virtual SCENEID UpdateScene()		PURE;
 
 protected:
-	DWORD		m_dwTime;
+	DWORD		m_dwTime = (DWORD)GetTickCount64();
 
 
 	

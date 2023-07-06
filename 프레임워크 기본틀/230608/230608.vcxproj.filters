@@ -181,6 +181,15 @@
     <Filter Include="03. Scene\02. Battle\02. Boss\Phase">
       <UniqueIdentifier>{6d600206-f461-41e9-a058-86facdec1e8d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="01. Obj\09. Mention">
+      <UniqueIdentifier>{d7e9c5d8-bf81-4dd8-abc1-58c6e054ed76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\03. GameOver">
+      <UniqueIdentifier>{b8ac2232-fadd-465d-b311-70b657750b55}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\04. Ending">
+      <UniqueIdentifier>{afeb87b6-a9e4-42bb-940b-a5032deb6baf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -336,6 +345,12 @@
     <ClInclude Include="TorielPhase.h">
       <Filter>03. Scene\02. Battle\02. Boss\Phase</Filter>
     </ClInclude>
+    <ClInclude Include="Mention.h">
+      <Filter>01. Obj\09. Mention</Filter>
+    </ClInclude>
+    <ClInclude Include="LookNormalBullet.h">
+      <Filter>01. Obj\04. Monster\Pattern\Attack2</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -463,6 +478,12 @@
     </ClCompile>
     <ClCompile Include="TorielPhase.cpp">
       <Filter>03. Scene\02. Battle\02. Boss\Phase</Filter>
+    </ClCompile>
+    <ClCompile Include="Mention.cpp">
+      <Filter>01. Obj\09. Mention</Filter>
+    </ClCompile>
+    <ClCompile Include="LookNormalBullet.cpp">
+      <Filter>01. Obj\04. Monster\Pattern\Attack2</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

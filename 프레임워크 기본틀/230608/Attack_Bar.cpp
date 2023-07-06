@@ -23,7 +23,7 @@ void CPlayer_Attack::Initialize(void)
 
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/attack_line.bmp", L"Line");
 
-	m_eRender = UI;
+	m_eRender = EFFECT;
 
 }
 

@@ -42,7 +42,7 @@ void CPlayerState::Render(HDC hDC)
     SetTextColor(hDC, RGB(255, 255, 255));
     HFONT	hFont, oldFont;
 
-    hFont = CreateFont(30, 0, 0, 0, 0, 0, 0, 0, HANGUL_CHARSET, 0, 0, 0, VARIABLE_PITCH || FF_ROMAN, TEXT("NeoµÕ±Ù¸ð"));
+    hFont = CreateFont(20, 0, 0, 0, 0, 0, 0, 0, HANGUL_CHARSET, 0, 0, 0, VARIABLE_PITCH || FF_ROMAN, TEXT("NeoµÕ±Ù¸ð"));
     oldFont = (HFONT)SelectObject(hDC, hFont);
 
     swprintf_s(szBuff, L"FRISK   LV %d   Hp %d/%d", m_iLevel, m_iHp, m_iMaxHp);
