@@ -37,15 +37,10 @@ void CPlayerState::Late_Update(void)
 
 void CPlayerState::Render(HDC hDC)
 {
-	AddFontResourceA("NeoµÕ±Ù¸ð.ttf");
     SetBkMode(hDC, 1);
     SetTextColor(hDC, RGB(255, 255, 255));
-    HFONT	hFont, oldFont;
 
-    hFont = CreateFont(20, 0, 0, 0, 0, 0, 0, 0, HANGUL_CHARSET, 0, 0, 0, VARIABLE_PITCH || FF_ROMAN, TEXT("NeoµÕ±Ù¸ð"));
-    oldFont = (HFONT)SelectObject(hDC, hFont);
-
-    swprintf_s(szBuff, L"FRISK   LV %d   Hp %d/%d", m_iLevel, m_iHp, m_iMaxHp);
+    swprintf_s(szBuff, L"FRISK  LV %d    Hp %d/%d", m_iLevel, m_iHp, m_iMaxHp);
 
     TextOut(hDC, 70, 500, szBuff, lstrlen(szBuff));
 

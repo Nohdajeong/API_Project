@@ -10,12 +10,6 @@ public:
 	virtual ~CToriel();
 
 public:
-	void Idle();
-	void Attack1();
-	void Attack2();
-	void Attack3();
-
-public:
 	virtual void		Initialize(void) override;
 	virtual int			Update(void) override;
 	virtual void		Late_Update(void) override;

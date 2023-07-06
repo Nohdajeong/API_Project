@@ -62,7 +62,7 @@ void CLooKNormalBullet::Late_Update(void)
 		m_tInfo.fY *= -1.f;
 	}
 
-	if (CSceneMgr::Get_Instance()->Get_SceneID() == MONSTER_PHASE || CSceneMgr::Get_Instance()->Get_SceneID() == BOSS_PHASE)
+	if (CSceneMgr::Get_Instance()->Get_SceneID() == MONSTER_PHASE)
 		m_bDead = false;
 	else
 		m_bDead = true;

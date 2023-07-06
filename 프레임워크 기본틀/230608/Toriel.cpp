@@ -7,31 +7,15 @@ CToriel::CToriel()
 
 CToriel::~CToriel()
 {
-    Release();
-}
-
-void CToriel::Idle()
-{
-}
-
-void CToriel::Attack1()
-{
-}
-
-void CToriel::Attack2()
-{
-}
-
-void CToriel::Attack3()
-{
 }
 
 void CToriel::Initialize(void)
 {
     m_tInfo = { 400.f, 190.f, 178.f, 245.f };
-    m_tStates.iAttack = 10.f;
-    m_tStates.iDefense = 0.f;
-    m_tStates.iHp = 50.f;
+
+    m_tStates.iHp = 440.f;
+    m_tStates.iAttack = 80.f;
+    m_tStates.iDefense = 80.f;
 
     CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Monster/Toriel_boss.bmp", L"Toriel");
 
@@ -39,14 +23,9 @@ void CToriel::Initialize(void)
     m_tFrame.iFrameEnd = 0;
     m_tFrame.iMotion = 0;
     m_tFrame.dwSpeed = 300;
-    m_tFrame.dwTime = GetTickCount64();
+    m_tFrame.dwTime = (DWORD)GetTickCount64();
 
     m_eRender = GAMEOBJECT;
-
-    //m_States[(int)TorielState::IDLE] = new TorielIdle();
-    //m_States[(int)TorielState::ATTACK1] = new TorielAttack1();
-    //m_States[(int)TorielState::ATTACK2] = new TorielAttack2();
-    //m_States[(int)TorielState::ATTACK2] = new TorielAttack3();
 
 }
 
@@ -55,17 +34,6 @@ int CToriel::Update(void)
     if (m_bDead)
         return OBJ_DEAD;
 
-    //TorielState nowState = m_States[(int)m_eState]->Update(*this);
-    //if (m_eState != nowState)
-    //{
-    //    m_States[(int)m_eState]->Release(*this);
-
-    //    m_eState = nowState;
-    //    m_States[(int)m_eState]->Initialize(*this);
-    //    m_States[(int)m_eState]->Update(*this);
-    //}
-
-
     __super::Move_Frame();
     __super::Update_Rect();
     return OBJ_NOEVENT;
@@ -73,14 +41,12 @@ int CToriel::Update(void)
 
 void CToriel::Late_Update(void)
 {
-    //m_States[(int)m_eState]->Late_Update(*this);
-
+    if (m_tStates.iHp == 0)
+        Set_Dead();
 }
 
 void CToriel::Render(HDC hDC)
 {
-    //m_States[(int)m_eState]->Render(hDC, *this);
-
     HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Img(L"Toriel");
 
     GdiTransparentBlt(hDC,

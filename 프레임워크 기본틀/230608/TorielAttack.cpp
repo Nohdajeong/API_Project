@@ -1,10 +1,8 @@
 #include "stdafx.h"
 #include "TorielAttack.h"
-#include "Toriel.h"
-#include "MyButton.h"
 #include "MessageBlock.h"
 #include "Attack_Bar.h"
-#include "PlayerState.h"
+#include "Attack_Motion.h"
 
 CTorielAttack::CTorielAttack()
 {
@@ -24,14 +22,25 @@ void CTorielAttack::Initialize(void)
 void CTorielAttack::Update(void)
 {
     CObjMgr::Get_Instance()->Update();
+
+    CObj* pAttack = CObjMgr::Get_Instance()->Get_Objects(BAR).front();
+
+    if (pAttack->Get_Speed() == 0) {
+        if (m_dwTime + 700 < GetTickCount64()) {
+            CObjMgr::Get_Instance()->Add_Object(ATTACK, CAbstractFactory<CAttackMotion>::Create());
+        }
+    }
+
 }
 
 void CTorielAttack::Late_Update(void)
 {
     CObjMgr::Get_Instance()->Late_Update();
 
-    if (m_dwTime + 7000 < GetTickCount())
+    if (m_dwTime + 4000 < GetTickCount64()) {
         CSceneMgr::Get_Instance()->Scene_Change(BOSS_PHASE);
+        return;
+    }
 }
 
 void CTorielAttack::Render(HDC hDC)

@@ -1,11 +1,9 @@
 #include "stdafx.h"
 #include "TorielPhase.h"
-#include "Toriel.h"
-#include "MyButton.h"
 #include "MessageBlock.h"
-#include "Player_Battle.h"
 #include "CollisionMgr.h"
-#include "PlayerState.h"
+#include "TorielBullet.h"
+#include "TorielPassBullet.h"
 
 CTorielPhase::CTorielPhase()
 {
@@ -18,21 +16,30 @@ CTorielPhase::~CTorielPhase()
 
 void CTorielPhase::Initialize(void)
 {
+    CObjMgr::Get_Instance()->Get_BattlePlayer()->Set_Pos(400.f, 400.f);
     CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CMessageBlock>::Create());
 
     m_iMonsterPhase = rand() % 100;
-
-    if (m_iMonsterPhase % 3 == 0)
-        Boss_Phase1();
-    else if (m_iMonsterPhase % 3 == 1)
-        Boss_Phase2();
-    else if (m_iMonsterPhase % 3 == 2)
-        Boss_Phase3();
 
 }
 
 void CTorielPhase::Update(void)
 {
+    if (m_iMonsterPhase % 3 == 0) {
+        if (m_preDeley + 200.f < GetTickCount64()) {
+            Boss_Phase1();
+            m_preDeley = GetTickCount64();
+        }
+    }
+    else if (m_iMonsterPhase % 3 == 1) {
+        if (m_preDeley + 50.f < GetTickCount64()) {
+            Boss_Phase2();
+            m_preDeley = GetTickCount64();
+        }
+    }
+    else if (m_iMonsterPhase % 3 == 2)
+        Boss_Phase3();
+
 
     CObjMgr::Get_Instance()->Update();
 
@@ -46,7 +53,6 @@ void CTorielPhase::Late_Update(void)
         CObjMgr::Get_Instance()->Get_Objects(BATTLE_PLAYER),
         CObjMgr::Get_Instance()->Get_Objects(BULLET)
     );
-
 
     if (m_dwTime + 5000 < GetTickCount64()) {
         CSceneMgr::Get_Instance()->Scene_Change(BOSS_IDLE);
@@ -71,10 +77,13 @@ void CTorielPhase::Release(void)
 
 void CTorielPhase::Boss_Phase1()
 {
+   CObjMgr::Get_Instance()->Add_Object(BULLET, CAbstractFactory<CTorielBullet>::Create(350.f, 300.f));
+   CObjMgr::Get_Instance()->Add_Object(BULLET, CAbstractFactory<CTorielBullet>::Create(450.f, 300.f));
 }
 
 void CTorielPhase::Boss_Phase2()
 {
+    CObjMgr::Get_Instance()->Add_Object(BULLET, CAbstractFactory<CTorielPassBullet>::Create(300.f + rand()%200, 300.f));
 }
 
 void CTorielPhase::Boss_Phase3()

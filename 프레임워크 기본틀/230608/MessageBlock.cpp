@@ -17,11 +17,11 @@ void CMessageBlock::Text_Change(SCENEID eScene)
 {
 	switch (eScene) {
 	case MONSTER_MATCH:
-		swprintf_s(szBuff, L"* 룩스가 나타났다!");
+		swprintf_s(szBuff, L"* 룩스가 다가왔다!");
 		break;
 
 	case MONSTER_IDLE:
-		swprintf_s(szBuff, L"* 룩스는 당신을 응시하고 있다.");
+		swprintf_s(szBuff, L"* 룩스는 당신을 노려보고 있다.");
 		break;
 
 	case MONSTER_ATTACK:
@@ -43,9 +43,8 @@ void CMessageBlock::Text_Change(SCENEID eScene)
 		break;
 
 	case MONSTER_MERCY:
-		swprintf_s(szBuff, L"* 당신은 자비를 베풀었다.");
-		if (m_dwTime + 1500 < GetTickCount64())
-			swprintf_s(szBuff, L"* 0exp와 0골드를 획득했다.");
+		swprintf_s(szBuff, L"* 승리했다!");
+		swprintf_s(szPlayer, L"* 0exp와 5골드를 얻었다.");
 		break;
 
 	case BOSS_MATCH:
@@ -53,7 +52,7 @@ void CMessageBlock::Text_Change(SCENEID eScene)
 		break;
 
 	case BOSS_IDLE:
-		swprintf_s(szBuff, L"* 토리엘은 아무 말도 하지 않는다.");
+		swprintf_s(szBuff, L"* 토리엘은 당신을 바라봤다.");
 		break;
 
 	case BOSS_ATTACK:
@@ -66,8 +65,7 @@ void CMessageBlock::Text_Change(SCENEID eScene)
 
 	case BOSS_ACT:
 		swprintf_s(szBuff, L"* 토리엘 - Attack : %d, Defense : %d", m_iAttack, m_iDefense);
-		if (m_dwTime + 1500 < GetTickCount64())
-			swprintf_s(szBuff, L"* 누구보다 당신을 잘 알고 있다.");
+		swprintf_s(szPlayer, L"* 누구보다 당신을 잘 알고 있다.");
 		break;
 
 	case BOSS_ITEM:
@@ -77,16 +75,13 @@ void CMessageBlock::Text_Change(SCENEID eScene)
 		break;
 
 	case BOSS_MERCY:
-		swprintf_s(szBuff, L"* 당신은 자비를 베풀었다.");
-		if (m_dwTime + 2000 < GetTickCount64())
 			swprintf_s(szBuff, L"* 토리엘은 동요하고 있다.");
-		if (m_dwTime + 4000 < GetTickCount64())
+		if (m_dwTime + 2000 < GetTickCount64())
 			swprintf_s(szBuff, L"* ...");
+		if (m_dwTime + 4000 < GetTickCount64())
+			swprintf_s(szBuff, L"* 당신의 말이, 그의 마음을 움직였다.");
 		if (m_dwTime + 6000 < GetTickCount64())
-			swprintf_s(szBuff, L"* 당신의 자비가, 그의 마음을 움직였다.");
-		if (m_dwTime + 8000 < GetTickCount64())
-			swprintf_s(szBuff, L"* 0exp와 0골드를 획득했다.");
-
+			swprintf_s(szBuff, L"*  0exp와 0골드를 얻었다.");
 		break;
 
 	}
@@ -142,6 +137,7 @@ void CMessageBlock::Render(HDC hDC)
 		RGB(195, 134, 255));
 
 	TextOut(hDC, (int)(m_tRect.left + 40), (int)(m_tInfo.fY - 50), szBuff, lstrlen(szBuff));
+	TextOut(hDC, (int)(m_tRect.left + 40), (int)(m_tInfo.fY), szPlayer, lstrlen(szPlayer));
 }
 
 void CMessageBlock::Release(void)

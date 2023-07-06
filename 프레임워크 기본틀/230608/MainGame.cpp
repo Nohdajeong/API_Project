@@ -27,7 +27,7 @@ void CMainGame::Initialize()
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Back.bmp", L"Back");
 	CSoundMgr::Get_Instance()->Initialize();
 
-	CSceneMgr::Get_Instance()->Scene_Change(MONSTER_MATCH);
+	CSceneMgr::Get_Instance()->Scene_Change(RUIN);
 
 
 }
@@ -56,7 +56,17 @@ void CMainGame::Render()
 		m_dwTime = GetTickCount();
 	}
 
+	AddFontResourceA("NeoµÕ±Ù¸ð.ttf");
+	AddFontResourceA("DeterminationSansK.ttf");
+	AddFontResourceA("DeterminationSansK.otf");
+
+
 	HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Img(L"Back");
+
+	HFONT	hFont, oldFont;
+
+	hFont = CreateFont(25, 0, 0, 0, 0, 0, 0, 0, HANGUL_CHARSET, 0, 0, 0, VARIABLE_PITCH || FF_ROMAN, TEXT("NeoµÕ±Ù¸ð"));
+	oldFont = (HFONT)SelectObject(hMemDC, hFont);
 
 	CSceneMgr::Get_Instance()->Render(hMemDC);
 

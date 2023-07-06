@@ -360,6 +360,12 @@
     <ClInclude Include="Attack_Motion.h">
       <Filter>01. Obj\07. Attack_Bar\Motion</Filter>
     </ClInclude>
+    <ClInclude Include="TorielBullet.h">
+      <Filter>01. Obj\03. Boss\Pattern\Attack1</Filter>
+    </ClInclude>
+    <ClInclude Include="TorielPassBullet.h">
+      <Filter>01. Obj\03. Boss\Pattern\Attack2</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -499,6 +505,12 @@
     </ClCompile>
     <ClCompile Include="Attack_Motion.cpp">
       <Filter>01. Obj\07. Attack_Bar\Motion</Filter>
+    </ClCompile>
+    <ClCompile Include="TorielBullet.cpp">
+      <Filter>01. Obj\03. Boss\Pattern\Attack1</Filter>
+    </ClCompile>
+    <ClCompile Include="TorielPassBullet.cpp">
+      <Filter>01. Obj\03. Boss\Pattern\Attack2</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

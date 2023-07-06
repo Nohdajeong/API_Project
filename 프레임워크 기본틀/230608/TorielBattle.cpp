@@ -7,6 +7,7 @@
 #include "SoundMgr.h"
 #include "Player_Battle.h"
 
+
 CTorielMatch::CTorielMatch()
     : m_iLevel(1), m_iHp(0), m_iMaxHp(0)
 {
@@ -33,19 +34,19 @@ void CTorielMatch::Initialize(void)
     CObjMgr::Get_Instance()->Add_Object(BATTLE_PLAYER, CAbstractFactory<CPlayerBattle>::Create());
     CObjMgr::Get_Instance()->Add_Object(PLAYER_STATE, CAbstractFactory<CPlayerState>::Create());
 
-    CObj* pObj = CAbstractFactory<CMyButton>::Create(100.f, 570.f);
+    CObj* pObj = CAbstractFactory<CMyButton>::Create(130.f, 570.f);
     pObj->Set_FrameKey(L"Fight");
     CObjMgr::Get_Instance()->Add_Object(BUTTON, pObj);
 
-    pObj = CAbstractFactory<CMyButton>::Create(300.f, 570.f);
+    pObj = CAbstractFactory<CMyButton>::Create(310.f, 570.f);
     pObj->Set_FrameKey(L"Act");
     CObjMgr::Get_Instance()->Add_Object(BUTTON, pObj);
 
-    pObj = CAbstractFactory<CMyButton>::Create(500.f, 570.f);
+    pObj = CAbstractFactory<CMyButton>::Create(490.f, 570.f);
     pObj->Set_FrameKey(L"Item");
     CObjMgr::Get_Instance()->Add_Object(BUTTON, pObj);
 
-    pObj = CAbstractFactory<CMyButton>::Create(700.f, 570.f);
+    pObj = CAbstractFactory<CMyButton>::Create(670.f, 570.f);
     pObj->Set_FrameKey(L"Mercy");
     CObjMgr::Get_Instance()->Add_Object(BUTTON, pObj);
 
@@ -55,6 +56,7 @@ void CTorielMatch::Initialize(void)
 void CTorielMatch::Update(void)
 {
     CObjMgr::Get_Instance()->Update();
+
 }
 
 void CTorielMatch::Late_Update(void)

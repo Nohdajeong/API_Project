@@ -1,6 +1,5 @@
 #include "stdafx.h"
 #include "Look.h"
-#include "LookBullet.h"
 
 CLook::CLook()
 {

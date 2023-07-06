@@ -30,9 +30,6 @@ void CMonsterAttack::Update(void)
     if (pAttack->Get_Speed() == 0) {
         if (m_dwTime + 700 < GetTickCount64()) {
             CObjMgr::Get_Instance()->Add_Object(ATTACK, CAbstractFactory<CAttackMotion>::Create());
-            if ((pAttack->Get_Info().fX > 350.f) && (pAttack->Get_Info().fX < 450.f)) {
-                pAttack->Set_Attack(30);
-            }
         }
     }
 
@@ -41,8 +38,6 @@ void CMonsterAttack::Update(void)
 void CMonsterAttack::Late_Update(void)
 {
     CObjMgr::Get_Instance()->Late_Update();
-
-
 
     if (m_dwTime + 4000 < GetTickCount64()) {
             CSceneMgr::Get_Instance()->Scene_Change(MONSTER_PHASE);
