@@ -35,7 +35,6 @@ void CMonsterAttack::Late_Update(void)
 
 void CMonsterAttack::Render(HDC hDC)
 {
-
     HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Img(L"Back_Monster");
 
     BitBlt(hDC, 0, 0, WINCX, WINCY, hMemDC, 0, 0, SRCCOPY);

@@ -15,6 +15,7 @@ CMonsterPhase::~CMonsterPhase()
 
 void CMonsterPhase::Initialize(void)
 {
+    CObjMgr::Get_Instance()->Get_BattlePlayer()->Set_Pos(400.f, 400.f);
     CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CMessageBlock>::Create());
 
     //for (int i = 0; i < 10; ++i) {
