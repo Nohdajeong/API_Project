@@ -27,9 +27,9 @@ void CMonsterMatch::Initialize(void)
     CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Item.bmp", L"Item");
     CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Mercy.bmp", L"Mercy");
 
-    CObjMgr::Get_Instance()->Add_Object(MONSTER, CAbstractFactory<CLook>::Create(300.f, 250.f));
+    CObjMgr::Get_Instance()->Add_Object(MONSTER, CAbstractFactory<CLook>::Create());
     CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CMessageBlock>::Create(400.f, 400.f));
-    CObjMgr::Get_Instance()->Add_Object(BATTLE_PLAYER, CAbstractFactory<CPlayerBattle>::Create(400.f, 400.f));
+    CObjMgr::Get_Instance()->Add_Object(BATTLE_PLAYER, CAbstractFactory<CPlayerBattle>::Create());
     CObjMgr::Get_Instance()->Add_Object(PLAYER_STATE, CAbstractFactory<CPlayerState>::Create());
 
     CObj* pObj = CAbstractFactory<CMyButton>::Create(100.f, 570.f);

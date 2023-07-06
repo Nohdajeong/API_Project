@@ -6,6 +6,7 @@
 #include "BmpMgr.h"
 #include "KeyMgr.h"
 #include "SoundMgr.h"
+#include "SceneMgr.h"
 
 CPlayerS1::CPlayerS1() 
 	  : m_ePreState(STATE_END), m_eCurState(IDLE)
@@ -34,8 +35,11 @@ void CPlayerS1::Initialize(void)
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Player/Player_Up.bmp", L"Player_UP");
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Player/Stretch.bmp", L"Player_UP");
 	
-
 	m_pFrameKey = L"Player_DOWN";
+
+	if (CSceneMgr::Get_Instance()->Get_SceneID() == FLOWEY)
+		m_pFrameKey = L"Player_UP";
+
 
 	m_tFrame.iFrameStart = 0;
 	m_tFrame.iFrameEnd = 0;

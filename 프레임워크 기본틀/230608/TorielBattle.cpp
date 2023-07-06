@@ -29,8 +29,8 @@ void CTorielMatch::Initialize(void)
     CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Mercy.bmp", L"Mercy");
 
     CObjMgr::Get_Instance()->Add_Object(MONSTER, CAbstractFactory<CToriel>::Create());
-    CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CMessageBlock>::Create(400.f, 400.f));
-    CObjMgr::Get_Instance()->Add_Object(BATTLE_PLAYER, CAbstractFactory<CPlayerBattle>::Create(400.f, 400.f));
+    CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CMessageBlock>::Create());
+    CObjMgr::Get_Instance()->Add_Object(BATTLE_PLAYER, CAbstractFactory<CPlayerBattle>::Create());
     CObjMgr::Get_Instance()->Add_Object(PLAYER_STATE, CAbstractFactory<CPlayerState>::Create());
 
     CObj* pObj = CAbstractFactory<CMyButton>::Create(100.f, 570.f);
@@ -66,7 +66,6 @@ void CTorielMatch::Late_Update(void)
 
 void CTorielMatch::Render(HDC hDC)
 {
-
     HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Img(L"Back_Boss");
 
     BitBlt(hDC, 0, 0, WINCX, WINCY, hMemDC, 0, 0, SRCCOPY);

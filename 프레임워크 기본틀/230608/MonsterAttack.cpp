@@ -15,7 +15,7 @@ CMonsterAttack::~CMonsterAttack()
 void CMonsterAttack::Initialize(void)
 {
     CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CMessageBlock>::Create());
-    //CObjMgr::Get_Instance()->Add_Object(BAR, CAbstractFactory<CPlayer_Attack>::Create(400.f, 400.f));
+    CObjMgr::Get_Instance()->Add_Object(BAR, CAbstractFactory<CPlayer_Attack>::Create());
 }
 
 void CMonsterAttack::Update(void)
@@ -47,5 +47,5 @@ void CMonsterAttack::Render(HDC hDC)
 void CMonsterAttack::Release(void)
 {
     CObjMgr::Get_Instance()->Delete_ID(MESSAGEBOX);
-    //CObjMgr::Get_Instance()->Delete_ID(BAR);
+    CObjMgr::Get_Instance()->Delete_ID(BAR);
 }

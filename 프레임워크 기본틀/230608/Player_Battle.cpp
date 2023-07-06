@@ -13,6 +13,8 @@ CPlayerBattle::~CPlayerBattle()
 
 void CPlayerBattle::Initialize(void)
 {
+	m_tInfo.fX = 400.f;
+	m_tInfo.fY = 400.f;
 	m_tInfo.fCX = 25.f;
 	m_tInfo.fCY = 25.f;
 
@@ -39,7 +41,7 @@ int CPlayerBattle::Update(void)
 
 void CPlayerBattle::Late_Update(void)
 {
-	if ((m_tRect.left < 300.f) || (m_tRect.right > 500.f)) {
+	if ((m_tRect.left < 290.f) || (m_tRect.right > 515.f)) {
 		m_tInfo.fX = -m_tInfo.fX;
 	}
 
