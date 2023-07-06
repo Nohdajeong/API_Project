@@ -1,3 +1,9 @@
-﻿  MessageBlock.cpp
+﻿  MainGame.cpp
 C:\Users\노다정\Desktop\Jusin Academy\API_Project\프레임워크 기본틀\230608\Obj.h(50,67): warning C4244: '=': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  TorielPhase.cpp
+C:\Users\노다정\Desktop\Jusin Academy\API_Project\프레임워크 기본틀\230608\Obj.h(50,67): warning C4244: '=': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\노다정\Desktop\Jusin Academy\API_Project\프레임워크 기본틀\230608\TorielPhase.cpp(31,40): warning C4244: '=': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\노다정\Desktop\Jusin Academy\API_Project\프레임워크 기본틀\230608\TorielPhase.cpp(37,40): warning C4244: '=': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\노다정\Desktop\Jusin Academy\API_Project\프레임워크 기본틀\230608\TorielPhase.cpp(43,40): warning C4244: '=': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  코드를 생성하고 있습니다...
   230608.vcxproj -> C:\Users\노다정\Desktop\Jusin Academy\API_Project\프레임워크 기본틀\Debug\230608.exe

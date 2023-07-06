@@ -15,13 +15,13 @@ CMiniBullet::~CMiniBullet()
 
 void CMiniBullet::Initialize(void)
 {
-	m_tInfo.fCX = 10.f;
-	m_tInfo.fCY = 10.f;
+	m_tInfo.fCX = 15.f;
+	m_tInfo.fCY = 15.f;
 
 	m_fSpeed = 2.f;
 	m_iAttack = 1;
 
-	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Monster/looks_attack.bmp", L"LookAttack");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Monster/Look_Mini_Attack.bmp", L"LookMiniAttack");
 
 	m_eRender = EFFECT;
 
@@ -34,17 +34,10 @@ int CMiniBullet::Update(void)
 	
 	if (m_tInfo.fX > 400.f) {
 			m_tInfo.fX -= m_fSpeed;
-
-			if (m_tInfo.fX == 400.f)
-				m_bDead = true;
 	}
 
 	if (m_tInfo.fX < 400.f) {
 			m_tInfo.fX += m_fSpeed;
-
-			if (m_tInfo.fX == 400.f)
-				m_bDead = true;
-
 	}
 
 	__super::Update_Rect();
@@ -62,21 +55,19 @@ void CMiniBullet::Late_Update(void)
 
 void CMiniBullet::Render(HDC hDC)
 {
-	HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Img(L"LookAttack");
+	HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Img(L"LookMiniAttack");
 
-	//GdiTransparentBlt(hDC,
-	//	(int)m_tRect.left,
-	//	(int)m_tRect.top,
-	//	(int)m_tInfo.fCX,
-	//	(int)m_tInfo.fCY,
-	//	hMemDC,
-	//	m_tFrame.iFrameStart * (int)m_tInfo.fCX,
-	//	m_tFrame.iMotion * (int)m_tInfo.fCY,
-	//	(int)m_tInfo.fCX,
-	//	(int)m_tInfo.fCY,
-	//	RGB(195, 134, 255));
-
-	Rectangle(hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
+	GdiTransparentBlt(hDC,
+		(int)m_tRect.left,
+		(int)m_tRect.top,
+		(int)m_tInfo.fCX,
+		(int)m_tInfo.fCY,
+		hMemDC,
+		0,
+		0,
+		(int)m_tInfo.fCX,
+		(int)m_tInfo.fCY,
+		RGB(205, 141, 255));
 }
 
 void CMiniBullet::Release(void)

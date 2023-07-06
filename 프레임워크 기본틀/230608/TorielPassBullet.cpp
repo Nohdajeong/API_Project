@@ -15,14 +15,14 @@ CTorielPassBullet::~CTorielPassBullet()
 
 void CTorielPassBullet::Initialize(void)
 {
-	m_tInfo.fCX = 20.f;
-	m_tInfo.fCY = 20.f;
+	m_tInfo.fCX = 25.f;
+	m_tInfo.fCY = 25.f;
 
 	m_fSpeed = 1.f;
 	m_iAttack = 2;
 	m_fRange = 30.f;
 
-	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Monster/looks_attack.bmp", L"LookAttack");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Monster/Look_Attack.bmp", L"Look_Attack");
 
 	m_eRender = EFFECT;
 
@@ -63,7 +63,7 @@ void CTorielPassBullet::Late_Update(void)
 
 void CTorielPassBullet::Render(HDC hDC)
 {
-	HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Img(L"LookAttack");
+	HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Img(L"Look_Attack");
 
 	//GdiTransparentBlt(hDC,
 	//	(int)m_tRect.left,
@@ -77,8 +77,21 @@ void CTorielPassBullet::Render(HDC hDC)
 	//	(int)m_tInfo.fCY,
 	//	RGB(195, 134, 255));
 
-	if (m_tInfo.fY > 330.f && m_tInfo.fY < 480.f)
-		Rectangle(hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
+	if (m_tInfo.fY > 330.f && m_tInfo.fY < 480.f) {
+		GdiTransparentBlt(hDC,
+			(int)m_tRect.left,
+			(int)m_tRect.top,
+			(int)m_tInfo.fCX,
+			(int)m_tInfo.fCY,
+			hMemDC,
+			0,
+			0,
+			(int)m_tInfo.fCX,
+			(int)m_tInfo.fCY,
+			RGB(205, 141, 255));
+
+		//Rectangle(hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
+	}
 }
 
 void CTorielPassBullet::Release(void)

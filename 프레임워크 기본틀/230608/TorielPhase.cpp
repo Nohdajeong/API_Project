@@ -37,8 +37,13 @@ void CTorielPhase::Update(void)
             m_preDeley = GetTickCount64();
         }
     }
-    else if (m_iMonsterPhase % 3 == 2)
-        Boss_Phase3();
+    else if (m_iMonsterPhase % 3 == 2) {
+        if (m_preDeley + 50.f < GetTickCount64()) {
+            Boss_Phase2();
+            m_preDeley = GetTickCount64();
+        }
+
+    }
 
 
     CObjMgr::Get_Instance()->Update();
