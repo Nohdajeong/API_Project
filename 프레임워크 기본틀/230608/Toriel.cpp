@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "Toriel.h"
+#include "SceneMgr.h"
 
 CToriel::CToriel()
 {
@@ -17,7 +18,7 @@ void CToriel::Initialize(void)
     m_tStates.iAttack = 80.f;
     m_tStates.iDefense = 80.f;
 
-    CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Monster/Toriel_boss.bmp", L"Toriel");
+    CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Monster/Toriel_bosss.bmp", L"Toriel");
 
     m_tFrame.iFrameStart = 0;
     m_tFrame.iFrameEnd = 0;
@@ -48,6 +49,18 @@ void CToriel::Late_Update(void)
 void CToriel::Render(HDC hDC)
 {
     HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Img(L"Toriel");
+
+    if (CSceneMgr::Get_Instance()->Get_SceneID() == BOSS_PHASE) {
+        m_tFrame.iFrameStart = 2;
+    }
+    else if (CSceneMgr::Get_Instance()->Get_SceneID() == BOSS_MERCY) {
+        m_tFrame.iFrameStart = 1;
+
+        if (m_dwTime + 5000 < GetTickCount64())
+            m_tFrame.iFrameStart = 3;
+    }
+    else
+        m_tFrame.iFrameStart = 0;
 
     GdiTransparentBlt(hDC,
         (int)m_tRect.left,

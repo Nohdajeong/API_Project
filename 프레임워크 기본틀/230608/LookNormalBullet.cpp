@@ -21,7 +21,7 @@ void CLooKNormalBullet::Initialize(void)
 	m_tInfo.fCY = 25.f;
 
 	m_fSpeed = 2.f;
-	m_fAngle = 10.f;
+	m_fAngle = 5.f;
 	m_iAttack = 2.f;
 
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Monster/Look_Attack.bmp", L"Look_Attack");

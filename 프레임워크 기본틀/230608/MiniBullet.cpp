@@ -18,7 +18,7 @@ void CMiniBullet::Initialize(void)
 	m_tInfo.fCX = 15.f;
 	m_tInfo.fCY = 15.f;
 
-	m_fSpeed = 2.f;
+	m_fSpeed = 1.5f;
 	m_iAttack = 1;
 
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Monster/Look_Mini_Attack.bmp", L"LookMiniAttack");
@@ -36,7 +36,7 @@ int CMiniBullet::Update(void)
 			m_tInfo.fX -= m_fSpeed;
 	}
 
-	if (m_tInfo.fX < 400.f) {
+	else if (m_tInfo.fX < 400.f) {
 			m_tInfo.fX += m_fSpeed;
 	}
 
@@ -47,6 +47,9 @@ int CMiniBullet::Update(void)
 
 void CMiniBullet::Late_Update(void)
 {
+	if (m_tRect.right == 380.f || m_tRect.left == 420.f)
+		m_fSpeed *= -1.f;
+
 	if (CSceneMgr::Get_Instance()->Get_SceneID() == MONSTER_PHASE)
 		m_bDead = false;
 	else
@@ -57,17 +60,19 @@ void CMiniBullet::Render(HDC hDC)
 {
 	HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Img(L"LookMiniAttack");
 
-	GdiTransparentBlt(hDC,
-		(int)m_tRect.left,
-		(int)m_tRect.top,
-		(int)m_tInfo.fCX,
-		(int)m_tInfo.fCY,
-		hMemDC,
-		0,
-		0,
-		(int)m_tInfo.fCX,
-		(int)m_tInfo.fCY,
-		RGB(205, 141, 255));
+	if ((m_tRect.left > 290.f) && (m_tRect.right < 515.f)) {
+		GdiTransparentBlt(hDC,
+			(int)m_tRect.left,
+			(int)m_tRect.top,
+			(int)m_tInfo.fCX,
+			(int)m_tInfo.fCY,
+			hMemDC,
+			0,
+			0,
+			(int)m_tInfo.fCX,
+			(int)m_tInfo.fCY,
+			RGB(205, 141, 255));
+	}
 }
 
 void CMiniBullet::Release(void)

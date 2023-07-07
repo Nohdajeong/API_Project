@@ -18,7 +18,7 @@ CMonsterAct::~CMonsterAct()
 void CMonsterAct::Initialize(void)
 {
     CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CMessageBlock>::Create());
-
+    CObjMgr::Get_Instance()->Get_BattlePlayer()->Set_Pos(100.f, 570.f);
 }
 
 void CMonsterAct::Update(void)

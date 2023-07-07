@@ -46,7 +46,11 @@ int CTorielBullet::Update(void)
 	m_tCenter.x += LONG(m_fSpeed * sinf(m_fAngle * (PI / 180.f)));
 	m_tCenter.y += LONG(m_fSpeed * cosf(m_fAngle * (PI / 180.f)));
 
-	m_fRotAngle += m_fRotSpeed;
+	if (m_tInfo.fX < 400.f)
+		m_fRotAngle += m_fRotSpeed;
+	else if (m_tInfo.fX > 400.f)
+		m_fRotAngle -= m_fRotSpeed;
+
 
 	m_tInfo.fX = m_tCenter.x - m_fDistance * sinf(m_fRotAngle * (PI / 180.f));
 	m_tInfo.fY = m_tCenter.y + m_fDistance * cosf(m_fRotAngle * (PI / 180.f));

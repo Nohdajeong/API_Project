@@ -50,10 +50,6 @@ int CTorielPassBullet::Update(void)
 
 void CTorielPassBullet::Late_Update(void)
 {
-	if ((m_tRect.left < 290.f) || (m_tRect.right > 515.f)) {
-		m_bDead = true;
-	}
-
 	if (CSceneMgr::Get_Instance()->Get_SceneID() == BOSS_PHASE)
 		m_bDead = false;
 	else
@@ -77,7 +73,7 @@ void CTorielPassBullet::Render(HDC hDC)
 	//	(int)m_tInfo.fCY,
 	//	RGB(195, 134, 255));
 
-	if (m_tInfo.fY > 330.f && m_tInfo.fY < 480.f) {
+	if (m_tInfo.fY > 330.f && m_tInfo.fY < 480.f && (m_tRect.left > 290.f) && (m_tRect.right < 515.f)) {
 		GdiTransparentBlt(hDC,
 			(int)m_tRect.left,
 			(int)m_tRect.top,
