@@ -32,6 +32,9 @@ void CPlayerBattle::Initialize(void)
 
 int CPlayerBattle::Update(void)
 {
+	if (m_bDead)
+		return OBJ_DEAD;
+
     Key_Input();
 
     __super::Update_Rect();
