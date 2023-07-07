@@ -20,8 +20,6 @@ void CStage1::Initialize()
 
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Map/Ruin.bmp", L"Ruin");
 	
-	m_iRand = rand() % 100;
-
 }
 
 void CStage1::Update()
@@ -40,8 +38,11 @@ void CStage1::Late_Update()
 		CSceneMgr::Get_Instance()->Scene_Change(FLOWEY);
 	}
 
-	if (m_iRand % 10 == 0)
+	if (m_dwTime + 5000 < GetTickCount64()) {
 		CSceneMgr::Get_Instance()->Scene_Change(MONSTER_MATCH);
+		m_dwTime = GetTickCount64();
+		return;
+	}
 }
 
 void CStage1::Render(HDC hDC)

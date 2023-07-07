@@ -73,10 +73,9 @@ void CPlayerS1::Render(HDC hDC)
 	int		iScrollX = (int)CScrollMgr::Get_Instance()->Get_ScollX();
 	int		iScrollY = (int)CScrollMgr::Get_Instance()->Get_ScollY();
 
-	HDC		hBackDC = CBmpMgr::Get_Instance()->Find_Img(L"Back");
 	HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Img(m_pFrameKey);
 
-
+	if (CSceneMgr::Get_Instance()->Get_SceneID() == RUIN || CSceneMgr::Get_Instance()->Get_SceneID() == FLOWEY)
 	GdiTransparentBlt(hDC,
 			(int)m_tRect.left + iScrollX, // 복사 받을 위치 X,Y 좌표
 			(int)m_tRect.top + iScrollY,
@@ -88,8 +87,6 @@ void CPlayerS1::Render(HDC hDC)
 			(int)m_tInfo.fCX,		// 출력할 비트맵의 가로, 세로 사이즈
 			(int)m_tInfo.fCY,
 			RGB(195, 134, 255)); // 제거하고자 하는 색상
-
-	BitBlt(hDC, 0, 0, (int)m_tInfo.fCX, (int)m_tInfo.fCY, hBackDC, 0, 0, SRCCOPY);
 
 }
 
