@@ -5,6 +5,7 @@
 #include "SoundMgr.h"
 
 CStage1::CStage1()
+	: m_iRand(0)
 {
 }
 
@@ -19,6 +20,8 @@ void CStage1::Initialize()
 
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Map/Ruin.bmp", L"Ruin");
 	
+	m_iRand = rand() % 100;
+
 }
 
 void CStage1::Update()
@@ -34,9 +37,11 @@ void CStage1::Late_Update()
 	CObj* pPlayer = CObjMgr::Get_Instance()->Get_Player();
 
 	if ((1200.f < pPlayer->Get_Info().fX) && (350.f > pPlayer->Get_Info().fY)) {
-		CSceneMgr::Get_Instance()->Scene_Change(MONSTER_MATCH);
+		CSceneMgr::Get_Instance()->Scene_Change(FLOWEY);
 	}
 
+	if (m_iRand % 10 == 0)
+		CSceneMgr::Get_Instance()->Scene_Change(MONSTER_MATCH);
 }
 
 void CStage1::Render(HDC hDC)
@@ -53,5 +58,4 @@ void CStage1::Render(HDC hDC)
 
 void CStage1::Release()
 {
-	CObjMgr::Get_Instance()->Destroy_Instance();
 }

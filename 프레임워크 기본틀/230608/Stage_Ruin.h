@@ -14,7 +14,9 @@ public:
 	virtual void		Late_Update() override;
 	virtual void		Render(HDC hDC) override;
 	virtual void		Release() override;
+
 private:
 	DWORD		m_dwTime = GetTickCount();
+	int			m_iRand;
 };
 

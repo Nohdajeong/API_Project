@@ -20,8 +20,8 @@ void CStage2::Initialize()
 
 	CSoundMgr::Get_Instance()->StopSound(SOUND_BGM);
 
+	CObjMgr::Get_Instance()->Get_Player()->Set_Pos(400.f, 800.f);
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Map/Flowey.bmp", L"Flowey_map");
-	CObjMgr::Get_Instance()->Add_Object(PLAYER, CAbstractFactory<CPlayerS1>::Create(400, 800));
 	CObjMgr::Get_Instance()->Add_Object(NPC, CAbstractFactory<CFlowey>::Create());
 	CSoundMgr::Get_Instance()->PlaySoundW(L"Flowey.mp3", SOUND_BGM, g_fSound);
 }
