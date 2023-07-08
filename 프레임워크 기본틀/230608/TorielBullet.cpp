@@ -16,8 +16,8 @@ CTorielBullet::~CTorielBullet()
 
 void CTorielBullet::Initialize(void)
 {
-	m_tInfo.fCX = 25.f;
-	m_tInfo.fCY = 25.f;
+	m_tInfo.fCX = 15.f;
+	m_tInfo.fCY = 15.f;
 
 	m_fSpeed = 2.f;
 	m_iAttack = 1;
@@ -25,7 +25,7 @@ void CTorielBullet::Initialize(void)
 	m_fRotSpeed = 12.f;
 	m_fDistance = 20.f;
 
-	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Monster/Look_Attack.bmp", L"Look_Attack");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Monster/Toriel_Bullet.bmp", L"Toriel_Bullet");
 
 	m_eRender = GAMEOBJECT;
 
@@ -70,7 +70,7 @@ void CTorielBullet::Late_Update(void)
 
 void CTorielBullet::Render(HDC hDC)
 {
-	HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Img(L"Look_Attack");
+	HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Img(L"Toriel_Bullet");
 
 	if (m_tInfo.fY > 330.f && m_tInfo.fY < 480.f) {
 		GdiTransparentBlt(hDC,
@@ -83,7 +83,7 @@ void CTorielBullet::Render(HDC hDC)
 			0,
 			(int)m_tInfo.fCX,
 			(int)m_tInfo.fCY,
-			RGB(205, 141, 255));
+			RGB(195, 134, 255));
 	}
 }
 

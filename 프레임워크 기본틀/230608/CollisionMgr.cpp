@@ -129,8 +129,8 @@ void CCollisionMgr::Collision_Sphere(list<CObj*> _Dst, list<CObj*> _Src)
 
 				Dst->Set_Hp(-(Src->Get_Attack()));
 
-				if (Dst->Get_Hp() <= 0)
-					Dst->Set_Dead();
+				//if (Dst->Get_Hp() <= 0)
+				//	Dst->Set_Dead();
 			}
 		}
 	}
@@ -147,4 +147,18 @@ bool CCollisionMgr::Check_Sphere(CObj* _Dst, CObj* _Src)
 	float	fRadius = (_Dst->Get_Info().fCX + _Src->Get_Info().fCX) * 0.5f;
 
 	return fDiagonal <= fRadius;
+}
+
+bool CCollisionMgr::Check_Collision(list<CObj*> _Dst, list<CObj*> _Src)
+{
+	for (auto& Dst : _Dst)
+	{
+		for (auto& Src : _Src)
+		{
+			if (Check_Sphere(Dst, Src))
+				return true;
+		}
+	}
+
+	return false;
 }

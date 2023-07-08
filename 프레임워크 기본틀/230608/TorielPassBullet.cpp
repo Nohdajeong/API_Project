@@ -15,14 +15,14 @@ CTorielPassBullet::~CTorielPassBullet()
 
 void CTorielPassBullet::Initialize(void)
 {
-	m_tInfo.fCX = 25.f;
-	m_tInfo.fCY = 25.f;
+	m_tInfo.fCX = 15.f;
+	m_tInfo.fCY = 15.f;
 
 	m_fSpeed = 1.f;
 	m_fRange = 30.f;
 	m_iAttack = 2;
 
-	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Monster/Look_Attack.bmp", L"Look_Attack");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Monster/Toriel_Bullet.bmp", L"Toriel_Bullet");
 
 	m_eRender = GAMEOBJECT;
 
@@ -59,7 +59,7 @@ void CTorielPassBullet::Late_Update(void)
 
 void CTorielPassBullet::Render(HDC hDC)
 {
-	HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Img(L"Look_Attack");
+	HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Img(L"Toriel_Bullet");
 
 
 	if (m_tInfo.fY > 330.f && m_tInfo.fY < 480.f && (m_tRect.left > 290.f) && (m_tRect.right < 515.f)) {
@@ -73,7 +73,7 @@ void CTorielPassBullet::Render(HDC hDC)
 			0,
 			(int)m_tInfo.fCX,
 			(int)m_tInfo.fCY,
-			RGB(205, 141, 255));
+			RGB(195, 134, 255));
 
 	}
 }

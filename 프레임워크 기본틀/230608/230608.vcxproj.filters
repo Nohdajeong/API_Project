@@ -196,6 +196,12 @@
     <Filter Include="03. Scene\01. Stage\Stage4 - Toliel\Toriel_NPC">
       <UniqueIdentifier>{784a94e6-265f-4594-a313-956758a608a9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="01. Obj\03. Boss\Pattern\Attack4">
+      <UniqueIdentifier>{87fa6821-82ab-49bf-a6b3-195f61ae030f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Obj\03. Boss\Pattern\Attack5">
+      <UniqueIdentifier>{cfdacd3c-0e8f-4b6c-9224-02c08289a754}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -378,6 +384,12 @@
     <ClInclude Include="TorielNPC.h">
       <Filter>03. Scene\01. Stage\Stage4 - Toliel\Toriel_NPC</Filter>
     </ClInclude>
+    <ClInclude Include="TorielHandBullet.h">
+      <Filter>01. Obj\03. Boss\Pattern\Attack3</Filter>
+    </ClInclude>
+    <ClInclude Include="TorielMiniBullet.h">
+      <Filter>01. Obj\03. Boss\Pattern\Attack3</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -532,6 +544,12 @@
     </ClCompile>
     <ClCompile Include="TorielNPC.cpp">
       <Filter>03. Scene\01. Stage\Stage4 - Toliel\Toriel_NPC</Filter>
+    </ClCompile>
+    <ClCompile Include="TorielHandBullet.cpp">
+      <Filter>01. Obj\03. Boss\Pattern\Attack3</Filter>
+    </ClCompile>
+    <ClCompile Include="TorielMiniBullet.cpp">
+      <Filter>01. Obj\03. Boss\Pattern\Attack3</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

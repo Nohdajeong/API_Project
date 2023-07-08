@@ -4,6 +4,7 @@
 #include "CollisionMgr.h"
 #include "TorielBullet.h"
 #include "TorielPassBullet.h"
+#include "TorielHandBullet.h"
 
 CTorielPhase::CTorielPhase()
 {
@@ -19,49 +20,27 @@ void CTorielPhase::Initialize(void)
     CObjMgr::Get_Instance()->Get_BattlePlayer()->Set_Pos(400.f, 400.f);
     CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CMessageBlock>::Create());
 
-    m_iMonsterPhase = rand() % 100;
+    m_iMonsterPhase = rand() % 50;
 
+    if (m_iMonsterPhase % 3 == 2)
+        Boss_Phase3();
 }
 
 void CTorielPhase::Update(void)
 {
-    CObj* pPlayer = CObjMgr::Get_Instance()->Get_BattlePlayer();
-    CObj* pMonster = CObjMgr::Get_Instance()->Get_Monster();
+    //CObj* pPlayer = CObjMgr::Get_Instance()->Get_BattlePlayer();
+    //CObj* pMonster = CObjMgr::Get_Instance()->Get_Monster();
 
     if (m_iMonsterPhase % 3 == 0) {
-        if (m_preDeley + 200.f < GetTickCount64()) {
+        if (m_preDeley + 50.f < GetTickCount64()) {
             Boss_Phase1();
             m_preDeley = GetTickCount64();
         }
     }
     else if (m_iMonsterPhase % 3 == 1) {
-        if (pPlayer->Get_Hp() < 2) {
-            if (m_preDeley + 50.f < GetTickCount64()) {
-                Boss_Phase2();
-                m_preDeley = GetTickCount64();
-            }
-        }
-        else{
-            if (m_preDeley + 200.f < GetTickCount64()) {
-                Boss_Phase1();
-                m_preDeley = GetTickCount64();
-            }
-
-        }
-    }
-    else if (m_iMonsterPhase % 3 == 2) {
-        if (pPlayer->Get_Hp() < 2) {
-            if (m_preDeley + 50.f < GetTickCount64()) {
-                Boss_Phase2();
-                m_preDeley = GetTickCount64();
-            }
-        }
-        else {
-            if (m_preDeley + 200.f < GetTickCount64()) {
-                Boss_Phase1();
-                m_preDeley = GetTickCount64();
-            }
-
+        if (m_preDeley + 50.f < GetTickCount64()) {
+            Boss_Phase2();
+            m_preDeley = GetTickCount64();
         }
     }
 
@@ -102,8 +81,11 @@ void CTorielPhase::Release(void)
 
 void CTorielPhase::Boss_Phase1()
 {
-   CObjMgr::Get_Instance()->Add_Object(BULLET, CAbstractFactory<CTorielBullet>::Create(350.f, 300.f));
-   CObjMgr::Get_Instance()->Add_Object(BULLET, CAbstractFactory<CTorielBullet>::Create(450.f, 300.f));
+   CObjMgr::Get_Instance()->Add_Object(BULLET, CAbstractFactory<CTorielBullet>::Create(360.f, 300.f));
+   CObjMgr::Get_Instance()->Add_Object(BULLET, CAbstractFactory<CTorielBullet>::Create(440.f, 300.f));
+   CObjMgr::Get_Instance()->Add_Object(BULLET, CAbstractFactory<CTorielBullet>::Create(320.f, 300.f));
+   CObjMgr::Get_Instance()->Add_Object(BULLET, CAbstractFactory<CTorielBullet>::Create(480.f, 300.f));
+
 }
 
 void CTorielPhase::Boss_Phase2()
@@ -113,4 +95,6 @@ void CTorielPhase::Boss_Phase2()
 
 void CTorielPhase::Boss_Phase3()
 {
+    CObjMgr::Get_Instance()->Add_Object(BULLET, CAbstractFactory<CTorielHandBullet>::Create(600.f, 280.f));
+    CObjMgr::Get_Instance()->Add_Object(BULLET, CAbstractFactory<CTorielHandBullet>::Create(300.f, 520.f));
 }

@@ -31,12 +31,12 @@ int CMiniBullet::Update(void)
 {
 	if (m_bDead)
 		return OBJ_DEAD;	
-	
-	if (m_tInfo.fX > 400.f) {
+
+	if (m_pTarget->Get_Info().fX > 400.f) {
 			m_tInfo.fX -= m_fSpeed;
 	}
 
-	else if (m_tInfo.fX < 400.f) {
+	else if (m_pTarget->Get_Info().fX < 400.f) {
 			m_tInfo.fX += m_fSpeed;
 	}
 
@@ -47,9 +47,6 @@ int CMiniBullet::Update(void)
 
 void CMiniBullet::Late_Update(void)
 {
-	if (m_tRect.right == 380.f || m_tRect.left == 420.f)
-		m_fSpeed *= -1.f;
-
 	if (CSceneMgr::Get_Instance()->Get_SceneID() == MONSTER_PHASE)
 		m_bDead = false;
 	else

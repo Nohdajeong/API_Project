@@ -44,12 +44,10 @@ void CStage3::Late_Update()
 		CObjMgr::Get_Instance()->Get_Objects(STAGE_OBJ)
 	);
 
-
-	CObj* pPlayer = CObjMgr::Get_Instance()->Get_Player();
-
-	if (270.f > pPlayer->Get_Rect().top) {
+	if (CCollisionMgr::Check_Collision(
+		CObjMgr::Get_Instance()->Get_Objects(PLAYER),
+		CObjMgr::Get_Instance()->Get_Objects(MONSTER)))
 		CSceneMgr::Get_Instance()->Scene_Change(BOSS_MATCH);
-	}
 
 }
 
