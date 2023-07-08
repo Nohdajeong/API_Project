@@ -6,7 +6,7 @@
 #include "SceneMgr.h"
 
 CPlayerState::CPlayerState()
-    : m_iLevel(0), m_iHp(0), m_iMaxHp(0)
+    : m_iLevel(0), m_iCurHp(0), m_iMaxHp(0)
 {
 }
 
@@ -20,8 +20,8 @@ void CPlayerState::Initialize(void)
     CObj* pPlayer = CObjMgr::Get_Instance()->Get_BattlePlayer();
 
     m_iLevel = (pPlayer)->Get_States().iLevel;
-    m_iHp = (pPlayer)->Get_States().iHp;
     m_iMaxHp = (pPlayer)->Get_States().iMaxHp;
+    m_iCurHp = (pPlayer)->Get_Hp();
 
 	m_eRender = UI;
 
@@ -47,7 +47,7 @@ void CPlayerState::Render(HDC hDC)
     SetBkMode(hDC, 1);
     SetTextColor(hDC, RGB(255, 255, 255));
 
-    swprintf_s(szBuff, L"FRISK  LV %d    Hp %d/%d", m_iLevel, m_iHp, m_iMaxHp);
+    swprintf_s(szBuff, L"FRISK  LV %d    Hp %d/%d", m_iLevel, m_iCurHp, m_iMaxHp);
 
     TextOut(hDC, 70, 500, szBuff, lstrlen(szBuff));
 

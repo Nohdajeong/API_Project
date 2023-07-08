@@ -26,7 +26,7 @@ void CLooKNormalBullet::Initialize(void)
 
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Monster/Look_Attack.bmp", L"Look_Attack");
 
-	m_eRender = EFFECT;
+	m_eRender = GAMEOBJECT;
 
 }
 

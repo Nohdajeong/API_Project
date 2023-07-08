@@ -27,7 +27,7 @@ void CTorielBullet::Initialize(void)
 
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Monster/Look_Attack.bmp", L"Look_Attack");
 
-	m_eRender = EFFECT;
+	m_eRender = GAMEOBJECT;
 
 }
 
@@ -84,8 +84,6 @@ void CTorielBullet::Render(HDC hDC)
 			(int)m_tInfo.fCX,
 			(int)m_tInfo.fCY,
 			RGB(205, 141, 255));
-
-		//Rectangle(hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
 	}
 }
 

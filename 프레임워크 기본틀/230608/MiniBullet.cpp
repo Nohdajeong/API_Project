@@ -23,7 +23,7 @@ void CMiniBullet::Initialize(void)
 
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Monster/Look_Mini_Attack.bmp", L"LookMiniAttack");
 
-	m_eRender = EFFECT;
+	m_eRender = GAMEOBJECT;
 
 }
 

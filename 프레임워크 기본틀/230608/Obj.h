@@ -27,6 +27,7 @@ public:
 	bool 			Get_AttackOff() { return m_AttackOff; }
 	RENDERID		Get_RenderID() { return m_eRender; }
 	float			Get_Speed() { return m_fSpeed; }
+	int				Get_Hp() { return m_iHp; }
 
 	void			Set_Pos(float _fX, float _fY)
 	{
@@ -36,7 +37,7 @@ public:
 	void			Set_Dir(DIRECTION eDir) { m_eDir = eDir; }
 	void			Set_Dead() { m_bDead = true; }
 
-	void			Set_Hp(int _iHp) { m_tStates.iHp += _iHp; }
+	void			Set_Hp(int _iHp) { m_iHp += _iHp; }
 	void			Set_Attack(int _iAttack) { m_iAttack = _iAttack; }
 
 	void			Set_Angle(float _fAngle) { m_fAngle = _fAngle; }
@@ -75,6 +76,7 @@ protected:
 	float		m_fAngle;
 	bool		m_bDead;
 	int			m_iAttack;
+	int			m_iHp;
 
 	TCHAR*		m_pFrameKey;
 

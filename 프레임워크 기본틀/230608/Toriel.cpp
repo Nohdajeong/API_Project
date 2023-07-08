@@ -3,6 +3,7 @@
 #include "SceneMgr.h"
 
 CToriel::CToriel()
+    : m_iDrawID(0)
 {
 }
 
@@ -18,13 +19,9 @@ void CToriel::Initialize(void)
     m_tStates.iAttack = 80.f;
     m_tStates.iDefense = 80.f;
 
-    CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Monster/Toriel_bosss.bmp", L"Toriel");
+    m_iHp = m_tStates.iHp;
 
-    m_tFrame.iFrameStart = 0;
-    m_tFrame.iFrameEnd = 0;
-    m_tFrame.iMotion = 0;
-    m_tFrame.dwSpeed = 300;
-    m_tFrame.dwTime = (DWORD)GetTickCount64();
+    CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Monster/Toriel_bosss.bmp", L"Toriel");
 
     m_eRender = GAMEOBJECT;
 
@@ -55,16 +52,16 @@ void CToriel::Render(HDC hDC)
     HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Img(L"Toriel");
 
     if (CSceneMgr::Get_Instance()->Get_SceneID() == BOSS_PHASE) {
-        m_tFrame.iFrameStart = 2;
+        m_iDrawID = 2;
     }
     else if (CSceneMgr::Get_Instance()->Get_SceneID() == BOSS_MERCY) {
-        m_tFrame.iFrameStart = 1;
+        m_iDrawID = 1;
 
         if (m_dwTime + 5000 < GetTickCount64())
-            m_tFrame.iFrameStart = 3;
+            m_iDrawID = 3;
     }
     else
-        m_tFrame.iFrameStart = 0;
+        m_iDrawID = 0;
 
     GdiTransparentBlt(hDC,
         (int)m_tRect.left,
@@ -72,8 +69,8 @@ void CToriel::Render(HDC hDC)
         (int)m_tInfo.fCX,
         (int)m_tInfo.fCY,
         hMemDC,
-        m_tFrame.iFrameStart * (int)m_tInfo.fCX,
-        m_tFrame.iMotion * (int)m_tInfo.fCY,
+        m_iDrawID * (int)m_tInfo.fCX,
+        0,
         (int)m_tInfo.fCX,
         (int)m_tInfo.fCY,
         RGB(195, 134, 255));

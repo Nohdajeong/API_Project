@@ -20,9 +20,10 @@ void CPlayerBattle::Initialize(void)
 
 	m_tStates.iAttack = 10;
 	m_tStates.iMaxHp = 20;
-	m_tStates.iHp = 20;
 	m_tStates.iDefense = 10;
 	m_tStates.iLevel = 1;
+
+	m_iHp = 16;
 
     CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Player/Player_Battle.bmp", L"Player_Battle");
 

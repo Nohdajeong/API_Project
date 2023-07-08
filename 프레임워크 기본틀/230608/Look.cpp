@@ -16,6 +16,7 @@ void CLook::Initialize(void)
 	m_tStates.iHp = 50;
 	m_tStates.iAttack = 5;
 	m_tStates.iDefense = 4;
+	m_iHp = m_tStates.iHp;
 
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Monster/Monster_looks.bmp", L"Looks");
 

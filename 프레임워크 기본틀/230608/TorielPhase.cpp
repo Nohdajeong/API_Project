@@ -25,6 +25,9 @@ void CTorielPhase::Initialize(void)
 
 void CTorielPhase::Update(void)
 {
+    CObj* pPlayer = CObjMgr::Get_Instance()->Get_BattlePlayer();
+    CObj* pMonster = CObjMgr::Get_Instance()->Get_Monster();
+
     if (m_iMonsterPhase % 3 == 0) {
         if (m_preDeley + 200.f < GetTickCount64()) {
             Boss_Phase1();
@@ -32,17 +35,34 @@ void CTorielPhase::Update(void)
         }
     }
     else if (m_iMonsterPhase % 3 == 1) {
-        if (m_preDeley + 50.f < GetTickCount64()) {
-            Boss_Phase2();
-            m_preDeley = GetTickCount64();
+        if (pPlayer->Get_Hp() < 2) {
+            if (m_preDeley + 50.f < GetTickCount64()) {
+                Boss_Phase2();
+                m_preDeley = GetTickCount64();
+            }
+        }
+        else{
+            if (m_preDeley + 200.f < GetTickCount64()) {
+                Boss_Phase1();
+                m_preDeley = GetTickCount64();
+            }
+
         }
     }
     else if (m_iMonsterPhase % 3 == 2) {
-        if (m_preDeley + 50.f < GetTickCount64()) {
-            Boss_Phase2();
-            m_preDeley = GetTickCount64();
+        if (pPlayer->Get_Hp() < 2) {
+            if (m_preDeley + 50.f < GetTickCount64()) {
+                Boss_Phase2();
+                m_preDeley = GetTickCount64();
+            }
         }
+        else {
+            if (m_preDeley + 200.f < GetTickCount64()) {
+                Boss_Phase1();
+                m_preDeley = GetTickCount64();
+            }
 
+        }
     }
 
 

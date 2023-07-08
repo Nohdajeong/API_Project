@@ -1,7 +1,4 @@
-﻿  Toriel.cpp
-C:\Users\노다정\Desktop\Jusin Academy\API_Project\프레임워크 기본틀\230608\Obj.h(50,67): warning C4244: '=': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\노다정\Desktop\Jusin Academy\API_Project\프레임워크 기본틀\230608\Toriel.h(20,36): warning C4244: '초기화 중': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\노다정\Desktop\Jusin Academy\API_Project\프레임워크 기본틀\230608\Toriel.cpp(17,21): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\노다정\Desktop\Jusin Academy\API_Project\프레임워크 기본틀\230608\Toriel.cpp(18,25): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\노다정\Desktop\Jusin Academy\API_Project\프레임워크 기본틀\230608\Toriel.cpp(19,26): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+﻿  CollisionMgr.cpp
+C:\Users\노다정\Desktop\Jusin Academy\API_Project\프레임워크 기본틀\230608\Obj.h(51,67): warning C4244: '=': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\노다정\Desktop\Jusin Academy\API_Project\프레임워크 기본틀\230608\CollisionMgr.cpp(80,15): warning C4244: '초기화 중': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   230608.vcxproj -> C:\Users\노다정\Desktop\Jusin Academy\API_Project\프레임워크 기본틀\Debug\230608.exe
