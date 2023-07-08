@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "MessageBlock.h"
 #include "SceneMgr.h"
+#include "KeyMgr.h"
 
 CMessageBlock::CMessageBlock()
 	: m_iDrawID(0), m_iHp(0), m_iAttack(0), m_iDefense(0)
@@ -84,6 +85,23 @@ void CMessageBlock::Text_Change(SCENEID eScene)
 			swprintf_s(szBuff, L"*  0exp와 0골드를 얻었다.");
 		break;
 
+	case FLOWEY:
+		swprintf_s(szBuff, L"* 안녕! 나는 플라위야, 노란꽃 플라위!");
+		if (m_dwTime + 1000 < GetTickCount64())
+			swprintf_s(szBuff, L"* 넌 이곳에 처음 왔구나?");
+		if (m_dwTime + 2000 < GetTickCount64())
+			swprintf_s(szBuff, L"* 아, 아니지.");
+		if (m_dwTime + 3000 < GetTickCount64())
+			swprintf_s(szBuff, L"* 이곳은 본 게임이 아니었지.");
+		if (m_dwTime + 4000 < GetTickCount64())
+			swprintf_s(szBuff, L"* 뭐, 잘 해봐!");
+		if (m_dwTime + 5000 < GetTickCount64())
+			swprintf_s(szBuff, L"* 이걸 보는 너 말이야, 하하!");
+		break;
+
+	case TORIEL:
+		swprintf_s(szBuff, L"* 당신의 의지가 가득 차올랐다.");
+		break;
 	}
 }
 
@@ -117,7 +135,7 @@ int CMessageBlock::Update(void)
 
 void CMessageBlock::Late_Update(void)
 {
-	if (CSceneMgr::Get_Instance()->Get_SceneID() == RUIN)
+	if (CSceneMgr::Get_Instance()->Get_SceneID() == RUIN || CSceneMgr::Get_Instance()->Get_SceneID() == TORIEL)
 		m_bDead = true;
 
 	Text_Change(CSceneMgr::Get_Instance()->Get_SceneID());

@@ -17,9 +17,6 @@ void CFlowey::Initialize(void)
 	m_tInfo.fCX = 50.f;
 	m_tInfo.fCY = 50.f;
 
-	m_tInfo.fX = 400.f;
-	m_tInfo.fY = 500.f;
-
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/NPC/Flowey.bmp", L"Flowey");
 
 	m_tFrame.iFrameStart = 0;

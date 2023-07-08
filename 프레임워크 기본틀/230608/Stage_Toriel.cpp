@@ -5,6 +5,7 @@
 #include "MessageBlock.h"
 #include "Save.h"
 #include "TorielNPC.h"
+#include "KeyMgr.h"
 
 CStage3::CStage3()
 {
@@ -39,15 +40,22 @@ void CStage3::Late_Update()
 {
 	CObjMgr::Get_Instance()->Late_Update();
 
-	CCollisionMgr::Collision_RectEx(
-		CObjMgr::Get_Instance()->Get_Objects(PLAYER),
-		CObjMgr::Get_Instance()->Get_Objects(STAGE_OBJ)
-	);
-
 	if (CCollisionMgr::Check_Collision(
 		CObjMgr::Get_Instance()->Get_Objects(PLAYER),
 		CObjMgr::Get_Instance()->Get_Objects(MONSTER)))
 		CSceneMgr::Get_Instance()->Scene_Change(BOSS_MATCH);
+
+
+	if (CCollisionMgr::Check_Collision(
+		CObjMgr::Get_Instance()->Get_Objects(PLAYER),
+		CObjMgr::Get_Instance()->Get_Objects(STAGE_OBJ)))
+	{
+		CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CMessageBlock>::Create(400.f, 500.f));
+
+	}
+
+
+
 
 }
 

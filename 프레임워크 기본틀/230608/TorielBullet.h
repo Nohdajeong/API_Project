@@ -25,5 +25,4 @@ private:
 	float		m_fRotAngle; // 총알의 회전을 위한 각도
 	float		m_fRotSpeed; // 총알의 회전 속도
 	float		m_fDistance;
-
 };

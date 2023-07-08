@@ -198,6 +198,7 @@
     <ClInclude Include="TorielAttack.h" />
     <ClInclude Include="TorielBattle.h" />
     <ClInclude Include="TorielBullet.h" />
+    <ClInclude Include="TorielCenterBullet.h" />
     <ClInclude Include="TorielHandBullet.h" />
     <ClInclude Include="TorielIdle.h" />
     <ClInclude Include="TorielItem.h" />
@@ -258,6 +259,7 @@
     <ClCompile Include="TorielAttack.cpp" />
     <ClCompile Include="TorielBattle.cpp" />
     <ClCompile Include="TorielBullet.cpp" />
+    <ClCompile Include="TorielCenterBullet.cpp" />
     <ClCompile Include="TorielHandBullet.cpp" />
     <ClCompile Include="TorielIdle.cpp" />
     <ClCompile Include="TorielItem.cpp" />

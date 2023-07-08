@@ -40,6 +40,9 @@ void CStage1::Late_Update()
 	if (CKeyMgr::Get_Instance()->Key_Down('P'))
 		CSceneMgr::Get_Instance()->Scene_Change(TORIEL);
 
+	if (CKeyMgr::Get_Instance()->Key_Down('R'))
+		CSceneMgr::Get_Instance()->Scene_Change(FLOWEY);
+
 
 	if ((1200.f < pPlayer->Get_Info().fX) && (350.f > pPlayer->Get_Info().fY)) {
 		CSceneMgr::Get_Instance()->Scene_Change(FLOWEY);

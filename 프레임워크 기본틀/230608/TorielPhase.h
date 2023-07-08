@@ -21,6 +21,8 @@ private:
 	void	Boss_Phase1();
 	void	Boss_Phase2();
 	void	Boss_Phase3();
+	void	Boss_Phase4();
+	void	Boss_Phase5();
 
 private:
 	DWORD		m_dwTime = (DWORD)GetTickCount64();

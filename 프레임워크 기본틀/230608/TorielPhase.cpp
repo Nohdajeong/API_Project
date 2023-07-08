@@ -5,6 +5,7 @@
 #include "TorielBullet.h"
 #include "TorielPassBullet.h"
 #include "TorielHandBullet.h"
+#include "TorielCenterBullet.h"
 
 CTorielPhase::CTorielPhase()
 {
@@ -17,13 +18,14 @@ CTorielPhase::~CTorielPhase()
 
 void CTorielPhase::Initialize(void)
 {
-    CObjMgr::Get_Instance()->Get_BattlePlayer()->Set_Pos(400.f, 400.f);
+    CObjMgr::Get_Instance()->Get_BattlePlayer()->Set_Pos(400.f, 450.f);
     CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CMessageBlock>::Create());
 
     m_iMonsterPhase = rand() % 50;
 
-    if (m_iMonsterPhase % 3 == 2)
+    if (m_iMonsterPhase % 5 == 2)
         Boss_Phase3();
+
 }
 
 void CTorielPhase::Update(void)
@@ -31,19 +33,27 @@ void CTorielPhase::Update(void)
     //CObj* pPlayer = CObjMgr::Get_Instance()->Get_BattlePlayer();
     //CObj* pMonster = CObjMgr::Get_Instance()->Get_Monster();
 
-    if (m_iMonsterPhase % 3 == 0) {
+    if (m_iMonsterPhase % 5 == 0) {
         if (m_preDeley + 50.f < GetTickCount64()) {
             Boss_Phase1();
             m_preDeley = GetTickCount64();
         }
     }
-    else if (m_iMonsterPhase % 3 == 1) {
+    else if (m_iMonsterPhase % 5 == 1) {
         if (m_preDeley + 50.f < GetTickCount64()) {
             Boss_Phase2();
             m_preDeley = GetTickCount64();
         }
     }
-
+    else if (m_iMonsterPhase % 5 == 3) {
+        if (m_preDeley + 25.f < GetTickCount64()) {
+            Boss_Phase4();
+            m_preDeley = GetTickCount64();
+        }
+    }
+    else if (m_iMonsterPhase % 5 == 4) {
+        Boss_Phase5();
+    }
 
     CObjMgr::Get_Instance()->Update();
 
@@ -97,4 +107,15 @@ void CTorielPhase::Boss_Phase3()
 {
     CObjMgr::Get_Instance()->Add_Object(BULLET, CAbstractFactory<CTorielHandBullet>::Create(600.f, 280.f));
     CObjMgr::Get_Instance()->Add_Object(BULLET, CAbstractFactory<CTorielHandBullet>::Create(300.f, 520.f));
+}
+
+void CTorielPhase::Boss_Phase4()
+{
+        CObjMgr::Get_Instance()->Add_Object(BULLET, CAbstractFactory<CTorielCenterBullet>::Create(300.f, 200.f + rand()%100));
+        CObjMgr::Get_Instance()->Add_Object(BULLET, CAbstractFactory<CTorielCenterBullet>::Create(200.f + rand() % 100, 300.f));
+
+}
+
+void CTorielPhase::Boss_Phase5()
+{
 }

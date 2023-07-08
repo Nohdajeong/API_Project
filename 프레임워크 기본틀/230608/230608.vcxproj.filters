@@ -390,6 +390,9 @@
     <ClInclude Include="TorielMiniBullet.h">
       <Filter>01. Obj\03. Boss\Pattern\Attack3</Filter>
     </ClInclude>
+    <ClInclude Include="TorielCenterBullet.h">
+      <Filter>01. Obj\03. Boss\Pattern\Attack4</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -550,6 +553,9 @@
     </ClCompile>
     <ClCompile Include="TorielMiniBullet.cpp">
       <Filter>01. Obj\03. Boss\Pattern\Attack3</Filter>
+    </ClCompile>
+    <ClCompile Include="TorielCenterBullet.cpp">
+      <Filter>01. Obj\03. Boss\Pattern\Attack4</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
