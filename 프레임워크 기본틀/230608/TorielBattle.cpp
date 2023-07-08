@@ -29,7 +29,7 @@ void CTorielMatch::Initialize(void)
     CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Item.bmp", L"Item");
     CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Mercy.bmp", L"Mercy");
 
-    CObjMgr::Get_Instance()->Add_Object(MONSTER, CAbstractFactory<CToriel>::Create());
+    CObjMgr::Get_Instance()->Add_Object(MONSTER, CAbstractFactory<CToriel>::Create(400.f, 190.f));
     CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CMessageBlock>::Create());
     CObjMgr::Get_Instance()->Add_Object(BATTLE_PLAYER, CAbstractFactory<CPlayerBattle>::Create());
     CObjMgr::Get_Instance()->Add_Object(PLAYER_STATE, CAbstractFactory<CPlayerState>::Create());
@@ -50,6 +50,7 @@ void CTorielMatch::Initialize(void)
     pObj->Set_FrameKey(L"Mercy");
     CObjMgr::Get_Instance()->Add_Object(BUTTON, pObj);
 
+    CSoundMgr::Get_Instance()->StopSound(SOUND_BGM);
     CSoundMgr::Get_Instance()->PlayBGM(L"TorielBattle.mp3", g_fSound);
 }
 

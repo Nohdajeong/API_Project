@@ -16,6 +16,8 @@ CStage1::~CStage1()
 
 void CStage1::Initialize() 
 {
+	CSoundMgr::Get_Instance()->StopSound(SOUND_BGM);
+
 	if(CSceneMgr::Get_Instance()->Get_ScenePreID() == SCENE_END)
 		CObjMgr::Get_Instance()->Add_Object(PLAYER, CAbstractFactory<CPlayerS1>::Create(400.f, 300.f));
 

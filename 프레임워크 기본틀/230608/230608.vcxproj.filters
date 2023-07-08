@@ -190,6 +190,12 @@
     <Filter Include="01. Obj\07. Attack_Bar\Motion">
       <UniqueIdentifier>{0425b16c-1f55-4188-94c7-4f16533e24fe}</UniqueIdentifier>
     </Filter>
+    <Filter Include="01. Obj\10. Save">
+      <UniqueIdentifier>{995badfc-0f8f-4969-8bb3-260f0701bdb5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\01. Stage\Stage4 - Toliel\Toriel_NPC">
+      <UniqueIdentifier>{784a94e6-265f-4594-a313-956758a608a9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -366,6 +372,12 @@
     <ClInclude Include="Stage_Toriel.h">
       <Filter>03. Scene\01. Stage\Stage4 - Toliel</Filter>
     </ClInclude>
+    <ClInclude Include="Save.h">
+      <Filter>01. Obj\10. Save</Filter>
+    </ClInclude>
+    <ClInclude Include="TorielNPC.h">
+      <Filter>03. Scene\01. Stage\Stage4 - Toliel\Toriel_NPC</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -514,6 +526,12 @@
     </ClCompile>
     <ClCompile Include="Stage_Toriel.cpp">
       <Filter>03. Scene\01. Stage\Stage4 - Toliel</Filter>
+    </ClCompile>
+    <ClCompile Include="Save.cpp">
+      <Filter>01. Obj\10. Save</Filter>
+    </ClCompile>
+    <ClCompile Include="TorielNPC.cpp">
+      <Filter>03. Scene\01. Stage\Stage4 - Toliel\Toriel_NPC</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

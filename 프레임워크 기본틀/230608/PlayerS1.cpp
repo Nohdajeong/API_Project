@@ -130,6 +130,9 @@ void CPlayerS1::OffSet(void)
 	int	iOffSetX = 400;
 	int	iOffSetY = 300;
 
+	int	iOffSetMinY = 300;
+	int	iOffSetMaxY = 500;
+
 
 	int	iScrollX = int(CScrollMgr::Get_Instance()->Get_ScollX());
 	int	iScrollY = int(CScrollMgr::Get_Instance()->Get_ScollY());
@@ -140,11 +143,21 @@ void CPlayerS1::OffSet(void)
 	if (iOffSetX < m_tInfo.fX + iScrollX)
 		CScrollMgr::Get_Instance()->Set_ScrollX(-m_fSpeed);
 
-	if (iOffSetY > m_tInfo.fY + iScrollY)
-		CScrollMgr::Get_Instance()->Set_ScrollY(m_fSpeed);
+	if (CSceneMgr::Get_Instance()->Get_SceneID() == RUIN) {
 
-	if (iOffSetY < m_tInfo.fY + iScrollY)
-		CScrollMgr::Get_Instance()->Set_ScrollY(-m_fSpeed);
+		if (iOffSetY > m_tInfo.fY + iScrollY)
+			CScrollMgr::Get_Instance()->Set_ScrollY(m_fSpeed);
+
+		if (iOffSetY < m_tInfo.fY + iScrollY)
+			CScrollMgr::Get_Instance()->Set_ScrollY(-m_fSpeed);
+	}
+	else {
+		if (iOffSetMinY > m_tInfo.fY + iScrollY)
+			CScrollMgr::Get_Instance()->Set_ScrollY(m_fSpeed);
+
+		if (iOffSetMaxY < m_tInfo.fY + iScrollY)
+			CScrollMgr::Get_Instance()->Set_ScrollY(-m_fSpeed);
+	}
 
 }
 

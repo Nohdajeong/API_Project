@@ -94,13 +94,11 @@ void CMessageBlock::Initialize(void)
     m_tInfo.fCX = 700.f;
     m_tInfo.fCY = 200.f;
 
-	if (CSceneMgr::Get_Instance()->Get_SceneID() == MONSTER_MATCH || CSceneMgr::Get_Instance()->Get_SceneID() == BOSS_MATCH) {
 		CObj* pMonster = CObjMgr::Get_Instance()->Get_Monster();
 
 		m_iHp = pMonster->Get_States().iHp;
 		m_iAttack = pMonster->Get_States().iAttack;
 		m_iDefense = pMonster->Get_States().iDefense;
-	}
 
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Message.bmp", L"Message");
 

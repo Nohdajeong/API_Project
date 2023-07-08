@@ -160,6 +160,7 @@
     <ClInclude Include="MonsterMercy.h" />
     <ClInclude Include="PlayerState.h" />
     <ClInclude Include="Player_Battle.h" />
+    <ClInclude Include="Save.h" />
     <ClInclude Include="Stage_Flowey.h" />
     <ClInclude Include="MonsterAttack.h" />
     <ClInclude Include="MonsterBattle.h" />
@@ -200,6 +201,7 @@
     <ClInclude Include="TorielIdle.h" />
     <ClInclude Include="TorielItem.h" />
     <ClInclude Include="TorielMercy.h" />
+    <ClInclude Include="TorielNPC.h" />
     <ClInclude Include="TorielPassBullet.h" />
     <ClInclude Include="TorielPhase.h" />
   </ItemGroup>
@@ -217,6 +219,7 @@
     <ClCompile Include="MonsterMercy.cpp" />
     <ClCompile Include="PlayerState.cpp" />
     <ClCompile Include="Player_Battle.cpp" />
+    <ClCompile Include="Save.cpp" />
     <ClCompile Include="Stage_Flowey.cpp" />
     <ClCompile Include="MonsterAttack.cpp" />
     <ClCompile Include="MonsterBattle.cpp" />
@@ -256,6 +259,7 @@
     <ClCompile Include="TorielIdle.cpp" />
     <ClCompile Include="TorielItem.cpp" />
     <ClCompile Include="TorielMercy.cpp" />
+    <ClCompile Include="TorielNPC.cpp" />
     <ClCompile Include="TorielPassBullet.cpp" />
     <ClCompile Include="TorielPhase.cpp" />
   </ItemGroup>
