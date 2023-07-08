@@ -6,6 +6,7 @@
 #include "TorielPassBullet.h"
 #include "TorielHandBullet.h"
 #include "TorielCenterBullet.h"
+#include "TorielLaserBullet.h"
 
 CTorielPhase::CTorielPhase()
 {
@@ -118,4 +119,6 @@ void CTorielPhase::Boss_Phase4()
 
 void CTorielPhase::Boss_Phase5()
 {
+    CObjMgr::Get_Instance()->Add_Object(BULLET, CAbstractFactory<CTorielLaserBullet>::Create(300.f, 200.f + rand() % 100));
+
 }

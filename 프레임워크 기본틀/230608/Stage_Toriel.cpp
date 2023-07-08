@@ -53,10 +53,6 @@ void CStage3::Late_Update()
 		CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CMessageBlock>::Create(400.f, 500.f));
 
 	}
-
-
-
-
 }
 
 void CStage3::Render(HDC hDC)
