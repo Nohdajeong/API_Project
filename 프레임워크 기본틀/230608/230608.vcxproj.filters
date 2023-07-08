@@ -70,9 +70,6 @@
     <Filter Include="03. Scene\01. Stage\Stage4 - Toliel">
       <UniqueIdentifier>{19b1d20e-0635-4e2f-bb82-bebe1e5e47ed}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Scene\01. Stage\Stage4 - Toliel\00. Toliel">
-      <UniqueIdentifier>{a3c41303-6e06-4ded-bd04-6254ba419341}</UniqueIdentifier>
-    </Filter>
     <Filter Include="03. Scene\01. Stage\Stage3 - Puzzle">
       <UniqueIdentifier>{65020c9f-6d89-4cac-a823-92a326b007e4}</UniqueIdentifier>
     </Filter>
@@ -366,6 +363,9 @@
     <ClInclude Include="TorielPassBullet.h">
       <Filter>01. Obj\03. Boss\Pattern\Attack2</Filter>
     </ClInclude>
+    <ClInclude Include="Stage_Toriel.h">
+      <Filter>03. Scene\01. Stage\Stage4 - Toliel</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -511,6 +511,9 @@
     </ClCompile>
     <ClCompile Include="TorielPassBullet.cpp">
       <Filter>01. Obj\03. Boss\Pattern\Attack2</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage_Toriel.cpp">
+      <Filter>03. Scene\01. Stage\Stage4 - Toliel</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -31,6 +31,10 @@ void CSceneMgr::Scene_Change(SCENEID eScene)
 			m_pScene = new CStage2;
 			break;
 
+		case TORIEL:
+			m_pScene = new CStage3;
+			break;
+
 		case MONSTER_MATCH:
 			m_pScene = new CMonsterMatch;
 			break;

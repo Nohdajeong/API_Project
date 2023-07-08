@@ -3,13 +3,14 @@
 #include "SceneMgr.h"
 #include "KeyMgr.h"
 
-CMyButton::CMyButton() : m_iDrawID(0)
+CMyButton::CMyButton() 
+	: m_iDrawID(0)
 {
 }
 
 CMyButton::~CMyButton()
 {
-    Release();
+	Release();
 }
 
 void CMyButton::Initialize(void)
@@ -22,6 +23,9 @@ void CMyButton::Initialize(void)
 
 int CMyButton::Update(void)
 {
+	if (m_bDead)
+		return OBJ_DEAD;
+
     __super::Update_Rect();
 
     return OBJ_NOEVENT;
@@ -29,55 +33,60 @@ int CMyButton::Update(void)
 
 void CMyButton::Late_Update(void)
 {
-	POINT	pt{};
-	GetCursorPos(&pt);
-	ScreenToClient(g_hWnd, &pt);
-
-	if (PtInRect(&m_tRect, pt))
-	{
-		if (CSceneMgr::Get_Instance()->Get_SceneID() == MONSTER_IDLE || CSceneMgr::Get_Instance()->Get_SceneID() == MONSTER_MATCH) {
-			if (CKeyMgr::Get_Instance()->Key_Down(VK_LBUTTON))
-			{
-				if (!lstrcmp(L"Fight", m_pFrameKey))
-					CSceneMgr::Get_Instance()->Scene_Change(MONSTER_ATTACK);
-
-				else if (!lstrcmp(L"Act", m_pFrameKey))
-					CSceneMgr::Get_Instance()->Scene_Change(MONSTER_ACT);
-
-				else if (!lstrcmp(L"Item", m_pFrameKey))
-					CSceneMgr::Get_Instance()->Scene_Change(MONSTER_ITEM);
-
-				else if (!lstrcmp(L"Mercy", m_pFrameKey))
-					CSceneMgr::Get_Instance()->Scene_Change(MONSTER_MERCY);
-
-			}
-
-			m_iDrawID = 1;
-		}
-
-		if (CSceneMgr::Get_Instance()->Get_SceneID() == BOSS_IDLE || CSceneMgr::Get_Instance()->Get_SceneID() == BOSS_MATCH) {
-			if (CKeyMgr::Get_Instance()->Key_Down(VK_LBUTTON))
-			{
-				if (!lstrcmp(L"Fight", m_pFrameKey))
-					CSceneMgr::Get_Instance()->Scene_Change(BOSS_ATTACK);
-
-				else if (!lstrcmp(L"Act", m_pFrameKey))
-					CSceneMgr::Get_Instance()->Scene_Change(BOSS_ACT);
-
-				else if (!lstrcmp(L"Item", m_pFrameKey))
-					CSceneMgr::Get_Instance()->Scene_Change(BOSS_ITEM);
-
-				else if (!lstrcmp(L"Mercy", m_pFrameKey))
-					CSceneMgr::Get_Instance()->Scene_Change(BOSS_MERCY);
-
-			}
-
-			m_iDrawID = 1;
-		}
-
-	}
+	if (CSceneMgr::Get_Instance()->Get_ScenePreID() == RUIN)
+		Set_Dead();
+	
 	else {
-		m_iDrawID = 0;
+		POINT	pt{};
+		GetCursorPos(&pt);
+		ScreenToClient(g_hWnd, &pt);
+
+		if (PtInRect(&m_tRect, pt))
+		{
+			if (CSceneMgr::Get_Instance()->Get_SceneID() == MONSTER_IDLE || CSceneMgr::Get_Instance()->Get_SceneID() == MONSTER_MATCH) {
+				if (CKeyMgr::Get_Instance()->Key_Down(VK_LBUTTON))
+				{
+					if (!lstrcmp(L"Fight", m_pFrameKey))
+						CSceneMgr::Get_Instance()->Scene_Change(MONSTER_ATTACK);
+
+					else if (!lstrcmp(L"Act", m_pFrameKey))
+						CSceneMgr::Get_Instance()->Scene_Change(MONSTER_ACT);
+
+					else if (!lstrcmp(L"Item", m_pFrameKey))
+						CSceneMgr::Get_Instance()->Scene_Change(MONSTER_ITEM);
+
+					else if (!lstrcmp(L"Mercy", m_pFrameKey))
+						CSceneMgr::Get_Instance()->Scene_Change(MONSTER_MERCY);
+
+				}
+
+				m_iDrawID = 1;
+			}
+
+			if (CSceneMgr::Get_Instance()->Get_SceneID() == BOSS_IDLE || CSceneMgr::Get_Instance()->Get_SceneID() == BOSS_MATCH) {
+				if (CKeyMgr::Get_Instance()->Key_Down(VK_LBUTTON))
+				{
+					if (!lstrcmp(L"Fight", m_pFrameKey))
+						CSceneMgr::Get_Instance()->Scene_Change(BOSS_ATTACK);
+
+					else if (!lstrcmp(L"Act", m_pFrameKey))
+						CSceneMgr::Get_Instance()->Scene_Change(BOSS_ACT);
+
+					else if (!lstrcmp(L"Item", m_pFrameKey))
+						CSceneMgr::Get_Instance()->Scene_Change(BOSS_ITEM);
+
+					else if (!lstrcmp(L"Mercy", m_pFrameKey))
+						CSceneMgr::Get_Instance()->Scene_Change(BOSS_MERCY);
+
+				}
+
+				m_iDrawID = 1;
+			}
+
+		}
+		else {
+			m_iDrawID = 0;
+		}
 	}
 
 }

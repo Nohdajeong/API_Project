@@ -36,6 +36,8 @@ public:
 
 	void		Scroll_Lock();
 
+	void      Scroll_reset(int _iX, int _iY) { m_fScrollX = (float)_iX, m_fScrollY = (float)_iY; }
+
 private:
 	static CScrollMgr* m_pInstance;
 

@@ -3,6 +3,7 @@
 #include "Intro.h"
 #include "Stage_Ruin.h"
 #include "Stage_Flowey.h"
+#include "Stage_Toriel.h"
 #include "MonsterBattle.h"
 #include "MonsterAttack.h"
 #include "MonsterPhase.h"
@@ -26,6 +27,7 @@ private:
 
 public:
 	SCENEID		Get_SceneID() { return m_eCurScene; }
+	SCENEID		Get_ScenePreID() { return m_ePreScene; }
 
 public:
 	void		Scene_Change(SCENEID eScene);

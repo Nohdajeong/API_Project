@@ -17,6 +17,5 @@ public:
 
 private:
 	DWORD		m_dwTime = GetTickCount();
-	int			m_iRand;
 };
 

@@ -3,6 +3,7 @@
 #include "KeyMgr.h"
 #include "ObjMgr.h"
 #include "PlayerS1.h"
+#include "SceneMgr.h"
 
 CPlayerState::CPlayerState()
     : m_iLevel(0), m_iHp(0), m_iMaxHp(0)
@@ -28,11 +29,17 @@ void CPlayerState::Initialize(void)
 
 int CPlayerState::Update(void)
 {
+    if (m_bDead)
+        return OBJ_DEAD;
+
 	return OBJ_NOEVENT;
 }
 
 void CPlayerState::Late_Update(void)
 {
+    if (CSceneMgr::Get_Instance()->Get_SceneID() == RUIN)
+        m_bDead = true;
+
 }
 
 void CPlayerState::Render(HDC hDC)

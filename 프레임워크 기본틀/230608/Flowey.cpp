@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "Flowey.h"
 #include "ScrollMgr.h"
+#include "SceneMgr.h"
 
 CFlowey::CFlowey()
 {
@@ -33,6 +34,9 @@ void CFlowey::Initialize(void)
 
 int CFlowey::Update(void)
 {
+	if (m_bDead)
+		return OBJ_DEAD;
+
 	__super::Move_Frame();
 	__super::Update_Rect();
 
@@ -41,7 +45,8 @@ int CFlowey::Update(void)
 
 void CFlowey::Late_Update(void)
 {
-
+	if (CSceneMgr::Get_Instance()->Get_SceneID() != FLOWEY)
+		Set_Dead();
 }
 
 void CFlowey::Render(HDC hDC)

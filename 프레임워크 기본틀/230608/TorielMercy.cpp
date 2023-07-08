@@ -48,5 +48,4 @@ void CTorielMercy::Render(HDC hDC)
 
 void CTorielMercy::Release(void)
 {
-    CObjMgr::Get_Instance()->Destroy_Instance();
 }

@@ -53,6 +53,10 @@ void CPlayerBattle::Late_Update(void)
 			m_tInfo.fY *= -1.f;
 		}
 	}
+
+	if (CSceneMgr::Get_Instance()->Get_SceneID() == RUIN)
+		m_bDead = true;
+
 }
 
 void CPlayerBattle::Render(HDC hDC)

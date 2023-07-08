@@ -43,6 +43,10 @@ void CLook::Late_Update(void)
 {
 	if (m_tStates.iHp == 0)
 		Set_Dead();
+
+	if (CSceneMgr::Get_Instance()->Get_SceneID() == RUIN)
+		Set_Dead();
+
 }
 
 void CLook::Render(HDC hDC)

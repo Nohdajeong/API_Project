@@ -94,11 +94,13 @@ void CMessageBlock::Initialize(void)
     m_tInfo.fCX = 700.f;
     m_tInfo.fCY = 200.f;
 
-	CObj* pMonster = CObjMgr::Get_Instance()->Get_Monster();
+	if (CSceneMgr::Get_Instance()->Get_SceneID() == MONSTER_MATCH || CSceneMgr::Get_Instance()->Get_SceneID() == BOSS_MATCH) {
+		CObj* pMonster = CObjMgr::Get_Instance()->Get_Monster();
 
-	m_iHp = pMonster->Get_States().iHp;
-	m_iAttack = pMonster->Get_States().iAttack;
-	m_iDefense = pMonster->Get_States().iDefense;
+		m_iHp = pMonster->Get_States().iHp;
+		m_iAttack = pMonster->Get_States().iAttack;
+		m_iDefense = pMonster->Get_States().iDefense;
+	}
 
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Message.bmp", L"Message");
 
@@ -117,7 +119,11 @@ int CMessageBlock::Update(void)
 
 void CMessageBlock::Late_Update(void)
 {
+	if (CSceneMgr::Get_Instance()->Get_SceneID() == RUIN)
+		m_bDead = true;
+
 	Text_Change(CSceneMgr::Get_Instance()->Get_SceneID());
+
 }
 
 void CMessageBlock::Render(HDC hDC)
@@ -135,6 +141,9 @@ void CMessageBlock::Render(HDC hDC)
 		(int)m_tInfo.fCX,
 		(int)m_tInfo.fCY,
 		RGB(195, 134, 255));
+
+	SetBkMode(hDC, 1);
+	SetTextColor(hDC, RGB(255, 255, 255));
 
 	TextOut(hDC, (int)(m_tRect.left + 40), (int)(m_tInfo.fY - 50), szBuff, lstrlen(szBuff));
 	TextOut(hDC, (int)(m_tRect.left + 40), (int)(m_tInfo.fY), szPlayer, lstrlen(szPlayer));

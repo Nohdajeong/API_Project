@@ -21,9 +21,6 @@ CPlayerS1::~CPlayerS1()
 
 void CPlayerS1::Initialize(void)
 {
-	m_tInfo.fX = WINCX * 0.5f;
-	m_tInfo.fY = WINCY * 0.5f;
-
 	m_tInfo.fCX = 40.f;
 	m_tInfo.fCY = 60.f;
 
@@ -35,11 +32,10 @@ void CPlayerS1::Initialize(void)
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Player/Player_Up.bmp", L"Player_UP");
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Player/Stretch.bmp", L"Player_UP");
 	
-	m_pFrameKey = L"Player_DOWN";
+	m_pFrameKey = L"Player_UP";
 
-	if (CSceneMgr::Get_Instance()->Get_SceneID() == FLOWEY)
-		m_pFrameKey = L"Player_UP";
-
+	if (CSceneMgr::Get_Instance()->Get_SceneID() == RUIN)
+		m_pFrameKey = L"Player_DOWN";
 
 	m_tFrame.iFrameStart = 0;
 	m_tFrame.iFrameEnd = 0;
@@ -65,7 +61,6 @@ int CPlayerS1::Update(void)
 
 void CPlayerS1::Late_Update(void)
 {
-
 }
 
 void CPlayerS1::Render(HDC hDC)
@@ -75,8 +70,8 @@ void CPlayerS1::Render(HDC hDC)
 
 	HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Img(m_pFrameKey);
 
-	if (CSceneMgr::Get_Instance()->Get_SceneID() == RUIN || CSceneMgr::Get_Instance()->Get_SceneID() == FLOWEY)
-	GdiTransparentBlt(hDC,
+	if (CSceneMgr::Get_Instance()->Get_SceneID() == RUIN || CSceneMgr::Get_Instance()->Get_SceneID() == FLOWEY || CSceneMgr::Get_Instance()->Get_SceneID() == TORIEL)	
+		GdiTransparentBlt(hDC,
 			(int)m_tRect.left + iScrollX, // 복사 받을 위치 X,Y 좌표
 			(int)m_tRect.top + iScrollY,
 			(int)m_tInfo.fCX,	// 복사 받을 가로, 세로 길이

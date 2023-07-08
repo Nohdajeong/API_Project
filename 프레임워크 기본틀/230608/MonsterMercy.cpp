@@ -1,9 +1,7 @@
 #include "stdafx.h"
 #include "MonsterMercy.h"
-#include "Look.h"
-#include "MyButton.h"
 #include "MessageBlock.h"
-#include "PlayerState.h"
+#include "SoundMgr.h"
 
 CMonsterMercy::CMonsterMercy()
 {
@@ -11,7 +9,6 @@ CMonsterMercy::CMonsterMercy()
 
 CMonsterMercy::~CMonsterMercy()
 {
-    Release();
 }
 
 void CMonsterMercy::Initialize(void)
@@ -29,6 +26,7 @@ void CMonsterMercy::Late_Update(void)
     CObjMgr::Get_Instance()->Late_Update();
 
     if (m_dwTime + 5000 < GetTickCount()) {
+        CSoundMgr::Get_Instance()->StopSound(SOUND_BGM);
         CSceneMgr::Get_Instance()->Scene_Change(RUIN);
         return;
     }
@@ -47,5 +45,4 @@ void CMonsterMercy::Render(HDC hDC)
 
 void CMonsterMercy::Release(void)
 {
-    CObjMgr::Get_Instance()->Destroy_Instance();
 }
