@@ -26,7 +26,7 @@ void CSave::Initialize(void)
 	m_tFrame.iFrameEnd = 1;
 	m_tFrame.iMotion = 0;
 	m_tFrame.dwSpeed = 400;
-	m_tFrame.dwTime = GetTickCount();
+	m_tFrame.dwTime = GetTickCount64();
 
 	m_eRender = GAMEOBJECT;
 

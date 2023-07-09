@@ -18,7 +18,7 @@ void CStage1::Initialize()
 {
 	CSoundMgr::Get_Instance()->StopSound(SOUND_BGM);
 
-	if(CSceneMgr::Get_Instance()->Get_ScenePreID() == SCENE_END)
+	if(CSceneMgr::Get_Instance()->Get_ScenePreID() == INTRO)
 		CObjMgr::Get_Instance()->Add_Object(PLAYER, CAbstractFactory<CPlayerS1>::Create(400.f, 300.f));
 
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Map/Ruin_Back.bmp", L"Ruin_Back");

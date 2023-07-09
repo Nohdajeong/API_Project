@@ -84,24 +84,6 @@ void CMessageBlock::Text_Change(SCENEID eScene)
 		if (m_dwTime + 6000 < GetTickCount64())
 			swprintf_s(szBuff, L"*  0exp와 0골드를 얻었다.");
 		break;
-
-	case FLOWEY:
-		swprintf_s(szBuff, L"* 안녕! 나는 플라위야, 노란꽃 플라위!");
-		if (m_dwTime + 1000 < GetTickCount64())
-			swprintf_s(szBuff, L"* 넌 이곳에 처음 왔구나?");
-		if (m_dwTime + 2000 < GetTickCount64())
-			swprintf_s(szBuff, L"* 아, 아니지.");
-		if (m_dwTime + 3000 < GetTickCount64())
-			swprintf_s(szBuff, L"* 이곳은 본 게임이 아니었지.");
-		if (m_dwTime + 4000 < GetTickCount64())
-			swprintf_s(szBuff, L"* 뭐, 잘 해봐!");
-		if (m_dwTime + 5000 < GetTickCount64())
-			swprintf_s(szBuff, L"* 이걸 보는 너 말이야, 하하!");
-		break;
-
-	case TORIEL:
-		swprintf_s(szBuff, L"* 당신의 의지가 가득 차올랐다.");
-		break;
 	}
 }
 
@@ -112,11 +94,11 @@ void CMessageBlock::Initialize(void)
     m_tInfo.fCX = 700.f;
     m_tInfo.fCY = 200.f;
 
-		CObj* pMonster = CObjMgr::Get_Instance()->Get_Monster();
+	CObj* pMonster = CObjMgr::Get_Instance()->Get_Monster();
 
-		m_iHp = pMonster->Get_States().iHp;
-		m_iAttack = pMonster->Get_States().iAttack;
-		m_iDefense = pMonster->Get_States().iDefense;
+	m_iHp = pMonster->Get_States().iHp;
+	m_iAttack = pMonster->Get_States().iAttack;
+	m_iDefense = pMonster->Get_States().iDefense;
 
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Message.bmp", L"Message");
 

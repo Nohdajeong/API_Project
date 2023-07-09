@@ -22,7 +22,7 @@ void CTorielPhase::Initialize(void)
     CObjMgr::Get_Instance()->Get_BattlePlayer()->Set_Pos(400.f, 450.f);
     CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CMessageBlock>::Create());
 
-    m_iMonsterPhase = rand() % 50;
+    m_iMonsterPhase = rand() % 5;
 
     if (m_iMonsterPhase % 5 == 2)
         Boss_Phase3();
@@ -33,7 +33,7 @@ void CTorielPhase::Update(void)
 {
     //CObj* pPlayer = CObjMgr::Get_Instance()->Get_BattlePlayer();
     //CObj* pMonster = CObjMgr::Get_Instance()->Get_Monster();
-
+    
     if (m_iMonsterPhase % 5 == 0) {
         if (m_preDeley + 50.f < GetTickCount64()) {
             Boss_Phase1();
@@ -53,8 +53,12 @@ void CTorielPhase::Update(void)
         }
     }
     else if (m_iMonsterPhase % 5 == 4) {
-        Boss_Phase5();
+        if (m_preDeley + 100.f < GetTickCount64()) {
+            Boss_Phase5();
+            m_preDeley = GetTickCount64();
+        }
     }
+
 
     CObjMgr::Get_Instance()->Update();
 
@@ -119,6 +123,8 @@ void CTorielPhase::Boss_Phase4()
 
 void CTorielPhase::Boss_Phase5()
 {
-    CObjMgr::Get_Instance()->Add_Object(BULLET, CAbstractFactory<CTorielLaserBullet>::Create(300.f, 200.f + rand() % 100));
-
+    CObjMgr::Get_Instance()->Add_Object(BULLET, CAbstractFactory<CTorielLaserBullet>::Create(380.f, 300.f));
+    CObjMgr::Get_Instance()->Add_Object(BULLET, CAbstractFactory<CTorielLaserBullet>::Create(420.f, 300.f));
+    CObjMgr::Get_Instance()->Add_Object(BULLET, CAbstractFactory<CTorielLaserBullet>::Create(460.f, 300.f));
+    CObjMgr::Get_Instance()->Add_Object(BULLET, CAbstractFactory<CTorielLaserBullet>::Create(490.f, 300.f));
 }

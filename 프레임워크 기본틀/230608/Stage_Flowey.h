@@ -19,6 +19,10 @@ public:
 	virtual void Release();
 
 private:
+	bool	Search(CObj* _pTarget);
+	float	m_fRange;
+
+private:
 	DWORD		m_dwTime = GetTickCount();
 
 };

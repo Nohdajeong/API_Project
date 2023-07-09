@@ -2,6 +2,9 @@
 #include "MyButton.h"
 #include "SceneMgr.h"
 #include "KeyMgr.h"
+#include "SoundMgr.h"
+
+float	g_fSound = 3.f;
 
 CMyButton::CMyButton() 
 	: m_iDrawID(0)
@@ -15,8 +18,11 @@ CMyButton::~CMyButton()
 
 void CMyButton::Initialize(void)
 {
+
     m_tInfo.fCX = 145.f;
     m_tInfo.fCY = 55.f;
+
+
 
     m_eRender = UI;
 }
@@ -46,21 +52,22 @@ void CMyButton::Late_Update(void)
 			if (CSceneMgr::Get_Instance()->Get_SceneID() == MONSTER_IDLE || CSceneMgr::Get_Instance()->Get_SceneID() == MONSTER_MATCH) {
 				if (CKeyMgr::Get_Instance()->Key_Down(VK_LBUTTON))
 				{
-					if (!lstrcmp(L"Fight", m_pFrameKey))
+					if (!lstrcmp(L"Fight", m_pFrameKey)) {
 						CSceneMgr::Get_Instance()->Scene_Change(MONSTER_ATTACK);
-
-					else if (!lstrcmp(L"Act", m_pFrameKey))
+					}
+					else if (!lstrcmp(L"Act", m_pFrameKey)) {
 						CSceneMgr::Get_Instance()->Scene_Change(MONSTER_ACT);
-
-					else if (!lstrcmp(L"Item", m_pFrameKey))
+					}
+					else if (!lstrcmp(L"Item", m_pFrameKey)) {
 						CSceneMgr::Get_Instance()->Scene_Change(MONSTER_ITEM);
-
-					else if (!lstrcmp(L"Mercy", m_pFrameKey))
+					}
+					else if (!lstrcmp(L"Mercy", m_pFrameKey)) {
 						CSceneMgr::Get_Instance()->Scene_Change(MONSTER_MERCY);
-
+					}
 				}
 
 				m_iDrawID = 1;
+				CSoundMgr::Get_Instance()->PlaySoundW(L"Select.wav", SOUND_EFFECT, g_fSound);
 			}
 
 			if (CSceneMgr::Get_Instance()->Get_SceneID() == BOSS_IDLE || CSceneMgr::Get_Instance()->Get_SceneID() == BOSS_MATCH) {
@@ -81,8 +88,8 @@ void CMyButton::Late_Update(void)
 				}
 
 				m_iDrawID = 1;
+				CSoundMgr::Get_Instance()->PlaySoundW(L"Select.wav", SOUND_EFFECT, g_fSound);
 			}
-
 		}
 		else {
 			m_iDrawID = 0;
@@ -111,4 +118,5 @@ void CMyButton::Render(HDC hDC)
 
 void CMyButton::Release(void)
 {
+	CSoundMgr::Get_Instance()->StopSound(SOUND_BGM);
 }

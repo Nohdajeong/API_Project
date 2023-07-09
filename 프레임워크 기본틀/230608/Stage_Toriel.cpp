@@ -2,10 +2,11 @@
 #include "Stage_Toriel.h"
 #include "CollisionMgr.h"
 #include "SoundMgr.h"
-#include "MessageBlock.h"
+#include "MessageTextBlock.h"
 #include "Save.h"
 #include "TorielNPC.h"
 #include "KeyMgr.h"
+#include "Flowey.h"
 
 CStage3::CStage3()
 {
@@ -25,7 +26,8 @@ void CStage3::Initialize()
 	CObjMgr::Get_Instance()->Get_Player()->Set_Pos(400.f, 1150.f);
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Map/Toriel.bmp", L"Toriel_map");
 	CObjMgr::Get_Instance()->Add_Object(STAGE_OBJ, CAbstractFactory<CSave>::Create());
-	CObjMgr::Get_Instance()->Add_Object(MONSTER, CAbstractFactory<CTorielNPC>::Create(400.f, 250.f));
+
+	CObjMgr::Get_Instance()->Add_Object(NPC, CAbstractFactory<CTorielNPC>::Create(400.f, 250.f));
 
 	CScrollMgr::Get_Instance()->Scroll_reset(0.f, -500.f);
 
@@ -42,15 +44,15 @@ void CStage3::Late_Update()
 
 	if (CCollisionMgr::Check_Collision(
 		CObjMgr::Get_Instance()->Get_Objects(PLAYER),
-		CObjMgr::Get_Instance()->Get_Objects(MONSTER)))
-		CSceneMgr::Get_Instance()->Scene_Change(BOSS_MATCH);
-
+		CObjMgr::Get_Instance()->Get_Objects(NPC))) {
+			CSceneMgr::Get_Instance()->Scene_Change(BOSS_MATCH);
+	}
 
 	if (CCollisionMgr::Check_Collision(
 		CObjMgr::Get_Instance()->Get_Objects(PLAYER),
 		CObjMgr::Get_Instance()->Get_Objects(STAGE_OBJ)))
 	{
-		CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CMessageBlock>::Create(400.f, 500.f));
+		CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CMessageTextBlock>::Create(400.f, 500.f));
 
 	}
 }

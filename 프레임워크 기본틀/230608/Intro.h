@@ -3,6 +3,9 @@
 class Intro : public Loading
 {
 public:
+	Intro() {};
+	~Intro() {};
+public:
 	virtual void	Initialize(void) override;
 	virtual void	Update(void) override;
 	virtual void	Late_Update(void) override;

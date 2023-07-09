@@ -8,7 +8,7 @@
 #include "SoundMgr.h"
 #include "BmpMgr.h"
 
-CMainGame::CMainGame() : m_dwTime(GetTickCount()), m_iFPS(0)
+CMainGame::CMainGame() : m_dwTime(GetTickCount64()), m_iFPS(0)
 {
 	ZeroMemory(m_szFPS, sizeof(m_szFPS));
 }
@@ -27,7 +27,7 @@ void CMainGame::Initialize()
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Back.bmp", L"Back");
 	CSoundMgr::Get_Instance()->Initialize();
 
-	CSceneMgr::Get_Instance()->Scene_Change(RUIN);
+	CSceneMgr::Get_Instance()->Scene_Change(INTRO);
 
 
 }
@@ -47,13 +47,13 @@ void CMainGame::Render()
 {
 	++m_iFPS;
 
-	if (m_dwTime + 2000 < GetTickCount())
+	if (m_dwTime + 2000 < GetTickCount64())
 	{
 		swprintf_s(m_szFPS, L"FPS : %d", m_iFPS);
 		SetWindowText(g_hWnd, m_szFPS);
 
 		m_iFPS = 0;
-		m_dwTime = GetTickCount();
+		m_dwTime = GetTickCount64();
 	}
 
 	AddFontResourceA("NeoµÕ±Ù¸ð.ttf");

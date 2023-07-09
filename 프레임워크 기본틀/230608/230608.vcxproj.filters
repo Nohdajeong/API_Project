@@ -396,6 +396,9 @@
     <ClInclude Include="TorielLaserBullet.h">
       <Filter>01. Obj\03. Boss\Pattern\Attack5</Filter>
     </ClInclude>
+    <ClInclude Include="MessageTextBlock.h">
+      <Filter>01. Obj\06. Message</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -562,6 +565,9 @@
     </ClCompile>
     <ClCompile Include="TorielLaserBullet.cpp">
       <Filter>01. Obj\03. Boss\Pattern\Attack5</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageTextBlock.cpp">
+      <Filter>01. Obj\06. Message</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -32,16 +32,22 @@ int CTorielLaserBullet::Update(void)
 {
 	if (m_bDead)
 		return OBJ_DEAD;	
-	
-	m_pTarget = CObjMgr::Get_Instance()->Get_BattlePlayer();
 
-	if (Search(m_pTarget)) {
-		if (m_tInfo.fX < m_pTarget->Get_Info().fX)
-			m_tInfo.fX -= 5.f;
-		else if (m_tInfo.fX > m_pTarget->Get_Info().fX)
-			m_tInfo.fX += 5.f;
-	}
-	m_tInfo.fY += m_fSpeed;
+	float fWidth = 500.f - m_tInfo.fX;
+	float fHeight = 500.f - m_tInfo.fY;
+
+	float fDiagonal = sqrtf(fWidth * fWidth + fHeight * fHeight);
+	float fRadian = acosf(fWidth / fDiagonal);
+
+	m_fAngle = fRadian * 180.f / PI;
+
+	if (m_tInfo.fY < 500.f)
+		m_fAngle *= -1.f;
+
+
+	m_fAngle += 3.f;
+	m_tInfo.fX -= m_fSpeed * cosf(m_fAngle * (PI / 180.f));
+	m_tInfo.fY -= m_fSpeed * sinf(m_fAngle * (PI / 180.f));
 
 	__super::Update_Rect();
 
@@ -82,15 +88,3 @@ void CTorielLaserBullet::Release(void)
 {
 }
 
-bool CTorielLaserBullet::Search(CObj* _pTarget)
-{
-	if ((m_tInfo.fY + m_fRange) >= _pTarget->Get_Info().fY && (m_tInfo.fY - m_fRange) <= _pTarget->Get_Info().fY) {
-
-		if (m_tInfo.fX > _pTarget->Get_Info().fX && (m_tInfo.fX - m_fRange) < _pTarget->Get_Info().fX)
-			return true;
-		else if (m_tInfo.fX < _pTarget->Get_Info().fX && (m_tInfo.fX + m_fRange) > _pTarget->Get_Info().fX)
-			return true;
-	}
-
-	return false;
-}

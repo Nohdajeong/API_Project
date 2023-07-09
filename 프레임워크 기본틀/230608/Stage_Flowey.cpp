@@ -2,8 +2,9 @@
 #include "Stage_Flowey.h"
 #include "CollisionMgr.h"
 #include "SoundMgr.h"
-#include "MessageBlock.h"
+#include "MessageTextBlock.h"
 #include "KeyMgr.h"
+#include "Flowey.h"
 
 CStage2::CStage2()
 {
@@ -26,11 +27,13 @@ void CStage2::Initialize()
 
 	CScrollMgr::Get_Instance()->Scroll_reset(0.f, -200.f);
 
+
 }
 
 void CStage2::Update()
 {
 	CObjMgr::Get_Instance()->Update();
+
 }
 
 void CStage2::Late_Update()
@@ -43,17 +46,16 @@ void CStage2::Late_Update()
 		CSceneMgr::Get_Instance()->Scene_Change(TORIEL);
 	}
 
-	CCollisionMgr::Collision_RectEx(
-		CObjMgr::Get_Instance()->Get_Objects(PLAYER),
-		CObjMgr::Get_Instance()->Get_Objects(STAGE_OBJ));
-
 	if (CCollisionMgr::Check_Collision(
 		CObjMgr::Get_Instance()->Get_Objects(PLAYER),
 		CObjMgr::Get_Instance()->Get_Objects(STAGE_OBJ)))
 	{
-		CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CMessageBlock>::Create(400.f, 500.f));
+		CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CMessageTextBlock>::Create(400.f, 500.f));
+		if (m_dwTime + 10000.f < GetTickCount64()) {
+			CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CMessageTextBlock>::Create(400.f, 500.f));
+			m_dwTime = GetTickCount64();
+		}
 	}
-
 
 }
 

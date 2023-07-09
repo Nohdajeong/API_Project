@@ -151,6 +151,8 @@ bool CCollisionMgr::Check_Sphere(CObj* _Dst, CObj* _Src)
 
 bool CCollisionMgr::Check_Collision(list<CObj*> _Dst, list<CObj*> _Src)
 {
+	float fX = 0.f, fY = 0.f;
+
 	for (auto& Dst : _Dst)
 	{
 		for (auto& Src : _Src)

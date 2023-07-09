@@ -17,6 +17,6 @@ public:
 private:
 	int		m_iDrawID;
 
-
+	DWORD	m_dwTime = GetTickCount();
 };
 

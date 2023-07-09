@@ -15,9 +15,6 @@ public:
 	virtual void Release(void) override;
 
 private:
-	bool		Search(CObj* _pTarget);
-
-private:
 	DWORD		m_dwTime;
 	int			m_iTime;
 	float		m_fRange;

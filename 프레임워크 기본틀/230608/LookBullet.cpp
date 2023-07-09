@@ -79,8 +79,6 @@ void CLooKBullet::Render(HDC hDC)
 		(int)m_tInfo.fCX,
 		(int)m_tInfo.fCY,
 		RGB(205, 141, 255));
-
-	//Rectangle(hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
 }
 
 void CLooKBullet::Release(void)

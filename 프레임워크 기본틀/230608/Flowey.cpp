@@ -2,6 +2,7 @@
 #include "Flowey.h"
 #include "ScrollMgr.h"
 #include "SceneMgr.h"
+#include "MessageBlock.h"
 
 CFlowey::CFlowey()
 {
@@ -14,8 +15,11 @@ CFlowey::~CFlowey()
 
 void CFlowey::Initialize(void)
 {
+	m_tInfo.fX = 400.f;
+	m_tInfo.fY = 500.f;
 	m_tInfo.fCX = 50.f;
 	m_tInfo.fCY = 50.f;
+
 
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/NPC/Flowey.bmp", L"Flowey");
 
@@ -23,7 +27,7 @@ void CFlowey::Initialize(void)
 	m_tFrame.iFrameEnd = 1;
 	m_tFrame.iMotion = 0;
 	m_tFrame.dwSpeed = 400;
-	m_tFrame.dwTime = GetTickCount();
+	m_tFrame.dwTime = GetTickCount64();
 
 	m_eRender = GAMEOBJECT;
 
@@ -69,4 +73,3 @@ void CFlowey::Render(HDC hDC)
 void CFlowey::Release(void)
 {
 }
-
