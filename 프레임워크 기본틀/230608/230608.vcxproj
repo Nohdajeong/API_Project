@@ -150,6 +150,7 @@
     <ClInclude Include="Actor.h" />
     <ClInclude Include="Attack_Bar.h" />
     <ClInclude Include="Attack_Motion.h" />
+    <ClInclude Include="Ending.h" />
     <ClInclude Include="LookBullet.h" />
     <ClInclude Include="LookNormalBullet.h" />
     <ClInclude Include="Mention.h" />
@@ -175,7 +176,6 @@
     <ClInclude Include="KeyMgr.h" />
     <ClInclude Include="Line.h" />
     <ClInclude Include="LineMgr.h" />
-    <ClInclude Include="Loading.h" />
     <ClInclude Include="MainGame.h" />
     <ClInclude Include="MessageBlock.h" />
     <ClInclude Include="Look.h" />
@@ -214,6 +214,7 @@
     <ClCompile Include="230608.cpp" />
     <ClCompile Include="Attack_Bar.cpp" />
     <ClCompile Include="Attack_Motion.cpp" />
+    <ClCompile Include="Ending.cpp" />
     <ClCompile Include="LookBullet.cpp" />
     <ClCompile Include="LookNormalBullet.cpp" />
     <ClCompile Include="Mention.cpp" />

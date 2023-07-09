@@ -18,6 +18,7 @@
 #include "TorielItem.h"
 #include "TorielMercy.h"
 #include "TorielPhase.h"
+#include "Ending.h"
 
 class CSceneMgr
 {

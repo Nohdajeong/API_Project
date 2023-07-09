@@ -267,9 +267,6 @@
     <ClInclude Include="ScrollMgr.h">
       <Filter>02. Design\05. ScrollMgr</Filter>
     </ClInclude>
-    <ClInclude Include="Loading.h">
-      <Filter>03. Scene\00. Intro</Filter>
-    </ClInclude>
     <ClInclude Include="BitMap.h">
       <Filter>02. Design\06. BmpMgr</Filter>
     </ClInclude>
@@ -398,6 +395,9 @@
     </ClInclude>
     <ClInclude Include="MessageTextBlock.h">
       <Filter>01. Obj\06. Message</Filter>
+    </ClInclude>
+    <ClInclude Include="Ending.h">
+      <Filter>03. Scene\04. Ending</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -568,6 +568,9 @@
     </ClCompile>
     <ClCompile Include="MessageTextBlock.cpp">
       <Filter>01. Obj\06. Message</Filter>
+    </ClCompile>
+    <ClCompile Include="Ending.cpp">
+      <Filter>03. Scene\04. Ending</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

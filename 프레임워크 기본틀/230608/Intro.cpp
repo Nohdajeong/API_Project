@@ -4,8 +4,6 @@
 
 void Intro::Initialize(void)
 {
-	m_dwTime = GetTickCount();
-
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Intro.bmp", L"Intro");
 
 }
@@ -32,9 +30,4 @@ void Intro::Render(HDC hDC)
 
 void Intro::Release(void)
 {
-}
-
-SCENEID Intro::UpdateScene()
-{
-	return INTRO;
 }

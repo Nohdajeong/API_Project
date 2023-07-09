@@ -95,6 +95,9 @@ void CSceneMgr::Scene_Change(SCENEID eScene)
 			m_pScene = new CTorielMercy;
 			break;
 
+		case ENDING:
+			m_pScene = new Ending;
+			break;
 		}
 
 		m_pScene->Initialize();
