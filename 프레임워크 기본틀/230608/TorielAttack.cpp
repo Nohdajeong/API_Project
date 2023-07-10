@@ -4,6 +4,7 @@
 #include "Attack_Bar.h"
 #include "Attack_Motion.h"
 #include "CollisionMgr.h"
+#include "MonsterState.h"
 
 CTorielAttack::CTorielAttack()
 {
@@ -18,6 +19,8 @@ void CTorielAttack::Initialize(void)
 {
     CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CMessageBlock>::Create());
     CObjMgr::Get_Instance()->Add_Object(BAR, CAbstractFactory<CPlayer_Attack>::Create(400.f, 400.f));
+    CObjMgr::Get_Instance()->Add_Object(MONSTER_STATE, CAbstractFactory<CMonsterState>::Create());
+
 }
 
 void CTorielAttack::Update(void)
@@ -42,9 +45,6 @@ void CTorielAttack::Late_Update(void)
 
         if (m_dwTime + 4000 < GetTickCount64()) {
             CObjMgr::Get_Instance()->Get_Monster()->Set_Hp(-CObjMgr::Get_Instance()->Get_Objects(BAR).front()->Get_Attack());
-        
-            if (CObjMgr::Get_Instance()->Get_Monster()->Get_Hp() < 220)
-                CObjMgr::Get_Instance()->Get_Monster()->Set_Hp(-(CObjMgr::Get_Instance()->Get_Objects(BAR).front()->Get_Attack() * 2));
         }
 
     }

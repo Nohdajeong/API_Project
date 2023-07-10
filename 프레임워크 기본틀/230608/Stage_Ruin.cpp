@@ -82,19 +82,19 @@ void CStage1::Release()
 
 void CStage1::Walls()
 {
-	CObjMgr::Get_Instance()->Add_Object(WALL, CAbstractFactory<CWall>::Create(140.f, 130.f));
+	CObjMgr::Get_Instance()->Add_Object(WALL, CAbstractFactory<CWall>::Create(140.f, 80.f));
 	CObjMgr::Get_Instance()->Add_Object(WALL, CAbstractFactory<CWall>::Create(140.f, 510.f));
 	CObjMgr::Get_Instance()->Add_Object(WALL, CAbstractFactory<CWall>::Create(90.f, 430.f));
 	CObjMgr::Get_Instance()->Add_Object(WALL, CAbstractFactory<CWall>::Create(180.f, 560.f));
 
 	CObjMgr::Get_Instance()->Add_Object(WALL, CAbstractFactory<CWall>::Create(615.f, 555.f));
-	CObjMgr::Get_Instance()->Add_Object(WALL, CAbstractFactory<CWall>::Create(640.f, 130.f));
+	CObjMgr::Get_Instance()->Add_Object(WALL, CAbstractFactory<CWall>::Create(640.f, 80.f));
 	CObjMgr::Get_Instance()->Add_Object(WALL, CAbstractFactory<CWall>::Create(670.f, 510.f));
 	CObjMgr::Get_Instance()->Add_Object(WALL, CAbstractFactory<CWall>::Create(1650.f, 400.f));
 
 
 	for (int i = 0; i < 4; i++) {
-		CObjMgr::Get_Instance()->Add_Object(WALL, CAbstractFactory<CWall>::Create(240.f + i * 100, 80.f));
+		CObjMgr::Get_Instance()->Add_Object(WALL, CAbstractFactory<CWall>::Create(240.f + i * 100, 30.f));
 		CObjMgr::Get_Instance()->Add_Object(WALL, CAbstractFactory<CWall>::Create(240.f + i * 100, 570.f));
 	}
 

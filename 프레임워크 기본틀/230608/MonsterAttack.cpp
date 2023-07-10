@@ -4,6 +4,7 @@
 #include "Attack_Bar.h"
 #include "Attack_Motion.h"
 #include "CollisionMgr.h"
+#include "MonsterState.h"
 
 CMonsterAttack::CMonsterAttack()
 {
@@ -18,13 +19,17 @@ void CMonsterAttack::Initialize(void)
 {
     CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CMessageBlock>::Create());
     CObjMgr::Get_Instance()->Add_Object(BAR, CAbstractFactory<CPlayer_Attack>::Create());
+    CObjMgr::Get_Instance()->Add_Object(MONSTER_STATE, CAbstractFactory<CMonsterState>::Create());
 
 }
 
 void CMonsterAttack::Update(void)
 {
     CObjMgr::Get_Instance()->Update();
+}
 
+void CMonsterAttack::Late_Update(void)
+{
     CObj* pAttack = CObjMgr::Get_Instance()->Get_Objects(BAR).front();
 
     if (pAttack->Get_Speed() == 0) {
@@ -33,10 +38,6 @@ void CMonsterAttack::Update(void)
         }
     }
 
-}
-
-void CMonsterAttack::Late_Update(void)
-{
     if (CCollisionMgr::Check_Collision(
         CObjMgr::Get_Instance()->Get_Objects(MONSTER),
         CObjMgr::Get_Instance()->Get_Objects(ATTACK))) {

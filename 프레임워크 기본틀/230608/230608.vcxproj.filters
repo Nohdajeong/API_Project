@@ -208,6 +208,9 @@
     <Filter Include="01. Obj\11. Wall">
       <UniqueIdentifier>{8c706bdc-bdc4-4862-acfc-8e698aa3ba18}</UniqueIdentifier>
     </Filter>
+    <Filter Include="01. Obj\04. Monster\State">
+      <UniqueIdentifier>{0880803a-3ab0-4df5-a38f-8e877e3dd564}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -417,6 +420,9 @@
     <ClInclude Include="TorielDieMention.h">
       <Filter>01. Obj\09. Mention</Filter>
     </ClInclude>
+    <ClInclude Include="MonsterState.h">
+      <Filter>01. Obj\04. Monster\State</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -601,6 +607,9 @@
     </ClCompile>
     <ClCompile Include="TorielDieMention.cpp">
       <Filter>01. Obj\09. Mention</Filter>
+    </ClCompile>
+    <ClCompile Include="MonsterState.cpp">
+      <Filter>01. Obj\04. Monster\State</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

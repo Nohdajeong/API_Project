@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "Toriel.h"
 #include "SceneMgr.h"
+#include "MonsterState.h"
 
 CToriel::CToriel()
     : m_iDrawID(0)
@@ -15,12 +16,15 @@ void CToriel::Initialize(void)
 {
     m_tInfo = { 400.f, 190.f, 178.f, 245.f };
 
-    m_iHp = 220.f;
-    m_iAttack = 80.f;
-    m_iDefense = 80.f;
+    m_iHp = 220;
+    m_iMaxHp = 220;
+    m_iAttack = 80;
+    m_iDefense = 80;
 
     CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Monster/Toriel_bosss.bmp", L"Toriel");
     
+
+
     m_dwTime = GetTickCount64();
     m_eRender = GAMEOBJECT;
 
@@ -38,6 +42,10 @@ int CToriel::Update(void)
 
 void CToriel::Late_Update(void)
 {
+    if (CSceneMgr::Get_Instance()->Get_SceneID() == MONSTER_ATTACK)
+        CObjMgr::Get_Instance()->Add_Object(MONSTER_STATE, CAbstractFactory<CMonsterState>::Create());
+
+
     if (CSceneMgr::Get_Instance()->Get_SceneID() == RUIN)
         Set_Dead();
 
@@ -67,17 +75,6 @@ void CToriel::Render(HDC hDC)
         (int)m_tInfo.fCX,
         (int)m_tInfo.fCY,
         RGB(195, 134, 255));
-
-
-    if (CSceneMgr::Get_Instance()->Get_SceneID() == BOSS_ATTACK) {
-        SetBkMode(hDC, 1);
-        SetTextColor(hDC, RGB(255, 255, 255));
-
-        swprintf_s(szBuff, L"%d", m_iHp);
-
-        TextOut(hDC, m_tInfo.fX - 20.f, m_tRect.top - 30.f, szBuff, lstrlen(szBuff));
-    }
-
 }
 
 void CToriel::Release(void)

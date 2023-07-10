@@ -165,6 +165,7 @@
     <ClInclude Include="MonsterIdle.h" />
     <ClInclude Include="MonsterItem.h" />
     <ClInclude Include="MonsterMercy.h" />
+    <ClInclude Include="MonsterState.h" />
     <ClInclude Include="PlayerState.h" />
     <ClInclude Include="Player_Battle.h" />
     <ClInclude Include="Save.h" />
@@ -233,6 +234,7 @@
     <ClCompile Include="MonsterIdle.cpp" />
     <ClCompile Include="MonsterItem.cpp" />
     <ClCompile Include="MonsterMercy.cpp" />
+    <ClCompile Include="MonsterState.cpp" />
     <ClCompile Include="PlayerState.cpp" />
     <ClCompile Include="Player_Battle.cpp" />
     <ClCompile Include="Save.cpp" />

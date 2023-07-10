@@ -2,7 +2,7 @@
 #include "Look.h"
 #include "CollisionMgr.h"
 #include "SoundMgr.h"
-
+#include "MonsterState.h"
 
 CLook::CLook()
 {
@@ -17,6 +17,8 @@ void CLook::Initialize(void)
 	m_tInfo = { 300.f, 250.f, 100.f, 115.f };
 
 	m_iHp = 50;
+	m_iMaxHp = 50;
+
 	m_iAttack = 5;
 	m_iDefense = 4;
 
@@ -42,10 +44,9 @@ int CLook::Update(void)
 
 	return OBJ_NOEVENT;
 }
-
+//»õÄÞ´ÞÄÞ Àß¸Ô¾ú´Ù -±«µµ 139
 void CLook::Late_Update(void)
 {
-
 	if (CSceneMgr::Get_Instance()->Get_SceneID() == RUIN)
 		Set_Dead();
 
@@ -76,17 +77,6 @@ void CLook::Render(HDC hDC)
 		m_tFrame.iMotion = 1;
 
 	}
-
-
-	if (CSceneMgr::Get_Instance()->Get_SceneID() == MONSTER_ATTACK) {
-		SetBkMode(hDC, 1);
-		SetTextColor(hDC, RGB(255, 255, 255));
-
-		swprintf_s(szBuff, L"%d", m_iHp);
-
-		TextOut(hDC, m_tInfo.fX, m_tRect.top - 50.f, szBuff, lstrlen(szBuff));
-	}
-
 }
 
 void CLook::Release(void)
