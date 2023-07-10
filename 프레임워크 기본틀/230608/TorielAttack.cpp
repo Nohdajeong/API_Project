@@ -52,7 +52,7 @@ void CTorielAttack::Late_Update(void)
     CObjMgr::Get_Instance()->Late_Update();
 
     if (CObjMgr::Get_Instance()->Get_Monster()->Get_Hp() <= 0) {
-        CSceneMgr::Get_Instance()->Scene_Change(BOSS_MERCY);
+        CSceneMgr::Get_Instance()->Scene_Change(BOSS_DIE);
         return;
     }
 

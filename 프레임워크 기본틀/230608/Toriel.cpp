@@ -20,7 +20,8 @@ void CToriel::Initialize(void)
     m_iDefense = 80.f;
 
     CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Monster/Toriel_bosss.bmp", L"Toriel");
-
+    
+    m_dwTime = GetTickCount64();
     m_eRender = GAMEOBJECT;
 
 }
@@ -46,15 +47,12 @@ void CToriel::Render(HDC hDC)
 {
     HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Img(L"Toriel");
 
-    if (CSceneMgr::Get_Instance()->Get_SceneID() == BOSS_PHASE) {
+    if (CSceneMgr::Get_Instance()->Get_SceneID() == BOSS_PHASE)
         m_iDrawID = 2;
-    }
-    else if (CSceneMgr::Get_Instance()->Get_SceneID() == BOSS_MERCY) {
+    else if (CSceneMgr::Get_Instance()->Get_SceneID() == BOSS_MERCY)
         m_iDrawID = 1;
-
-        if (m_dwTime + 5000 < GetTickCount64())
-            m_iDrawID = 3;
-    }
+    else if (CSceneMgr::Get_Instance()->Get_SceneID() == BOSS_DIE)
+        m_iDrawID = 4;
     else
         m_iDrawID = 0;
 
@@ -77,7 +75,7 @@ void CToriel::Render(HDC hDC)
 
         swprintf_s(szBuff, L"%d", m_iHp);
 
-        TextOut(hDC, m_tInfo.fX, m_tRect.top - 50.f, szBuff, lstrlen(szBuff));
+        TextOut(hDC, m_tInfo.fX - 20.f, m_tRect.top - 30.f, szBuff, lstrlen(szBuff));
     }
 
 }

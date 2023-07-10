@@ -64,7 +64,9 @@ void CPlayerBattle::Render(HDC hDC)
 {
 	HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Img(L"Player_Battle");
 
-	if (CSceneMgr::Get_Instance()->Get_SceneID() == MONSTER_PHASE || CSceneMgr::Get_Instance()->Get_SceneID() == BOSS_PHASE) {
+	if (CSceneMgr::Get_Instance()->Get_SceneID() == MONSTER_PHASE ||
+		CSceneMgr::Get_Instance()->Get_SceneID() == BOSS_PHASE ||
+		CSceneMgr::Get_Instance()->Get_SceneID() == BOSS_DIE) {
 		GdiTransparentBlt(hDC,
 			(int)m_tRect.left,
 			(int)m_tRect.top,

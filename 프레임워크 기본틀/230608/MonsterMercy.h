@@ -18,6 +18,7 @@ public:
 	virtual void Release(void) override;
 
 private:
-	DWORD		m_dwTime = GetTickCount();
+	DWORD		m_preDeley = GetTickCount64();
+	DWORD		m_PostDelay = GetTickCount64();
 };
 

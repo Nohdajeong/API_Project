@@ -411,6 +411,12 @@
     <ClInclude Include="Toriel_Wall.h">
       <Filter>01. Obj\11. Wall</Filter>
     </ClInclude>
+    <ClInclude Include="TorielDie.h">
+      <Filter>03. Scene\02. Battle\02. Boss\TorielDie</Filter>
+    </ClInclude>
+    <ClInclude Include="TorielDieMention.h">
+      <Filter>01. Obj\09. Mention</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -589,6 +595,12 @@
     </ClCompile>
     <ClCompile Include="Toriel_Wall.cpp">
       <Filter>01. Obj\11. Wall</Filter>
+    </ClCompile>
+    <ClCompile Include="TorielDie.cpp">
+      <Filter>03. Scene\02. Battle\02. Boss\TorielDie</Filter>
+    </ClCompile>
+    <ClCompile Include="TorielDieMention.cpp">
+      <Filter>01. Obj\09. Mention</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

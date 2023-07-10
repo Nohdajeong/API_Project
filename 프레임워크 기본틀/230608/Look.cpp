@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "Look.h"
 #include "CollisionMgr.h"
+#include "SoundMgr.h"
+
 
 CLook::CLook()
 {
@@ -26,6 +28,7 @@ void CLook::Initialize(void)
 	m_tFrame.dwSpeed = 300;
 	m_tFrame.dwTime = (DWORD)GetTickCount64();
 
+
 	m_eRender = GAMEOBJECT;
 }
 
@@ -42,6 +45,7 @@ int CLook::Update(void)
 
 void CLook::Late_Update(void)
 {
+
 	if (CSceneMgr::Get_Instance()->Get_SceneID() == RUIN)
 		Set_Dead();
 
@@ -49,6 +53,9 @@ void CLook::Late_Update(void)
 
 void CLook::Render(HDC hDC)
 {
+	float g_fSound = 3.f;
+
+
 	HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Img(L"Looks");
 
 	GdiTransparentBlt(hDC,
@@ -63,6 +70,13 @@ void CLook::Render(HDC hDC)
 		(int)m_tInfo.fCY,
 		RGB(195, 134, 255));
 
+	if (CSceneMgr::Get_Instance()->Get_SceneID() == MONSTER_MERCY) {
+		m_tFrame.iFrameStart = 0;
+		m_tFrame.iFrameEnd = 0;
+		m_tFrame.iMotion = 1;
+
+	}
+
 
 	if (CSceneMgr::Get_Instance()->Get_SceneID() == MONSTER_ATTACK) {
 		SetBkMode(hDC, 1);
@@ -72,6 +86,7 @@ void CLook::Render(HDC hDC)
 
 		TextOut(hDC, m_tInfo.fX, m_tRect.top - 50.f, szBuff, lstrlen(szBuff));
 	}
+
 }
 
 void CLook::Release(void)

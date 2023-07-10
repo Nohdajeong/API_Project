@@ -7,6 +7,7 @@
 #include "TorielHandBullet.h"
 #include "TorielCenterBullet.h"
 #include "TorielLaserBullet.h"
+#include "Mention.h"
 
 CTorielPhase::CTorielPhase()
 {
@@ -21,6 +22,7 @@ void CTorielPhase::Initialize(void)
 {
     CObjMgr::Get_Instance()->Get_BattlePlayer()->Set_Pos(400.f, 450.f);
     CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CMessageBlock>::Create());
+    CObjMgr::Get_Instance()->Add_Object(MONSTER_MENTION, CAbstractFactory<CMention>::Create(600.f, 190.f));
 
     m_iMonsterPhase = rand() % 5;
 
@@ -31,9 +33,6 @@ void CTorielPhase::Initialize(void)
 
 void CTorielPhase::Update(void)
 {
-    //CObj* pPlayer = CObjMgr::Get_Instance()->Get_BattlePlayer();
-    //CObj* pMonster = CObjMgr::Get_Instance()->Get_Monster();
-    
     if (m_iMonsterPhase % 5 == 0) {
         if (m_preDeley + 50.f < GetTickCount64()) {
             Boss_Phase1();

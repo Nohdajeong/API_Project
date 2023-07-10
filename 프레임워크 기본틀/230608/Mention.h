@@ -1,6 +1,5 @@
 #pragma once
 #include "Obj.h"
-#include "MyButton.h"
 #include "SceneMgr.h"
 
 class CMention : public CObj
@@ -30,7 +29,8 @@ public:
 
 private:
 	TCHAR	szBuff[100] = L"";
-	TCHAR	szPlayer[100] = L"";
+	TCHAR	szBuff2[100] = L"";
+	TCHAR	szBuff3[100] = L"";
 	DWORD	m_dwTime = (DWORD) GetTickCount64();
 };
 

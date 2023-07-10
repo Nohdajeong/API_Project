@@ -95,6 +95,10 @@ void CSceneMgr::Scene_Change(SCENEID eScene)
 			m_pScene = new CTorielMercy;
 			break;
 
+		case BOSS_DIE:
+			m_pScene = new CTorielDie;
+			break;
+
 		case ENDING:
 			m_pScene = new Ending;
 			break;

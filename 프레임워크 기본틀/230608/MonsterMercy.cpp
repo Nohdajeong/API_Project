@@ -13,6 +13,7 @@ CMonsterMercy::~CMonsterMercy()
 
 void CMonsterMercy::Initialize(void)
 {
+
     CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CMessageBlock>::Create());
 }
 
@@ -25,7 +26,14 @@ void CMonsterMercy::Late_Update(void)
 {
     CObjMgr::Get_Instance()->Late_Update();
 
-    if (m_dwTime + 5000 < GetTickCount()) {
+    float g_fSound = 3.f;
+
+    if (m_preDeley + 1450 < GetTickCount64()) {
+        CSoundMgr::Get_Instance()->PlaySoundW(L"hurtloox.wav", SOUND_EFFECT, g_fSound);
+    }
+
+    if (m_PostDelay + 2000 < GetTickCount64()) {
+        CSoundMgr::Get_Instance()->StopSound(SOUND_EFFECT);
         CSceneMgr::Get_Instance()->Scene_Change(RUIN);
         return;
     }

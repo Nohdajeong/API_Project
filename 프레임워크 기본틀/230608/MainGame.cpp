@@ -65,7 +65,7 @@ void CMainGame::Render()
 
 	HFONT	hFont, oldFont;
 
-	hFont = CreateFont(25, 0, 0, 0, 0, 0, 0, 0, HANGUL_CHARSET, 0, 0, 0, VARIABLE_PITCH || FF_ROMAN, TEXT("NeoµÕ±Ù¸ð"));
+	hFont = CreateFont(23, 0, 0, 0, 0, 0, 0, 0, HANGUL_CHARSET, 0, 0, 0, VARIABLE_PITCH || FF_ROMAN, TEXT("NeoµÕ±Ù¸ð"));
 	oldFont = (HFONT)SelectObject(hMemDC, hFont);
 
 	CSceneMgr::Get_Instance()->Render(hMemDC);

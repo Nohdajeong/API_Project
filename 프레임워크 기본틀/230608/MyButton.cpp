@@ -22,8 +22,6 @@ void CMyButton::Initialize(void)
     m_tInfo.fCX = 145.f;
     m_tInfo.fCY = 55.f;
 
-
-
     m_eRender = UI;
 }
 

@@ -84,6 +84,10 @@ void CMessageBlock::Text_Change(SCENEID eScene)
 		if (m_dwTime + 6000 < GetTickCount64())
 			swprintf_s(szBuff, L"*  0exp와 0골드를 얻었다.");
 		break;
+
+	case BOSS_DIE:
+		m_iDrawID = 2;
+		break;
 	}
 }
 

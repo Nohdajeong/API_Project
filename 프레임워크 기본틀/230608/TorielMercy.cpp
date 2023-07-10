@@ -5,6 +5,7 @@
 #include "MessageBlock.h"
 #include "PlayerState.h"
 #include "SoundMgr.h"
+#include "TorielDieMention.h"
 
 CTorielMercy::CTorielMercy()
 {
@@ -18,11 +19,13 @@ CTorielMercy::~CTorielMercy()
 void CTorielMercy::Initialize(void)
 {
     CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CMessageBlock>::Create());
+    CObjMgr::Get_Instance()->Add_Object(MONSTER_MENTION, CAbstractFactory<CTorielDieMention>::Create(600.f, 190.f));
 
 }
 
 void CTorielMercy::Update(void)
 {
+
     CObjMgr::Get_Instance()->Update();
 }
 

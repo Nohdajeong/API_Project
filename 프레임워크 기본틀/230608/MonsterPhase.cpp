@@ -20,8 +20,7 @@ void CMonsterPhase::Initialize(void)
 {
     CObjMgr::Get_Instance()->Get_BattlePlayer()->Set_Pos(400.f, 400.f);
     CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CMessageBlock>::Create());
-    CObjMgr::Get_Instance()->Add_Object(MONSTER_MENTION, CAbstractFactory<CMention>::Create());
-
+    CObjMgr::Get_Instance()->Add_Object(MONSTER_MENTION, CAbstractFactory<CMention>::Create(450.f, 200.f));
 
     m_iMonsterPhase = rand() % 2;
 
