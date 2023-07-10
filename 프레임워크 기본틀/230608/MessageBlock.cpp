@@ -96,9 +96,9 @@ void CMessageBlock::Initialize(void)
 
 	CObj* pMonster = CObjMgr::Get_Instance()->Get_Monster();
 
-	m_iHp = pMonster->Get_States().iHp;
-	m_iAttack = pMonster->Get_States().iAttack;
-	m_iDefense = pMonster->Get_States().iDefense;
+	m_iHp = pMonster->Get_Hp();
+	m_iAttack = pMonster->Get_Attack();
+	m_iDefense = pMonster->Get_Defense();
 
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Message.bmp", L"Message");
 

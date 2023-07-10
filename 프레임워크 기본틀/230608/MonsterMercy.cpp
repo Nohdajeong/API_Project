@@ -26,7 +26,6 @@ void CMonsterMercy::Late_Update(void)
     CObjMgr::Get_Instance()->Late_Update();
 
     if (m_dwTime + 5000 < GetTickCount()) {
-        CSoundMgr::Get_Instance()->StopSound(SOUND_BGM);
         CSceneMgr::Get_Instance()->Scene_Change(RUIN);
         return;
     }

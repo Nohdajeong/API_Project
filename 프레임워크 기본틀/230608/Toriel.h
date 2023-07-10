@@ -20,6 +20,7 @@ private:
 	DWORD				m_dwTime = GetTickCount64();
 	int					m_iDrawID;
 
+	TCHAR				szBuff[100] = L"";
 
 };
 

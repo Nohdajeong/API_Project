@@ -21,5 +21,6 @@ private:
 	DWORD		m_preDeley;
 	DWORD		m_PostDelay;
 
+	TCHAR		szBuff[100] = L"";
 
 };

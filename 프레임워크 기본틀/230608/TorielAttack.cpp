@@ -3,6 +3,7 @@
 #include "MessageBlock.h"
 #include "Attack_Bar.h"
 #include "Attack_Motion.h"
+#include "CollisionMgr.h"
 
 CTorielAttack::CTorielAttack()
 {
@@ -35,7 +36,26 @@ void CTorielAttack::Update(void)
 
 void CTorielAttack::Late_Update(void)
 {
+    if (CCollisionMgr::Check_Collision(
+        CObjMgr::Get_Instance()->Get_Objects(MONSTER),
+        CObjMgr::Get_Instance()->Get_Objects(ATTACK))) {
+
+        if (m_dwTime + 4000 < GetTickCount64()) {
+            CObjMgr::Get_Instance()->Get_Monster()->Set_Hp(-CObjMgr::Get_Instance()->Get_Objects(BAR).front()->Get_Attack());
+        
+            if (CObjMgr::Get_Instance()->Get_Monster()->Get_Hp() < 220)
+                CObjMgr::Get_Instance()->Get_Monster()->Set_Hp(-CObjMgr::Get_Instance()->Get_Objects(BAR).front()->Get_Attack() * 2);
+        }
+
+    }
+
     CObjMgr::Get_Instance()->Late_Update();
+
+    if (CObjMgr::Get_Instance()->Get_Monster()->Get_Hp() <= 0) {
+        CSceneMgr::Get_Instance()->Scene_Change(BOSS_MERCY);
+        return;
+    }
+
 
     if (m_dwTime + 4000 < GetTickCount64()) {
         CSceneMgr::Get_Instance()->Scene_Change(BOSS_PHASE);

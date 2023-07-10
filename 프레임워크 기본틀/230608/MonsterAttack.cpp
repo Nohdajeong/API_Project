@@ -37,9 +37,23 @@ void CMonsterAttack::Update(void)
 
 void CMonsterAttack::Late_Update(void)
 {
+    if (CCollisionMgr::Check_Collision(
+        CObjMgr::Get_Instance()->Get_Objects(MONSTER),
+        CObjMgr::Get_Instance()->Get_Objects(ATTACK))) {
+
+        if (m_dwTime + 4000 < GetTickCount64()) {
+            CObjMgr::Get_Instance()->Get_Monster()->Set_Hp(-CObjMgr::Get_Instance()->Get_Objects(BAR).front()->Get_Attack());
+        }
+    }
+
     CObjMgr::Get_Instance()->Late_Update();
 
-    if (m_dwTime + 4000 < GetTickCount64()) {
+    if (CObjMgr::Get_Instance()->Get_Monster()->Get_Hp() <= 0) {
+        CSceneMgr::Get_Instance()->Scene_Change(MONSTER_MERCY);
+        return;
+    }
+
+    else if (m_dwTime + 4000 < GetTickCount64()) {
             CSceneMgr::Get_Instance()->Scene_Change(MONSTER_PHASE);
             return;
     }

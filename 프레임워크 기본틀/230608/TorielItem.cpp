@@ -16,6 +16,9 @@ CTorielItem::~CTorielItem()
 
 void CTorielItem::Initialize(void)
 {
+    CObj* pPlayer = CObjMgr::Get_Instance()->Get_BattlePlayer();
+    pPlayer->Set_Hp(5);
+
     CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CMessageBlock>::Create());
 }
 

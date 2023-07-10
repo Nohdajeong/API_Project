@@ -26,20 +26,6 @@ typedef struct tagInfo
 
 }INFO;
 
-typedef struct states {
-	int		iLevel;
-	int		iHp;
-	int		iMaxHp;
-
-	int		iMoney;
-	
-	int		iAttack;
-	int		iDefense;
-	
-	int		iExp;
-	int		iMaxExp;
-} STATES;
-
 enum DIRECTION { LEFT, RIGHT, UP, DOWN, DIR_END };
 
 enum OBJID {	PLAYER, NPC, STAGE_OBJ,

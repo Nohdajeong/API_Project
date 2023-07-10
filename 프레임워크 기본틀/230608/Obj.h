@@ -13,8 +13,6 @@ public:
 public:
 	RECT			Get_Rect() { return m_tRect; }
 	INFO			Get_Info() { return m_tInfo; }
-	STATES			Get_States() { return m_tStates; }
-	int				Get_Attack() { return m_iAttack; }
 	bool			Get_Dead() { return m_bDead; }
 
 	bool			Get_PostAttackDelay()
@@ -27,7 +25,13 @@ public:
 	bool 			Get_AttackOff() { return m_AttackOff; }
 	RENDERID		Get_RenderID() { return m_eRender; }
 	float			Get_Speed() { return m_fSpeed; }
+
+	int				Get_Level() { return m_iLevel; }
 	int				Get_Hp() { return m_iHp; }
+	int				Get_MaxHp() { return m_iMaxHp; }
+	int				Get_Attack() { return m_iAttack; }
+	int				Get_Defense() { return m_iDefense; }
+
 
 	void			Set_Pos(float _fX, float _fY)
 	{
@@ -65,7 +69,6 @@ protected:
 	INFO		m_tInfo;
 	RECT		m_tRect;
 	DIRECTION	m_eDir;
-	STATES		m_tStates;
 	FRAME		m_tFrame;
 	RENDERID	m_eRender;
 
@@ -75,8 +78,13 @@ protected:
 	float		m_fSpeed;
 	float		m_fAngle;
 	bool		m_bDead;
-	int			m_iAttack;
+	
+	int			m_iLevel;
 	int			m_iHp;
+	int			m_iMaxHp;
+
+	int			m_iAttack;
+	int			m_iDefense;
 
 	TCHAR*		m_pFrameKey;
 

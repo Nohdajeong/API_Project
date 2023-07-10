@@ -18,12 +18,12 @@ void CPlayerBattle::Initialize(void)
 	m_tInfo.fCX = 25.f;
 	m_tInfo.fCY = 25.f;
 
-	m_tStates.iAttack = 10;
-	m_tStates.iMaxHp = 20;
-	m_tStates.iDefense = 10;
-	m_tStates.iLevel = 1;
+	m_iLevel = 1;
+	m_iAttack = 10;
+	m_iMaxHp = 20;
+	m_iDefense = 10;
 
-	m_iHp = 16;
+	m_iHp = 20;
 
     CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Player/Player_Battle.bmp", L"Player_Battle");
 

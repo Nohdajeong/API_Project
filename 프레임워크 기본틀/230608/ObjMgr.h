@@ -18,8 +18,6 @@ public:
 
 	CObj* Get_Target(OBJID eID, CObj* pInstance);
 
-	OBJID	Get_OBJID() { return m_ObjID; }
-
 public:
 	void		Add_Object(OBJID eID, CObj* pInstance);
 	int			Update();

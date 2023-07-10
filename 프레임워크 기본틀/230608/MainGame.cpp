@@ -82,7 +82,7 @@ void CMainGame::Release()
 	CKeyMgr::Destroy_Instance();
 	CObjMgr::Destroy_Instance();
 	CSceneMgr::Destroy_Instance();
-	CSoundMgr::Get_Instance()->Destroy_Instance();
+	CSoundMgr::Destroy_Instance();
 	CBmpMgr::Destroy_Instance();
 
 	ReleaseDC(g_hWnd, m_hDC);

@@ -202,6 +202,9 @@
     <Filter Include="01. Obj\03. Boss\Pattern\Attack5">
       <UniqueIdentifier>{cfdacd3c-0e8f-4b6c-9224-02c08289a754}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. Scene\02. Battle\02. Boss\TorielDie">
+      <UniqueIdentifier>{5f51bbde-d876-4085-a3b0-cc1beedcfb22}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />

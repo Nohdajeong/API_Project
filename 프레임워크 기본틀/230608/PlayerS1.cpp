@@ -32,10 +32,11 @@ void CPlayerS1::Initialize(void)
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Player/Player_Up.bmp", L"Player_UP");
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Player/Stretch.bmp", L"Player_UP");
 	
-	m_pFrameKey = L"Player_UP";
 
 	if (CSceneMgr::Get_Instance()->Get_SceneID() == RUIN)
 		m_pFrameKey = L"Player_DOWN";
+	else
+		m_pFrameKey = L"Player_UP";
 
 	m_tFrame.iFrameStart = 0;
 	m_tFrame.iFrameEnd = 0;

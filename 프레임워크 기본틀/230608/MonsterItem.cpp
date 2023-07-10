@@ -28,9 +28,6 @@ void CMonsterItem::Update(void)
 
 void CMonsterItem::Late_Update(void)
 {
-    CObj* pPlayer = CObjMgr::Get_Instance()->Get_BattlePlayer();
-    pPlayer->Set_Hp(5);
-
     CObjMgr::Get_Instance()->Late_Update();
 
 

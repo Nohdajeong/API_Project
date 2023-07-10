@@ -22,7 +22,7 @@ void CTorielHandBullet::Initialize(void)
 
 	m_fSpeed = 2.f;
 	m_fAngle = 5.f;
-	m_iAttack = 2.f;
+	m_iAttack = 2;
 
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Monster/Toriel_Attack.bmp", L"Toriel_Attack");
 

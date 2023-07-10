@@ -15,11 +15,9 @@ void CToriel::Initialize(void)
 {
     m_tInfo = { 400.f, 190.f, 178.f, 245.f };
 
-    m_tStates.iHp = 440.f;
-    m_tStates.iAttack = 80.f;
-    m_tStates.iDefense = 80.f;
-
-    m_iHp = m_tStates.iHp;
+    m_iHp = 440.f;
+    m_iAttack = 80.f;
+    m_iDefense = 80.f;
 
     CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Monster/Toriel_bosss.bmp", L"Toriel");
 
@@ -39,9 +37,6 @@ int CToriel::Update(void)
 
 void CToriel::Late_Update(void)
 {
-    if (m_tStates.iHp == 0)
-        Set_Dead();
-
     if (CSceneMgr::Get_Instance()->Get_SceneID() == RUIN)
         Set_Dead();
 
@@ -74,6 +69,16 @@ void CToriel::Render(HDC hDC)
         (int)m_tInfo.fCX,
         (int)m_tInfo.fCY,
         RGB(195, 134, 255));
+
+
+    if (CSceneMgr::Get_Instance()->Get_SceneID() == BOSS_ATTACK) {
+        SetBkMode(hDC, 1);
+        SetTextColor(hDC, RGB(255, 255, 255));
+
+        swprintf_s(szBuff, L"%d", m_iHp);
+
+        TextOut(hDC, m_tInfo.fX, m_tRect.top - 50.f, szBuff, lstrlen(szBuff));
+    }
 
 }
 
