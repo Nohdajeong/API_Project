@@ -125,9 +125,6 @@ void CCollisionMgr::Collision_Sphere(list<CObj*> _Dst, list<CObj*> _Src)
 				Src->Set_Dead();
 
 				Dst->Set_Hp(-(Src->Get_Attack()));
-
-				//if (Dst->Get_Hp() <= 0)
-				//	Dst->Set_Dead();
 			}
 		}
 	}

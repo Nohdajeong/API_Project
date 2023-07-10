@@ -84,13 +84,19 @@ void CPlayer_Attack::Release(void)
 
 int CPlayer_Attack::Damage_size(float _fX)
 {
+	CObj* pBoss = CObjMgr::Get_Instance()->Get_Monster();
+
 	if (_fX == 400.f)
-		return 35;
+		return 50;
 	else if (_fX > 350.f && _fX < 450.f)
+		return 40;
+	else if (_fX > 250.f && _fX <= 350.f)
 		return 30;
-	else if (_fX > 200.f && _fX <= 350.f)
-		return 20;
 	else if (_fX >= 450.f && _fX < 550.f)
+		return 30;
+	else if (_fX > 150.f && _fX <= 200.f)
+		return 20;
+	else if (_fX >= 550.f && _fX < 650.f)
 		return 20;
 	else
 		return 10;

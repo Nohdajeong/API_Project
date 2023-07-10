@@ -209,6 +209,8 @@
     <ClInclude Include="TorielNPC.h" />
     <ClInclude Include="TorielPassBullet.h" />
     <ClInclude Include="TorielPhase.h" />
+    <ClInclude Include="Toriel_Wall.h" />
+    <ClInclude Include="Wall.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="230608.cpp" />
@@ -273,6 +275,8 @@
     <ClCompile Include="TorielNPC.cpp" />
     <ClCompile Include="TorielPassBullet.cpp" />
     <ClCompile Include="TorielPhase.cpp" />
+    <ClCompile Include="Toriel_Wall.cpp" />
+    <ClCompile Include="Wall.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="230608.rc" />

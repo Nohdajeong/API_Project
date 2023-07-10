@@ -19,7 +19,7 @@ void CMention::Text_Change(SCENEID eScene)
 		swprintf_s(szBuff, L"그만 쳐다봐줄래 ?");
 		break;
 	case BOSS_PHASE:
-		swprintf_s(szBuff, L"* 그만 쳐다봐줄래?");
+		swprintf_s(szBuff, L"그만 쳐다봐줄래?");
 		break;
 	}
 }
@@ -51,7 +51,7 @@ int CMention::Update(void)
 
 void CMention::Late_Update(void)
 {
-	if (CSceneMgr::Get_Instance()->Get_SceneID() == MONSTER_ATTACK || CSceneMgr::Get_Instance()->Get_SceneID() == BOSS_ATTACK)
+	if (CSceneMgr::Get_Instance()->Get_SceneID() == MONSTER_PHASE || CSceneMgr::Get_Instance()->Get_SceneID() == BOSS_PHASE)
 		m_bDead = false;
 	else
 		m_bDead = true;
@@ -60,8 +60,6 @@ void CMention::Late_Update(void)
 
 void CMention::Render(HDC hDC)
 {
-	AddFontResourceA("Neo둥근모.ttf");
-
 	HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Img(L"Mention");
 
 	GdiTransparentBlt(hDC,
@@ -78,10 +76,7 @@ void CMention::Render(HDC hDC)
 
 	SetBkMode(hDC, 1);
 	SetTextColor(hDC, RGB(255, 255, 255));
-	HFONT	hFont, oldFont;
 
-	hFont = CreateFont(20, 0, 0, 0, 0, 0, 0, 0, HANGUL_CHARSET, 0, 0, 0, VARIABLE_PITCH || FF_ROMAN, TEXT("Neo둥근모"));
-	oldFont = (HFONT)SelectObject(hDC, hFont);
 	TextOut(hDC, (int)(m_tRect.left + 40), (int)(m_tInfo.fY - 50), szBuff, lstrlen(szBuff));
 }
 

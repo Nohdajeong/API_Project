@@ -42,7 +42,10 @@ void CStage2::Late_Update()
 
 	CObj* pPlayer = CObjMgr::Get_Instance()->Get_Player();
 
-	if (200.f > pPlayer->Get_Info().fY) {
+	if (800.f < pPlayer->Get_Info().fY)
+		CSceneMgr::Get_Instance()->Scene_Change(RUIN);
+
+	if (200.f > pPlayer->Get_Info().fY && (380.f < pPlayer->Get_Info().fX) && (450.f > pPlayer->Get_Info().fX)) {
 		CSceneMgr::Get_Instance()->Scene_Change(TORIEL);
 	}
 

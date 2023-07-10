@@ -15,7 +15,7 @@ void CToriel::Initialize(void)
 {
     m_tInfo = { 400.f, 190.f, 178.f, 245.f };
 
-    m_iHp = 440.f;
+    m_iHp = 220.f;
     m_iAttack = 80.f;
     m_iDefense = 80.f;
 

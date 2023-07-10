@@ -40,7 +40,7 @@ void CMessageBlock::Text_Change(SCENEID eScene)
 	case MONSTER_ITEM:
 		swprintf_s(szBuff, L"* 버터스카치 파이를 먹었다.");
 		if (m_dwTime + 1500 < GetTickCount64())
-			swprintf_s(szBuff, L"* 체력을 5 회복했다.");
+			swprintf_s(szBuff, L"* 체력을 회복했다.");
 		break;
 
 	case MONSTER_MERCY:

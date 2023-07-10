@@ -1,9 +1,14 @@
 #include "stdafx.h"
 #include "Ending.h"
 #include "SceneMgr.h"
+#include "SoundMgr.h"
 
 void Ending::Initialize(void)
 {
+	float	g_fSound = 1.f;
+
+	CSoundMgr::Get_Instance()->PlayBGM(L"Ending.mp3", g_fSound);
+
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Ending.bmp", L"Ending");
 
 }

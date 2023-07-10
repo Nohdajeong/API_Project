@@ -94,36 +94,41 @@ void CPlayerS1::Key_Input(void)
 {
 	float	fY = 0.f;
 
-	if (GetAsyncKeyState(VK_LEFT))
-	{
-		m_tInfo.fX -= m_fSpeed;
-		m_pFrameKey = L"Player_LEFT";
-		m_eCurState = WALK;
-	}
+	if (CSceneMgr::Get_Instance()->Get_SceneID() == RUIN ||
+		CSceneMgr::Get_Instance()->Get_SceneID() == FLOWEY ||
+		CSceneMgr::Get_Instance()->Get_SceneID() == TORIEL) {
 
-	else if (GetAsyncKeyState(VK_RIGHT))
-	{
-		m_tInfo.fX += m_fSpeed;
-		m_pFrameKey = L"Player_RIGHT";
-		m_eCurState = WALK;
-	}
+		if (GetAsyncKeyState(VK_LEFT))
+		{
+			m_tInfo.fX -= m_fSpeed;
+			m_pFrameKey = L"Player_LEFT";
+			m_eCurState = WALK;
+		}
 
-	else if (GetAsyncKeyState(VK_UP))
-	{
-		m_tInfo.fY -= m_fSpeed;
-		m_pFrameKey = L"Player_UP";
-		m_eCurState = WALK;
-	}
+		else if (GetAsyncKeyState(VK_RIGHT))
+		{
+			m_tInfo.fX += m_fSpeed;
+			m_pFrameKey = L"Player_RIGHT";
+			m_eCurState = WALK;
+		}
 
-	else if (GetAsyncKeyState(VK_DOWN))
-	{
-		m_tInfo.fY += m_fSpeed;
-		m_pFrameKey = L"Player_DOWN";
-		m_eCurState = WALK;
-	}
+		else if (GetAsyncKeyState(VK_UP))
+		{
+			m_tInfo.fY -= m_fSpeed;
+			m_pFrameKey = L"Player_UP";
+			m_eCurState = WALK;
+		}
 
-	else
-		m_eCurState = IDLE;
+		else if (GetAsyncKeyState(VK_DOWN))
+		{
+			m_tInfo.fY += m_fSpeed;
+			m_pFrameKey = L"Player_DOWN";
+			m_eCurState = WALK;
+		}
+
+		else
+			m_eCurState = IDLE;
+	}
 }
 
 void CPlayerS1::OffSet(void)

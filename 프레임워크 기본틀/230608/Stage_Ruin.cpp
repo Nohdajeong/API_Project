@@ -3,7 +3,9 @@
 #include "PlayerS1.h"
 #include "SceneMgr.h"
 #include "SoundMgr.h"
+#include "CollisionMgr.h"
 #include "KeyMgr.h"
+#include "Wall.h"
 
 CStage1::CStage1()
 {
@@ -23,8 +25,10 @@ void CStage1::Initialize()
 
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Map/Ruin_Back.bmp", L"Ruin_Back");
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Map/Ruin.bmp", L"Ruin");
-	
+
+	Walls();
 }
+
 
 void CStage1::Update()
 {
@@ -33,6 +37,10 @@ void CStage1::Update()
 
 void CStage1::Late_Update()
 {
+	CCollisionMgr::Collision_RectEx(
+		CObjMgr::Get_Instance()->Get_Objects(PLAYER),
+		CObjMgr::Get_Instance()->Get_Objects(WALL));
+
 	CObjMgr::Get_Instance()->Late_Update();
 
 	CObj* pPlayer = CObjMgr::Get_Instance()->Get_Player();
@@ -43,8 +51,7 @@ void CStage1::Late_Update()
 	if (CKeyMgr::Get_Instance()->Key_Down('R'))
 		CSceneMgr::Get_Instance()->Scene_Change(FLOWEY);
 
-
-	if ((1200.f < pPlayer->Get_Info().fX) && (350.f > pPlayer->Get_Info().fY)) {
+	if ((1200.f < pPlayer->Get_Info().fX) && (330.f > pPlayer->Get_Info().fY)) {
 		CSceneMgr::Get_Instance()->Scene_Change(FLOWEY);
 	}
 
@@ -71,4 +78,35 @@ void CStage1::Render(HDC hDC)
 
 void CStage1::Release()
 {
+}
+
+void CStage1::Walls()
+{
+	CObjMgr::Get_Instance()->Add_Object(WALL, CAbstractFactory<CWall>::Create(140.f, 130.f));
+	CObjMgr::Get_Instance()->Add_Object(WALL, CAbstractFactory<CWall>::Create(140.f, 510.f));
+	CObjMgr::Get_Instance()->Add_Object(WALL, CAbstractFactory<CWall>::Create(90.f, 430.f));
+	CObjMgr::Get_Instance()->Add_Object(WALL, CAbstractFactory<CWall>::Create(180.f, 560.f));
+
+	CObjMgr::Get_Instance()->Add_Object(WALL, CAbstractFactory<CWall>::Create(615.f, 555.f));
+	CObjMgr::Get_Instance()->Add_Object(WALL, CAbstractFactory<CWall>::Create(640.f, 130.f));
+	CObjMgr::Get_Instance()->Add_Object(WALL, CAbstractFactory<CWall>::Create(670.f, 510.f));
+	CObjMgr::Get_Instance()->Add_Object(WALL, CAbstractFactory<CWall>::Create(1650.f, 400.f));
+
+
+	for (int i = 0; i < 4; i++) {
+		CObjMgr::Get_Instance()->Add_Object(WALL, CAbstractFactory<CWall>::Create(240.f + i * 100, 80.f));
+		CObjMgr::Get_Instance()->Add_Object(WALL, CAbstractFactory<CWall>::Create(240.f + i * 100, 570.f));
+	}
+
+	for (int i = 0; i < 2; i++) {
+		CObjMgr::Get_Instance()->Add_Object(WALL, CAbstractFactory<CWall>::Create(50.f, 230.f + i * 100));
+		CObjMgr::Get_Instance()->Add_Object(WALL, CAbstractFactory<CWall>::Create(750.f, 175.f + i * 100));
+	}
+
+	for (int i = 0; i < 6; i++) {
+		CObjMgr::Get_Instance()->Add_Object(WALL, CAbstractFactory<CWall>::Create(750.f + 100 * (i + 1), 275.f));
+	}
+
+	for (int i = 0; i < 9; i++)
+		CObjMgr::Get_Instance()->Add_Object(WALL, CAbstractFactory<CWall>::Create(670.f + 100 * (i + 1), 510.f));
 }

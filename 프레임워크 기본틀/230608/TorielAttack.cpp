@@ -44,7 +44,7 @@ void CTorielAttack::Late_Update(void)
             CObjMgr::Get_Instance()->Get_Monster()->Set_Hp(-CObjMgr::Get_Instance()->Get_Objects(BAR).front()->Get_Attack());
         
             if (CObjMgr::Get_Instance()->Get_Monster()->Get_Hp() < 220)
-                CObjMgr::Get_Instance()->Get_Monster()->Set_Hp(-CObjMgr::Get_Instance()->Get_Objects(BAR).front()->Get_Attack() * 2);
+                CObjMgr::Get_Instance()->Get_Monster()->Set_Hp(-(CObjMgr::Get_Instance()->Get_Objects(BAR).front()->Get_Attack() * 2));
         }
 
     }

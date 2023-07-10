@@ -17,5 +17,6 @@ public:
 
 private:
 	DWORD		m_dwTime = GetTickCount();
+	void		Walls();
 };
 

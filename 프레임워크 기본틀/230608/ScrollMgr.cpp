@@ -13,7 +13,7 @@ CScrollMgr::~CScrollMgr()
 {
 }
 
-void CScrollMgr::Scroll_Lock()
+void CScrollMgr::Scroll_Lock(float _fX, float _fY)
 {
 	if (0.f < m_fScrollX)
 		m_fScrollX = 0.f;
@@ -22,10 +22,10 @@ void CScrollMgr::Scroll_Lock()
 		m_fScrollY = 0.f;
 
 
-	if (WINCX - 1920 > m_fScrollX)
-		m_fScrollX = WINCX - 1920;
+	if (WINCX - _fX > m_fScrollX)
+		m_fScrollX = WINCX - _fX;
 
-	if (WINCY - 1280 > m_fScrollY)
-		m_fScrollY = WINCY - 1280;
+	if (WINCY - _fY > m_fScrollY)
+		m_fScrollY = WINCY - _fY;
 
 }

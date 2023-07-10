@@ -77,21 +77,6 @@ void CPlayerBattle::Render(HDC hDC)
 			(int)m_tInfo.fCY,
 			RGB(205, 141, 255));
 	}
-
-	//else if (CSceneMgr::Get_Instance()->Get_SceneID() != BOSS_MATCH) {
-	//	GdiTransparentBlt(hDC,
-	//		(int)m_tRect.left,
-	//		(int)m_tRect.top,
-	//		(int)m_tInfo.fCX,
-	//		(int)m_tInfo.fCY,
-	//		hMemDC,
-	//		0,
-	//		0,
-	//		(int)m_tInfo.fCX,
-	//		(int)m_tInfo.fCY,
-	//		RGB(205, 141, 255));
-
-	//}
 }
 
 void CPlayerBattle::Release(void)

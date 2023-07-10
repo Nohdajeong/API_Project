@@ -23,11 +23,11 @@ void CMonsterPhase::Initialize(void)
     CObjMgr::Get_Instance()->Add_Object(MONSTER_MENTION, CAbstractFactory<CMention>::Create());
 
 
-    m_iMonsterPhase = rand() % 100;
+    m_iMonsterPhase = rand() % 2;
 
     if (m_iMonsterPhase % 2 == 0)
         Monster_Phase1();
-    else if (m_iMonsterPhase %2 == 1)
+    else if (m_iMonsterPhase % 2 == 1)
         Monster_Phase2();
 }
 

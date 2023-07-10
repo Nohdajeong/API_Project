@@ -205,6 +205,9 @@
     <Filter Include="03. Scene\02. Battle\02. Boss\TorielDie">
       <UniqueIdentifier>{5f51bbde-d876-4085-a3b0-cc1beedcfb22}</UniqueIdentifier>
     </Filter>
+    <Filter Include="01. Obj\11. Wall">
+      <UniqueIdentifier>{8c706bdc-bdc4-4862-acfc-8e698aa3ba18}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -402,6 +405,12 @@
     <ClInclude Include="Ending.h">
       <Filter>03. Scene\04. Ending</Filter>
     </ClInclude>
+    <ClInclude Include="Wall.h">
+      <Filter>01. Obj\11. Wall</Filter>
+    </ClInclude>
+    <ClInclude Include="Toriel_Wall.h">
+      <Filter>01. Obj\11. Wall</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -574,6 +583,12 @@
     </ClCompile>
     <ClCompile Include="Ending.cpp">
       <Filter>03. Scene\04. Ending</Filter>
+    </ClCompile>
+    <ClCompile Include="Wall.cpp">
+      <Filter>01. Obj\11. Wall</Filter>
+    </ClCompile>
+    <ClCompile Include="Toriel_Wall.cpp">
+      <Filter>01. Obj\11. Wall</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
