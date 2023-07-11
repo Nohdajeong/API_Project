@@ -1,7 +1,6 @@
 #include "stdafx.h"
 #include "MessageBlock.h"
 #include "SceneMgr.h"
-#include "KeyMgr.h"
 
 CMessageBlock::CMessageBlock()
 	: m_iDrawID(0), m_iHp(0), m_iAttack(0), m_iDefense(0)

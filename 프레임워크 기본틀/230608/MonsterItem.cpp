@@ -1,9 +1,6 @@
 #include "stdafx.h"
 #include "MonsterItem.h"
-#include "Look.h"
-#include "MyButton.h"
 #include "MessageBlock.h"
-#include "PlayerState.h"
 
 CMonsterItem::CMonsterItem()
 {

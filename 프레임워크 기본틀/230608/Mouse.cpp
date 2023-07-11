@@ -12,8 +12,11 @@ CMouse::~CMouse()
 
 void CMouse::Initialize(void)
 {
-	m_tInfo.fCX = 30.f;
-	m_tInfo.fCY = 30.f;
+	m_tInfo.fCX = 25.f;
+	m_tInfo.fCY = 25.f;
+
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Player/Player_Battle.bmp", L"Player_Battle");
+
 }
 
 int CMouse::Update(void)
@@ -26,6 +29,7 @@ int CMouse::Update(void)
 	
 	m_tInfo.fX = (float)ptMouse.x;
 	m_tInfo.fY = (float)ptMouse.y;
+
 
 	__super::Update_Rect();
 
@@ -40,11 +44,19 @@ void CMouse::Late_Update(void)
 
 void CMouse::Render(HDC hDC)
 {
-	Rectangle(hDC,
-		m_tRect.left,
-		m_tRect.top,
-		m_tRect.right,
-		m_tRect.bottom);
+	HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Img(L"Player_Battle");
+
+	GdiTransparentBlt(hDC,
+		(int)m_tRect.left,
+		(int)m_tRect.top,
+		(int)m_tInfo.fCX,
+		(int)m_tInfo.fCY,
+		hMemDC,
+		0,
+		0,
+		(int)m_tInfo.fCX,
+		(int)m_tInfo.fCY,
+		RGB(205, 141, 255));
 }
 
 void CMouse::Release(void)

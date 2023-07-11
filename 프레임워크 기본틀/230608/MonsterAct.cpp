@@ -1,10 +1,6 @@
 #include "stdafx.h"
 #include "MonsterAct.h"
-#include "Look.h"
-#include "MyButton.h"
 #include "MessageBlock.h"
-#include "PlayerState.h"
-#include "Player_Battle.h"
 
 CMonsterAct::CMonsterAct()
 {

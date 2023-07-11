@@ -26,6 +26,14 @@ void CPlayerS1::Initialize(void)
 
 	m_fSpeed = 5.f;
 
+	m_iLevel = 1;
+	m_iAttack = 10;
+	m_iMaxHp = 20;
+	m_iDefense = 10;
+
+	m_iHp = 20;
+
+
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Player/Player_Down.bmp", L"Player_DOWN");
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Player/Player_Left.bmp", L"Player_LEFT");
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Player/Player_Right.bmp", L"Player_RIGHT");
@@ -42,7 +50,7 @@ void CPlayerS1::Initialize(void)
 	m_tFrame.iFrameEnd = 0;
 	m_tFrame.iMotion = 0;
 	m_tFrame.dwSpeed = 500;
-	m_tFrame.dwTime = GetTickCount();
+	m_tFrame.dwTime = (DWORD)GetTickCount64();
 
 	m_eRender = GAMEOBJECT;
 
@@ -178,7 +186,7 @@ void CPlayerS1::Motion_Change(void)
 			m_tFrame.iFrameEnd = 0;
 			m_tFrame.iMotion = 0;
 			m_tFrame.dwSpeed = 250;
-			m_tFrame.dwTime = GetTickCount();
+			m_tFrame.dwTime = (DWORD)GetTickCount64();
 			break;
 
 		case WALK:
@@ -186,7 +194,7 @@ void CPlayerS1::Motion_Change(void)
 			m_tFrame.iFrameEnd = 3;
 			m_tFrame.iMotion = 1;
 			m_tFrame.dwSpeed = 250;
-			m_tFrame.dwTime = GetTickCount();
+			m_tFrame.dwTime = (DWORD)GetTickCount64();
 			break;
 
 		}

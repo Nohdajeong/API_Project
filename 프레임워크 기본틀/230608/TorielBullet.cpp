@@ -4,7 +4,7 @@
 #include "SceneMgr.h"
 
 CTorielBullet::CTorielBullet()
-	:m_dwTime(GetTickCount64()), m_iTime(0), m_bStart(true), m_fDistance(0.f), m_fRotSpeed(0.f), m_fRotAngle(0.f)
+	:m_dwTime((DWORD)GetTickCount64()), m_iTime(0), m_bStart(true), m_fDistance(0.f), m_fRotSpeed(0.f), m_fRotAngle(0.f)
 {
 	ZeroMemory(&m_tCenter, sizeof(POINT));
 }

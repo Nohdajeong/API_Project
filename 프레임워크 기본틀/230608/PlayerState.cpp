@@ -6,7 +6,7 @@
 #include "CollisionMgr.h"
 
 CPlayerState::CPlayerState()
-    : m_iLevel(0), m_iCurHp(0), m_iMaxHp(0), m_dwTime(GetTickCount64())
+    : m_dwTime((DWORD)GetTickCount64()), m_iCurHp(0)
 {
 }
 
@@ -51,9 +51,9 @@ void CPlayerState::Late_Update(void)
 {
     if (CSceneMgr::Get_Instance()->Get_SceneID() == MONSTER_ITEM || CSceneMgr::Get_Instance()->Get_SceneID() == BOSS_ITEM) {
     
-        if (m_dwTime + 4000 < GetTickCount64()) {
+        if (m_dwTime + 4000 < (DWORD)GetTickCount64()) {
             m_iCurHp = m_iCurHp + 5;
-            m_dwTime = GetTickCount64();
+            m_dwTime = (DWORD)GetTickCount64();
         }
 
 
@@ -68,7 +68,7 @@ void CPlayerState::Late_Update(void)
             CObjMgr::Get_Instance()->Get_Objects(BATTLE_PLAYER),
             CObjMgr::Get_Instance()->Get_Objects(BULLET))) {
 
-            m_iCurHp -= 0.1;
+            m_iCurHp -= (int)0.1;
 
             if (m_iCurHp < 0)
                 m_iCurHp = 0;

@@ -19,6 +19,6 @@ private:
 	int		Damage_size(float _fX);
 
 private:
-	DWORD		m_dwTime = GetTickCount64();
+	DWORD		m_dwTime = (DWORD)GetTickCount64();
 };
 

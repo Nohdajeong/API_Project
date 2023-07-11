@@ -3,10 +3,9 @@
 #include "KeyMgr.h"
 #include "ObjMgr.h"
 #include "SceneMgr.h"
-#include "CollisionMgr.h"
 
 CMonsterState::CMonsterState()
-    : m_iLevel(0), m_iCurHp(0), m_iMaxHp(0), m_dwTime(GetTickCount64())
+    : m_iLevel(0), m_iCurHp(0), m_iMaxHp(0), m_dwTime((DWORD)GetTickCount64())
 {
 }
 
@@ -67,7 +66,7 @@ void CMonsterState::Render(HDC hDC)
 
     swprintf_s(szBuff, L"%d", m_iCurHp);
 
-    TextOut(hDC, m_tInfo.fX - 80.f, m_tInfo.fY - 10.f, szBuff, lstrlen(szBuff));
+    TextOut(hDC, (int)(m_tInfo.fX - 80.f), (int)(m_tInfo.fY - 10.f), szBuff, lstrlen(szBuff));
 
     GdiTransparentBlt(hDC,
         (int)m_tRect.left,

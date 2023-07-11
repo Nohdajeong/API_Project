@@ -17,10 +17,7 @@ public:
 
 private:
 	TCHAR		szBuff[100] = L"";
-	int			m_iLevel;
-	int			m_iCurHp;
-	int			m_iMaxHp;
-
 	DWORD		m_dwTime;
+	int			m_iCurHp;
 };
 

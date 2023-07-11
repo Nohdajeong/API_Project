@@ -1,9 +1,6 @@
 #include "stdafx.h"
 #include "MonsterIdle.h"
-#include "Look.h"
-#include "MyButton.h"
 #include "MessageBlock.h"
-#include "PlayerState.h"
 
 CMonsterIdle::CMonsterIdle()
 {

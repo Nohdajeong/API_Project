@@ -25,7 +25,7 @@ void CToriel::Initialize(void)
     
 
 
-    m_dwTime = GetTickCount64();
+    m_dwTime = (DWORD)GetTickCount64();
     m_eRender = GAMEOBJECT;
 
 }

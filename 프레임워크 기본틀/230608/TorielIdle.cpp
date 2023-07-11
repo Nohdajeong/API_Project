@@ -1,9 +1,6 @@
 #include "stdafx.h"
 #include "TorielIdle.h"
-#include "Toriel.h"
-#include "MyButton.h"
 #include "MessageBlock.h"
-#include "PlayerState.h"
 
 CTorielIdle::CTorielIdle()
 {

@@ -52,7 +52,7 @@ public:
 
 	void			Set_FrameKey(TCHAR* pFrameKey) { m_pFrameKey = pFrameKey; }
 
-	void			Set_PostAttackDelay() { m_PostAttackDelay = GetTickCount64(); }
+	void			Set_PostAttackDelay() { m_PostAttackDelay = (DWORD)GetTickCount64(); }
 
 public:
 	virtual void		Initialize(void)	PURE;

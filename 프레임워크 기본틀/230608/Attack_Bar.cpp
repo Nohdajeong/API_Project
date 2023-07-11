@@ -25,7 +25,7 @@ void CPlayer_Attack::Initialize(void)
 	m_tInfo.fCY = 150.f;
 
 	m_fSpeed = 3.f;
-	m_iAttack = 5.f;
+	m_iAttack = 5;
 
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/attack_line.bmp", L"Line");
 

@@ -26,9 +26,6 @@ private:
 	STATE				m_eCurState;
 	STATE				m_ePreState;
 
-	SCENEID				m_eCurScene;
-	SCENEID				m_ePreScene;
-
 	bool				m_bStretch = false;
 
 };

@@ -1,9 +1,6 @@
 #include "stdafx.h"
 #include "TorielMercy.h"
-#include "Toriel.h"
-#include "MyButton.h"
 #include "MessageBlock.h"
-#include "PlayerState.h"
 #include "SoundMgr.h"
 #include "TorielDieMention.h"
 

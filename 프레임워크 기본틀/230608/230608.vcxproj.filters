@@ -40,9 +40,6 @@
     <Filter Include="01. Obj\01. Player">
       <UniqueIdentifier>{a538927e-c2c1-40f9-93f1-1f42f6ff2455}</UniqueIdentifier>
     </Filter>
-    <Filter Include="01. Obj\00. Actor">
-      <UniqueIdentifier>{4b05b9bc-f5cd-41a1-ac65-3886dc6a08ff}</UniqueIdentifier>
-    </Filter>
     <Filter Include="02. Design\04. KeyMgr">
       <UniqueIdentifier>{8cbae56d-d83e-43f6-acff-177acc050f89}</UniqueIdentifier>
     </Filter>
@@ -66,12 +63,6 @@
     </Filter>
     <Filter Include="03. Scene\01. Stage\Stage1 - Ruin">
       <UniqueIdentifier>{4eac66b5-be39-4179-919e-1d5df3c89ede}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Scene\01. Stage\Stage4 - Toliel">
-      <UniqueIdentifier>{19b1d20e-0635-4e2f-bb82-bebe1e5e47ed}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Scene\01. Stage\Stage3 - Puzzle">
-      <UniqueIdentifier>{65020c9f-6d89-4cac-a823-92a326b007e4}</UniqueIdentifier>
     </Filter>
     <Filter Include="03. Scene\01. Stage\Stage2 - Flowey">
       <UniqueIdentifier>{fd26949e-e538-4a2f-8d0c-819d18aac292}</UniqueIdentifier>
@@ -193,9 +184,6 @@
     <Filter Include="01. Obj\10. Save">
       <UniqueIdentifier>{995badfc-0f8f-4969-8bb3-260f0701bdb5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Scene\01. Stage\Stage4 - Toliel\Toriel_NPC">
-      <UniqueIdentifier>{784a94e6-265f-4594-a313-956758a608a9}</UniqueIdentifier>
-    </Filter>
     <Filter Include="01. Obj\03. Boss\Pattern\Attack4">
       <UniqueIdentifier>{87fa6821-82ab-49bf-a6b3-195f61ae030f}</UniqueIdentifier>
     </Filter>
@@ -210,6 +198,12 @@
     </Filter>
     <Filter Include="01. Obj\04. Monster\State">
       <UniqueIdentifier>{0880803a-3ab0-4df5-a38f-8e877e3dd564}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\01. Stage\Stage3 - Toliel">
+      <UniqueIdentifier>{19b1d20e-0635-4e2f-bb82-bebe1e5e47ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\01. Stage\Stage3 - Toliel\Toriel_NPC">
+      <UniqueIdentifier>{784a94e6-265f-4594-a313-956758a608a9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -260,12 +254,6 @@
     </ClInclude>
     <ClInclude Include="Intro.h">
       <Filter>03. Scene\00. Intro</Filter>
-    </ClInclude>
-    <ClInclude Include="Actor.h">
-      <Filter>01. Obj\00. Actor</Filter>
-    </ClInclude>
-    <ClInclude Include="State.h">
-      <Filter>01. Obj\00. Actor</Filter>
     </ClInclude>
     <ClInclude Include="PlayerS1.h">
       <Filter>01. Obj\01. Player\Player</Filter>
@@ -382,13 +370,13 @@
       <Filter>01. Obj\03. Boss\Pattern\Attack2</Filter>
     </ClInclude>
     <ClInclude Include="Stage_Toriel.h">
-      <Filter>03. Scene\01. Stage\Stage4 - Toliel</Filter>
+      <Filter>03. Scene\01. Stage\Stage3 - Toliel</Filter>
     </ClInclude>
     <ClInclude Include="Save.h">
       <Filter>01. Obj\10. Save</Filter>
     </ClInclude>
     <ClInclude Include="TorielNPC.h">
-      <Filter>03. Scene\01. Stage\Stage4 - Toliel\Toriel_NPC</Filter>
+      <Filter>03. Scene\01. Stage\Stage3 - Toliel\Toriel_NPC</Filter>
     </ClInclude>
     <ClInclude Include="TorielHandBullet.h">
       <Filter>01. Obj\03. Boss\Pattern\Attack3</Filter>
@@ -570,13 +558,13 @@
       <Filter>01. Obj\03. Boss\Pattern\Attack2</Filter>
     </ClCompile>
     <ClCompile Include="Stage_Toriel.cpp">
-      <Filter>03. Scene\01. Stage\Stage4 - Toliel</Filter>
+      <Filter>03. Scene\01. Stage\Stage3 - Toliel</Filter>
     </ClCompile>
     <ClCompile Include="Save.cpp">
       <Filter>01. Obj\10. Save</Filter>
     </ClCompile>
     <ClCompile Include="TorielNPC.cpp">
-      <Filter>03. Scene\01. Stage\Stage4 - Toliel\Toriel_NPC</Filter>
+      <Filter>03. Scene\01. Stage\Stage3 - Toliel\Toriel_NPC</Filter>
     </ClCompile>
     <ClCompile Include="TorielHandBullet.cpp">
       <Filter>01. Obj\03. Boss\Pattern\Attack3</Filter>

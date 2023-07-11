@@ -4,7 +4,7 @@
 #include "SceneMgr.h"
 
 CMiniBullet::CMiniBullet()
-	:m_dwTime(GetTickCount64()), m_iTime(0)
+	:m_dwTime((DWORD)GetTickCount64()), m_iTime(0)
 {
 }
 

@@ -2,7 +2,6 @@
 #include "Flowey.h"
 #include "ScrollMgr.h"
 #include "SceneMgr.h"
-#include "MessageBlock.h"
 
 CFlowey::CFlowey()
 {

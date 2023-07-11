@@ -5,7 +5,6 @@
 #include "MessageTextBlock.h"
 #include "Save.h"
 #include "TorielNPC.h"
-#include "KeyMgr.h"
 #include "Toriel_Wall.h"
 
 CStage3::CStage3()

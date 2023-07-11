@@ -1,6 +1,5 @@
 #include "stdafx.h"
 #include "TorielDie.h"
-#include "Toriel.h"
 #include "MessageBlock.h"
 #include "SoundMgr.h"
 #include "TorielDieMention.h"

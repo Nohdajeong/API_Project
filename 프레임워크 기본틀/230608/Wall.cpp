@@ -1,6 +1,5 @@
 #include "stdafx.h"
 #include "Wall.h"
-#include "ScrollMgr.h"
 #include "SceneMgr.h"
 
 CWall::CWall()
@@ -39,14 +38,6 @@ void CWall::Late_Update(void)
 
 void CWall::Render(HDC hDC)
 {
-	//int		iScrollX = (int)CScrollMgr::Get_Instance()->Get_ScollX();
-	//int		iScrollY = (int)CScrollMgr::Get_Instance()->Get_ScollY();
-
-	//Rectangle(hDC,
-	//	(int)m_tRect.left + iScrollX,
-	//	(int)m_tRect.top + iScrollY,
-	//	(int)m_tRect.right + iScrollX,
-	//	(int)m_tRect.bottom + iScrollY);
 
 }
 
