@@ -23,6 +23,7 @@ void CSceneMgr::Scene_Change(SCENEID eScene)
 
 		switch (m_eCurScene)
 		{
+
 		case INTRO:
 			m_pScene = new Intro;
 			break;

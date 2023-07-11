@@ -1,4 +1,8 @@
-﻿  Mushroom.cpp
-  Stage_Toriel.cpp
+﻿  230608.cpp
+  MonsterItem.cpp
+  MonsterMercy.cpp
+  Look.cpp
+  TorielDie.cpp
+  Wall.cpp
   코드를 생성하고 있습니다...
   230608.vcxproj -> C:\Users\노다정\Desktop\Jusin Academy\API_Project\프레임워크 기본틀\Debug\230608.exe

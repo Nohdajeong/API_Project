@@ -9,7 +9,7 @@ void Intro::Initialize(void)
 
 	float	g_fSound = 1.f;
 
-	//CSoundMgr::Get_Instance()->PlayBGM(L"Intro.mp3", g_fSound);
+	CSoundMgr::Get_Instance()->PlayBGM(L"Intro.mp3", g_fSound);
 }
 
 void Intro::Update(void)

@@ -51,15 +51,17 @@ void CStage1::Late_Update()
 	if (CKeyMgr::Get_Instance()->Key_Down('R'))
 		CSceneMgr::Get_Instance()->Scene_Change(FLOWEY);
 
-	if ((1200.f < pPlayer->Get_Info().fX) && (330.f > pPlayer->Get_Info().fY)) {
-		CSceneMgr::Get_Instance()->Scene_Change(FLOWEY);
-	}
-
 	if (m_dwTime + 5000 < GetTickCount64()) {
 		CSceneMgr::Get_Instance()->Scene_Change(MONSTER_MATCH);
 		m_dwTime = (DWORD)GetTickCount64();
 		return;
 	}
+
+	if ((1200.f < pPlayer->Get_Info().fX) && (330.f > pPlayer->Get_Info().fY)) {
+		CSceneMgr::Get_Instance()->Scene_Change(FLOWEY);
+	}
+
+
 }
 
 void CStage1::Render(HDC hDC)
