@@ -48,7 +48,7 @@ void CMonsterMatch::Initialize(void)
     pObj->Set_FrameKey(L"Mercy");
     CObjMgr::Get_Instance()->Add_Object(BUTTON, pObj);
 
-    CSoundMgr::Get_Instance()->PlayBGM(L"MonsterBattle.mp3", g_fSound);
+    //CSoundMgr::Get_Instance()->PlayBGM(L"MonsterBattle.mp3", g_fSound);
 }
 
 void CMonsterMatch::Update(void)

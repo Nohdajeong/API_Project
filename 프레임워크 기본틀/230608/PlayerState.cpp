@@ -63,12 +63,11 @@ void CPlayerState::Late_Update(void)
 
     if (CSceneMgr::Get_Instance()->Get_SceneID() == MONSTER_PHASE || CSceneMgr::Get_Instance()->Get_SceneID() == BOSS_PHASE) {
 
-
         if (CCollisionMgr::Check_Collision(
             CObjMgr::Get_Instance()->Get_Objects(BATTLE_PLAYER),
             CObjMgr::Get_Instance()->Get_Objects(BULLET))) {
-
-            m_iCurHp -= (int)0.1;
+         
+            m_iCurHp -= 1;
 
             if (m_iCurHp < 0)
                 m_iCurHp = 0;

@@ -205,6 +205,9 @@
     <Filter Include="03. Scene\01. Stage\Stage3 - Toliel\Toriel_NPC">
       <UniqueIdentifier>{784a94e6-265f-4594-a313-956758a608a9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. Scene\01. Stage\Stage3 - Toliel\Mushroom">
+      <UniqueIdentifier>{8067b257-11f7-4900-b501-9efc19a8ade6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -411,6 +414,9 @@
     <ClInclude Include="MonsterState.h">
       <Filter>01. Obj\04. Monster\State</Filter>
     </ClInclude>
+    <ClInclude Include="Mushroom.h">
+      <Filter>03. Scene\01. Stage\Stage3 - Toliel\Mushroom</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -598,6 +604,9 @@
     </ClCompile>
     <ClCompile Include="MonsterState.cpp">
       <Filter>01. Obj\04. Monster\State</Filter>
+    </ClCompile>
+    <ClCompile Include="Mushroom.cpp">
+      <Filter>03. Scene\01. Stage\Stage3 - Toliel\Mushroom</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

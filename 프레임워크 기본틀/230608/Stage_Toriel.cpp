@@ -6,6 +6,7 @@
 #include "Save.h"
 #include "TorielNPC.h"
 #include "Toriel_Wall.h"
+#include "Mushroom.h"
 
 CStage3::CStage3()
 {
@@ -20,11 +21,13 @@ void CStage3::Initialize()
 {
 	float	g_fSound = 1.f;
 
-	CSoundMgr::Get_Instance()->PlayBGM(L"FallenDown.mp3", g_fSound);
+	//CSoundMgr::Get_Instance()->PlayBGM(L"FallenDown.mp3", g_fSound);
 
 	CObjMgr::Get_Instance()->Get_Player()->Set_Pos(400.f, 1150.f);
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Map/Toriel.bmp", L"Toriel_map");
 	CObjMgr::Get_Instance()->Add_Object(STAGE_OBJ, CAbstractFactory<CSave>::Create());
+
+	CObjMgr::Get_Instance()->Add_Object(WALL, CAbstractFactory<CMushroom>::Create());
 
 	CObjMgr::Get_Instance()->Add_Object(NPC, CAbstractFactory<CTorielNPC>::Create(400.f, 250.f));
 
