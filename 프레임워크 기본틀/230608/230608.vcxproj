@@ -158,6 +158,7 @@
     <ClInclude Include="LookBullet.h" />
     <ClInclude Include="LookNormalBullet.h" />
     <ClInclude Include="Mention.h" />
+    <ClInclude Include="MessageQuizBlock.h" />
     <ClInclude Include="MessageTextBlock.h" />
     <ClInclude Include="MiniBullet.h" />
     <ClInclude Include="MonsterAct.h" />
@@ -199,6 +200,8 @@
     <ClInclude Include="Stage_Toriel.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="Teacher.h" />
+    <ClInclude Include="Temmy.h" />
     <ClInclude Include="Toriel.h" />
     <ClInclude Include="TorielAct.h" />
     <ClInclude Include="TorielAttack.h" />
@@ -227,6 +230,7 @@
     <ClCompile Include="LookBullet.cpp" />
     <ClCompile Include="LookNormalBullet.cpp" />
     <ClCompile Include="Mention.cpp" />
+    <ClCompile Include="MessageQuizBlock.cpp" />
     <ClCompile Include="MessageTextBlock.cpp" />
     <ClCompile Include="MiniBullet.cpp" />
     <ClCompile Include="MonsterAct.cpp" />
@@ -269,6 +273,8 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Teacher.cpp" />
+    <ClCompile Include="Temmy.cpp" />
     <ClCompile Include="Toriel.cpp" />
     <ClCompile Include="TorielAct.cpp" />
     <ClCompile Include="TorielAttack.cpp" />

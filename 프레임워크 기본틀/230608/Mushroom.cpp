@@ -2,6 +2,7 @@
 #include "Mushroom.h"
 #include "ScrollMgr.h"
 #include "SceneMgr.h"
+#include "KeyMgr.h"
 
 CMushroom::CMushroom()
 	: m_ePreState(STATE_END), m_eCurState(IDLE)
@@ -42,7 +43,6 @@ int CMushroom::Update(void)
 	m_pTarget = CObjMgr::Get_Instance()->Get_Player();
 
 	if (Search(m_pTarget)) {
-
 		m_eCurState = DANCE;
 	}
 	else m_eCurState = IDLE;

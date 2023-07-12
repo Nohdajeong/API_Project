@@ -208,6 +208,21 @@
     <Filter Include="03. Scene\01. Stage\Stage3 - Toliel\Mushroom">
       <UniqueIdentifier>{8067b257-11f7-4900-b501-9efc19a8ade6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="01. Obj\06. Message\Battle">
+      <UniqueIdentifier>{ad033922-bf61-4357-aab0-71bf66ce6a88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Obj\06. Message\Normal">
+      <UniqueIdentifier>{a7037864-02f2-41f0-9bef-ba54488c167d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Obj\06. Message\Quiz">
+      <UniqueIdentifier>{3d66da09-42c7-4471-b08d-073a3b8d4c4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\01. Stage\Stage3 - Toliel\Teacher">
+      <UniqueIdentifier>{f4681a13-69be-461f-bfae-bf3119e18081}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\01. Stage\Stage3 - Toliel\Temmy">
+      <UniqueIdentifier>{814b81cc-076f-4185-94f6-cf662546ef49}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -281,9 +296,6 @@
     </ClInclude>
     <ClInclude Include="MyButton.h">
       <Filter>01. Obj\05. Button</Filter>
-    </ClInclude>
-    <ClInclude Include="MessageBlock.h">
-      <Filter>01. Obj\06. Message</Filter>
     </ClInclude>
     <ClInclude Include="Look.h">
       <Filter>01. Obj\04. Monster</Filter>
@@ -393,9 +405,6 @@
     <ClInclude Include="TorielLaserBullet.h">
       <Filter>01. Obj\03. Boss\Pattern\Attack5</Filter>
     </ClInclude>
-    <ClInclude Include="MessageTextBlock.h">
-      <Filter>01. Obj\06. Message</Filter>
-    </ClInclude>
     <ClInclude Include="Ending.h">
       <Filter>03. Scene\04. Ending</Filter>
     </ClInclude>
@@ -416,6 +425,21 @@
     </ClInclude>
     <ClInclude Include="Mushroom.h">
       <Filter>03. Scene\01. Stage\Stage3 - Toliel\Mushroom</Filter>
+    </ClInclude>
+    <ClInclude Include="Teacher.h">
+      <Filter>03. Scene\01. Stage\Stage3 - Toliel\Teacher</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageBlock.h">
+      <Filter>01. Obj\06. Message\Battle</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageTextBlock.h">
+      <Filter>01. Obj\06. Message\Normal</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageQuizBlock.h">
+      <Filter>01. Obj\06. Message\Quiz</Filter>
+    </ClInclude>
+    <ClInclude Include="Temmy.h">
+      <Filter>03. Scene\01. Stage\Stage3 - Toliel\Temmy</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -472,9 +496,6 @@
     </ClCompile>
     <ClCompile Include="MyButton.cpp">
       <Filter>01. Obj\05. Button</Filter>
-    </ClCompile>
-    <ClCompile Include="MessageBlock.cpp">
-      <Filter>01. Obj\06. Message</Filter>
     </ClCompile>
     <ClCompile Include="Look.cpp">
       <Filter>01. Obj\04. Monster</Filter>
@@ -584,9 +605,6 @@
     <ClCompile Include="TorielLaserBullet.cpp">
       <Filter>01. Obj\03. Boss\Pattern\Attack5</Filter>
     </ClCompile>
-    <ClCompile Include="MessageTextBlock.cpp">
-      <Filter>01. Obj\06. Message</Filter>
-    </ClCompile>
     <ClCompile Include="Ending.cpp">
       <Filter>03. Scene\04. Ending</Filter>
     </ClCompile>
@@ -607,6 +625,21 @@
     </ClCompile>
     <ClCompile Include="Mushroom.cpp">
       <Filter>03. Scene\01. Stage\Stage3 - Toliel\Mushroom</Filter>
+    </ClCompile>
+    <ClCompile Include="Teacher.cpp">
+      <Filter>03. Scene\01. Stage\Stage3 - Toliel\Teacher</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageBlock.cpp">
+      <Filter>01. Obj\06. Message\Battle</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageTextBlock.cpp">
+      <Filter>01. Obj\06. Message\Normal</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageQuizBlock.cpp">
+      <Filter>01. Obj\06. Message\Quiz</Filter>
+    </ClCompile>
+    <ClCompile Include="Temmy.cpp">
+      <Filter>03. Scene\01. Stage\Stage3 - Toliel\Temmy</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

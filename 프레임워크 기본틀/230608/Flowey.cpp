@@ -3,6 +3,7 @@
 #include "ScrollMgr.h"
 #include "SceneMgr.h"
 #include "MessageTextBlock.h"
+#include "KeyMgr.h"
 
 CFlowey::CFlowey()
 {
@@ -43,7 +44,8 @@ int CFlowey::Update(void)
 	m_pTarget = CObjMgr::Get_Instance()->Get_Player();
 
 	if(Search(m_pTarget))
-		CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CMessageTextBlock>::Create(400.f, 100.f));
+		if (CKeyMgr::Get_Instance()->Key_Down(VK_SPACE))
+			CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CMessageTextBlock>::Create(400.f, 100.f));
 
 	__super::Move_Frame();
 	__super::Update_Rect();

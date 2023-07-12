@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "Player_Battle.h"
 #include "SceneMgr.h"
+#include "CollisionMgr.h"
 
 CPlayerBattle::CPlayerBattle()
 {
@@ -46,6 +47,8 @@ int CPlayerBattle::Update(void)
 void CPlayerBattle::Late_Update(void)
 {
 	if (CSceneMgr::Get_Instance()->Get_SceneID() == MONSTER_PHASE || CSceneMgr::Get_Instance()->Get_SceneID() == BOSS_PHASE) {
+
+		
 		if ((m_tRect.left < 290.f) || (m_tRect.right > 515.f)) {
 			m_tInfo.fX *= -1.f;
 		}
