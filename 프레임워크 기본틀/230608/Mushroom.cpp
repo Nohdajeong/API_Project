@@ -20,7 +20,6 @@ void CMushroom::Initialize(void)
 	m_tInfo.fCX = 40.f;
 	m_tInfo.fCY = 64.f;
 
-	m_fSpeed = 1.f;
 	m_fRange = 100.f;
 
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/NPC/mushroom.bmp", L"mushroom");

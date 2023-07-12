@@ -1,0 +1,84 @@
+﻿  stdafx.cpp
+  230608.cpp
+  Attack_Bar.cpp
+  Attack_Motion.cpp
+  Ending.cpp
+  LookBullet.cpp
+  LookNormalBullet.cpp
+  Mention.cpp
+  MessageTextBlock.cpp
+  MiniBullet.cpp
+  MonsterAct.cpp
+  MonsterIdle.cpp
+  MonsterItem.cpp
+  MonsterMercy.cpp
+  MonsterState.cpp
+  Mushroom.cpp
+  PlayerState.cpp
+  Player_Battle.cpp
+  Save.cpp
+C:\Users\노다정\Desktop\Jusin Academy\API_Project\프레임워크 기본틀\230608\Save.cpp(29,34): warning C4244: '=': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Stage_Flowey.cpp
+C:\Users\노다정\Desktop\Jusin Academy\API_Project\프레임워크 기본틀\230608\Stage_Flowey.cpp(59,29): warning C4244: '=': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  MonsterAttack.cpp
+  컴파일하고 있습니다...
+  MonsterBattle.cpp
+  BitMap.cpp
+  BmpMgr.cpp
+  CollisionMgr.cpp
+C:\Users\노다정\Desktop\Jusin Academy\API_Project\프레임워크 기본틀\230608\CollisionMgr.cpp(80,15): warning C4244: '초기화 중': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Flowey.cpp
+C:\Users\노다정\Desktop\Jusin Academy\API_Project\프레임워크 기본틀\230608\Flowey.cpp(29,34): warning C4244: '=': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Intro.cpp
+  KeyMgr.cpp
+  Line.cpp
+  LineMgr.cpp
+  MainGame.cpp
+  MessageBlock.cpp
+  Look.cpp
+  MonsterPhase.cpp
+  Mouse.cpp
+  MyButton.cpp
+  Obj.cpp
+  ObjMgr.cpp
+  PlayerS1.cpp
+  SceneMgr.cpp
+  ScrollMgr.cpp
+  컴파일하고 있습니다...
+  SoundMgr.cpp
+  Stage_Ruin.cpp
+  Stage_Toriel.cpp
+  Toriel.cpp
+  TorielAct.cpp
+  TorielAttack.cpp
+  TorielBattle.cpp
+  TorielBullet.cpp
+  TorielCenterBullet.cpp
+  TorielDie.cpp
+  TorielDieMention.cpp
+  TorielHandBullet.cpp
+C:\Users\노다정\Desktop\Jusin Academy\API_Project\프레임워크 기본틀\230608\TorielHandBullet.cpp(9,11): warning C4244: '초기화 중': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\노다정\Desktop\Jusin Academy\API_Project\프레임워크 기본틀\230608\TorielHandBullet.cpp(49,28): warning C4244: '=': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  TorielIdle.cpp
+  TorielItem.cpp
+  TorielLaserBullet.cpp
+C:\Users\노다정\Desktop\Jusin Academy\API_Project\프레임워크 기본틀\230608\TorielLaserBullet.cpp(7,11): warning C4244: '초기화 중': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  TorielMercy.cpp
+  TorielMiniBullet.cpp
+C:\Users\노다정\Desktop\Jusin Academy\API_Project\프레임워크 기본틀\230608\TorielMiniBullet.cpp(7,11): warning C4244: '초기화 중': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  TorielNPC.cpp
+  TorielPassBullet.cpp
+C:\Users\노다정\Desktop\Jusin Academy\API_Project\프레임워크 기본틀\230608\TorielPassBullet.cpp(7,11): warning C4244: '초기화 중': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  TorielPhase.cpp
+C:\Users\노다정\Desktop\Jusin Academy\API_Project\프레임워크 기본틀\230608\TorielPhase.cpp(39,40): warning C4244: '=': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\노다정\Desktop\Jusin Academy\API_Project\프레임워크 기본틀\230608\TorielPhase.cpp(45,40): warning C4244: '=': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\노다정\Desktop\Jusin Academy\API_Project\프레임워크 기본틀\230608\TorielPhase.cpp(51,40): warning C4244: '=': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\노다정\Desktop\Jusin Academy\API_Project\프레임워크 기본틀\230608\TorielPhase.cpp(57,40): warning C4244: '=': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  컴파일하고 있습니다...
+  Toriel_Wall.cpp
+  Wall.cpp
+  코드를 생성하고 있습니다.
+  Previous IPDB not found, fall back to full compilation.
+  All 984 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  코드를 생성했습니다.
+  230608.vcxproj -> C:\Users\노다정\Desktop\Jusin Academy\API_Project\프레임워크 기본틀\Release\230608.exe

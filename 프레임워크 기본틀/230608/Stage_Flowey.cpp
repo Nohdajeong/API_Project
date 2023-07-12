@@ -22,6 +22,8 @@ void CStage2::Initialize()
 	CSoundMgr::Get_Instance()->PlayBGM(L"Flowey.mp3", g_fSound);
 
 	CObjMgr::Get_Instance()->Get_Player()->Set_Pos(400.f, 700.f);
+
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Map/Ruin_Back.bmp", L"Ruin_Back");
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Map/Flowey.bmp", L"Flowey_map");
 	CObjMgr::Get_Instance()->Add_Object(STAGE_OBJ, CAbstractFactory<CFlowey>::Create(400.f, 500.f));
 
@@ -49,26 +51,27 @@ void CStage2::Late_Update()
 		CSceneMgr::Get_Instance()->Scene_Change(TORIEL);
 	}
 
-	if (CCollisionMgr::Check_Collision(
+	CCollisionMgr::Collision_RectEx(	
 		CObjMgr::Get_Instance()->Get_Objects(PLAYER),
-		CObjMgr::Get_Instance()->Get_Objects(STAGE_OBJ)))
-	{
-		CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CMessageTextBlock>::Create(400.f, 500.f));
-		if (m_dwTime + 10000.f < GetTickCount64()) {
-			CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CMessageTextBlock>::Create(400.f, 500.f));
-			m_dwTime = GetTickCount64();
-		}
-	}
+		CObjMgr::Get_Instance()->Get_Objects(STAGE_OBJ));
+
+	//if (CCollisionMgr::Check_Collision(
+	//	CObjMgr::Get_Instance()->Get_Objects(PLAYER),
+	//	CObjMgr::Get_Instance()->Get_Objects(STAGE_OBJ)))
+	//{		
+	//}
 
 }
 
 void CStage2::Render(HDC hDC)
 {
+	HDC		hBackDC = CBmpMgr::Get_Instance()->Find_Img(L"Ruin_Back");
 	HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Img(L"Flowey_map");
 
 	int	iScrollX = (int)CScrollMgr::Get_Instance()->Get_ScollX();
 	int	iScrollY = (int)CScrollMgr::Get_Instance()->Get_ScollY();
 
+	BitBlt(hDC, 0, 0, 1700, 600, hBackDC, 0, 0, SRCCOPY);
 	BitBlt(hDC, iScrollX, iScrollY, 800, 1100, hMemDC, 0, 0, SRCCOPY);
 
 	CObjMgr::Get_Instance()->Render(hDC);

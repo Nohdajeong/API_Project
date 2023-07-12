@@ -13,4 +13,11 @@ public:
 	virtual void	Render(HDC hDC) override;
 	virtual void	Release(void) override;
 
+
+private:
+	bool		Search(CObj* _pTarget);
+
+	float		m_fRange = 0.f;
+	DWORD		m_dwTime = (DWORD)GetTickCount64();
+
 };

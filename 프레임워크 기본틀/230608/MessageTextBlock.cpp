@@ -17,7 +17,6 @@ void CMessageTextBlock::Text_Change(SCENEID eScene)
 {
 
 	switch (eScene) {
-
 	case FLOWEY:
 		swprintf_s(szBuff, L"* 안녕! 나는 플라위야, 노란꽃 플라위!");
 		swprintf_s(szPlayer, L"* 이건 원래 게임과는 다른 내용이야.");
