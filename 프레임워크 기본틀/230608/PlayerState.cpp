@@ -27,7 +27,7 @@ void CPlayerState::Initialize(void)
     m_tInfo.fX = 400.f;
     m_tInfo.fY = 510.f;
 
-    m_tInfo.fCX = 85.f;
+    m_tInfo.fCX = 100.f;
     m_tInfo.fCY = 15.f;
 
     CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/hp_base.bmp", L"hp_base");
@@ -52,7 +52,7 @@ void CPlayerState::Late_Update(void)
     if (CSceneMgr::Get_Instance()->Get_SceneID() == MONSTER_ITEM || CSceneMgr::Get_Instance()->Get_SceneID() == BOSS_ITEM) {
     
         if (m_dwTime + 4000 < (DWORD)GetTickCount64()) {
-            m_iCurHp = m_iCurHp + 5;
+            m_iCurHp += 5;
             m_dwTime = (DWORD)GetTickCount64();
         }
 
@@ -76,7 +76,7 @@ void CPlayerState::Late_Update(void)
     }
 
 
-    if (CSceneMgr::Get_Instance()->Get_SceneID() == RUIN)
+    if (CSceneMgr::Get_Instance()->Get_SceneID() == RUIN || CSceneMgr::Get_Instance()->Get_SceneID() == TORIEL)
         m_bDead = true;
 
 }
@@ -109,12 +109,12 @@ void CPlayerState::Render(HDC hDC)
     GdiTransparentBlt(hDC,
         (int)m_tRect.left,
         (int)m_tRect.top,
-        (int)m_tInfo.fCX,
+        ((int)m_tInfo.fCX / m_iMaxHp) * m_iCurHp,
         (int)m_tInfo.fCY,
         hMemDC,
         0,
         0,
-        (int)m_tInfo.fCX * (m_iCurHp / m_iMaxHp),
+        ((int)m_tInfo.fCX / m_iMaxHp) * m_iCurHp,
         (int)m_tInfo.fCY,
         RGB(195, 134, 255));
 

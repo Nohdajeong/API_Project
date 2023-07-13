@@ -16,8 +16,8 @@ CTemmy::~CTemmy()
 
 void CTemmy::Initialize(void)
 {
-	m_tInfo.fCX = 40.f;
-	m_tInfo.fCY = 36.f;
+	m_tInfo.fCX = 50.f;
+	m_tInfo.fCY = 45.f;
 
 	m_fRange = 50.f;
 
@@ -45,7 +45,7 @@ int CTemmy::Update(void)
 		{
 			CObj* pObj = CAbstractFactory<CMessageQuizBlock>::Create(400.f, 100.f);
 			pObj->Set_Target(this);
-			CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, pObj);
+			CObjMgr::Get_Instance()->Add_Object(TEXTBOX, pObj);
 
 		}
 	}

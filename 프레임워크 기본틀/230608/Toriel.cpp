@@ -16,8 +16,8 @@ void CToriel::Initialize(void)
 {
     m_tInfo = { 400.f, 190.f, 178.f, 245.f };
 
-    m_iHp = 220;
-    m_iMaxHp = 220;
+    m_iHp = 200;
+    m_iMaxHp = 200;
     m_iAttack = 80;
     m_iDefense = 80;
 
@@ -46,7 +46,7 @@ void CToriel::Late_Update(void)
         CObjMgr::Get_Instance()->Add_Object(MONSTER_STATE, CAbstractFactory<CMonsterState>::Create());
 
 
-    if (CSceneMgr::Get_Instance()->Get_SceneID() == RUIN)
+    if (CSceneMgr::Get_Instance()->Get_SceneID() == RUIN || CSceneMgr::Get_Instance()->Get_SceneID() == TORIEL)
         Set_Dead();
 
 }

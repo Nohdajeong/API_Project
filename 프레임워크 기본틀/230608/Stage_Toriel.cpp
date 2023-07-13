@@ -8,6 +8,7 @@
 #include "Toriel_Wall.h"
 #include "Mushroom.h"
 #include "Temmy.h"
+#include "Teacher.h"
 
 CStage3::CStage3()
 {
@@ -30,9 +31,10 @@ void CStage3::Initialize()
 
 	CObjMgr::Get_Instance()->Add_Object(STAGE_OBJ, CAbstractFactory<CMushroom>::Create());
 
-	CObjMgr::Get_Instance()->Add_Object(STAGE_OBJ, CAbstractFactory<CTemmy>::Create(300.f, 910.f));
-	CObjMgr::Get_Instance()->Add_Object(STAGE_OBJ, CAbstractFactory<CTemmy>::Create(280.f, 850.f));
-	CObjMgr::Get_Instance()->Add_Object(STAGE_OBJ, CAbstractFactory<CTemmy>::Create(290.f, 780.f));
+	CObjMgr::Get_Instance()->Add_Object(STAGE_OBJ, CAbstractFactory<CTemmy>::Create(250.f, 910.f));
+	CObjMgr::Get_Instance()->Add_Object(STAGE_OBJ, CAbstractFactory<CTemmy>::Create(230.f, 850.f));
+	CObjMgr::Get_Instance()->Add_Object(STAGE_OBJ, CAbstractFactory<CTemmy>::Create(240.f, 780.f));
+	CObjMgr::Get_Instance()->Add_Object(STAGE_OBJ, CAbstractFactory<CTeacher>::Create(600.f, 780.f));
 
 	CObjMgr::Get_Instance()->Add_Object(NPC, CAbstractFactory<CTorielNPC>::Create(400.f, 250.f));
 

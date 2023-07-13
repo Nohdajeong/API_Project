@@ -3,6 +3,7 @@
 #include "ScrollMgr.h"
 #include "SceneMgr.h"
 #include "KeyMgr.h"
+#include "MessageQuizBlock.h"
 
 CTeacher::CTeacher()
 {
@@ -15,19 +16,17 @@ CTeacher::~CTeacher()
 
 void CTeacher::Initialize(void)
 {
-	m_tInfo.fX = 600.f;
-	m_tInfo.fY = 900.f;
-	m_tInfo.fCX = 40.f;
-	m_tInfo.fCY = 64.f;
+	m_tInfo.fCX = 50.f;
+	m_tInfo.fCY = 73.f;
 
 	m_fRange = 100.f;
 
-	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/NPC/mushroom.bmp", L"mushroom");
-
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/NPC/Teacher.bmp", L"Teacher");
+	
 	m_tFrame.iFrameStart = 0;
-	m_tFrame.iFrameEnd = 0;
+	m_tFrame.iFrameEnd = 1;
 	m_tFrame.iMotion = 0;
-	m_tFrame.dwSpeed = 400;
+	m_tFrame.dwSpeed = 700;
 	m_tFrame.dwTime = (DWORD)GetTickCount64();
 
 	m_eRender = GAMEOBJECT;
@@ -44,6 +43,9 @@ int CTeacher::Update(void)
 	if (Search(m_pTarget)) {
 		if (CKeyMgr::Get_Instance()->Key_Down(VK_SPACE))
 		{
+			CObj* pObj = CAbstractFactory<CMessageQuizBlock>::Create(400.f, 100.f);
+			pObj->Set_Target(this);
+			CObjMgr::Get_Instance()->Add_Object(TEXTBOX, pObj);
 
 		}
 	}
@@ -58,7 +60,8 @@ int CTeacher::Update(void)
 void CTeacher::Late_Update(void)
 {
 	if (CSceneMgr::Get_Instance()->Get_SceneID() != TORIEL)
-		Set_Dead();
+		if (m_dwTime + 5000 < GetTickCount64())
+			Set_Dead();
 }
 
 void CTeacher::Render(HDC hDC)
@@ -66,7 +69,7 @@ void CTeacher::Render(HDC hDC)
 	int		iScrollX = (int)CScrollMgr::Get_Instance()->Get_ScollX();
 	int		iScrollY = (int)CScrollMgr::Get_Instance()->Get_ScollY();
 
-	HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Img(L"mushroom");
+	HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Img(L"Teacher");
 
 	GdiTransparentBlt(hDC,
 		(int)m_tRect.left + iScrollX,

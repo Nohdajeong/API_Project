@@ -25,7 +25,7 @@ void CMonsterState::Initialize(void)
     m_tInfo.fX = (pMonster)->Get_Info().fX;
     m_tInfo.fY = (pMonster)->Get_Rect().top - 30.f;
 
-    m_tInfo.fCX = 85.f;
+    m_tInfo.fCX = 100.f;
     m_tInfo.fCY = 15.f;
 
     CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/hp_base.bmp", L"hp_base");
@@ -66,7 +66,7 @@ void CMonsterState::Render(HDC hDC)
 
     swprintf_s(szBuff, L"%d", m_iCurHp);
 
-    TextOut(hDC, (int)(m_tInfo.fX - 80.f), (int)(m_tInfo.fY - 10.f), szBuff, lstrlen(szBuff));
+    TextOut(hDC, (int)(m_tInfo.fX - 90.f), (int)(m_tInfo.fY - 10.f), szBuff, lstrlen(szBuff));
 
     GdiTransparentBlt(hDC,
         (int)m_tRect.left,
@@ -80,17 +80,33 @@ void CMonsterState::Render(HDC hDC)
         (int)m_tInfo.fCY,
         RGB(195, 134, 255));
 
-    GdiTransparentBlt(hDC,
-        (int)m_tRect.left,
-        (int)m_tRect.top,
-        (int)m_tInfo.fCX,
-        (int)m_tInfo.fCY,
-        hMemDC,
-        0,
-        0,
-        (int)m_tInfo.fCX * (m_iCurHp / m_iMaxHp),
-        (int)m_tInfo.fCY,
-        RGB(195, 134, 255));
+    if (CSceneMgr::Get_Instance()->Get_SceneID() == MONSTER_ATTACK) {
+        GdiTransparentBlt(hDC,
+            (int)m_tRect.left,
+            (int)m_tRect.top,
+            (int)m_tInfo.fCX / m_iMaxHp * m_iCurHp,
+            (int)m_tInfo.fCY,
+            hMemDC,
+            0,
+            0,
+            (int)m_tInfo.fCX / m_iMaxHp * m_iCurHp,
+            (int)m_tInfo.fCY,
+            RGB(195, 134, 255));
+    }
+    else if (CSceneMgr::Get_Instance()->Get_SceneID() == BOSS_ATTACK) {
+        GdiTransparentBlt(hDC,
+            (int)m_tRect.left,
+            (int)m_tRect.top,
+            m_tInfo.fCX / m_iMaxHp * m_iCurHp,
+            (int)m_tInfo.fCY,
+            hMemDC,
+            0,
+            0,
+            m_tInfo.fCX / m_iMaxHp * m_iCurHp,
+            (int)m_tInfo.fCY,
+            RGB(195, 134, 255));
+
+    }
 
 }
 

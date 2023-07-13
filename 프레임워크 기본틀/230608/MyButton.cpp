@@ -37,7 +37,7 @@ int CMyButton::Update(void)
 
 void CMyButton::Late_Update(void)
 {
-	if (CSceneMgr::Get_Instance()->Get_ScenePreID() == RUIN)
+	if (CSceneMgr::Get_Instance()->Get_SceneID() == RUIN || CSceneMgr::Get_Instance()->Get_SceneID() == TORIEL)
 		Set_Dead();
 	
 	else {

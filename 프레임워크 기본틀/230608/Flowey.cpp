@@ -45,7 +45,7 @@ int CFlowey::Update(void)
 
 	if(Search(m_pTarget))
 		if (CKeyMgr::Get_Instance()->Key_Down(VK_SPACE))
-			CObjMgr::Get_Instance()->Add_Object(MESSAGEBOX, CAbstractFactory<CMessageTextBlock>::Create(400.f, 100.f));
+			CObjMgr::Get_Instance()->Add_Object(TEXTBOX, CAbstractFactory<CMessageTextBlock>::Create(400.f, 100.f));
 
 	__super::Move_Frame();
 	__super::Update_Rect();
