@@ -44,9 +44,10 @@ int CFlowey::Update(void)
 	m_pTarget = CObjMgr::Get_Instance()->Get_Player();
 
 	if(Search(m_pTarget))
-		if (CKeyMgr::Get_Instance()->Key_Down(VK_SPACE))
-			CObjMgr::Get_Instance()->Add_Object(TEXTBOX, CAbstractFactory<CMessageTextBlock>::Create(400.f, 100.f));
-
+		if (CKeyMgr::Get_Instance()->Key_Down(VK_SPACE)) {
+			CObjMgr::Get_Instance()->Add_Object(TEXTBOX, CAbstractFactory<CMessageTextBlock>::Create(400.f, 500.f));
+			m_bTalk = true;
+		}
 	__super::Move_Frame();
 	__super::Update_Rect();
 

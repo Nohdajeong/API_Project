@@ -32,7 +32,7 @@ void CTorielMercy::Late_Update(void)
 
     if (m_dwTime + 10000 < GetTickCount()) {
         CSoundMgr::Get_Instance()->StopSound(SOUND_BGM);
-        CSceneMgr::Get_Instance()->Scene_Change(ENDING);
+        CSceneMgr::Get_Instance()->Scene_Change(RUIN);
     }
 }
 

@@ -2,19 +2,21 @@
 #include "Intro.h"
 #include "SceneMgr.h"
 #include "SoundMgr.h"
+#include "KeyMgr.h"
 
 void Intro::Initialize(void)
 {
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/UI/Intro.bmp", L"Intro");
 
-	float	g_fSound = 1.f;
-
-	CSoundMgr::Get_Instance()->PlayBGM(L"Intro.mp3", g_fSound);
 
 }
 
 void Intro::Update(void)
 {
+	float	g_fSound = 1.f;
+
+	if (CKeyMgr::Get_Instance()->Key_Down(VK_RETURN))
+		CSoundMgr::Get_Instance()->PlayBGM(L"Intro.mp3", g_fSound);
 
 }
 

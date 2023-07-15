@@ -32,6 +32,9 @@ public:
 	int				Get_Attack() { return m_iAttack; }
 	int				Get_Defense() { return m_iDefense; }
 
+	bool			Get_Talk() { return m_bTalk; }
+	int				Get_Draw() { return m_iDrawID; }
+
 
 	void			Set_Pos(float _fX, float _fY)
 	{
@@ -85,6 +88,9 @@ protected:
 
 	int			m_iAttack;
 	int			m_iDefense;
+
+	bool		m_bTalk = false;
+	int			m_iDrawID = 0;
 
 	TCHAR*		m_pFrameKey;
 

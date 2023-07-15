@@ -4,7 +4,6 @@
 #include "MonsterState.h"
 
 CToriel::CToriel()
-    : m_iDrawID(0)
 {
 }
 

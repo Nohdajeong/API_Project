@@ -15,8 +15,6 @@ public:
 	virtual void Release(void) override;
 
 private:
-	int		m_iDrawID;
-
 	DWORD	m_dwTime = GetTickCount();
 };
 

@@ -7,7 +7,6 @@
 float	g_fSound = 3.f;
 
 CMyButton::CMyButton() 
-	: m_iDrawID(0)
 {
 }
 

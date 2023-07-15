@@ -18,7 +18,6 @@ public:
 
 private:
 	DWORD				m_dwTime = (DWORD)GetTickCount64();
-	int					m_iDrawID;
 
 	TCHAR				szBuff[100] = L"";
 

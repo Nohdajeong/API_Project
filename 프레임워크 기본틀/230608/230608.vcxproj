@@ -154,6 +154,7 @@
     <ClInclude Include="AbstractFactory.h" />
     <ClInclude Include="Attack_Bar.h" />
     <ClInclude Include="Attack_Motion.h" />
+    <ClInclude Include="Chain.h" />
     <ClInclude Include="Ending.h" />
     <ClInclude Include="LookBullet.h" />
     <ClInclude Include="LookNormalBullet.h" />
@@ -226,6 +227,7 @@
     <ClCompile Include="230608.cpp" />
     <ClCompile Include="Attack_Bar.cpp" />
     <ClCompile Include="Attack_Motion.cpp" />
+    <ClCompile Include="Chain.cpp" />
     <ClCompile Include="Ending.cpp" />
     <ClCompile Include="LookBullet.cpp" />
     <ClCompile Include="LookNormalBullet.cpp" />

@@ -223,6 +223,9 @@
     <Filter Include="03. Scene\01. Stage\Stage3 - Toliel\Temmy">
       <UniqueIdentifier>{814b81cc-076f-4185-94f6-cf662546ef49}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. Scene\01. Stage\Stage2 - Flowey\Chain">
+      <UniqueIdentifier>{0aa7696b-0194-4265-9be1-3afb6cefd4c1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -441,6 +444,9 @@
     <ClInclude Include="Temmy.h">
       <Filter>03. Scene\01. Stage\Stage3 - Toliel\Temmy</Filter>
     </ClInclude>
+    <ClInclude Include="Chain.h">
+      <Filter>03. Scene\01. Stage\Stage2 - Flowey\Chain</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -640,6 +646,9 @@
     </ClCompile>
     <ClCompile Include="Temmy.cpp">
       <Filter>03. Scene\01. Stage\Stage3 - Toliel\Temmy</Filter>
+    </ClCompile>
+    <ClCompile Include="Chain.cpp">
+      <Filter>03. Scene\01. Stage\Stage2 - Flowey\Chain</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -5,6 +5,7 @@
 #include "MessageTextBlock.h"
 #include "KeyMgr.h"
 #include "Flowey.h"
+#include "Chain.h"
 
 CStage2::CStage2()
 {
@@ -25,7 +26,10 @@ void CStage2::Initialize()
 
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Map/Ruin_Back.bmp", L"Ruin_Back");
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Map/Flowey.bmp", L"Flowey_map");
-	CObjMgr::Get_Instance()->Add_Object(STAGE_OBJ, CAbstractFactory<CFlowey>::Create(400.f, 500.f));
+	CObjMgr::Get_Instance()->Add_Object(NPC, CAbstractFactory<CFlowey>::Create(400.f, 500.f));
+	CObjMgr::Get_Instance()->Add_Object(STAGE_OBJ, CAbstractFactory<CChain>::Create(380.f, 250.f));
+	CObjMgr::Get_Instance()->Add_Object(STAGE_OBJ, CAbstractFactory<CChain>::Create(400.f, 250.f));
+	CObjMgr::Get_Instance()->Add_Object(STAGE_OBJ, CAbstractFactory<CChain>::Create(420.f, 250.f));
 
 	CScrollMgr::Get_Instance()->Scroll_reset(0.f, -200.f);
 
@@ -53,7 +57,7 @@ void CStage2::Late_Update()
 
 	CCollisionMgr::Collision_RectEx(	
 		CObjMgr::Get_Instance()->Get_Objects(PLAYER),
-		CObjMgr::Get_Instance()->Get_Objects(STAGE_OBJ));
+		CObjMgr::Get_Instance()->Get_Objects(NPC));
 
 	//if (CCollisionMgr::Check_Collision(
 	//	CObjMgr::Get_Instance()->Get_Objects(PLAYER),
